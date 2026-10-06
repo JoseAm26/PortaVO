@@ -1,0 +1,171 @@
+:host {
+  display: block;
+}
+
+.contacto {
+  min-height: 500px; /* Reducido de 650px a 500px para hacerlo más compacto */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px; /* Padding externo reducido */
+  background-image:
+    linear-gradient(
+      rgba(13, 44, 84, 0.85), /* Azul marino de Veinsur con opacidad */
+      rgba(13, 44, 84, 0.85)
+    ),
+    url('/assets/img/prefooter.webp');
+  background-size: cover;
+  background-position: center;
+}
+
+.contact-card {
+  width: 100%;
+  max-width: 650px; /* Reducido de 900px a 650px para que se vea más recogido y elegante */
+  background: rgba(255, 255, 255, 0.98);
+  border-radius: 16px; /* Bordes ligeramente más sutiles */
+  padding: 30px; /* Relleno interno reducido para ahorrar espacio vertical */
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+}
+
+h2 {
+  text-align: center;
+  color: #0d2c54; /* Azul oscuro corporativo */
+  font-size: 28px; /* Reducido de 38px para estilizarlo */
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 8px;
+  letter-spacing: 0.5px;
+}
+
+.descripcion {
+  text-align: center;
+  color: #55647a;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 24px;
+}
+
+/* --- Formulario --- */
+.fila {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 8px;
+}
+
+mat-form-field {
+  flex: 1;
+}
+
+/* Forzar ancho completo nativo en los inputs de Angular Material */
+::v-deep .mat-mdc-form-field {
+  width: 100% !important;
+}
+
+/* Reducir sutilmente la altura densa por defecto de Material */
+::v-deep .mat-mdc-form-field-subscript-wrapper {
+  display: none; /* Oculta el espacio de error vacío si no se necesita para compactar más */
+}
+
+/* --- Texto Legal y Checkbox --- */
+.legal {
+  margin-top: 15px;
+  color: #4a5568;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.legal p {
+  margin: 0 0 6px 0;
+}
+
+.legal strong {
+  color: #0d2c54;
+}
+
+.legal a {
+  color: #0d2c54; /* Rojo corporativo para enlaces de interés */
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.legal a:hover {
+  text-decoration: underline;
+}
+
+.checkbox-container {
+  margin-top: 12px;
+}
+
+/* Ajuste responsivo para que el texto largo del checkbox salte de línea correctamente en móviles */
+::v-deep .mdc-form-field {
+  white-space: normal !important;
+}
+
+/* --- Botón Enviar --- */
+.btn-enviar {
+  width: 100%;
+  height: 48px; /* Reducido de 56px a 48px */
+  margin-top: 20px;
+  background: #0d2c54 !important; /* Color Rojo sólido corporativo */
+  color: white !important;
+  font-size: 15px;
+  font-weight: 600;
+  text-transform: uppercase;
+  border-radius: 6px !important; /* Más cuadrado acorde a la web de Veinsur */
+  transition: background-color 0.2s ease, transform 0.1s ease !important;
+}
+
+.btn-enviar:hover {
+  background: #0d2c54 !important; /* Intercambio de color corporativo al pasar el cursor */
+}
+
+/* --- Media Queries (Adaptación Móvil Completa) --- */
+@media (max-width: 768px) {
+  .contacto {
+    padding: 30px 15px;
+    min-height: auto;
+  }
+
+  .contact-card {
+    padding: 20px;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  .descripcion {
+    font-size: 0.9rem;
+    margin-bottom: 16px;
+  }
+
+  .fila {
+    flex-direction: column; /* Cambia a vertical en smartphones automáticamente */
+    gap: 0; /* Angular Material maneja su propio margen inferior */
+  }
+}
+
+.error-privacidad {
+  margin-top: 6px;
+  font-size: 0.85rem;
+  color: #dc3545;
+  font-weight: 500;
+}
+:host ::ng-deep .snackbar-ok {
+  --mdc-snackbar-container-color: #198754;
+  --mdc-snackbar-supporting-text-color: white;
+
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 12px;
+}
+
+:host ::ng-deep .snackbar-error {
+  --mdc-snackbar-container-color: #dc3545;
+  --mdc-snackbar-supporting-text-color: white;
+
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 12px;
+}

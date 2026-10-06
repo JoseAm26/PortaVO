@@ -1,0 +1,1180 @@
+{
+  "HOME": {
+    "TAGLINE": "Garantía Veinsur",
+    "TITULO_1": "Encuentra el camión que",
+    "TITULO_2": "impulsa tu negocio",
+    "DESCRIPCION": "Accede a nuestra flota de segunda mano totalmente revisada en talleres oficiales. Rendimiento y fiabilidad listos para la carretera.",
+
+    "VEHICULOS_LISTOS": "Vehículos listos",
+    "SOPORTE_RUTA": "Soporte en ruta",
+    "ANIOS_CONTIGO": "Años contigo",
+
+    "FILTROS_BUSQUEDA": "Filtros de búsqueda",
+    "MARCAS_BUSCADAS": "Marcas más buscadas",
+
+    "TALLER_OFICIAL": "Taller oficial propio",
+    "TALLER_OFICIAL_DESC": "Revisión técnica de pre-entrega completa en Veinsur.",
+
+    "TRAMITES_EXPRES": "Trámites exprés",
+    "TRAMITES_EXPRES_DESC": "Gestión rápida para que salgas rodando el mismo día.",
+
+    "COMO_CONSEGUIR_UNIDAD": "¿Cómo conseguir tu unidad?",
+
+    "PASO1_TITULO": "Selecciona en la web",
+    "PASO1_DESC": "Filtra y encuentra el camión que mejor se acople a tu actividad.",
+
+    "PASO2_TITULO": "Prueba presencial",
+    "PASO2_DESC": "Ven a probarlo con nuestros mecánicos a cualquiera de nuestras delegaciones.",
+
+    "PASO3_TITULO": "En carretera",
+    "PASO3_DESC": "Nosotros nos encargamos del cambio de titular para que solo pienses en conducir.",
+
+    "VOZ_CLIENTES": "La voz de nuestros clientes",
+
+    "RENOVAR_FLOTA": "¿Quieres renovar tu flota actual?",
+    "RENOVAR_FLOTA_DESC": "Tasamos tu camión usado de forma inmediata. Consigue el mejor precio de mercado directamente con Veinsur.",
+    "INICIAR_VALORACION": "Iniciar valoración"
+  },
+
+  "BUSCADOR": {
+    "MARCA": "Marca",
+    "MODELO": "Modelo",
+    "TODAS_MARCAS": "Todas las marcas",
+    "TODOS_MODELOS": "Todos los modelos",
+    "ANIO_MIN": "Año mín.",
+    "KM_MAX": "Km máx.",
+    "CUALQUIERA": "Cualquiera",
+    "BUSCAR": "Buscar unidades"
+  },
+
+  "DESTACADAS": {
+    "TITULO": "Unidades destacadas en stock",
+    "DESCRIPCION": "Vehículos industriales listos para entrega inmediata.",
+    "DIESEL": "Diésel",
+    "PRECIO_CONSULTAR": "Precio a consultar",
+    "VER_DETALLES": "Ver detalles"
+  },
+
+  "MENU": {
+    "INICIO": "Inicio",
+    "BUSCADOR": "Buscador",
+    "DELEGACIONES": "Delegaciones",
+    "FAVORITOS": "Favoritos",
+    "COMPARADOR": "Comparador",
+    "BUSQUEDAS": "Búsquedas",
+    "PETICIONES": "Peticiones",
+    "CERRAR_SESION": "Cerrar sesión",
+    "MI_CUENTA": "Mi cuenta",
+    "ARIA_LABEL": "Menú"
+  },
+
+  "CONTACTO": {
+    "TITULO": "TE LLAMAMOS",
+    "DESCRIPCION": "Nos ponemos en contacto contigo y te resolvemos cualquier duda relacionada con nuestros vehículos de ocasión.",
+    "NOMBRE": "Nombre",
+    "TELEFONO": "Teléfono",
+    "ACEPTO_PRIVACIDAD_TEXTO": "He leído y acepto la ",
+    "POLITICA_PRIVACIDAD": "política de privacidad",
+    "ERROR_PRIVACIDAD": "Debes aceptar la política de privacidad para continuar.",
+    "BTN_ENVIAR": "Enviar",
+    "LEGAL": {
+      "RESPONSABLE_LABEL": "Responsable",
+      "RESPONSABLE_VALOR": "VEINSUR, SAU.",
+      "FINALIDAD_LABEL": "Finalidad",
+      "FINALIDAD_VALOR": "Gestionar y responder a las consultas o comunicaciones recibidas a través del formulario de contacto",
+      "DERECHOS_LABEL": "Derechos",
+      "DERECHOS_VALOR": "Tiene derecho a acceder, rectificar y suprimir los datos, así como otros derechos, como se explica en la información adicional.",
+      "INFO_ADICIONAL_LABEL": "Información adicional",
+      "DISPONIBLE_EN": "Disponible en nuestra",
+      "POLITICA_PRIVACIDAD_LINK": "Política de Privacidad"
+    }
+  },
+  "FOOTER": {
+    "POSTVENTA": "Servicio Postventa",
+    "RECAMBIOS": "Venta de Recambios",
+    "SEGUROS": "Seguros para el Transporte",
+    "AVISO_LEGAL": "Aviso Legal",
+    "POLITICA_REDES": "Política de Redes Sociales",
+    "POLITICA_PRIVACIDAD": "Política de Privacidad",
+    "POLITICA_COOKIES": "Política de Cookies",
+    "DERECHOS_RESERVADOS": "Todos los derechos reservados."
+  },
+
+  "COMUN": {
+    "MOSTRAR_MAS": "Mostrar más",
+    "MOSTRAR_MENOS": "Mostrar menos",
+    "CERRAR": "Cerrar"
+  },
+  "BUSCADOR_VEHICULOS": {
+    "TITULO": "Buscador de Vehículos",
+    "SUBTITULO": "Encuentra el vehículo que mejor se adapte a tus necesidades",
+    "PLACEHOLDER_BUSQUEDA": "Buscar marca, modelo, chasis...",
+    "LIMPIAR_BUSQUEDA": "Limpiar búsqueda",
+    "COMPARAR": "Comparar",
+    "GUARDAR_BUSQUEDA": "Guardar búsqueda",
+    "VEHICULOS_DISPONIBLES": "vehículos disponibles",
+    "FILTRAR_VEHICULOS": "Filtrar vehículos"
+  },
+  "FILTROS": {
+    "TITULO": "Filtros de Búsqueda",
+    "TIPO": "Tipo",
+    "MARCA": "Marca",
+    "MODELO": "Modelo",
+    "ANIO_MATRICULACION": "Año de matriculación",
+    "POTENCIA": "Potencia",
+    "KILOMETRAJE": "Kilometraje",
+    "CABINA": "Cabina",
+    "CONFIGURACION_EJES": "Configuración de ejes",
+    "EMISIONES": "Emisiones / EuroNorma",
+    "CARROCERIA": "Carrocería",
+    "DESDE": "Desde",
+    "HASTA": "Hasta",
+    "SIN_LIMITE": "Sin límite"
+  },
+  "TARJETA_VEHICULO": {
+    "SIN_VEHICULOS": "No hay vehículos que mostrar",
+    "INDICACION_FILTROS": "Selecciona filtros y haz clic en buscar.",
+    "PRECIO_A_CONSULTAR": "Precio a consultar",
+    "GARANTIA": "Garantía",
+    "AGREGAR_FAVORITO": "Añadir a favoritos",
+    "QUITAR_FAVORITO": "Quitar de favoritos",
+    "TOOLTIP_COMPARAR": "Comparar vehículo",
+    "AGREGADO_A_COMPARADOR": "Añadido al comparador",
+    "VER_DETALLE": "Ver detalle"
+  },
+
+  "DETALLE_VEHICULO": {
+    "ANTERIOR": "Anterior",
+    "ESTADO": "Estado",
+    "DISPONIBLE": "Disponible",
+    "CARGANDO": "Cargando la ficha técnica completa...",
+    "REF_STOCK": "Ref. Stock",
+    "CHASIS": "Chasis",
+    "PRECIO_A_CONSULTAR": "Precio a consultar",
+    "VER_EN_GRANDE": "Ver en grande",
+    "VENDIDO": "VENDIDO",
+    "DATOS_CLAVE": "Datos Clave",
+    "MATRICULACION": "Matriculación",
+    "KILOMETRAJE": "Kilometraje",
+    "POTENCIA": "Potencia",
+    "CONFIG_EJES": "Config. Ejes",
+    "NORMATIVA": "Normativa",
+    "UBICACION": "Ubicación",
+    "GARANTIA_INCLUIDA": "Garantía Incluida",
+    "ADR": "ADR",
+    "TACOGRAFO": "Tacógrafo",
+    "FAVORITO": "Favorito",
+    "AGREGAR_FAVORITO": "Añadir a favoritos",
+    "QUITAR_COMPARADOR": "Quitar comparador",
+    "COMPARAR": "Comparar",
+    "INFO_COMPARADOR": "Tienes <strong>{{ cantidad }}</strong> vehículo(s) en el comparador",
+    "SOLICITAR_INFORMACION": "Solicitar Información",
+    "ESPECIFICACIONES_TECNICAS": "Especificaciones Técnicas Completas",
+    "DESPLEGAR_TODO": "Desplegar todo",
+    "PLEGAR_TODO": "Plegar todo",
+    "FICHA_MINI": "Ver ficha rápida",
+    "FICHA_COMPLETA": "Ver ficha completa"
+  },
+  "SECCIONES_FICHA": {
+    "MOTOR_TRANSMISION": "Motor y Transmisión",
+    "POTENCIA": "Potencia",
+    "CODIGO_MOTOR": "Código Motor",
+    "EURONORMA": "EuroNorma",
+    "TIPO_CAJA_CAMBIOS": "Tipo Caja Cambios",
+    "MODELO_CAJA": "Modelo Caja",
+    "NUM_VELOCIDADES": "Nº Velocidades",
+    "FRENO_PRINCIPAL": "Freno Principal",
+    "FRENO_AUXILIAR": "Freno Auxiliar",
+    "ADBLUE": "AdBlue",
+    "NUM_DEPOSITOS": "Nº Depósitos",
+    "DEPOSITO_PRINCIPAL": "Depósito Principal",
+    "DEPOSITO_SECUNDARIO": "Depósito Secundario",
+
+    "CHASIS_EJES_PESOS": "Chasis, Ejes y Pesos",
+    "CONFIGURACION_EJES": "Configuración Ejes",
+    "NUM_EJES": "Nº Ejes",
+    "MARCA_EJE": "Marca Eje",
+    "DISTANCIA_EJES": "Distancia Ejes",
+    "EJE_ELEVABLE": "Eje Elevable",
+    "EJE_DIRECCIONAL": "Eje Direccional",
+    "MMA_TOTAL": "MMA Total",
+    "MMA_EJE_DIRECCION": "MMA Eje Dirección",
+    "TARA": "Tara",
+    "SUSPENSION_DELANTERA": "Suspensión Delantera",
+    "SUSPENSION_TRASERA": "Suspensión Trasera",
+    "TIPO_CHASIS": "Tipo Chasis",
+    "ALTURA_CHASIS": "Altura Chasis",
+    "LLANTAS": "Llantas",
+
+    "CABINA_EQUIPAMIENTO": "Cabina y Equipamiento",
+    "MODELO_CABINA": "Modelo Cabina",
+    "LITERAS": "Literas",
+    "COLOR": "Color",
+    "RESORTE_CABINA": "Resorte Cabina",
+    "ASIENTO_EXTRA": "Asiento Extra",
+    "AIRE_ACONDICIONADO": "Aire Acondicionado",
+    "CLIMATIZADOR_TECNICO": "Climatizador Técnico",
+    "CALEFACTOR": "Calefactor",
+    "NEVERA": "Nevera",
+    "NAVEGADOR": "Navegador",
+    "XENON": "Xenón",
+    "RADIO": "Radio",
+    "EMISORA": "Emisora",
+    "CONTROL_VELOCIDAD": "Control de Velocidad",
+    "SISTEMA_EBS": "Sistema EBS",
+    "SPOILER": "Spoiler",
+    "TECHO_CORTINA": "Techo Cortina",
+    "TECHO_ELECTRICO": "Techo Eléctrico",
+
+    "CARROCERIA_DIMENSIONES": "Carrocería y Dimensiones",
+    "TIPO_CARROCERIA": "Tipo Carrocería",
+    "MARCA_CARROCERIA": "Marca Carrocería",
+    "LARGO_INTERIOR": "Largo Interior",
+    "ANCHO_INTERIOR": "Ancho Interior",
+    "ALTO_INTERIOR": "Alto Interior",
+    "LARGO_EXTERIOR": "Largo Exterior",
+    "ANCHO_EXTERIOR": "Ancho Exterior",
+    "ALTO_EXTERIOR": "Alto Exterior",
+    "VOLUMEN": "Volumen",
+    "TIPO_PISO": "Tipo Piso",
+    "PORTA_PALET": "Porta Palet",
+    "LONA": "Lona",
+    "PUERTA": "Puerta",
+
+    "EQUIPO_FRIGORIFICO": "Equipo Frigorífico",
+    "EQUIPO_FRIO": "Equipo Frío",
+    "MARCA_FRIO": "Marca Frío",
+    "MODELO_FRIO": "Modelo Frío",
+    "HORAS_FRIO": "Horas Frío",
+    "FECHA_ATP": "Fecha ATP",
+    "CONEXION_ELECTRICA": "Conexión Eléctrica",
+    "TERMOGRAFO": "Termógrafo",
+
+    "GRUA_PLATAFORMA": "Grúa y Plataforma",
+    "TIENE_GRUA": "Tiene Grúa",
+    "MARCA_GRUA": "Marca Grúa",
+    "MODELO_GRUA": "Modelo Grúa",
+    "MANDO_GRUA": "Mando Grúa",
+    "NUM_PROLONGAS": "Nº Prolongas / Barras",
+    "TIENE_PLATAFORMA": "Tiene Plataforma",
+    "MARCA_PLATAFORMA": "Marca Plataforma",
+    "MODELO_PLATAFORMA": "Modelo Plataforma",
+
+    "DOCUMENTACION_EXTRAS": "Documentación y Extras",
+    "MATRICULA": "Matrícula",
+    "PROXIMA_ITV": "Próxima ITV",
+    "GARANTIA_VO": "Garantía VO",
+    "INSTALACION_HIDRAULICA": "Instalación Hidráulica",
+    "GANCHO_REMOLQUE": "Gancho Remolque",
+    "REMOLCADOR": "Remolcador"
+  },
+
+  "FORMULARIO": {
+    "TITULO": "Solicita información sobre este vehículo",
+    "SUBTITULO": "Nuestro equipo de profesionales se ocupará de ayudarte en todo lo que necesites para que acabes llevándote el modelo que estás buscando.",
+    "EXITO_TITULO": "¡Solicitud enviada con éxito!",
+    "EXITO_MENSAJE": "Nos pondremos en contacto contigo a la mayor brevedad posible.",
+    "NOMBRE": "Nombre completo",
+    "PLACEHOLDER_NOMBRE": "Tu nombre",
+    "EMAIL": "Correo electrónico",
+    "PLACEHOLDER_EMAIL": "ejemplo@correo.com",
+    "TELEFONO": "Teléfono de contacto",
+    "PLACEHOLDER_TELEFONO": "600 000 000",
+    "RESPONSABLE": "Responsable:",
+    "FINALIDAD": "Finalidad:",
+    "FINALIDAD_TEXTO": "Gestionar y responder a las consultas o comunicaciones recibidas a través del formulario de contacto.",
+    "DERECHOS": "Derechos:",
+    "DERECHOS_TEXTO": "Tiene derecho a acceder, rectificar y suprimir los datos, así como otros derechos, como se explica en la información adicional.",
+    "INFO_ADICIONAL": "Información adicional:",
+    "INFO_ADICIONAL_TEXTO": "Puede consultar la información adicional en el siguiente enlace:",
+    "POLITICA_PRIVACIDAD": "Política de Privacidad",
+    "ACEPTO_POLITICA": "He leído y acepto la política de privacidad",
+    "ENVIANDO": "Enviando solicitud...",
+    "ENVIAR": "Enviar Solicitud"
+  },
+
+  "RELACIONADOS": {
+    "TITULO": "Vehículos Relacionados",
+    "SUBTITULO": "Modelos similares que podrían interesarte",
+    "TIPO_DEFAULT": "Vehículo",
+    "KM": "Km:",
+    "POTENCIA": "Potencia:",
+    "CABINA": "Cabina:",
+    "CONFIG": "Config:",
+    "PRECIO": "Precio",
+    "CONSULTAR": "Consultar",
+    "VER_DETALLE": "Ver Detalle",
+    "NO_DISPONIBLE": "N/D",
+    "MAS_VEHICULOS": "Ver más vehículos",
+    "MENOS_VEHICULOS": "Ver menos"
+  },
+  "DELEGACIONES": {
+    "SUBTITULO_TAG": "Red de centros oficiales",
+    "TITULO": "Nuestras Delegaciones",
+    "FOTO": "Foto",
+    "MAPA": "Mapa",
+    "ALT_FOTO": "Instalaciones Veinsur ",
+    "TITLE_MAPA": "Mapa de ubicación de ",
+    "CARGANDO_MAPA": "Cargando mapa...",
+    "LABEL_TELEFONO": "Teléfono de atención:",
+    "COMO_LLEGAR": "Cómo llegar",
+    "RECAMBIOS": "Recambios",
+    "POSTVENTA": "Postventa"
+  },
+
+  "FICHA_DELEGACION": {
+    "TAG_TIENDA": "Tienda de Recambios",
+    "LEMA": "El recambio que necesita en el momento que lo necesita.",
+    "DESC_TITULO": "Disponibilidad Inmediata y Garantía",
+    "DESC_TEXTO": "En la actividad del transporte el tiempo es oro y por ello en nuestros almacenes disponemos de un gran stock de recambios que permitirá resolver la mayor parte de las incidencias sin demoras y con la calidad y la garantía que ofrece el Recambio Genuino Volvo.",
+    "POR_QUE_ELEGIRNOS": "¿Por qué elegirnos?",
+    "POR_QUE_VOLVO": "Por qué elegir Recambio Genuino Volvo",
+    "VENTAJA_1": "Fabricado con los más estrictos estándares de calidad.",
+    "VENTAJA_2": "Diseñado para adaptarse perfectamente a su camión.",
+    "VENTAJA_3": "Rigurosas pruebas de campo para máxima fiabilidad y rendimiento.",
+    "VENTAJA_4": "2 años de garantía internacional instalados en talleres autorizados Volvo.",
+    "MSJ_CUALIFICACION": "Nuestro equipo de profesionales está altamente cualificado y siempre dispuesto para dar el asesoramiento y soporte que usted necesita.",
+    "INFO_CONTACTO": "Información de contacto",
+    "LLAMANOS": "Llámanos",
+    "DIRECCION": "Dirección",
+    "EMAIL": "Email",
+    "HORARIO": "Horario",
+    "HORARIO_DETALLE": "Lunes a Viernes: 08:00 - 19:00 hs<br>Sábados: 08:00 - 13:00 hs",
+    "HORARIO_ANTAS_DETALLE": "Lunes a Viernes: 08:00 - 19:00 hs<br>Sábados: 09:00 - 13:00 hs",
+    "HORARIO_DETALLE_SAB_9": "Lunes a Viernes: 08:00 - 19:00 hs<br>Sábados: 09:00 - 13:00 hs",
+    "HORARIO_JAEN_DETALLE": "Lunes a Viernes: 06:00 - 22:00 hs<br>Sábados y Domingos: 08:00 - 21:00 hs",
+    "COMO_LLEGAR": "Cómo llegar",
+    "COMO_ENCONTRARNOS": "Cómo encontrarnos",
+    "DONDE_ESTAMOS": "Dónde estamos"
+
+  },
+  "FICHA_GRANADA": {
+    "TAG_TIENDA": "Tienda de Recambios Volvo Trucks",
+    "LEMA": "Construimos relaciones sólidas y duraderas con nuestros clientes ofreciendo un servicio profesional ágil y eficiente caracterizado por la excelencia.",
+    "DESC_TITULO": "Soluciones Globales para su Empresa",
+    "DESC_TEXTO": "Respaldada por una filosofía de trabajo que persigue la excelencia y un equipo de profesionales cualificados y de gran experiencia, Veinsur ofrece soluciones globales que ayudan al cliente a simplificar la gestión de su empresa.",
+    "MAPA_TITULO": "Mapa de localización"
+  },
+  "FICHA_JAEN": {
+    "TAG_TIENDA": "Tienda de Recambios Volvo Trucks",
+    "LEMA": "Construimos relaciones sólidas y duraderas con nuestros clientes ofreciendo un servicio profesional ágil y eficiente caracterizado por la excelencia.",
+    "DESC_TITULO": "Soluciones Globales para su Empresa",
+    "DESC_TEXTO": "Respaldada por una filosofía de trabajo que persigue la excelencia y un equipo de profesionales cualificados y de gran experiencia, Veinsur ofrece soluciones globales que ayudan al cliente a simplificar la gestión de su empresa.",
+    "MAPA_TITULO": "Mapa de localización"
+  },
+  "FICHA_MALAGA": {
+    "TAG_TIENDA": "Tienda de Recambios Volvo Trucks",
+    "LEMA": "Construimos relaciones sólidas y duraderas con nuestros clientes ofreciendo un servicio profesional ágil y eficiente caracterizado por la excelencia.",
+    "DESC_TITULO": "Soluciones Globales para su Empresa",
+    "DESC_TEXTO": "Respaldada por una filosofía de trabajo que persigue la excelencia y un equipo de profesionales cualificados y de gran experiencia, Veinsur ofrece soluciones globales que ayudan al cliente a simplificar la gestión de su empresa.",
+    "MAPA_TITULO": "Mapa de localización"
+  },
+  "FICHA_SEVILLA": {
+    "TAG_TIENDA": "Tienda de Recambios Volvo Trucks",
+    "LEMA": "Construimos relaciones sólidas y duraderas con nuestros clientes ofreciendo un servicio profesional ágil y eficiente caracterizado por la excelencia.",
+    "DESC_TITULO": "Soluciones Globales para su Empresa",
+    "DESC_TEXTO": "Respaldada por una filosofía de trabajo que persigue la excelencia y un equipo de profesionales cualificados y de gran experiencia, Veinsur ofrece soluciones globales que ayudan al cliente a simplificar la gestión de su empresa.",
+    "MAPA_TITULO": "Mapa de localización"
+  },
+
+  "FICHA_DELEGACION_POSTVENTA": {
+    "TAG_POSTVENTA": "Servicio Oficial y Postventa",
+    "SOLUCIONES_FLOTA": "Soluciones Globales para tu Flota",
+    "QUE_OFRECEMOS": "¿Qué ofrecemos?",
+    "SERVICIOS_TITULO": "Servicios de esta delegación",
+    "INFO_CONTACTO": "Información de contacto",
+    "LLAMANOS": "Llámanos",
+    "DIRECCION": "Dirección",
+    "EMAIL": "Email",
+    "HORARIO": "Horario",
+    "HORARIO_DETALLE": "Lunes a Viernes: 08:00 - 19:00 hs<br>Sábados: 08:00 - 13:00 hs",
+    "HORARIO_ANTAS_DETALLE": "Lunes a Viernes: 08:00 - 19:00 hs<br>Sábados: 09:00 - 13:00 hs",
+    "HORARIO_JAEN_DETALLE": "Lunes a Viernes: 06:00 - 22:00 hs<br>Sábados y Domingos: 08:00 - 21:00 hs",
+    "COMO_LLEGAR": "Cómo llegar",
+    "COMO_ENCONTRARNOS": "Cómo encontrarnos",
+    "MAPA_TITULO": "Mapa de localización"
+  },
+  "SERVICIOS_ALMERIA": {
+    "MANTENIMIENTO_CAMIONES": "Mantenimiento y reparación de camiones",
+    "FURGONETA_TALLER": "Furgoneta taller (servicio móvil)",
+    "MANTENIMIENTO_AUTOBUSES": "Mantenimiento y reparación de autobuses",
+    "SERVICIO_RUEDAS": "Servicio de ruedas",
+    "SEMIRREMOLQUES": "Mantenimiento y reparación de semirremolques",
+    "AIRE_ACONDICIONADO": "Aire acondicionado - Camión",
+    "EQUIPOS_FRIO": "Mantenimiento y reparación de equipos de frío - camión",
+    "DIAGNOSTICO_VCADS": "Diagnóstico VCADS",
+    "CHAPA_PINTURA": "Chapa y pintura",
+    "DESCARGA_TACOGRAFO": "Descarga de datos de tacógrafo",
+    "BANCADA_CHASIS": "Bancada de chasis",
+    "FRENOMETRO": "Frenómetro",
+    "ASISTENCIA_24H": "Servicio de asistencia 24 hs - camiones"
+  },
+
+  "FICHA_ANTAS": {
+    "TAG_CONCESIONARIO": "Concesionario Oficial Volvo Trucks",
+    "LEMA": "Construimos relaciones sólidas y duraderas con nuestros clientes ofreciendo un servicio profesional, ágil, eficiente y caracterizado por la excelencia.",
+    "SOLUCIONES_TITULO": "Soluciones Globales para tu Flota",
+    "SOLUCIONES_DESC": "Respaldada por una filosofía de trabajo que persigue la excelencia y un equipo de profesionales cualificados y de gran experiencia, Veinsur ofrece soluciones globales que ayudan al cliente a simplificar la gestión de su empresa."
+  },
+  "SERVICIOS_ANTAS": {
+    "MANTENIMIENTO_CAMIONES": "Mantenimiento y reparación de camiones",
+    "FURGONETA_TALLER": "Furgoneta taller (servicio móvil)",
+    "SEMIRREMOLQUES": "Mantenimiento y reparación de semirremolques",
+    "AIRE_ACONDICIONADO": "Aire acondicionado - Camión",
+    "MANTENIMIENTO_AUTOBUSES": "Mantenimiento y reparación de autobuses",
+    "DIAGNOSTICO_VCADS": "Diagnóstico VCADS",
+    "ASISTENCIA_24H": "Servicio de asistencia 24 hs - Camiones"
+  },
+
+  "FICHA_CORDOBA": {
+    "TAG_CONCESIONARIO": "Concesionario Oficial Volvo Trucks",
+    "LEMA": "Construimos relaciones sólidas y duraderas con nuestros clientes ofreciendo un servicio profesional, ágil, eficiente y caracterizado por la excelencia.",
+    "SOLUCIONES_TITULO": "Soluciones Globales para tu Flota",
+    "SOLUCIONES_DESC": "Respaldada por una filosofía de trabajo que persigue la excelencia y un equipo de profesionales cualificados y de gran experiencia, Veinsur ofrece soluciones globales que ayudan al cliente a simplificar la gestión de su empresa."
+  },
+  "SERVICIOS_CORDOBA": {
+    "MANTENIMIENTO_CAMIONES": "Mantenimiento y reparación de camiones",
+    "FURGONETA_TALLER": "Furgoneta taller (servicio móvil)",
+    "SEMIRREMOLQUES": "Mantenimiento y reparación de semirremolques",
+    "AIRE_ACONDICIONADO": "Aire acondicionado - Camión",
+    "MANTENIMIENTO_AUTOBUSES": "Mantenimiento y reparación de autobuses",
+    "DIAGNOSTICO_VCADS": "Diagnóstico VCADS",
+    "ASISTENCIA_24H": "Servicio de asistencia 24 hs - camiones"
+  },
+
+  "FICHA_DELEGACION_COMUN": {
+    "TAG_CONCESIONARIO": "Concesionario Oficial Volvo Trucks",
+    "LEMA": "Construimos relaciones sólidas y duraderas con nuestros clientes ofreciendo un servicio profesional, ágil, eficiente y caracterizado por la excelencia.",
+    "SOLUCIONES_TITULO": "Soluciones Globales para tu Flota",
+    "SOLUCIONES_DESC": "Respaldada por una filosofía de trabajo que persigue la excelencia y un equipo de profesionales cualificados y de gran experiencia, Veinsur ofrece soluciones globales que ayudan al cliente a simplificar la gestión de su empresa."
+  },
+  "SERVICIOS_GRANADA": {
+    "MANTENIMIENTO_CAMIONES": "Mantenimiento y reparación de camiones",
+    "FURGONETA_TALLER": "Furgoneta taller (servicio móvil)",
+    "MANTENIMIENTO_AUTOBUSES": "Mantenimiento y reparación de autobuses",
+    "SERVICIO_RUEDAS": "Servicio de ruedas",
+    "SEMIRREMOLQUES": "Mantenimiento y reparación de semirremolques",
+    "AIRE_ACONDICIONADO": "Aire acondicionado - Camión",
+    "EQUIPOS_FRIO": "Mantenimiento y reparación de equipos de frío - camión",
+    "DIAGNOSTICO_VCADS": "Diagnóstico VCADS",
+    "CHAPA_PINTURA": "Chapa y pintura",
+    "DESCARGA_TACOGRAFO": "Descarga de datos de tacógrafo",
+    "BANCADA_CHASIS": "Bancada de chasis",
+    "FRENOMETRO": "Frenómetro",
+    "ASISTENCIA_24H": "Servicio de asistencia 24 hs - camiones"
+  },
+
+  "SERVICIOS_JAEN": {
+    "MANTENIMIENTO_CAMIONES": "Mantenimiento y reparación de camiones",
+    "FURGONETA_TALLER": "Furgoneta taller (servicio móvil)",
+    "MANTENIMIENTO_AUTOBUSES": "Mantenimiento y reparación de autobuses",
+    "SERVICIO_RUEDAS": "Servicio de ruedas",
+    "SEMIRREMOLQUES": "Mantenimiento y reparación de semirremolques",
+    "AIRE_ACONDICIONADO": "Aire acondicionado - Camión",
+    "EQUIPOS_FRIO": "Mantenimiento y reparación de equipos de frío - camión",
+    "DIAGNOSTICO_VCADS": "Diagnóstico VCADS",
+    "CHAPA_PINTURA": "Chapa y pintura",
+    "DESCARGA_TACOGRAFO": "Descarga de datos de tacógrafo",
+    "BANCADA_CHASIS": "Bancada de chasis",
+    "FRENOMETRO": "Frenómetro",
+    "ASISTENCIA_24H": "Servicio de asistencia 24 hs - camiones"
+  },
+
+  "SERVICIOS_MALAGA": {
+    "MANTENIMIENTO_CAMIONES": "Mantenimiento y reparación de camiones",
+    "FURGONETA_TALLER": "Furgoneta taller (servicio móvil)",
+    "MANTENIMIENTO_AUTOBUSES": "Mantenimiento y reparación de autobuses",
+    "SERVICIO_RUEDAS": "Servicio de ruedas",
+    "SEMIRREMOLQUES": "Mantenimiento y reparación de semirremolques",
+    "AIRE_ACONDICIONADO": "Aire acondicionado - Camión",
+    "EQUIPOS_FRIO": "Mantenimiento y reparación de equipos de frío - camión",
+    "DIAGNOSTICO_VCADS": "Diagnóstico VCADS",
+    "CHAPA_PINTURA": "Chapa y pintura",
+    "DESCARGA_TACOGRAFO": "Descarga de datos de tacógrafo",
+    "BANCADA_CHASIS": "Bancada de chasis",
+    "FRENOMETRO": "Frenómetro",
+    "ASISTENCIA_24H": "Servicio de asistencia 24 hs - camiones"
+  },
+  "SERVICIOS_SEVILLA": {
+    "MANTENIMIENTO_CAMIONES": "Mantenimiento y reparación de camiones",
+    "FURGONETA_TALLER": "Furgoneta taller (servicio móvil)",
+    "MANTENIMIENTO_AUTOBUSES": "Mantenimiento y reparación de autobuses",
+    "SERVICIO_RUEDAS": "Servicio de ruedas",
+    "SEMIRREMOLQUES": "Mantenimiento y reparación de semirremolques",
+    "AIRE_ACONDICIONADO": "Aire acondicionado - Camión",
+    "EQUIPOS_FRIO": "Mantenimiento y reparación de equipos de frío - camión",
+    "DIAGNOSTICO_VCADS": "Diagnóstico VCADS",
+    "CHAPA_PINTURA": "Chapa y pintura",
+    "DESCARGA_TACOGRAFO": "Descarga de datos de tacógrafo",
+    "BANCADA_CHASIS": "Bancada de chasis",
+    "FRENOMETRO": "Frenómetro",
+    "ASISTENCIA_24H": "Servicio de asistencia 24 hs - camiones"
+  },
+
+  "AREA_PRIVADA": {
+    "TAG_AREA_PRIVADA": "Área Privada",
+    "BIENVENIDA": "Hola {{email}}, bienvenido a tu área privada",
+    "FAVORITOS": "Favoritos",
+    "BUSQUEDAS": "Búsquedas",
+    "COMPARADOR": "Comparador",
+    "CATALOGO": "Catálogo",
+    "CARGANDO_FAVORITOS": "Cargando favoritos...",
+    "PRECIO_CONSULTAR": "Precio a consultar",
+    "ESTADO_VENDIDO": "Vendido",
+    "ESTADO_DISPONIBLE": "Disponible",
+    "VER_DETALLES": "Ver detalles",
+    "SIN_FAVORITOS": "Aún no tienes vehículos guardados en tus favoritos."
+  },
+
+  "COMPARADOR": {
+    "TITULO": "Comparador de Vehículos",
+    "SUBTITULO": "Análisis detallado de especificaciones lado a lado.",
+    "SIN_VEHICULOS_TITULO": "No hay vehículos en el comparador",
+    "SIN_VEHICULOS_DESC": "Añade hasta 3 vehículos desde el buscador para comparar sus especificaciones.",
+    "MOBILE_TITULO_TABLA": "Comparativa",
+    "MOBILE_ANADIR_TITULO": "Añade otro vehículo",
+    "MOBILE_ANADIR_DESC": "Para comparar en móvil necesitas al menos 2 vehículos.",
+    "BARRAS": {
+      "ESPECIFICACION": "Especificación",
+      "STOCK": "Stock:",
+      "VER_FICHA": "Ver ficha",
+      "VER": "Ver",
+      "QUITAR": "Quitar",
+      "NO_APLICA": "No aplica"
+    },
+    "CATEGORIAS": {
+      "DATOS_BASICOS": "Datos básicos",
+      "TRANSMISION_CHASIS": "Transmisión y chasis",
+      "PESOS_MASAS": "Pesos y masas",
+      "SUSPENSION": "Suspensión",
+      "CABINA_CONFORT": "Cabina y confort",
+      "CARROCERIA_FRIO": "Carrocería y equipo especial"
+    },
+    "CAMPOS": {
+      "MARCA": "Marca",
+      "MODELO": "Modelo",
+      "TIPO_VEHICULO": "Tipo vehículo",
+      "CABINA": "Cabina",
+      "MATRICULACION": "Matriculación",
+      "KILOMETROS": "Kilómetros",
+      "POTENCIA": "Potencia",
+      "NORMA_EURO": "Norma Euro",
+      "PRECIO": "Precio",
+      "TIPO_CAJA": "Tipo caja",
+      "MODELO_CAJA": "Modelo caja",
+      "NUM_VELOCIDADES": "Nº velocidades",
+      "FRENO_AUXILIAR": "Freno auxiliar",
+      "FRENO_PRINCIPAL": "Freno principal",
+      "CONFIGURACION_EJES": "Configuración ejes",
+      "MARCA_EJE": "Marca eje",
+      "NUM_EJES": "Número ejes",
+      "DISTANCIA_EJES": "Distancia ejes",
+      "EJES_DIR": "Último eje fijo / direccional",
+      "SOLO_RIGIDOS": "Solo rígidos",
+      "EJE_ELEVABLE": "Eje elevable",
+      "MMA_TOTAL": "MMA total",
+      "MMA_EJE_DELANTERO": "MMA eje delantero",
+      "TARA": "Tara",
+      "SUSPENSION_DELANTERA": "Suspensión delantera",
+      "SUSPENSION_TRASERA": "Suspensión trasera",
+      "AIRE_ACONDICIONADO": "Aire acondicionado",
+      "CALEFACCION": "Calefacción",
+      "CLIMATIZADOR_TECHO": "Climatizador techo",
+      "RADIO": "Radio",
+      "NEVERA": "Nevera",
+      "XENON": "Xenón",
+      "LITERAS": "Literas",
+      "TIPO_CARROCERIA": "Tipo carrocería",
+      "MARCA_CARROCERIA": "Marca carrocería",
+      "EQUIPO_FRIO": "Equipo frío",
+      "MARCA_FRIO": "Marca frío",
+      "MODELO_FRIO": "Modelo frío",
+      "HORAS_FRIO": "Horas frío",
+      "TERMOGRAFO": "Termógrafo",
+      "ADR": "ADR"
+    }
+  },
+
+  "BUSQUEDAS": {
+    "TITULO": "Mis Búsquedas Guardadas",
+    "SUBTITULO": "Recibirás una notificación por correo cuando haya vehículos compatibles.",
+    "NUEVA_BUSQUEDA": "Nueva búsqueda",
+    "CARGANDO": "Cargando búsquedas...",
+    "SIN_BUSQUEDAS": "No tienes búsquedas guardadas.",
+    "BUSQUEDA_NUMERO": "Búsqueda #",
+    "ELIMINAR": "Eliminar",
+    "VER_VEHICULOS": "Ver vehículos",
+    "TIPOLOGIA": "Tipología:",
+    "MARCAS": "Marcas:",
+    "RANGOS": {
+      "KM": "Km",
+      "ANIO": "Año",
+      "POTENCIA": "Potencia",
+      "PRECIO": "Precio",
+      "SIN_LIMITE": "Sin límite"
+    }
+  },
+
+  "PETICIONES": {
+    "TAGLINE": "Solicitud Personalizada",
+    "TITULO_PREFIX": "Envío de",
+    "TITULO_HIGHLIGHT": "Petición",
+    "SUBTITULO": "SELECCIONA LAS ESPECIFICACIONES DE TU VEHÍCULO Y DÉJANOS TUS DATOS",
+    "CARGANDO_OPCIONES": "Cargando opciones del vehículo...",
+    "SECCION_1": "1. ESPECIFICACIONES DEL VEHÍCULO",
+    "CAMPOS": {
+      "TIPO_VEHICULO": "Tipo de Vehículo *",
+      "SELECCIONAR_TIPO": "Selecciona un tipo",
+      "MARCA": "Marca *",
+      "SELECCIONAR_MARCA": "Selecciona una marca",
+      "MODELO": "Modelo *",
+      "SELECCIONAR_MODELO": "Selecciona un modelo",
+      "CABINA": "Cabina *",
+      "SELECCIONAR_CABINA": "Selecciona un tipo de cabina",
+      "OBLIGATORIO": "Este campo es obligatorio",
+      "CARROCERIA": "Carrocería"
+    },
+    "MENSAJES": {
+      "ERROR_CARGA_FILTROS": "No se pudieron cargar las opciones del formulario.",
+      "EXITO_ENVIO": "¡Petición enviada con éxito! Nos pondremos en contacto contigo a la brevedad.",
+      "ERROR_PROCESAR": "La petición no se pudo procesar correctamente.",
+      "ERROR_ENVIO": "Ocurrió un error al enviar el formulario. Inténtalo de nuevo."
+    },
+    "BOTONES": {
+      "ENVIAR": "Enviar Petición",
+      "PROCESANDO": "Procesando...",
+      "LIMPIAR": "Limpiar"
+    }
+  },
+  "LOGIN": {
+    "AREA_CLIENTES": "Área de Clientes",
+    "BIENVENIDO": "Bienvenido a tu área privada",
+    "USUARIO_EMAIL": "Usuario / Email",
+    "PASSWORD": "Contraseña",
+    "OLVIDO_PASSWORD": "¿Has olvidado tu contraseña?",
+    "ENVIAR": "Enviar",
+    "CONTINUAR_GOOGLE": "Continuar con Google",
+    "NO_TIENES_CUENTA": "¿Aún no tienes cuenta?",
+    "REGISTRATE_VENTAJAS": "Regístrate y aprovecha las ventajas",
+    "BENEFICIOS": {
+      "FAVORITOS": "Crea tus favoritos",
+      "NOTIFICACIONES": "Recibe notificaciones",
+      "COMPARA": "Compara vehículos",
+      "CATALOGO": "Crea tu catálogo"
+    },
+    "CREAR_CUENTA": "Crear una cuenta ahora",
+    "OPORTUNIDADES": "Oportunidades",
+    "VEHICULOS_DESTACADOS": "Vehículos Destacados",
+    "QUE_HACEMOS": "¿Qué hacemos por ti?",
+    "SERVICIOS_VEINSUR": "Servicios VEINSUR",
+    "SERVICIOS": {
+      "SEGUROS_TITULO": "Seguros para el Transporte",
+      "SEGUROS_TEXTO": "Protección a la medida de tu flota y mercancías con el respaldo de las mejores aseguradoras.",
+      "TALLER_TITULO": "Servicio Taller",
+      "TALLER_TEXTO": "Mantenimiento preventivo y correctivo con mecánicos especializados para maximizar tu tiempo en ruta.",
+      "VOLVO_TITULO": "Volvo Action Service",
+      "VOLVO_TEXTO": "Asistencia en carretera 24 horas al día, 7 días a la semana, estés donde estés en Europa.",
+      "FINANCIEROS_TITULO": "Servicios Financieros",
+      "FINANCIEROS_TEXTO": "Soluciones de financiación flexibles y leasing diseñados para el crecimiento de tu negocio."
+    },
+    "VALORES": {
+      "TAG": "Nuestra Identidad",
+      "TITULO": "Valores VEINSUR",
+      "PARRAFO_1": "Ser el mayor concesionario oficial de Volvo Trucks en Europa nos permite disponer de una gran variedad de vehículos, tanto de la marca Volvo, que cuentan con la confianza de haber sido mantenidos en nuestros talleres, como del resto de marcas del mercado.",
+      "PARRAFO_2": "Desde el inicio de su actividad en el año 1990 Veinsur ha puesto a disposición de sus clientes toda su experiencia y su profundo conocimiento del sector del transporte. Respaldada por una filosofía de trabajo que persigue la excelencia y un equipo de profesionales cualificados y de gran experiencia, Veinsur ofrece soluciones globales que ayudan al cliente a simplificar la gestión de su empresa. Nos preocupamos por el transportista y por eso ofrecemos una amplia gama de productos y servicios que cubren las necesidades de su negocio.",
+      "BADGE_TEXTO": "Ofreciendo soluciones globales de transporte"
+    },
+    "ERRORES": {
+      "LOGIN_FAIL": "Error al hacer login"
+    }
+  },
+  "REGISTRO": {
+    "TAGLINE": "Únete a Veinsur",
+    "TITULO": "Crear una cuenta",
+    "ALERTAS": {
+      "REVISA_CAMPOS": "Por favor, revisa los campos marcados en rojo antes de continuar.",
+      "PASSWORD_NO_COINCIDE": "• Las contraseñas no coinciden.",
+      "EXITO": "¡Registro completado con éxito!"
+    },
+    "CAMPOS": {
+      "EMAIL": "Email",
+      "EMAIL_PLACEHOLDER": "tu@email.com",
+      "EMAIL_REQ": "El email es obligatorio.",
+      "EMAIL_INVALIDO": "Introduce un email válido.",
+      "NOMBRE": "Nombre completo",
+      "NOMBRE_PLACEHOLDER": "Nombre y apellidos",
+      "NOMBRE_REQ": "El nombre es obligatorio.",
+      "PASSWORD": "Contraseña",
+      "PASSWORD_REQ": "La contraseña es obligatoria.",
+      "PASSWORD_PATRON": "Debe tener entre 8 y 12 caracteres (letras, números o !?-).",
+      "PASSWORD_CONFIRM": "Confirmar contraseña",
+      "PASSWORD_CONFIRM_REQ": "Debes confirmar la contraseña.",
+      "PASSWORD_CONFIRM_MISMATCH": "Las contraseñas no coinciden.",
+      "TELEFONO": "Teléfono"
+    },
+    "LEGAL": {
+      "TITULO": "Información de privacidad",
+      "RESPONSABLE": "Responsable:",
+      "RESPONSABLE_VAL": "VEINSUR, SAU.",
+      "FINALIDAD": "Finalidad:",
+      "FINALIDAD_VAL": "Gestionar tu registro y, en caso de que lo autorice, a remitirle comunicaciones comerciales",
+      "DERECHOS": "Derechos:",
+      "DERECHOS_VAL": "Tiene derecho a acceder, rectificar y suprimir los datos, así como otros derechos, como se explica en la información adicional.",
+      "POLITICA_PRIVACIDAD": "Información adicional: ",
+      "ENLACE_POLITICA": "Disponible en nuestra Política de Privacidad."
+    },
+    "CHECKBOXES": {
+      "NOTIFICACIONES": "Acepto recibir notificaciones por email",
+      "TERMINOS": "He leído y acepto la política de privacidad",
+      "TERMINOS_REQ": "Debes aceptar la política de privacidad para continuar."
+    },
+    "BOTONES": {
+      "REGISTRARME": "Registrarme ahora",
+      "PROCESANDO": "Registrando..."
+    },
+    "ERRORES": {
+      "REGISTRO_FALLIDO": "Error al procesar el registro. Inténtalo de nuevo."
+    }
+  },
+  "PASSWORD": {
+    "TITULO": "¿Has olvidado tu contraseña?",
+    "DESCRIPCION": "Introduce tu correo electrónico asociado a tu cuenta de Veinsur y te enviaremos instrucciones para restablecerla.",
+    "EXITO": {
+      "TITULO": "¡Correo enviado!",
+      "TEXTO_1": "Hemos enviado un enlace de recuperación a",
+      "TEXTO_2": "Revisa tu bandeja de entrada o spam.",
+      "REDIRIGIENDO": "Serás redirigido automáticamente al inicio de sesión en unos segundos...",
+      "BTN_VOLVER": "Volver ahora al inicio de sesión"
+    },
+    "CAMPOS": {
+      "EMAIL": "Correo electrónico",
+      "EMAIL_PLACEHOLDER": "ejemplo@correo.com",
+      "EMAIL_INVALIDO": "Introduce un correo electrónico válido."
+    },
+    "BOTONES": {
+      "ENVIAR": "Enviar enlace de recuperación",
+      "PROCESANDO": "Enviando enlace..."
+    },
+    "ENLACES": {
+      "VOLVER": "Volver al inicio de sesión"
+    },
+    "LEGAL": {
+      "RESPONSABLE": "Responsable:",
+      "RESPONSABLE_VAL": "VEINSUR, SAU.",
+      "FINALIDAD": "Finalidad:",
+      "FINALIDAD_VAL": "Gestionar el restablecimiento de la contraseña de acceso.",
+      "INFO_ADD": "Información adicional:",
+      "POLITICA": "Política de Privacidad"
+    },
+    "ERRORES": {
+      "ENVIO_FALLIDO": "No ha sido posible enviar el correo de recuperación.",
+      "ERROR_PROCESO": "Se ha producido un error al procesar la solicitud."
+    }
+  },
+  "ACTIVACION": {
+    "TAGLINE": "Únete a Veinsur",
+    "CARGANDO": {
+      "TITULO": "Activando cuenta...",
+      "DESCRIPCION": "Por favor, espera unos segundos mientras verificamos tu enlace."
+    },
+    "RESULTADO": {
+      "EXITO_TITULO": "Cuenta activada",
+      "ERROR_TITULO": "Activación incorrecta",
+      "BTN_EXITO": "Ir a iniciar sesión",
+      "BTN_ERROR": "Volver al inicio"
+    },
+    "MENSAJES": {
+      "EXITO_DEFECTO": "Tu cuenta ha sido activada correctamente.",
+      "ERROR_DEFECTO": "No se ha podido activar la cuenta o el enlace ha caducado."
+    }
+  },
+  "RESET_PASSWORD": {
+    "TITULO": "Restablecer contraseña",
+    "SUBTITULO": "Introduce tu nueva contraseña para",
+    "ESTADOS": {
+      "VALIDANDO": "Validando enlace...",
+      "TOKEN_INVALIDO": "El enlace no es válido o ha expirado.",
+      "SOLICITAR_NUEVO": "Solicitar nuevo enlace"
+    },
+    "EXITO": {
+      "TITULO": "¡Contraseña actualizada!",
+      "DESCRIPCION": "Tu contraseña se ha cambiado correctamente. Ya puedes acceder con tus nuevas credenciales.",
+      "BTN_LOGIN": "Iniciar sesión"
+    },
+    "CAMPOS": {
+      "NUEVA_PWD": "Nueva contraseña",
+      "REPETIR_PWD": "Repetir nueva contraseña",
+      "REQ": "La contraseña es obligatoria.",
+      "MIN_LENGTH": "Mínimo 6 caracteres.",
+      "MISMATCH": "Las contraseñas no coinciden."
+    },
+    "BOTONES": {
+      "GUARDAR": "Guardar contraseña",
+      "PROCESANDO": "Guardando..."
+    },
+    "LEGAL": {
+      "RESPONSABLE": "Responsable:",
+      "RESPONSABLE_VAL": "VEINSUR, SAU.",
+      "FINALIDAD": "Finalidad:",
+      "FINALIDAD_VAL": "Gestión y modificación de datos de acceso a la plataforma privada.",
+      "POLITICA": "Política de Privacidad"
+    },
+    "ERRORES": {
+      "FALLO_CAMBIO": "No se ha podido cambiar la contraseña. Inténtalo de nuevo."
+    }
+  },
+  "AVISO_LEGAL": {
+    "TAGLINE": "Información Corporativa",
+    "TITULO_1": "Aviso",
+    "TITULO_2": "Legal",
+    "SUBTITULO": "LEY DE LOS SERVICIOS DE LA SOCIEDAD DE LA INFORMACIÓN (LSSI)",
+    "INTRODUCCION": {
+      "P1": "<strong>VEINSUR, SAU.</strong>, responsable del sitio web, en adelante RESPONSABLE, pone a disposición de los usuarios el presente documento, con el que pretende dar cumplimiento a las obligaciones dispuestas en la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y de Comercio Electrónico (LSSICE), BOE N.º 166, así como informar a todos los usuarios del sitio web respecto a cuáles son las condiciones de uso.",
+      "P2": "Toda persona que acceda a este sitio web asume el papel de usuario, comprometiéndose a la observancia y cumplimiento riguroso de las disposiciones aquí dispuestas, así como a cualquier otra disposición legal que fuera de aplicación.",
+      "P3": "VEINSUR, S.A.U. se reserva el derecho de modificar cualquier tipo de información que pudiera aparecer en el sitio web, sin que exista obligación de preavisar o poner en conocimiento de los usuarios dichas obligaciones, entendiéndose como suficiente la publicación en el sitio web de VEINSUR, S.A.U."
+    },
+    "DATOS": {
+      "TITULO": "1. DATOS IDENTIFICATIVOS",
+      "NOMBRE_COMERCIAL": "Nombre comercial",
+      "DENOMINACION_SOCIAL": "Denominación social",
+      "NIF": "NIF",
+      "DOMINIO": "Nombre de dominio",
+      "DOMICILIO": "Domicilio social",
+      "TELEFONO": "Teléfono",
+      "EMAIL": "E-mail de contacto",
+      "REGISTRALES": "Datos Registrales",
+      "VALORES": {
+        "DOMICILIO": "CTRA. A 1000 - 04230 Huércal de Almería (ALMERÍA)",
+        "REGISTRALES": "Registro Mercantil de Almería, Tomo 1285, Folio 142, Hoja AL-31217"
+      }
+    },
+    "PROPIEDAD": {
+      "TITULO": "2. DERECHOS DE PROPIEDAD INTELECTUAL E INDUSTRIAL",
+      "P1": "El sitio web, incluyendo a título enunciativo pero no limitativo su programación, edición, compilación y demás elementos necesarios para su funcionamiento, los diseños, logotipos, texto y/o gráficos, son propiedad del RESPONSABLE o, si es el caso, dispone de licencia o autorización expresa por parte de los autores. Todos los contenidos del sitio web se encuentran debidamente protegidos por la normativa de propiedad intelectual e industrial, así como inscritos en los registros públicos correspondientes.",
+      "P2": "Independientemente de la finalidad para la que fueran destinados, la reproducción total o parcial, uso, explotación, distribución y comercialización, requiere en todo caso la autorización escrita previa por parte del RESPONSABLE. Cualquier uso no autorizado previamente se considera un incumplimiento grave de los derechos de propiedad intelectual o industrial del autor.",
+      "P3": "Los diseños, logotipos, texto y/o gráficos ajenos al RESPONSABLE y que pudieran aparecer en el sitio web, pertenecen a sus respectivos propietarios, siendo ellos mismos responsables de cualquier posible controversia que pudiera suscitarse respecto a los mismos. El RESPONSABLE autoriza expresamente a que terceros puedan redirigir directamente a los contenidos concretos del sitio web, y en todo caso redirigir al sitio web principal de www.veinsurtrucks.com/es.",
+      "P4": "El RESPONSABLE reconoce a favor de sus titulares los correspondientes derechos de propiedad intelectual e industrial, no implicando su sola mención o aparición en el sitio web la existencia de derechos o responsabilidad alguna sobre los mismos, como tampoco respaldo, patrocinio o recomendación por parte del mismo.",
+      "NOTA": "Para realizar cualquier tipo de observación respecto a posibles incumplimientos de los derechos de propiedad intelectual o industrial, así como sobre cualquiera de los contenidos del sitio web, puede hacerlo a través del correo electrónico"
+    },
+    "EXENCION": {
+      "TITULO": "3. EXENCIÓN DE RESPONSABILIDADES",
+      "P1": "El RESPONSABLE se exime de cualquier tipo de responsabilidad derivada de la información publicada en su sitio web siempre que no tenga conocimiento efectivo de que esta información haya sido manipulada o introducida por un tercero ajeno al mismo o, si lo tiene, haya actuado con diligencia para retirar los datos o hacer imposible el acceso a ellos.",
+      "COOKIES": {
+        "TITULO": "Uso de Cookies",
+        "P1": "Este sitio web puede utilizar cookies técnicas (pequeños archivos de información que el servidor envía al ordenador de quien accede a la página) para llevar a cabo determinadas funciones que son consideradas imprescindibles para el correcto funcionamiento y visualización del sitio. Las cookies utilizadas tienen, en todo caso, carácter temporal, con la única finalidad de hacer más eficaz la navegación, y desaparecen al terminar la sesión del usuario. En ningún caso, estas cookies proporcionan por sí mismas datos de carácter personal y no se utilizarán para la recogida de los mismos.",
+        "P2": "Mediante el uso de cookies también es posible que el servidor donde se encuentra la web reconozca el navegador utilizado por el usuario con la finalidad de que la navegación sea más sencilla, permitiendo, por ejemplo, el acceso de los usuarios que se hayan registrado previamente a las áreas, servicios, promociones o concursos reservados exclusivamente a ellos sin tener que registrarse en cada visita. También se pueden utilizar para medir la audiencia, parámetros de tráfico, controlar el progreso y número de entradas, etc., siendo en estos casos cookies prescindibles técnicamente, pero beneficiosas para el usuario. Este sitio web no instalará cookies prescindibles sin el consentimiento previo del usuario.",
+        "P3": "El usuario tiene la posibilidad de configurar su navegador para ser alertado de la recepción de cookies y para impedir su instalación en su equipo. Por favor, consulte las instrucciones de su navegador para ampliar esta información."
+      },
+      "ENLACES": {
+        "TITULO": "Política de enlaces",
+        "P1": "Desde el sitio web, es posible que se redirija a contenidos de terceros sitios web. Dado que el RESPONSABLE no puede controlar siempre los contenidos introducidos por terceros en sus respectivos sitios web, no asume ningún tipo de responsabilidad respecto a dichos contenidos. En todo caso, procederá a la retirada inmediata de cualquier contenido que pudiera contravenir la legislación nacional o internacional, la moral o el orden público, procediendo a la retirada inmediata de la redirección a dicho sitio web, poniendo en conocimiento de las autoridades competentes el contenido en cuestión.",
+        "P2": "El RESPONSABLE no se hace responsable de la información y contenidos almacenados, a título enunciativo pero no limitativo, en foros, chats, generadores de blogs, comentarios, redes sociales o cualquier otro medio que permita a terceros publicar contenidos de forma independiente en la página web del RESPONSABLE. Sin embargo, y en cumplimiento de lo dispuesto en los artículos 11 y 16 de la LSSICE, se pone a disposición de todos los usuarios, autoridades y fuerzas de seguridad, colaborando de forma activa en la retirada o, en su caso, bloqueo de todos aquellos contenidos que puedan afectar o contravenir la legislación nacional o internacional, los derechos de terceros o la moral y el orden público. En caso de que el usuario considere que existe en el sitio web algún contenido que pudiera ser susceptible de esta clasificación, se ruega lo notifique de forma inmediata al administrador del sitio web.",
+        "P3": "Este sitio web se ha revisado y probado para que funcione correctamente. En principio, puede garantizarse el correcto funcionamiento los 365 días del año, 24 horas al día. Sin embargo, el RESPONSABLE no descarta la posibilidad de que existan ciertos errores de programación, o que acontezcan causas de fuerza mayor, catástrofes naturales, huelgas o circunstancias semejantes que hagan imposible el acceso a la página web."
+      },
+      "IP": {
+        "TITULO": "Direcciones IP",
+        "P1": "Los servidores del sitio web podrán detectar de manera automática la dirección IP y el nombre de dominio utilizados por el usuario. Una dirección IP es un número asignado automáticamente a un ordenador cuando este se conecta a Internet. Toda esta información se registra en un fichero de actividad del servidor que permite el posterior procesamiento de los datos con el fin de obtener mediciones únicamente estadísticas que permitan conocer el número de impresiones de páginas, el número de visitas realizadas a los servidores web, el orden de visitas, el punto de acceso, etc."
+      }
+    },
+    "LEY": {
+      "TITULO": "4. LEY APLICABLE Y JURISDICCIÓN",
+      "P1": "Para la resolución de todas las controversias o cuestiones relacionadas con el presente sitio web o de las actividades en él desarrolladas, será de aplicación la legislación española, a la que se someten expresamente las partes, siendo competentes para la resolución de todos los conflictos derivados o relacionados con su uso los Juzgados y Tribunales del domicilio del USUARIO o el lugar del cumplimiento de la obligación."
+    }
+  },
+  "REDES_SOCIALES": {
+    "TAGLINE": "Privacidad y Comunicación",
+    "TITULO_1": "Política de",
+    "TITULO_2": "Redes Sociales",
+    "SUBTITULO": "INFORMACIÓN TRANSPARENTE SOBRE EL TRATAMIENTO DE DATOS EN NUESTROS PERFILES OFICIALES",
+    "SECCION_1": {
+      "TITULO": "1. INFORMACIÓN AL USUARIO",
+      "P1_TITULO": "¿Quién es el responsable del tratamiento de tus datos personales?",
+      "P1_DESCRIPCION": "<strong>VEINSUR, S.A.U.</strong>, en adelante, RESPONSABLE, informa al USUARIO de que ha procedido a crear un perfil en las Redes Sociales Facebook, Instagram, Twitter, LinkedIn, Youtube, Vimeo y Google+, que es el responsable del tratamiento de los datos personales del usuario que se lleve a cabo en dichas redes sociales y le informa de que estos datos serán tratados de conformidad con lo dispuesto en el Reglamento (UE) 2016/679, de 27 de abril (GDPR), y la Ley Orgánica 3/2018, de 5 de diciembre (LOPDGDD), por lo que se le facilita la siguiente información del tratamiento:",
+      "P2_TITULO": "¿Para qué tratamos tus datos personales?",
+      "FIN_TRATAMIENTO": "<strong>Fin del tratamiento:</strong> mantener una relación entre el USUARIO y el RESPONSABLE que puede incluir las siguientes operaciones:",
+      "OPERACIONES": {
+        "OP1": "Tramitar solicitudes y consultas planteadas al responsable.",
+        "OP2": "Informar sobre actividades y eventos organizados por el responsable.",
+        "OP3": "Informar sobre productos o servicios ofrecidos por el responsable.",
+        "OP4": "Interactuar a través de los perfiles oficiales."
+      },
+      "P3_TITULO": "¿Por qué motivo podemos tratar tus datos personales?",
+      "BASE_JURIDICA": "<strong>Base jurídica del tratamiento:</strong> artículo 6.1.a GDPR, el interesado ha dado su consentimiento para el tratamiento de sus datos personales para uno o varios fines específicos. El USUARIO dispone de un perfil en la misma red social y ha decidido unirse a la red social del RESPONSABLE mostrando así interés en la información que se publique en la misma, por tanto, en el momento de solicitar seguir nuestros perfiles oficiales, nos facilita su consentimiento para el tratamiento de aquellos datos personales publicados en su perfil.",
+      "CONFIGURACION_PRIVACIDAD": "El USUARIO puede acceder en todo momento a las políticas de privacidad de la propia red social, así como configurar su perfil para garantizar su privacidad.",
+      "INFORMACION_PUBLICA": "El RESPONSABLE tiene acceso y trata aquella información pública del USUARIO, en especial, su nombre de contacto. Estos datos solo son utilizados dentro de la propia red social y únicamente se incorporarán a un fichero del RESPONSABLE cuando sea necesario para tramitar la petición del USUARIO.",
+      "P4_TITULO": "¿Durante cuánto tiempo guardaremos tus datos personales?",
+      "CONSERVACION": "<strong>Criterios de conservación de los datos:</strong> se conservarán mientras el USUARIO no revoque el consentimiento prestado tal y como se indica en esta política de privacidad.",
+      "P5_TITULO": "¿A quién facilitamos tus datos personales?",
+      "COMUNICACION_DATOS": "<strong>Comunicación de los datos:</strong> la información facilitada por el USUARIO a través de las redes sociales del RESPONSABLE, incluidos sus datos personales, puede ser publicada, siempre en función de los servicios que el USUARIO utilice, por lo que podrá quedar a disposición pública de otros terceros usuarios de las redes sociales. Desde el perfil de cada red social, el USUARIO puede configurar qué información quiere hacer pública en cada caso, ver los permisos que se han concedido, eliminarlos o desactivarlos, como cualquier aplicación de un tercero que ya no se desea utilizar.",
+      "PROVEEDORES": "No está prevista ninguna comunicación de datos personales a terceros fuera de la red social salvo, si fuese imprescindible para el desarrollo y ejecución de las finalidades del tratamiento, a nuestros proveedores de servicios relacionados con comunicaciones, con los cuales el RESPONSABLE tiene suscritos los contratos de confidencialidad y de encargado de tratamiento exigidos por la normativa vigente de privacidad.",
+      "P6_TITULO": "¿Cuáles son tus derechos?",
+      "DERECHOS_INTRO": "Derechos que asisten al USUARIO: solo podrán satisfacerse en relación a aquella información que se encuentre bajo el control del RESPONSABLE.",
+      "LISTA_DERECHOS": {
+        "D1": "Derecho a retirar el consentimiento en cualquier momento.",
+        "D2": "Derecho de acceso, rectificación, portabilidad y supresión de sus datos, y de limitación u oposición a su tratamiento.",
+        "D3": "Derecho a presentar una reclamación ante la autoridad de control (www.aepd.es) si considera que el tratamiento no se ajusta a la normativa vigente."
+      },
+      "CONTACTO_DERECHOS": {
+        "TITULO": "Datos de contacto para ejercer sus derechos:",
+        "DIRECCION": "VEINSUR, S.A.U.. CTRA. A 1000, 32 - 04230 HUÉRCAL DE ALMERÍA (Almería).",
+        "EMAIL": "E-mail:",
+        "DPD": "Delegado de protección de datos:",
+        "DPD_VALOR": "GRUPO GM CONSULTORÍA EMPRESARIAL, S.L. (CIF B04827697), C/ Navarro Rodrigo, 2, Entreplanta - 04001 Almería (Almería)."
+      }
+    },
+    "SECCION_2": {
+      "TITULO": "2. UTILIZACIÓN DEL PERFIL",
+      "INTRO": "El RESPONSABLE realizará las siguientes actuaciones:",
+      "ACCIONES": {
+        "A1": "Acceso a la información pública del perfil.",
+        "A2": "Publicación en el perfil del USUARIO de toda aquella información ya publicada en la red social del RESPONSABLE.",
+        "A3": "Enviar mensajes personales e individuales a través de los canales de la red social.",
+        "A4": "Actualizaciones del estado de la página que se publicarán en el perfil del USUARIO."
+      },
+      "CONTROL_USUARIO": "El USUARIO siempre puede controlar sus conexiones, eliminar los contenidos que dejen de interesarle y restringir con quién comparte sus conexiones; para ello deberá acceder a su configuración de privacidad."
+    },
+    "SECCION_3": {
+      "TITULO": "3. PUBLICACIONES",
+      "P1": "El USUARIO, una vez sea seguidor o se haya unido a la red social del RESPONSABLE, podrá publicar en esta comentarios, enlaces, imágenes, fotografías o cualquier otro tipo de contenido multimedia soportado por la misma. El USUARIO, en todos los casos, debe ser el titular del contenido publicado, gozar de los derechos de autor y de propiedad intelectual o contar con el consentimiento de los terceros afectados.",
+      "P2": "Se prohíbe expresamente cualquier publicación en la red social, ya sean textos, gráficos, fotografías, vídeos, etc. que atenten o sean susceptibles de atentar contra la moral, la ética, el buen gusto o el decoro, y/o que infrinjan, violen o quebranten los derechos de propiedad intelectual o industrial, el derecho a la imagen o la Ley.",
+      "P3": "En estos casos, el RESPONSABLE se reserva el derecho a retirar de inmediato el contenido, sin comunicación previa, pudiendo solicitar el bloqueo permanente del USUARIO.",
+      "P4": "El RESPONSABLE no se hará responsable de los contenidos que libremente ha publicado un USUARIO.",
+      "P5": "El USUARIO debe tener presente que sus publicaciones serán conocidas por otros usuarios, por lo que él mismo es el principal responsable de su privacidad. Las imágenes que puedan publicarse en la red social no serán almacenadas en ningún fichero por parte del RESPONSABLE, pero sí que permanecerán en la red social."
+    },
+    "SECCION_4": {
+      "TITULO": "4. DATOS DE MENORES DE EDAD O PERSONAS CON CAPACIDADES ESPECIALES",
+      "P1": "El acceso y registro a través de las redes sociales del RESPONSABLE está prohibido a menores de 14 años. Por su parte, si el USUARIO tiene capacidades especiales, será necesaria la intervención del titular de su patria potestad o tutela, o de su representante legal mediante documento válido que acredite la representación.",
+      "P2": "El RESPONSABLE quedará expresamente exonerado de cualquier responsabilidad que pudiera derivarse del uso de las redes sociales por parte de menores o personas con capacidades especiales. Las redes sociales del RESPONSABLE no recogen conscientemente ninguna información personal de menores de edad, por ello, si el USUARIO es menor de edad, no debe registrarse, ni utilizar las redes sociales del RESPONSABLE ni tampoco proporcionar ninguna información personal."
+    }
+  },
+  "COOKIES": {
+    "TAGLINE": "Gestión de Privacidad",
+    "TITULO_1": "Política de",
+    "TITULO_2": "Cookies",
+    "SUBTITULO": "INFORMACIÓN TRANSPARENTE SOBRE EL USO, FINALIDAD Y CONFIGURACIÓN DE COOKIES",
+    "SECCION_1": {
+      "TITULO": "1. INFORMACIÓN GENERAL Y NORMATIVA",
+      "CONFORMIDAD_TITULO": "Conformidad Legal",
+      "CONFORMIDAD_P": "Conforme con la Ley 34/2002, de 11 de julio, de servicios de la sociedad de la información y de comercio electrónico (LSSI), en relación con el Reglamento (UE) 2016/679 (GDPR) y la Ley Orgánica 3/2018 (LOPDGDD), es obligado obtener el consentimiento expreso del usuario de todas las páginas web que usan cookies prescindibles, antes de que este navegue por ellas.",
+      "QUE_SON_TITULO": "¿Qué son las cookies?",
+      "QUE_SON_P1": "Las cookies y otras tecnologías similares (tales como <em>local shared objects</em>, <em>flash cookies</em> o píxeles) son herramientas empleadas por los servidores web para almacenar y recuperar información acerca de sus visitantes, así como para ofrecer un correcto funcionamiento del sitio.",
+      "QUE_SON_P2": "Mediante el uso de estos dispositivos se permite al servidor web recordar algunos datos concernientes al usuario, como sus preferencias para la visualización de las páginas de ese servidor, nombre y contraseña, productos que más le interesan, etc.",
+      "EXCEPTUADAS_TITULO": "Cookies afectadas por la normativa y exceptuadas",
+      "EXCEPTUADAS_P": "Según la directiva de la UE, las cookies que requieren el consentimiento informado por parte del usuario son las cookies de analítica, publicidad y afiliación, quedando exceptuadas las de carácter técnico y las necesarias para el funcionamiento del sitio web o la prestación de servicios expresamente solicitados por el usuario."
+    },
+    "SECCION_2": {
+      "TITULO": "2. TIPOS DE COOKIES",
+      "FINALIDAD": {
+        "ETIQUETA": "Según la Finalidad",
+        "TECNICAS": "<strong>Cookies técnicas y funcionales:</strong> Permiten la navegación a través de la web y la utilización de las diferentes opciones o servicios que en ella existen.",
+        "ANALITICAS": "<strong>Cookies analíticas:</strong> Permiten el seguimiento y análisis del comportamiento de los usuarios en los sitios web vinculados para la medición de actividad y elaboración de perfiles de navegación.",
+        "PUBLICITARIAS": "<strong>Cookies publicitarias:</strong> Permiten la gestión eficaz de los espacios publicitarios en base a criterios como el contenido editado o la frecuencia de los anuncios.",
+        "COMPORTAMENTAL": "<strong>Cookies de publicidad comportamental:</strong> Recogen información sobre las preferencias del usuario (<em>retargeting</em>) para gestionar los espacios publicitarios de la forma más eficaz posible.",
+        "SOCIALES": "<strong>Cookies sociales:</strong> Establecidas por redes sociales para permitir compartir contenido. Tienen la capacidad de rastrear su actividad en línea fuera de los servicios.",
+        "AFILIADOS": "<strong>Cookies de afiliados:</strong> Permiten hacer un seguimiento de las visitas procedentes de otras webs con las que se establece un contrato de afiliación.",
+        "SEGURIDAD": "<strong>Cookies de seguridad:</strong> Almacenan información cifrada para evitar que los datos guardados sean vulnerables a ataques maliciosos."
+      },
+      "PROPIEDAD": {
+        "ETIQUETA": "Según la Propiedad",
+        "PROPIAS": "<strong>Cookies propias:</strong> Enviadas al equipo del usuario desde un equipo o dominio gestionado por el propio editor.",
+        "TERCEROS": "<strong>Cookies de terceros:</strong> Enviadas al equipo del usuario desde un equipo o dominio gestionado por otra entidad ajena al editor."
+      },
+      "CONSERVACION": {
+        "ETIQUETA": "Según el Plazo de Conservación",
+        "SESION": "<strong>Cookies de sesión:</strong> Diseñadas para recabar y almacenar datos mientras el usuario accede a una página web.",
+        "PERSISTENTES": "<strong>Cookies persistentes:</strong> Los datos siguen almacenados en el terminal y pueden ser accedidos y tratados durante un período definido (de minutos a años)."
+      }
+    },
+    "SECCION_3": {
+      "TITULO": "3. TRATAMIENTO DE DATOS ASOCIADO A LAS COOKIES",
+      "INTRO": "<strong>VEINSUR, S.A.U.</strong> es el Responsable del tratamiento de los datos personales del Interesado y le informa de que estos datos serán tratados de conformidad con el Reglamento (UE) 2016/679 (GDPR):",
+      "FINES": "<strong>Fines del tratamiento:</strong> Según se especifica en el inventario de cookies utilizadas en este sitio web.",
+      "LEGITIMACION": "<strong>Legitimación:</strong> Salvo en los casos en que resulte necesario para la navegación, por consentimiento del interesado (art. 6.1.a GDPR).",
+      "CONSERVACION": "<strong>Conservación:</strong> Según el plazo indicado en el desglose de cookies.",
+      "COMUNICACION": "<strong>Comunicación de datos:</strong> No se comunicarán datos a terceros, excepto en cookies de terceros o por obligación legal.",
+      "CONTACTO_DERECHOS": {
+        "TITULO": "Ejercicio de Derechos:",
+        "TEXTO": "Puede retirar su consentimiento, así como ejercer los derechos de acceso, rectificación, portabilidad, supresión, limitación u oposición enviando una solicitud a:",
+        "DIRECCION": "VEINSUR, S.A.U. - CTRA. A 1000, 32 - 04230 HUÉRCAL DE ALMERÍA (Almería).",
+        "EMAIL": "E-mail:",
+        "DPD": "Delegado de Protección de Datos:",
+        "DPD_VALOR": "GRUPO GM CONSULTORÍA EMPRESARIAL, S.L. (CIF B04827697), C/ Navarro Rodrigo, 2, Entreplanta - 04001 Almería (Almería).",
+        "RECLAMACIONES": "Reclamaciones ante la autoridad de control:"
+      }
+    },
+    "SECCION_4": {
+      "TITULO": "4. COOKIES UTILIZADAS EN ESTE SITIO WEB",
+      "TABLA_CABECERA": {
+        "PROPIEDAD": "Propiedad",
+        "COOKIE": "Cookie",
+        "FINALIDAD": "Finalidad",
+        "PLAZO": "Plazo"
+      },
+      "TECNICAS_TITULO": "Técnicas y Funcionales",
+      "ANALITICAS_TITULO": "Analíticas",
+      "PUBLICITARIAS_TITULO": "Publicitarias",
+      "FINES_TEXTO": {
+        "USO_SERVICIOS": "Utilización de opciones y servicios del sitio web",
+        "RASTREADOR": "Rastreador de consentimiento de cookies de Google",
+        "ANUNCIOS_RELEVANTES": "Entrega de anuncios más relevantes según sus intereses",
+        "ID_USUARIOS": "ID utilizado para identificar a los usuarios",
+        "ANALISIS_AGREGADO": "Análisis agregado de los visitantes del sitio",
+        "CAMPAÑAS": "Orientación, análisis y optimización de campañas publicitarias",
+        "HERRAMIENTAS": "Herramientas de Google, preferencias y personalización de anuncios",
+        "ESTADISTICAS": "Estadísticas, tasas de conversión y personalización de anuncios",
+        "PREFERENCIAS_BUSQUEDA": "Preferencias de búsqueda y anuncios personalizados",
+        "ESTADISTICAS_SITIO": "Estadísticas del sitio y personalización de anuncios",
+        "DESCARGA": "Descarga de herramientas y preferencias de visualización",
+        "ESTADO_SEGURIDAD": "Gestión de estado, seguridad y preferencias publicitarías",
+        "EXPERIMENTACION": "Experimentación publicitaria mediante Google AdSense"
+      },
+      "PLAZOS": {
+        "ANO": "1 año",
+        "ANOS": "años",
+        "MESES_12": "12 meses",
+        "DIAS_24": "24 días",
+        "MESES_9": "9 meses",
+        "MESES_4": "4 meses",
+        "MES_1": "1 mes",
+        "MESES_2": "2 meses",
+        "MESES_7": "7 meses",
+        "DIA_1": "1 día",
+        "SESION": "Sesión",
+        "MESES_3": "3 meses"
+      }
+    },
+    "SECCION_5": {
+      "TITULO": "5. COOKIES DE TERCEROS Y CONFIGURACIÓN DEL NAVEGADOR",
+      "INTRO": "Los servicios de terceros son ajenos al control del editor. Los proveedores pueden modificar en todo momento sus condiciones de servicio, finalidad y utilización de las cookies.",
+      "PROVEEDORES_TITULO": "Proveedores Externos",
+      "TABLA_PROVEEDORES": {
+        "EDITOR": "Editor",
+        "POLITICA": "Política de Privacidad"
+      },
+      "GESTION_TITULO": "Cómo Gestionar las Cookies desde su Navegador",
+      "GESTION_OPCIONES": {
+        "ELIMINAR_TITULO": "Eliminar cookies",
+        "ELIMINAR_DESC": "Se pueden eliminar borrando el historial del navegador. Esto suprime las cookies de todos los sitios visitados (puede perderse información guardada como datos de inicio de sesión).",
+        "GESTION_TITULO": "Gestión específica",
+        "GESTION_DESC": "Ajuste los controles de privacidad y cookies en los ajustes de su navegador para un control más preciso.",
+        "BLOQUEAR_TITULO": "Bloquear cookies",
+        "BLOQUEAR_DESC": "Evita la instalación de cookies, aunque puede requerir el ajuste manual de preferencias en cada visita y afectar al correcto funcionamiento de ciertos servicios."
+      },
+      "INSTRUCCIONES_TITULO": "Instrucciones para los Navegadores más Comunes",
+      "TABLA_NAVEGADORES": {
+        "NAVEGADOR": "Navegador",
+        "ENLACE": "Enlace de Ayuda / Configuración",
+        "CHROME": "Soporte de Google Chrome",
+        "EDGE": "Soporte de Microsoft Edge",
+        "IE": "Soporte de Internet Explorer",
+        "FIREFOX": "Soporte de Mozilla Firefox",
+        "SAFARI": "Soporte de Apple Safari",
+        "OPERA": "Soporte de Opera"
+      }
+    }
+  },
+  "PRIVACIDAD": {
+    "TAGLINE": "Protección de Datos",
+    "TITULO_1": "Política de",
+    "TITULO_2": "Privacidad",
+    "SUBTITULO": "INFORMACIÓN DETALLADA SOBRE EL TRATAMIENTO DE TUS DATOS PERSONALES",
+    "SECCION_1": {
+      "TITULO": "1. INFORMACIÓN AL USUARIO",
+      "RESPONSABLE_TITULO": "¿Quién es el responsable del tratamiento de tus datos personales?",
+      "RESPONSABLE_P": "<strong>VEINSUR, S.A.U.</strong> es el RESPONSABLE del tratamiento de los datos personales del USUARIO y le informa de que estos datos serán tratados de conformidad con lo dispuesto en el Reglamento (UE) 2016/679, de 27 de abril (RGPD), y la Ley Orgánica 3/2018, de 5 de diciembre (LOPDGDD).",
+      "FINES_TITULO": "¿Para qué tratamos tus datos personales y por qué lo hacemos?",
+      "FINES_INTRO": "Según el formulario donde hayamos obtenido sus datos personales, los trataremos de manera confidencial para alcanzar los siguientes fines:",
+      "FORM_CONTACTO": {
+        "ETIQUETA": "En el formulario Contacto y WhatsApp",
+        "ITEM_1": "Dar respuesta a las consultas o cualquier tipo de petición realizada por el usuario a través de cualquiera de las formas de contacto a su disposición en la web. <em>(Por el consentimiento del interesado, art. 6.1.a GDPR)</em>.",
+        "ITEM_2": "Realizar análisis estadísticos y estudios de mercado. <em>(Por el interés legítimo del responsable, art. 6.1.f GDPR)</em>."
+      },
+      "FORM_REGISTRO": {
+        "ETIQUETA": "En el formulario Registro de usuario",
+        "ITEM_1": "Gestionar la cuenta del usuario para proporcionarle un acceso personalizado a la página web y a los servicios interactivos ofrecidos. <em>(Por el consentimiento del interesado, art. 6.1.a GDPR)</em>.",
+        "ITEM_2": "Remitir boletines informativos, novedades, ofertas y promociones online (cuando proceda). <em>(Por el consentimiento del interesado, art. 6.1.a GDPR)</em>."
+      },
+      "FORM_INFORMACION": {
+        "ETIQUETA": "En el formulario Solicitud de información",
+        "ITEM_1": "Proporcionar información sobre productos y/o servicios de la entidad. <em>(Por el consentimiento del interesado, art. 6.1.a GDPR)</em>."
+      },
+      "CONSERVACION_TITULO": "¿Durante cuánto tiempo guardaremos tus datos personales?",
+      "CONSERVACION_P": "Se conservarán durante no más tiempo del necesario para mantener el fin del tratamiento o mientras existan prescripciones legales que dictaminen su custodia. Cuando ya no sea necesario para ello, se suprimirán con medidas de seguridad adecuadas para garantizar la anonimización de los datos o su destrucción total.",
+      "DESTINATARIOS_TITULO": "¿A quién facilitamos tus datos personales?",
+      "DESTINATARIOS_P": "No está prevista ninguna comunicación de datos personales a terceros salvo, si fuese necesario para el desarrollo y ejecución de las finalidades del tratamiento, a nuestros proveedores de servicios relacionados con comunicaciones, con los cuales el RESPONSABLE tiene suscritos los contratos de confidencialidad y de encargado de tratamiento exigidos por la normativa vigente de privacidad.",
+      "DERECHOS_TITULO": "¿Cuáles son tus derechos?",
+      "DERECHOS_INTRO": "Los derechos que asisten al USUARIO son:",
+      "DERECHOS_LISTA": {
+        "ITEM_1": "Derecho a retirar el consentimiento en cualquier momento.",
+        "ITEM_2": "Derecho de acceso, rectificación, portabilidad y supresión de sus datos, y de limitación u oposición a su tratamiento.",
+        "ITEM_3": "Derecho a presentar una reclamación ante la autoridad de control (<a href=\"https://www.aepd.es\" target=\"_blank\" rel=\"noopener\">www.aepd.es</a>) si considera que el tratamiento no se ajusta a la normativa vigente."
+      },
+      "CONTACTO_DERECHOS": {
+        "TITULO": "Datos de contacto para ejercer sus derechos:",
+        "DIRECCION": "VEINSUR, S.A.U.. Ctra. A 1000, 32 - 04230 Huércal de Almería (Almería).",
+        "EMAIL": "E-mail:",
+        "DPD": "Delegado de protección de datos:",
+        "DPD_VALOR": "GRUPO GM CONSULTORÍA EMPRESARIAL, S.L. (CIF B04827697), C/ Navarro Rodrigo, 2, Entreplanta - 04001 Almería (Almería)."
+      }
+    },
+    "SECCION_2": {
+      "TITULO": "2. CARÁCTER OBLIGATORIO O FACULTATIVO DE LA INFORMACIÓN FACILITADA POR EL USUARIO",
+      "P1": "Los USUARIOS, mediante la marcación de las casillas correspondientes y la entrada de datos en los campos marcados con un asterisco (*) en el formulario de contacto o presentados en formularios de descarga, aceptan expresamente y de forma libre e inequívoca que sus datos son necesarios para atender su petición por parte del prestador, siendo voluntaria la inclusión de datos en los campos restantes. El USUARIO garantiza que los datos personales facilitados al RESPONSABLE son veraces y se hace responsable de comunicar cualquier modificación de los mismos.",
+      "P2": "El RESPONSABLE informa de que todos los datos solicitados a través del sitio web son obligatorios, ya que son necesarios para la prestación de un servicio óptimo al USUARIO. En caso de que no se faciliten todos los datos, no se garantiza que la información y servicios facilitados sean completamente ajustados a sus necesidades."
+    },
+    "SECCION_3": {
+      "TITULO": "3. MEDIDAS DE SEGURIDAD",
+      "P1": "De conformidad con lo dispuesto en las normativas vigentes en protección de datos personales, el RESPONSABLE está cumpliendo con todas las disposiciones de las normativas RGPD y LOPDGDD para el tratamiento de los datos personales de su responsabilidad, y manifiestamente con los principios descritos en el artículo 5 del RGPD, por los cuales son tratados de manera lícita, leal y transparente en relación con el interesado y adecuados, pertinentes y limitados a lo necesario en relación con los fines para los que son tratados.",
+      "P2": "El RESPONSABLE garantiza que ha implementado políticas técnicas y organizativas apropiadas para aplicar las medidas de seguridad que establecen el RGPD y la LOPDGDD con el fin de proteger los derechos y libertades de los USUARIOS y les ha comunicado la información adecuada para que puedan ejercerlos.",
+      "P3": "Para más información sobre las garantías de privacidad, puedes dirigirte al RESPONSABLE a través del e-mail:"
+    },
+    "SECCION_4": {
+      "TITULO": "4. AVISO IMPORTANTE – REGLAMENTO DE DATOS DE LA UE",
+      "P1": "La Ley de Datos de la UE exige que le proporcionemos información precontractual que describa cómo este Producto Conectado genera datos del producto, cómo se recopilan, cómo usted como usuario puede acceder a ellos y cómo los utiliza Volvo Truck Corporation.",
+      "P2": "La información completa está disponible en",
+      "P2_LINK": "en la sección",
+      "SECCION_VALOR": "Aviso de datos: Producto y Aviso de datos: Servicios"
+    }
+  },
+  "MODAL_LOGIN": {
+    "TITULO": "Inicia sesión para guardar tus búsquedas",
+    "SUBTITULO": "y recibir notificaciones",
+    "FORMULARIO": {
+      "EMAIL_LABEL": "Email",
+      "EMAIL_PLACEHOLDER": "ejemplo@correo.com",
+      "PWD_LABEL": "Contraseña",
+      "PWD_PLACEHOLDER": "••••••••",
+      "BTN_ACCEDIENDO": "Accediendo...",
+      "BTN_INICIAR_SESION": "Iniciar sesión",
+      "BTN_GOOGLE": "Continuar con Google"
+    },
+    "ENLACES": {
+      "OLVIDADO_PWD": "¿Has olvidado tu contraseña?",
+      "SIN_CUENTA": "¿Aún no tienes cuenta?"
+    },
+    "LEGAL": {
+      "RESPONSABLE": "Responsable:",
+      "RESPONSABLE_VALOR": "VEINSUR, SAU.",
+      "FINALIDAD": "Finalidad:",
+      "FINALIDAD_VALOR": "Gestionar tu registro y, en caso de que lo autorice, a remitirle comunicaciones comerciales",
+      "DERECHOS": "Derechos:",
+      "DERECHOS_VALOR": "Tiene derecho a acceder, rectificar y suprimir los datos, así como otros derechos, como se explica en la información adicional.",
+      "INFO_ADD": "Información adicional:",
+      "POLITICA_PRIVACIDAD": "Política de Privacidad"
+    }
+  },
+  "WHATSAPP_MODAL": {
+    "TITULO": "Contacto por WhatsApp",
+    "RESPONSABLE_LABEL": "Responsable",
+    "RESPONSABLE_VALOR": "VEINSUR, SAU.",
+    "FINALIDAD_LABEL": "Finalidad",
+    "FINALIDAD_VALOR": "Gestionar y responder a las consultas o comunicaciones recibidas a través de WhatsApp.",
+    "DERECHOS_LABEL": "Derechos",
+    "DERECHOS_VALOR": "Tiene derecho a acceder, rectificar y suprimir los datos, así como otros derechos, como se explica en la información adicional.",
+    "INFO_ADICIONAL_LABEL": "Información adicional",
+    "DISPONIBLE_EN": "Puede consultar la información adicional en el siguiente enlace:",
+    "POLITICA_PRIVACIDAD_LINK": "Política de Privacidad",
+    "BTN_CANCELAR": "Cancelar",
+    "BTN_ACEPTAR": "Aceptar y continuar a WhatsApp"
+  }
+}

@@ -1,0 +1,357 @@
+@use "sass:color";
+
+// ==========================================
+// PALETA DE COLORES CORPORATIVOS
+// ==========================================
+$azul-marino-oscuro: #0a192f;
+$azul-corporativo: #0f3460;
+$azul-texto-secundario: #4a5568;
+
+$gris-fondo-suave: #f8fafc;
+$gris-borde: #e2e8f0;
+$blanco-puro: #ffffff;
+
+$radio-esquina: 16px;
+// Transiciones acotadas a propiedades que no desencadenan Layout
+$transicion: background-color 0.25s ease-in-out, border-color 0.25s ease-in-out, box-shadow 0.25s ease-in-out, transform 0.25s ease-in-out;
+
+// ==========================================
+// ESTILOS COMPONENTE SECCIÓN DELEGACIONES
+// ==========================================
+.seccion-delegaciones {
+  padding: 5rem 0;
+  background-color: $blanco-puro;
+
+  .contenedor-delegaciones {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    box-sizing: border-box;
+  }
+
+  // Cabecera de la Sección con reserva de espacio
+  .cabecera-seccion {
+    margin-bottom: 2.5rem;
+    min-height: 5rem;
+
+    .subtitulo-tag {
+      display: inline-block;
+      background-color: color.change($azul-corporativo, $alpha: 0.08);
+      color: $azul-corporativo;
+      padding: 0.4rem 1rem;
+      border-radius: 30px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+      border: 1px solid color.change($azul-corporativo, $alpha: 0.15);
+      line-height: 1;
+    }
+
+    h2 {
+      font-size: clamp(1.75rem, 3.5vw, 2.25rem);
+      font-weight: 900;
+      color: $azul-marino-oscuro;
+      margin: 0;
+      letter-spacing: -0.5px;
+      line-height: 1.2;
+    }
+  }
+
+  // Grid Layout
+  .grid-delegaciones {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (min-width: 1024px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  // Tarjeta Individual
+  .tarjeta-delegacion {
+    background-color: $blanco-puro;
+    border: 2px solid $gris-borde;
+    border-radius: $radio-esquina;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    transition: $transicion;
+    will-change: transform, box-shadow;
+
+    /* Ancho implícito 'auto' para evitar colapsos horizontales de 1px */
+    content-visibility: auto;
+    contain-intrinsic-size: auto 450px;
+
+    &:hover {
+      border-color: $azul-corporativo;
+      box-shadow: 0 12px 30px color.change($azul-marino-oscuro, $alpha: 0.1);
+    }
+  }
+
+  // Contenedor Multimedia
+  .media-delegacion {
+    height: 200px;
+    background-color: $gris-fondo-suave;
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 16 / 9; /* Mantiene la proporción visual asegurada */
+
+    .foto-full {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+      filter: none !important;
+      opacity: 1 !important;
+      transition: opacity 0.2s ease-in-out;
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      display: block;
+      border: 0;
+      aspect-ratio: 16 / 9;
+    }
+
+    .mapa-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: $gris-fondo-suave;
+      color: $azul-texto-secundario;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    // Pestañas Flotantes
+    .selector-vista {
+      position: absolute;
+      top: 0.75rem;
+      right: 0.75rem;
+      z-index: 5;
+      background-color: $blanco-puro;
+      padding: 0.25rem;
+      border-radius: 30px;
+      display: flex;
+      gap: 0.25rem;
+      border: 1px solid $gris-borde;
+      box-shadow: 0 4px 12px color.change($azul-marino-oscuro, $alpha: 0.12);
+
+      button {
+        background: transparent;
+        border: none;
+        color: $azul-marino-oscuro;
+        font-size: 0.7rem;
+        font-weight: 700;
+        padding: 0.35rem 0.85rem;
+        border-radius: 30px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 0.35rem;
+        transition: $transicion;
+
+        i {
+          color: $azul-corporativo;
+          transition: color 0.2s ease, transform 0.2s ease;
+          width: 1em;
+          text-align: center;
+        }
+
+        &.activo {
+          background-color: $azul-corporativo;
+          color: $blanco-puro;
+          font-weight: 800;
+
+          i {
+            color: $blanco-puro;
+          }
+        }
+
+        &:hover:not(.activo) {
+          background-color: color.change($azul-corporativo, $alpha: 0.08);
+        }
+      }
+    }
+  }
+
+  // Datos de la Tarjeta
+  .cuerpo-tarjeta {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+
+    h3 {
+      font-size: 1.25rem;
+      font-weight: 900;
+      color: $azul-marino-oscuro;
+      margin: 0 0 1rem 0;
+      line-height: 1.3;
+      min-height: 1.6em; /* Evita desajustes según la cantidad de líneas del título */
+    }
+
+    .info-rows {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .info-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+
+      .icono-wrap {
+        width: 30px;
+        height: 30px;
+        border-radius: 6px;
+        background-color: color.change($azul-corporativo, $alpha: 0.08);
+        color: $azul-corporativo;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        font-size: 0.85rem;
+      }
+
+      p {
+        margin: 0;
+        font-size: 0.85rem;
+        font-weight: 600;
+        color: $azul-texto-secundario;
+        line-height: 1.4;
+        padding-top: 0.2rem;
+      }
+    }
+
+    // Bloque de Contacto Rápido
+    .bloque-contacto {
+      border-top: 1px solid $gris-borde;
+      padding-top: 1rem;
+      margin-top: auto;
+
+      .telefono-link {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        text-decoration: none;
+        background-color: $gris-fondo-suave;
+        padding: 0.65rem 0.85rem;
+        border-radius: 8px;
+        border: 1px solid $gris-borde;
+        transition: $transicion;
+        min-height: 50px;
+
+        .icono-tel {
+          width: 32px;
+          height: 32px;
+          border-radius: 50%;
+          background-color: $azul-corporativo;
+          color: $blanco-puro;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 0.85rem;
+          flex-shrink: 0;
+        }
+
+        .datos-tel {
+          display: flex;
+          flex-direction: column;
+
+          .label-tel {
+            font-size: 0.65rem;
+            font-weight: 700;
+            color: $azul-texto-secundario;
+            text-transform: uppercase;
+            line-height: 1;
+          }
+
+          strong {
+            font-size: 0.95rem;
+            font-weight: 850;
+            color: $azul-marino-oscuro;
+            line-height: 1.2;
+          }
+        }
+
+        &:hover {
+          background-color: color.change($azul-corporativo, $alpha: 0.05);
+          border-color: $azul-corporativo;
+        }
+      }
+    }
+  }
+
+  // Footer con Tres Botones
+  .footer-tarjeta {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-top: 2px solid $gris-borde;
+    background-color: $gris-borde;
+    gap: 2px;
+    height: 60px; /* Dimensiones fijas para evitar recalculo en el pie */
+
+    .btn-accion {
+      background-color: $blanco-puro;
+      color: $azul-marino-oscuro;
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      padding: 0.85rem 0.4rem;
+      font-size: 0.7rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.2px;
+      transition: $transicion;
+
+      i {
+        font-size: 1.1rem;
+        color: $azul-corporativo;
+        transition: transform 0.2s ease, color 0.2s ease;
+      }
+
+      &:hover {
+        background-color: $azul-corporativo;
+        color: $blanco-puro;
+
+        i {
+          color: $blanco-puro;
+          transform: translateY(-2px);
+        }
+      }
+    }
+  }
+
+  // Skeleton con dimensión idéntica a la tarjeta renderizada
+  .tarjeta-skeleton {
+    height: 450px;
+    background-color: $gris-fondo-suave;
+    border-radius: $radio-esquina;
+    border: 2px solid $gris-borde;
+    animation: pulso-skeleton 1.5s infinite ease-in-out;
+  }
+}
+
+// Animación del Skeleton
+@keyframes pulso-skeleton {
+  0% { opacity: 0.6; }
+  50% { opacity: 1; }
+  100% { opacity: 0.6; }
+}

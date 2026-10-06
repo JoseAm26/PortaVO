@@ -1,0 +1,353 @@
+<div class="container mt-4 mb-5">
+
+  <!-- BOTÓN VOLVER Y CABECERA -->
+  <div class="d-flex align-items-center justify-content-between mb-3">
+    <button class="btn btn-outline-secondary btn-sm rounded-pill px-3" (click)="volver()">
+      <fa-icon [icon]="faArrowLeft" class="me-1"></fa-icon> {{ 'DETALLE_VEHICULO.ANTERIOR' | translate }}
+    </button>
+    <span class="badge bg-secondary">
+      {{ 'DETALLE_VEHICULO.ESTADO' | translate }}: {{ vehiculo()?.estadoStock || ('DETALLE_VEHICULO.DISPONIBLE' | translate) }}
+    </span>
+  </div>
+
+  @if (cargando()) {
+    <div class="text-center py-5">
+      <div class="spinner-border text-primary" role="status"></div>
+      <p class="mt-2 text-muted">{{ 'DETALLE_VEHICULO.CARGANDO' | translate }}</p>
+    </div>
+  } @else if (error()) {
+    <div class="alert alert-danger d-flex align-items-center" role="alert">
+      <fa-icon [icon]="faTriangleExclamation" class="me-2 fs-4"></fa-icon>
+      <div>{{ error() }}</div>
+    </div>
+  } @else if (vehiculo(); as v) {
+
+    <!-- TÍTULO Y PRECIO -->
+    <div class="row mb-4">
+      <div class="col-12 d-flex flex-wrap align-items-center justify-content-between border-bottom pb-3 gap-2">
+        <div>
+          <h1 class="titulo-detalle mb-1">{{ v.marca }} {{ v.modelo }}</h1>
+          <p class="text-muted mb-0">
+            {{ v.tipoVeh || v.vhTipVeh }} • {{ 'DETALLE_VEHICULO.REF_STOCK' | translate }}: <strong>{{ v.idStoc }}</strong> • {{ 'DETALLE_VEHICULO.CHASIS' | translate }}: <code>{{ v.chasis || 'N/D' }}</code>
+          </p>
+        </div>
+        <div>
+          <span class="precio-badge">
+            @if (v.precio > 0) {
+              {{ v.precio | currency:'EUR':'symbol':'1.0-0' }}
+            } @else {
+              {{ 'DETALLE_VEHICULO.PRECIO_A_CONSULTAR' | translate }}
+            }
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- GALERÍA Y RESUMEN RÁPIDO -->
+    <div class="row g-4 mb-4">
+
+      <!-- GALERÍA DE IMÁGENES -->
+      <div class="col-lg-7">
+        <div class="galeria-container">
+
+          <!-- CONTENEDOR DE LA IMAGEN PRINCIPAL -->
+          <div class="imagen-principal mb-3">
+            <img
+              [src]="imagenSeleccionada()"
+              [alt]="v.marca + ' ' + v.modelo"
+              (click)="abrirModalFoto()"
+              loading="eager"
+              decoding="async">
+
+            <!-- FLECHAS DE NAVEGACIÓN EN VISTA PRINCIPAL -->
+            @if (imagenesGaleria().length > 1) {
+              <button
+                type="button"
+                class="btn-nav-galeria prev"
+                (click)="fotoAnterior($event)"
+                aria-label="Anterior">
+                <fa-icon [icon]="faChevronLeft"></fa-icon>
+              </button>
+
+              <button
+                type="button"
+                class="btn-nav-galeria next"
+                (click)="fotoSiguiente($event)"
+                aria-label="Siguiente">
+                <fa-icon [icon]="faChevronRight"></fa-icon>
+              </button>
+
+              <!-- CONTADOR DE FOTOS -->
+              <span class="badge-contador">
+                <fa-icon [icon]="faCamera" class="me-1"></fa-icon>
+                {{ indiceSeleccionado() + 1 }} / {{ imagenesGaleria().length }}
+              </span>
+            }
+
+            <div class="zoom-overlay" (click)="abrirModalFoto()">
+              <fa-icon [icon]="faMagnifyingGlassPlus"></fa-icon> {{ 'DETALLE_VEHICULO.VER_EN_GRANDE' | translate }}
+            </div>
+
+            @if (esCheck(v.vendido)) {
+              <span class="badge-status vendido">{{ 'DETALLE_VEHICULO.VENDIDO' | translate }}</span>
+            }
+          </div>
+
+          <!-- MINIATURAS -->
+          @if (imagenesGaleria().length > 1) {
+            <div class="miniaturas-grid" #contenedorMiniaturas>
+              @for (img of imagenesGaleria(); track $index) {
+                <div
+                  class="miniatura-item"
+                  [class.activa]="$index === indiceSeleccionado()"
+                  (click)="seleccionarImagenPorIndice($index)">
+                  <img [src]="img" [alt]="'Foto ' + ($index + 1)" loading="lazy" decoding="async">
+                </div>
+              }
+            </div>
+          }
+        </div>
+      </div>
+
+      <!-- CARD RESUMEN -->
+      <div class="col-lg-5">
+        <div class="card card-resumen p-4 h-100 justify-content-between">
+          <div>
+            <h4 class="titulo-bloque mb-3"><fa-icon [icon]="faStarSolid" class="me-2"></fa-icon>{{ 'DETALLE_VEHICULO.DATOS_CLAVE' | translate }}</h4>
+
+            <div class="grid-resumen">
+              <div class="item-resumen">
+                <fa-icon [icon]="faCalendar"></fa-icon>
+                <div>
+                  <span class="label">{{ 'DETALLE_VEHICULO.MATRICULACION' | translate }}</span>
+                  <span class="valor">{{ esCheck(v.fecMat) ? (v.fecMat | date:'dd/MM/yyyy') : 'N/D' }}</span>
+                </div>
+              </div>
+
+              <div class="item-resumen">
+                <fa-icon [icon]="faRoad"></fa-icon>
+                <div>
+                  <span class="label">{{ 'DETALLE_VEHICULO.KILOMETRAJE' | translate }}</span>
+                  <span class="valor">{{ esCheck(formatearKm (v.kilom)) ? formatearKm(v.kilom) + ' km' : 'N/D' }}</span>
+                </div>
+              </div>
+
+              <div class="item-resumen">
+                <fa-icon [icon]="faGaugeHigh"></fa-icon>
+                <div>
+                  <span class="label">{{ 'DETALLE_VEHICULO.POTENCIA' | translate }}</span>
+                  <span class="valor">{{ esCheck(v.potMot) ? v.potMot + ' CV' : 'N/D' }}</span>
+                </div>
+              </div>
+
+              <div class="item-resumen">
+                <fa-icon [icon]="faGears"></fa-icon>
+                <div>
+                  <span class="label">{{ 'DETALLE_VEHICULO.CONFIG_EJES' | translate }}</span>
+                  <span class="valor">{{ v.cfgeje || v.confEje || 'N/D' }}</span>
+                </div>
+              </div>
+
+              <div class="item-resumen">
+                <fa-icon [icon]="faLeaf"></fa-icon>
+                <div>
+                  <span class="label">{{ 'DETALLE_VEHICULO.NORMATIVA' | translate }}</span>
+                  <span class="valor">{{ v.euronorma || 'N/D' }}</span>
+                </div>
+              </div>
+
+              <div class="item-resumen">
+                <fa-icon [icon]="faLocationDot"></fa-icon>
+                <div>
+                  <span class="label">{{ 'DETALLE_VEHICULO.UBICACION' | translate }}</span>
+                  <span class="valor">{{ v.ciudad }} {{ v.provincia ? '(' + v.provincia + ')' : '' }}</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- BADGES RÁPIDOS DE ESTADO -->
+            <div class="d-flex flex-wrap gap-2 mt-4">
+              <span class="badge border p-2 fw-bold d-flex align-items-center gap-1"
+                [ngClass]="esCheck(v.garvo) || esCheck(v.vpGarvo) ? 'bg-success-subtle text-success border-success' : 'bg-light text-muted border-secondary'">
+                <fa-icon [icon]="(esCheck(v.garvo) || esCheck(v.vpGarvo)) ? faCircleCheck : faCircleXmark" [ngClass]="(esCheck(v.garvo) || esCheck(v.vpGarvo)) ? 'text-success' : 'text-danger'"></fa-icon>
+                {{ 'DETALLE_VEHICULO.GARANTIA_INCLUIDA' | translate }}
+              </span>
+
+              <span class="badge border p-2 fw-bold d-flex align-items-center gap-1"
+                [ngClass]="esCheck(v.adr) ? 'bg-danger-subtle text-danger border-danger' : 'bg-light text-muted border-secondary'">
+                <fa-icon [icon]="esCheck(v.adr) ? faCircleCheck : faCircleXmark" [ngClass]="esCheck(v.adr) ? 'text-success' : 'text-danger'"></fa-icon>
+                {{ 'DETALLE_VEHICULO.ADR' | translate }}
+              </span>
+
+              @if (esCheck(v.tacografo)) {
+                <span class="badge bg-light text-dark border p-2">
+                  <fa-icon [icon]="faClock" class="me-1"></fa-icon> {{ 'DETALLE_VEHICULO.TACOGRAFO' | translate }}: {{ v.tacografo }}
+                </span>
+              }
+            </div>
+          </div>
+
+          <!-- ACCIONES RÁPIDAS (FAVORITO Y COMPARAR) -->
+          <div class="acciones-fichas mt-4">
+            <button
+              type="button"
+              class="btn-accion btn-favorito"
+              [class.activo]="esFavorito()"
+              (click)="toggleFavorito()">
+              <fa-icon [icon]="esFavorito() ? faStarSolid : faStarRegular"></fa-icon>
+              <span>{{ (esFavorito() ? 'DETALLE_VEHICULO.FAVORITO' : 'DETALLE_VEHICULO.AGREGAR_FAVORITO') | translate }}</span>
+            </button>
+
+            <button
+              type="button"
+              class="btn-accion btn-comparar"
+              [class.activo]="isEnComparador()"
+              (click)="toggleComparar()">
+              <fa-icon [icon]="isEnComparador() ? faTrashCan : faCopy"></fa-icon>
+              <span>{{ (isEnComparador() ? 'DETALLE_VEHICULO.QUITAR_COMPARADOR' : 'DETALLE_VEHICULO.COMPARAR') | translate }}</span>
+            </button>
+          </div>
+
+          @if (comparadorService.vehiculosComparador().length > 0) {
+            <div class="badge-comparador-info mt-2" [innerHTML]="'DETALLE_VEHICULO.INFO_COMPARADOR' | translate:{ cantidad: comparadorService.vehiculosComparador().length }">
+            </div>
+          }
+
+          <!-- ACCIONES PDF -->
+          <div class="acciones-pdf mt-3">
+            <button
+              type="button"
+              class="btn-pdf btn-pdf-mini"
+              (click)="descargarFicha(true)">
+              <div class="icono">
+                <fa-icon [icon]="faFileLines"></fa-icon>
+              </div>
+              <div class="contenido">
+                <span class="titulo">
+                  {{ 'DETALLE_VEHICULO.FICHA_MINI' | translate }}
+                </span>
+                <small>Vista resumida del vehículo</small>
+              </div>
+            </button>
+
+            @if (estaLogueado) {
+              <button
+                type="button"
+                class="btn-pdf btn-pdf-completa"
+                (click)="descargarFicha(false)">
+                <div class="icono">
+                  <fa-icon [icon]="faFilePdf"></fa-icon>
+                </div>
+                <div class="contenido">
+                  <span class="titulo">
+                    {{ 'DETALLE_VEHICULO.FICHA_COMPLETA' | translate }}
+                  </span>
+                  <small>Información detallada</small>
+                </div>
+              </button>
+            }
+          </div>
+
+          <button class="btn btn-aplicar w-100 py-2 fs-6 mt-3" (click)="irAlFormulario()">
+            <fa-icon [icon]="faEnvelope" class="me-2"></fa-icon> {{ 'DETALLE_VEHICULO.SOLICITAR_INFORMACION' | translate }}
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+    <app-detalle-especifico [vehiculo]="v"></app-detalle-especifico>
+
+  }
+</div>
+
+<!-- MODAL FOTO PANTALLA COMPLETA -->
+@if (modalFotoAbierto()) {
+  <div
+    class="modal-foto-backdrop"
+    (click)="cerrarModalFoto()"
+    (mouseup)="finalizarArrastre($event)"
+    (mouseleave)="finalizarArrastre($event)"
+    (touchend)="finalizarArrastre($event)"
+    (touchcancel)="finalizarArrastre($event)">
+
+    <button
+      type="button"
+      class="btn-close-modal"
+      (click)="cerrarModalFoto(); $event.stopPropagation()">
+      <fa-icon [icon]="faXmark"></fa-icon>
+    </button>
+
+    @if (imagenesGaleria().length > 1) {
+      <button
+        type="button"
+        class="btn-nav-modal btn-prev-modal"
+        (click)="fotoAnterior($event)">
+        <fa-icon [icon]="faChevronLeft"></fa-icon>
+      </button>
+
+      <button
+        type="button"
+        class="btn-nav-modal btn-next-modal"
+        (click)="fotoSiguiente($event)">
+        <fa-icon [icon]="faChevronRight"></fa-icon>
+      </button>
+    }
+
+    <div
+      class="modal-foto-content"
+      [class.zoom-activo]="puedeMoverImagen"
+      (click)="$event.stopPropagation()"
+      (wheel)="onWheelZoom($event)"
+      (mousedown)="iniciarArrastre($event)"
+      (mousemove)="moverImagen($event)"
+      (mouseup)="finalizarArrastre($event)"
+      (touchstart)="iniciarArrastre($event)"
+      (touchmove)="moverImagen($event)"
+      (touchend)="finalizarArrastre($event)">
+
+      <img
+        [src]="imagenSeleccionada()"
+        [alt]="vehiculo()?.marca"
+        [style.transform]="transformImagenModal"
+        [class.imagen-ampliada]="puedeMoverImagen"
+        draggable="false"
+        loading="lazy" decoding="async">
+    </div>
+
+    <div class="zoom-controls" (click)="$event.stopPropagation()">
+      <button
+        type="button"
+        (click)="zoomMenos($event)"
+        [disabled]="zoom() <= 1">
+        <fa-icon [icon]="faMinus"></fa-icon>
+      </button>
+
+      <span>{{ (zoom() * 100) | number:'1.0-0' }}%</span>
+
+      <button
+        type="button"
+        (click)="zoomMas($event)"
+        [disabled]="zoom() >= 3">
+        <fa-icon [icon]="faPlus"></fa-icon>
+      </button>
+
+      <button
+        type="button"
+        (click)="resetZoom(); $event.stopPropagation()"
+        [disabled]="zoom() === 1">
+        <fa-icon [icon]="faRotateLeft"></fa-icon>
+      </button>
+    </div>
+
+  </div>
+}
+
+<app-formuarlio-detalle #formularioRef />
+
+<!-- SECCIÓN DE RELACIONADOS -->
+<app-relacionados [relacionadosData]="relacionados()"/>
+
+@if (mostrarLoginModal()) {
+  <app-login-modal (cerrarModal)="cerrarLoginModal()"></app-login-modal>
+}

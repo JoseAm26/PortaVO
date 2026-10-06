@@ -1,0 +1,222 @@
+@use "sass:color";
+
+// Variables de diseño
+$azul-primario: #0d2c54;
+$azul-hover: #0056a0;
+$fondo-footer: #f8fafc;
+$texto-oscuro: #1e293b;
+$texto-medio: #475569;
+$texto-suave: #94a3b8;
+$borde-color: rgba(13, 44, 84, 0.1);
+$transicion: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+
+:host {
+  display: block;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.footer {
+  position: relative;
+  background-color: $fondo-footer;
+  color: $texto-oscuro;
+  padding: 0 0 2rem 0;
+  border-top: 1px solid rgba($azul-primario, 0.08);
+
+  // Barra de acento con degradado corporativo
+  .footer-accent-bar {
+    height: 4px;
+    width: 100%;
+    background: linear-gradient(90deg, $azul-primario 0%, $azul-hover 50%, #0d2c54 100%);
+    margin-bottom: 3rem;
+  }
+
+  .footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  // --- Columnas principales ---
+  .footer-top {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2.5rem;
+
+    @media (min-width: 640px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (min-width: 992px) {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3rem;
+    }
+  }
+
+  .footer-column {
+    .column-header {
+      margin-bottom: 1.25rem;
+
+      h3 {
+        color: $azul-primario;
+        font-size: 1.25rem;
+        font-weight: 800;
+        margin: 0 0 0.25rem 0;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+      }
+
+      .subtitle {
+        display: inline-block;
+        color: $azul-hover;
+        font-size: 0.875rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        position: relative;
+
+        &::after {
+          content: "";
+          display: block;
+          width: 24px;
+          height: 2px;
+          background-color: $azul-hover;
+          margin-top: 6px;
+          border-radius: 2px;
+        }
+      }
+    }
+
+    .footer-nav {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      li {
+        margin-bottom: 0.5rem;
+
+        a {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.35rem;
+          color: $texto-medio;
+          text-decoration: none;
+          font-size: 0.925rem;
+          font-weight: 500;
+          transition: $transicion;
+          cursor: pointer;
+
+          .external-icon {
+            font-size: 0.7rem;
+            opacity: 0.6;
+            transition: opacity 0.2s ease;
+          }
+
+          &:hover {
+            color: $azul-primario;
+            transform: translateX(4px);
+
+            .external-icon {
+              opacity: 1;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // Divisor horizontal suave
+  .footer-divider {
+    border: 0;
+    height: 1px;
+    background-color: $borde-color;
+    margin: 3rem 0 2rem 0;
+  }
+
+  // --- Bloque inferior (Redes y Legales) ---
+  .footer-bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
+  // Redes Sociales
+  .social-links {
+    display: flex;
+    gap: 0.75rem;
+
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background-color: #ffffff;
+      color: $azul-primario;
+      border: 1px solid $borde-color;
+      border-radius: 50%;
+      text-decoration: none;
+      font-size: 1rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+      transition: $transicion;
+
+      &:hover {
+        background-color: $azul-primario;
+        color: #ffffff;
+        border-color: $azul-primario;
+        transform: translateY(-3px);
+        box-shadow: 0 4px 12px rgba($azul-primario, 0.25);
+      }
+    }
+  }
+
+  // Enlaces Legales
+  .legal-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem 0.75rem;
+
+    a {
+      color: $texto-medio;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: $transicion;
+
+      &:hover {
+        color: $azul-primario;
+        text-decoration: underline;
+      }
+    }
+
+    .dot-separator {
+      color: $texto-suave;
+      font-size: 0.75rem;
+
+      @media (max-width: 767px) {
+        display: none; // Ocultar puntos en móvil cuando se envuelvan las líneas
+      }
+    }
+  }
+
+  // Copyright
+  .footer-copy {
+    text-align: center;
+    font-size: 0.8rem;
+    color: $texto-suave;
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px dashed rgba(148, 163, 184, 0.25);
+
+    strong {
+      color: $texto-medio;
+    }
+  }
+}

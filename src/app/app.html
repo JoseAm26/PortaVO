@@ -1,0 +1,73 @@
+<shared-menu />
+
+<router-outlet />
+
+@if (mostrarLogin) {
+  <app-login-modal
+    (cerrarModal)="cerrarLogin()">
+  </app-login-modal>
+}
+
+<!-- Modal de Consentimiento de WhatsApp -->
+@if (mostrarModalWhatsapp) {
+  <div class="modal-backdrop">
+    <div class="modal-container">
+      <h2>{{ 'WHATSAPP_MODAL.TITULO' | translate }}</h2>
+
+      <div class="legal-info">
+        <p><strong>{{ 'WHATSAPP_MODAL.RESPONSABLE_LABEL' | translate }}:</strong> {{ 'WHATSAPP_MODAL.RESPONSABLE_VALOR' | translate }}</p>
+        <p><strong>{{ 'WHATSAPP_MODAL.FINALIDAD_LABEL' | translate }}:</strong> {{ 'WHATSAPP_MODAL.FINALIDAD_VALOR' | translate }}</p>
+        <p><strong>{{ 'WHATSAPP_MODAL.DERECHOS_LABEL' | translate }}:</strong> {{ 'WHATSAPP_MODAL.DERECHOS_VALOR' | translate }}</p>
+        <p>
+          <strong>{{ 'WHATSAPP_MODAL.INFO_ADICIONAL_LABEL' | translate }}:</strong> {{ 'WHATSAPP_MODAL.DISPONIBLE_EN' | translate }}
+          <a routerLink="/politica-privacidad" (click)="cerrarModalWhatsapp()">
+            {{ 'WHATSAPP_MODAL.POLITICA_PRIVACIDAD_LINK' | translate }}
+          </a>.
+        </p>
+      </div>
+
+      <div class="modal-acciones">
+        <button class="btn-cancelar" (click)="cerrarModalWhatsapp()">
+          {{ 'WHATSAPP_MODAL.BTN_CANCELAR' | translate }}
+        </button>
+        <button class="btn-aceptar" (click)="confirmarAperturaWhatsapp()">
+          <!-- SUSTITUIDO: Icono de WhatsApp en el modal -->
+          <fa-icon [icon]="faWhatsapp"></fa-icon>
+          {{ 'WHATSAPP_MODAL.BTN_ACEPTAR' | translate }}
+        </button>
+      </div>
+    </div>
+  </div>
+}
+
+<div #contactoSection>
+  <shared-contacto />
+</div>
+
+<shared-footer />
+
+<div class="acciones-flotantes">
+
+  <button
+    class="btn-ayuda"
+    aria-label="¿Cómo puedo ayudarte?"
+    (click)="abrirModalWhatsapp()">
+
+    <!-- SUSTITUIDO: Icono de WhatsApp flotante -->
+    <fa-icon [icon]="faWhatsapp" class="icono-accion"></fa-icon>
+    <span class="texto-accion">¿Cómo puedo ayudarte?</span>
+
+  </button>
+
+  <button
+    class="btn-contacto"
+    aria-label="Contacta con nosotros"
+    (click)="contactoSection.scrollIntoView({ behavior: 'smooth', block: 'start' })">
+
+    <!-- SUSTITUIDO: Icono de Sobred/Email flotante -->
+    <fa-icon [icon]="faEnvelope" class="icono-accion"></fa-icon>
+    <span class="texto-accion">Contacta con nosotros</span>
+
+  </button>
+
+</div>

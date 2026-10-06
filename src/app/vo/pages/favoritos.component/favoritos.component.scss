@@ -1,0 +1,441 @@
+@use "sass:color";
+
+// ==========================================
+// PALETA DE COLORES (Azules corporativos)
+// ==========================================
+$azul-marino-oscuro: #001a35;
+$azul-corporativo: #0056a0;
+$azul-cyan-brillante: #0084ff;
+$azul-cielo-suave: #f2f7fc;
+$azul-medio-texto: #335375;
+$blanco-puro: #ffffff;
+
+$color-texto-oscuro: $azul-marino-oscuro;
+$color-texto-mutado: $azul-medio-texto;
+$color-fondo-tarjeta: $blanco-puro;
+$color-borde: rgba(0, 86, 160, 0.12);
+$color-primario: $azul-corporativo;
+$color-consultar: $azul-cyan-brillante;
+
+$transicion-suave: transform 0.2s cubic-bezier(0.25, 0.8, 0.25, 1),
+                  opacity 0.2s cubic-bezier(0.25, 0.8, 0.25, 1),
+                  background-color 0.2s cubic-bezier(0.25, 0.8, 0.25, 1),
+                  border-color 0.2s cubic-bezier(0.25, 0.8, 0.25, 1),
+                  box-shadow 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
+
+:host {
+  display: block;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background-color: #f8f9fa;
+  min-height: 100vh;
+  contain: layout style;
+}
+
+.area-privada {
+  padding: 3rem 1rem;
+
+  .contenedor-global {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  /* --- CABECERA DE ÁREA PRIVADA --- */
+  .cabecera {
+    background: $blanco-puro;
+    border-radius: 12px;
+    padding: 24px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid $color-borde;
+    box-shadow: 0 4px 20px rgba(0, 26, 53, 0.04);
+    margin-bottom: 1.5rem;
+    min-height: 108px;
+    box-sizing: border-box;
+
+    .info-cabecera {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .tag {
+      display: inline-block;
+      background-color: color.adjust($azul-cyan-brillante, $lightness: 42%);
+      color: $azul-corporativo;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-bottom: 8px;
+      line-height: 1;
+      align-self: flex-start;
+    }
+
+    h1 {
+      color: $color-texto-oscuro;
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin: 0;
+      line-height: 1.2;
+      min-height: 1.2em;
+    }
+
+    /* CONTROL RIGUROSO PARA AVATAR / ICONO CABECERA */
+    img, i, svg {
+      width: 60px !important;
+      height: 60px !important;
+      max-width: 60px !important;
+      max-height: 60px !important;
+      font-size: 30px !important;
+      line-height: 60px !important;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid $azul-corporativo;
+      box-sizing: border-box;
+      padding: 2px;
+      display: flex !important;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      overflow: hidden;
+    }
+  }
+
+  /* --- BARRA DE ACCIONES RÁPIDAS --- */
+  .acciones {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+
+    .accion {
+      background: $blanco-puro;
+      padding: 14px 18px;
+      border-radius: 8px;
+      border: 1px solid $color-borde;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      color: $color-texto-oscuro;
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: $transicion-suave;
+      min-height: 52px;
+      box-sizing: border-box;
+
+      /* FIX DEFINTIVO ICONOS GIGANTES EN BOTONES */
+      i, svg {
+        font-size: 1.1rem !important;
+        width: 1.1rem !important;
+        height: 1.1rem !important;
+        max-width: 1.1rem !important;
+        max-height: 1.1rem !important;
+        line-height: 1.1rem !important;
+        color: $azul-corporativo;
+        display: inline-flex !important;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        overflow: hidden;
+
+        &::before {
+          font-size: 1.1rem !important;
+        }
+      }
+
+      &:hover {
+        background-color: $azul-corporativo;
+        color: $blanco-puro;
+        border-color: $azul-corporativo;
+        transform: translateY(-2px);
+
+        i, svg {
+          color: $blanco-puro;
+        }
+      }
+    }
+  }
+
+  /* --- CARGA Y ESTADO VACÍO --- */
+  .loading,
+  .sin-favoritos {
+    text-align: center;
+    padding: 3rem 1rem;
+    background: $blanco-puro;
+    border: 1px solid $color-borde;
+    border-radius: 10px;
+    color: $color-texto-mutado;
+    font-size: 1rem;
+    font-weight: 600;
+    min-height: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+
+    i, svg {
+      margin-right: 8px;
+      color: $azul-corporativo;
+      font-size: 1.2rem !important;
+      width: 1.2rem !important;
+      height: 1.2rem !important;
+      display: inline-flex !important;
+    }
+  }
+
+  /* --- LISTADO DE TARJETAS HORIZONTALES --- */
+  .listado-tarjetas {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .tarjeta-horizontal {
+    display: flex;
+    background: $color-fondo-tarjeta;
+    border: 1px solid $color-borde;
+    border-radius: 10px;
+    overflow: hidden;
+    min-height: 120px;
+    transition: $transicion-suave;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.06);
+      border-color: color.adjust($color-borde, $lightness: -5%);
+    }
+
+    .zona-imagen {
+      width: 180px;
+      min-width: 180px;
+      aspect-ratio: 3 / 2;
+      background-color: #f1f3f5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+
+      .vehiculo-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+    }
+
+    .zona-contenido {
+      display: flex;
+      flex: 1;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 1.5rem;
+      box-sizing: border-box;
+    }
+
+    .cabecera-tarjeta {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+
+      h3 {
+        margin: 0;
+        font-size: 1.1rem;
+        color: $color-texto-oscuro;
+        font-weight: 600;
+        line-height: 1.3;
+        min-height: 1.3em;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+
+        .modelo {
+          font-weight: 400;
+          color: $color-texto-mutado;
+          margin-left: 0.5rem;
+        }
+
+        .id-stoc {
+          font-size: 0.75rem;
+          background: #e9ecef;
+          color: $color-texto-mutado;
+          padding: 2px 6px;
+          border-radius: 4px;
+          margin-left: 10px;
+          font-weight: 600;
+          line-height: 1;
+        }
+      }
+
+      .especificaciones {
+        display: flex;
+        gap: 1rem;
+        font-size: 0.85rem;
+        color: $color-texto-mutado;
+        min-height: 1.2em;
+
+        .dato {
+          display: flex;
+          align-items: center;
+          gap: 0.35rem;
+
+          /* FIX DEFINITIVO ICONOS GIGANTES EN ESPECIFICACIONES */
+          i, svg {
+            color: $color-primario;
+            font-size: 0.95rem !important;
+            width: 0.95rem !important;
+            height: 0.95rem !important;
+            max-width: 0.95rem !important;
+            max-height: 0.95rem !important;
+            line-height: 0.95rem !important;
+            display: inline-flex !important;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            overflow: hidden;
+
+            &::before {
+              font-size: 0.95rem !important;
+            }
+          }
+        }
+      }
+    }
+
+    /* --- BLOQUE DERECHO: PRECIO + BADGE + BOTÓN DETALLES --- */
+    .tarjeta-fin {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      justify-content: center;
+      gap: 0.5rem;
+      min-width: 160px;
+
+      .precio-fijo {
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: $color-texto-oscuro;
+        line-height: 1.2;
+        min-height: 1.2em;
+      }
+
+      .precio-consultar {
+        font-size: 0.85rem;
+        font-weight: 600;
+        color: $color-consultar;
+        background-color: color.adjust($color-consultar, $lightness: 45%);
+        padding: 0.2rem 0.6rem;
+        border-radius: 5px;
+        border: 1px solid color.adjust($color-consultar, $lightness: 40%);
+        line-height: 1.2;
+      }
+
+      .acciones-fin {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+
+        .estado-tag {
+          .badge {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            padding: 4px 8px;
+            border-radius: 4px;
+            display: inline-block;
+            line-height: 1;
+
+            &.disponible {
+              background-color: rgba(16, 185, 129, 0.1);
+              color: #10b981;
+            }
+
+            &.vendido {
+              background-color: rgba(239, 68, 68, 0.1);
+              color: #ef4444;
+            }
+          }
+        }
+
+        .btn-solicitar {
+          background-color: $color-primario;
+          color: #ffffff;
+          border: none;
+          padding: 0.45rem 1rem;
+          font-size: 0.85rem;
+          font-weight: 600;
+          border-radius: 6px;
+          cursor: pointer;
+          transition: $transicion-suave;
+          height: 32px;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+
+          &:hover {
+            background-color: color.adjust($color-primario, $lightness: -10%);
+            transform: translateY(-1px);
+          }
+        }
+      }
+    }
+  }
+}
+
+/* --- ADAPTABILIDAD MÓVIL (<768px) --- */
+@media (max-width: 768px) {
+  .area-privada {
+    padding: 1.5rem 0.8rem;
+
+    .cabecera {
+      flex-direction: column-reverse;
+      text-align: center;
+      gap: 12px;
+      min-height: auto;
+
+      .info-cabecera {
+        align-items: center;
+      }
+
+      .tag {
+        align-self: center;
+      }
+    }
+
+    .acciones {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .tarjeta-horizontal {
+      flex-direction: column;
+
+      .zona-imagen {
+        width: 100%;
+        min-width: 100%;
+        aspect-ratio: 16 / 9;
+      }
+
+      .zona-contenido {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+        padding: 1.25rem 1rem;
+      }
+
+      .tarjeta-fin {
+        width: 100%;
+        min-width: 100%;
+        align-items: flex-start;
+        gap: 0.75rem;
+
+        .acciones-fin {
+          width: 100%;
+          justify-content: space-between;
+        }
+      }
+    }
+  }
+}

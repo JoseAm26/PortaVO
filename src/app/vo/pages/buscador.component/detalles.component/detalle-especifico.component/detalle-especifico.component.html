@@ -1,0 +1,64 @@
+@if (mostrarDetallesEspecificos()) {
+  @if (vehiculo(); as v) {
+    <div class="mt-5 detalle-especifico">
+
+      <!-- Cabecera de la sección -->
+      <div class="d-flex flex-wrap align-items-center justify-content-between mb-4 gap-2 pb-2 border-bottom-corporativo">
+        <h3 class="subtitulo-seccion mb-0 d-flex align-items-center gap-2">
+          <fa-icon [icon]="faListCheck" class="icono-seccion"></fa-icon>
+          <span>Detalles específicos de <strong class="texto-resaltado">{{ tituloTipo() }}</strong></span>
+        </h3>
+
+        <span class="badge-tipo-vehiculo">
+          <fa-icon [icon]="faTruckFront" class="me-1"></fa-icon>
+          {{ tituloTipo() }}
+        </span>
+      </div>
+
+      <!-- Grid de Fichas Desplegables -->
+      <div class="row g-3 align-items-start">
+        @for (grupo of detallesEspecificos(); track grupo.titulo) {
+          <div class="col-md-6 col-xl-4">
+
+            <details class="card-ficha-bento" open>
+
+              <!-- Cabecera / Control de colapso -->
+              <summary class="card-header-bento">
+                <div class="d-flex align-items-center gap-2">
+                  <fa-icon [icon]="getIconoGrupo(grupo.icono)" ></fa-icon>
+                  <h4 class="titulo-grupo mb-0">{{ grupo.titulo }}</h4>
+                </div>
+                <fa-icon [icon]="faChevronDown" class="flecha-desplegar"></fa-icon>
+              </summary>
+
+              <!-- Contenido Desplegable -->
+              <div class="card-body-bento">
+                <ul class="lista-especificaciones">
+                  @for (campo of grupo.campos; track campo.label) {
+                    <li class="item-especificacion">
+                      <span class="etiqueta-campo">{{ campo.label }}</span>
+
+                      <div class="valor-campo">
+                        @if (campo.tipo === 'boolean' || campo.tipo === 'ebs' || campo.tipo === 'abs') {
+                          <span class="badge-booleano" [ngClass]="campoBoolean(v, campo) ? 'cumple' : 'no-cumple'">
+                            <fa-icon [icon]="campoBoolean(v, campo) ? faCheck : faXmark"></fa-icon>
+                            {{ campoBoolean(v, campo) ? 'Sí' : 'No' }}
+                          </span>
+                        } @else {
+                          <span class="texto-valor">{{ valorCampo(v, campo) }}</span>
+                        }
+                      </div>
+                    </li>
+                  }
+                </ul>
+              </div>
+
+            </details>
+
+          </div>
+        }
+      </div>
+
+    </div>
+  }
+}

@@ -1,0 +1,96 @@
+<div class="contenedor-global pagina-legal">
+  <!-- Cabecera principal -->
+  <header class="header-aviso">
+    <span class="tagline">{{ 'AVISO_LEGAL.TAGLINE' | translate }}</span>
+    <h1>{{ 'AVISO_LEGAL.TITULO_1' | translate }} <span class="destaque">{{ 'AVISO_LEGAL.TITULO_2' | translate }}</span></h1>
+    <p class="subtitulo">{{ 'AVISO_LEGAL.SUBTITULO' | translate }}</p>
+  </header>
+
+  <!-- Cuerpo del texto legal -->
+  <div class="cuerpo-legal">
+
+    <!-- Introducción -->
+    <section class="seccion-legal">
+      <p [innerHTML]="'AVISO_LEGAL.INTRODUCCION.P1' | translate"></p>
+      <p>{{ 'AVISO_LEGAL.INTRODUCCION.P2' | translate }}</p>
+      <p>{{ 'AVISO_LEGAL.INTRODUCCION.P3' | translate }}</p>
+    </section>
+
+    <!-- 1. DATOS IDENTIFICATIVOS -->
+    <section class="seccion-legal">
+      <h2>{{ 'AVISO_LEGAL.DATOS.TITULO' | translate }}</h2>
+      <div class="grid-datos">
+        <div class="dato-item">
+          <span class="etiqueta">{{ 'AVISO_LEGAL.DATOS.NOMBRE_COMERCIAL' | translate }}</span>
+          <span class="valor">VEINSUR</span>
+        </div>
+        <div class="dato-item">
+          <span class="etiqueta">{{ 'AVISO_LEGAL.DATOS.DENOMINACION_SOCIAL' | translate }}</span>
+          <span class="valor">VEINSUR, S.A.U.</span>
+        </div>
+        <div class="dato-item">
+          <span class="etiqueta">{{ 'AVISO_LEGAL.DATOS.NIF' | translate }}</span>
+          <span class="valor">A04644571</span>
+        </div>
+        <div class="dato-item">
+          <span class="etiqueta">{{ 'AVISO_LEGAL.DATOS.DOMINIO' | translate }}</span>
+          <span class="valor">www.veinsurtrucks.com</span>
+        </div>
+        <div class="dato-item span-2">
+          <span class="etiqueta">{{ 'AVISO_LEGAL.DATOS.DOMICILIO' | translate }}</span>
+          <span class="valor">{{ 'AVISO_LEGAL.DATOS.VALORES.DOMICILIO' | translate }}</span>
+        </div>
+        <div class="dato-item">
+          <span class="etiqueta">{{ 'AVISO_LEGAL.DATOS.TELEFONO' | translate }}</span>
+          <span class="valor">950 21 20 00</span>
+        </div>
+        <div class="dato-item">
+          <span class="etiqueta">{{ 'AVISO_LEGAL.DATOS.EMAIL' | translate }}</span>
+          <span class="valor"><a href="mailto:webmaster@veinsur.es">webmaster@veinsur.es</a></span>
+        </div>
+        <div class="dato-item span-2">
+          <span class="etiqueta">{{ 'AVISO_LEGAL.DATOS.REGISTRALES' | translate }}</span>
+          <span class="valor">{{ 'AVISO_LEGAL.DATOS.VALORES.REGISTRALES' | translate }}</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. PROPIEDAD INTELECTUAL -->
+    <section class="seccion-legal">
+      <h2>{{ 'AVISO_LEGAL.PROPIEDAD.TITULO' | translate }}</h2>
+      <p>{{ 'AVISO_LEGAL.PROPIEDAD.P1' | translate }}</p>
+      <p>{{ 'AVISO_LEGAL.PROPIEDAD.P2' | translate }}</p>
+      <p>{{ 'AVISO_LEGAL.PROPIEDAD.P3' | translate }}</p>
+      <p>{{ 'AVISO_LEGAL.PROPIEDAD.P4' | translate }}</p>
+      <div class="nota-contacto">
+        {{ 'AVISO_LEGAL.PROPIEDAD.NOTA' | translate }} <a href="mailto:webmaster@veinsur.es">webmaster@veinsur.es</a>.
+      </div>
+    </section>
+
+    <!-- 3. EXENCIÓN DE RESPONSABILIDADES -->
+    <section class="seccion-legal">
+      <h2>{{ 'AVISO_LEGAL.EXENCION.TITULO' | translate }}</h2>
+      <p>{{ 'AVISO_LEGAL.EXENCION.P1' | translate }}</p>
+
+      <h3>{{ 'AVISO_LEGAL.EXENCION.COOKIES.TITULO' | translate }}</h3>
+      <p>{{ 'AVISO_LEGAL.EXENCION.COOKIES.P1' | translate }}</p>
+      <p>{{ 'AVISO_LEGAL.EXENCION.COOKIES.P2' | translate }}</p>
+      <p>{{ 'AVISO_LEGAL.EXENCION.COOKIES.P3' | translate }}</p>
+
+      <h3>{{ 'AVISO_LEGAL.EXENCION.ENLACES.TITULO' | translate }}</h3>
+      <p>{{ 'AVISO_LEGAL.EXENCION.ENLACES.P1' | translate }}</p>
+      <p>{{ 'AVISO_LEGAL.EXENCION.ENLACES.P2' | translate }}</p>
+      <p>{{ 'AVISO_LEGAL.EXENCION.ENLACES.P3' | translate }}</p>
+
+      <h3>{{ 'AVISO_LEGAL.EXENCION.IP.TITULO' | translate }}</h3>
+      <p>{{ 'AVISO_LEGAL.EXENCION.IP.P1' | translate }}</p>
+    </section>
+
+    <!-- 4. LEY APLICABLE -->
+    <section class="seccion-legal">
+      <h2>{{ 'AVISO_LEGAL.LEY.TITULO' | translate }}</h2>
+      <p>{{ 'AVISO_LEGAL.LEY.P1' | translate }}</p>
+    </section>
+
+  </div>
+</div>

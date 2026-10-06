@@ -1,0 +1,215 @@
+@use "sass:color";
+
+// ==========================================
+// PALETA GLOBAL Y VARIABLES
+// ==========================================
+$azul-marino-oscuro: #001a35;
+$azul-corporativo: #0056a0;
+$azul-cyan-brillante: #0084ff;
+$azul-cielo-suave: #f2f7fc;
+$azul-medio-texto: #335375;
+$blanco-puro: #ffffff;
+
+$borde-ligero: 1px solid rgba($azul-corporativo, 0.14);
+$radio-esquina: 12px;
+// Transición optimizada (evita 'all' para mejorar performance)
+$transicion: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out;
+$sombra-suave: 0 4px 14px rgba(0, 26, 53, 0.05);
+
+// ==========================================
+// DETALLES ESPECÍFICOS
+// ==========================================
+.detalle-especifico {
+  .border-bottom-corporativo {
+    border-bottom: 2px solid rgba($azul-corporativo, 0.12);
+  }
+
+  .icono-seccion {
+    color: $azul-cyan-brillante;
+  }
+
+  .texto-resaltado {
+    color: $azul-corporativo;
+  }
+
+  .badge-tipo-vehiculo {
+    background-color: rgba($azul-cyan-brillante, 0.1);
+    color: $azul-corporativo;
+    border: 1px solid rgba($azul-cyan-brillante, 0.3);
+    padding: 0.4rem 1rem;
+    border-radius: 30px;
+    font-size: 0.8rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  // Tarjetas Desplegables Optimizadas sin CLS
+  details.card-ficha-bento {
+    background-color: $blanco-puro;
+    border: $borde-ligero;
+    border-radius: $radio-esquina;
+    box-shadow: $sombra-suave;
+    overflow: hidden;
+    transition: $transicion;
+    will-change: transform, box-shadow;
+
+    // Eliminar marcadores por defecto de browsers
+    summary::-webkit-details-marker,
+    summary::marker {
+      display: none;
+    }
+
+    &:hover {
+      box-shadow: 0 6px 18px rgba(0, 26, 53, 0.08);
+      border-color: rgba($azul-cyan-brillante, 0.4);
+    }
+
+    // Cabecera cuando está CERRADO
+    summary.card-header-bento {
+      background-color: $azul-cielo-suave;
+      color: $azul-marino-oscuro;
+      padding: 0.75rem 1.1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+      user-select: none;
+      transition: $transicion;
+      border-radius: $radio-esquina;
+
+      &:hover {
+        background-color: rgba($azul-cyan-brillante, 0.1);
+
+        .icono-grupo {
+          color: $azul-cyan-brillante;
+          transform: scale(1.1);
+        }
+      }
+
+      .icono-grupo {
+        font-size: 1.05rem;
+        color: $azul-corporativo;
+        transition: transform 0.2s ease, color 0.2s ease;
+      }
+
+      .titulo-grupo {
+        font-size: 0.88rem;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 0.4px;
+        color: $azul-marino-oscuro;
+      }
+
+      .flecha-desplegar {
+        font-size: 0.8rem;
+        color: $azul-medio-texto;
+        transition: transform 0.25s ease;
+      }
+    }
+
+    // Estilos cuando está ABIERTO (<details open>)
+    &[open] {
+      summary.card-header-bento {
+        background-color: $azul-corporativo;
+        color: $blanco-puro;
+        border-radius: $radio-esquina $radio-esquina 0 0;
+
+        .icono-grupo {
+          color: $azul-cyan-brillante;
+        }
+
+        .titulo-grupo {
+          color: $blanco-puro;
+        }
+
+        .flecha-desplegar {
+          color: $blanco-puro;
+          transform: rotate(180deg);
+        }
+
+        &:hover {
+          background-color: $azul-marino-oscuro;
+        }
+      }
+
+      .card-body-bento {
+        animation: desplegarSuave 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+    }
+
+    .card-body-bento {
+      padding: 0.75rem 1.1rem;
+      background-color: $blanco-puro;
+    }
+
+    .lista-especificaciones {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      .item-especificacion {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.6rem 0;
+        border-bottom: 1px dashed rgba($azul-corporativo, 0.12);
+
+        &:last-child {
+          border-bottom: none;
+        }
+
+        .etiqueta-campo {
+          font-size: 0.82rem;
+          color: $azul-medio-texto;
+          font-weight: 600;
+        }
+
+        .valor-campo {
+          font-size: 0.88rem;
+          font-weight: 800;
+          color: $azul-marino-oscuro;
+          text-align: right;
+
+          .texto-valor {
+            color: $azul-marino-oscuro;
+          }
+
+          .badge-booleano {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            padding: 0.15rem 0.55rem;
+            border-radius: 20px;
+            font-size: 0.72rem;
+            font-weight: 800;
+
+            &.cumple {
+              background-color: rgba(16, 185, 129, 0.12);
+              color: #059669;
+              border: 1px solid rgba(16, 185, 129, 0.25);
+            }
+
+            &.no-cumple {
+              background-color: rgba(239, 68, 68, 0.08);
+              color: #dc2626;
+              border: 1px solid rgba(239, 68, 68, 0.2);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Animación combinada de opacidad y desplazamiento sutil
+@keyframes desplegarSuave {
+  0% {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

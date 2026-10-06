@@ -1,0 +1,121 @@
+$color-corporate: #222765;
+$color-text-muted: #6c757d;
+
+/* ESTILOS CABECERA DE PÁGINA */
+.header-busquedas {
+  /* Reserva de altura mínima para evitar saltos durante la carga de traducciones o fuentes */
+  min-height: 4rem;
+
+  .titulo-pagina {
+    color: $color-corporate;
+    font-size: 1.75rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    line-height: 1.2;
+  }
+
+  .subtitulo-pagina {
+    font-size: 0.95rem;
+    color: $color-text-muted;
+    line-height: 1.4;
+  }
+}
+
+/* TARJETA DE BÚSQUEDA GUARDADA */
+.tarjeta-busqueda {
+  .card {
+    border: 1px solid rgba(0, 0, 0, 0.08) !important;
+    border-radius: 12px;
+    /* Forzamos que la propiedad box-shadow use aceleración por GPU */
+    transition: box-shadow 0.2s ease-in-out;
+    will-change: box-shadow;
+
+    &:hover {
+      box-shadow: 0 8px 24px rgba(34, 39, 101, 0.08) !important;
+    }
+  }
+
+  .sublabel {
+    font-size: 0.8rem;
+    color: $color-text-muted;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.35rem;
+    display: block;
+  }
+
+  /* Contenedor de Badges (Prevención de CLS durante la carga asíncrona) */
+  .contenedor-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    align-items: center;
+    /* Reserva un espacio vertical mínimo equivalente a una fila de badges */
+    min-height: 2.2rem;
+  }
+
+  /* Badges para Tipos y Marcas seleccionadas */
+  .badge-filtro {
+    background-color: #f1f3f5;
+    color: $color-corporate;
+    font-weight: 600;
+    font-size: 0.85rem;
+    padding: 0.45rem 0.75rem;
+    border-radius: 6px;
+    border: 1px solid #dee2e6;
+    display: inline-flex;
+    align-items: center;
+    line-height: 1;
+    white-space: nowrap;
+  }
+
+  /* Cajas organizadoras para los Rangos (Km, Año, Potencia, Precio) */
+  .rango-box {
+    background-color: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    padding: 0.65rem 0.5rem;
+    text-align: center;
+    height: 100%;
+    /* Mantiene una altura fija mínima para evitar tirones de rejilla */
+    min-height: 64px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .rango-titulo {
+      display: block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: $color-text-muted;
+      text-transform: uppercase;
+      margin-bottom: 0.2rem;
+      line-height: 1;
+
+      /* Reserva de espacio fija para los iconos y evitar FOIT/FOUT */
+      i {
+        color: $color-corporate;
+        display: inline-block;
+        width: 1.1em;
+        text-align: center;
+      }
+    }
+
+    .rango-valores {
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: $color-corporate;
+      line-height: 1.2;
+      /* Mantiene espacio aun si la variable interpolated de Angular no se ha resuelto */
+      min-height: 1.05rem;
+    }
+  }
+}
+
+/* Divisor vertical responsivo */
+@media (min-width: 992px) {
+  .border-end-lg {
+    border-right: 1px solid #e9ecef !important;
+  }
+}

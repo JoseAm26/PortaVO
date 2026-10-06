@@ -1,0 +1,318 @@
+<div class="interfaz-bento">
+
+  <section class="split-cabecera con-fondo">
+    <div class="contenedor-global grid-split">
+
+      <div class="columna-hero">
+        <span class="tagline">{{ 'HOME.TAGLINE' | translate }}</span>
+
+        <h1>
+          {{ 'HOME.TITULO_1' | translate }}
+          <span class="destaque">
+            {{ 'HOME.TITULO_2' | translate }}
+          </span>
+        </h1>
+
+        <p class="descripcion">
+          {{ 'HOME.DESCRIPCION' | translate }}
+        </p>
+
+        <div class="mini-contadores">
+          <div class="mini-item">
+            <span class="numero">+350</span>
+            <span class="etiqueta">
+              {{ 'HOME.VEHICULOS_LISTOS' | translate }}
+            </span>
+          </div>
+
+          <div class="mini-item">
+            <span class="numero">24h</span>
+            <span class="etiqueta">
+              {{ 'HOME.SOPORTE_RUTA' | translate }}
+            </span>
+          </div>
+
+          <div class="mini-item">
+            <span class="numero">+30</span>
+            <span class="etiqueta">
+              {{ 'HOME.ANIOS_CONTIGO' | translate }}
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div class="columna-buscador">
+        <div class="caja-buscador">
+
+          <h2>
+            {{ 'HOME.FILTROS_BUSQUEDA' | translate }}
+          </h2>
+
+          <div class="formulario-buscador">
+
+            <div class="grupo-campo">
+              <label>{{ 'BUSCADOR.MARCA' | translate }}</label>
+
+              <select
+                [ngModel]="filtros().marca"
+                (ngModelChange)="actualizarFiltro('marca', $event)">
+
+                <option value="">
+                  {{ 'BUSCADOR.TODAS_MARCAS' | translate }}
+                </option>
+
+                @for (m of marcas(); track m.codigo) {
+                  <option [value]="m.codigo">{{ m.nombre }}</option>
+                }
+              </select>
+            </div>
+
+            <div class="grupo-campo">
+
+              <label>{{ 'BUSCADOR.MODELO' | translate }}</label>
+
+              <select
+                [ngModel]="filtros().modelo"
+                (ngModelChange)="actualizarFiltro('modelo', $event)">
+
+                <option value="">
+                  {{ 'BUSCADOR.TODOS_MODELOS' | translate }}
+                </option>
+
+                @for (modelo of modelos(); track modelo) {
+                  <option [value]="modelo">
+                    {{ modelo }}
+                  </option>
+                }
+
+              </select>
+
+            </div>
+
+            <div class="doble-campo">
+
+              <div class="grupo-campo">
+
+                <label>{{ 'BUSCADOR.ANIO_MIN' | translate }}</label>
+
+                <select
+                  [ngModel]="filtros().anio"
+                  (ngModelChange)="actualizarFiltro('anio', $event)">
+
+                  <option value="">
+                    {{ 'BUSCADOR.CUALQUIERA' | translate }}
+                  </option>
+
+                  <option value="2023">> 2023</option>
+                  <option value="2021">> 2021</option>
+                  <option value="2019">> 2019</option>
+
+                </select>
+
+              </div>
+
+              <div class="grupo-campo">
+
+                <label>{{ 'BUSCADOR.KM_MAX' | translate }}</label>
+
+                <select
+                  [ngModel]="filtros().km"
+                  (ngModelChange)="actualizarFiltro('km', $event)">
+
+                  <option value="">
+                    {{ 'BUSCADOR.CUALQUIERA' | translate }}
+                  </option>
+
+                  <option value="300000">&lt; 300k km</option>
+                  <option value="500000">&lt; 500k km</option>
+
+                </select>
+
+              </div>
+
+            </div>
+
+            <button
+              class="btn-buscar-principal"
+              (click)="buscar()">
+
+              <fa-icon [icon]="faMagnifyingGlass"></fa-icon>
+
+              {{ 'BUSCADOR.BUSCAR' | translate }}
+
+            </button>
+
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="bento-dashboard">
+    <div class="contenedor-global">
+
+      <div class="grid-bento">
+
+        <div class="bento-box bento-marcas">
+
+          <h3>
+            {{ 'HOME.MARCAS_BUSCADAS' | translate }}
+          </h3>
+
+          <div class="tags-marcas">
+
+            @for (m of marcas(); track m.nombre) {
+              <button class="tag-marca-btn">
+                {{ m.nombre }}
+              </button>
+            }
+
+          </div>
+
+        </div>
+
+        <div class="bento-box bento-valor">
+
+          <div class="icono-valor">
+            <fa-icon [icon]="faShieldHalved"></fa-icon>
+          </div>
+
+          <h4>{{ 'HOME.TALLER_OFICIAL' | translate }}</h4>
+
+          <p>
+            {{ 'HOME.TALLER_OFICIAL_DESC' | translate }}
+          </p>
+
+        </div>
+
+        <div class="bento-box bento-valor">
+
+          <div class="icono-valor">
+            <fa-icon [icon]="faTruckFast"></fa-icon>
+          </div>
+
+          <h4>{{ 'HOME.TRAMITES_EXPRES' | translate }}</h4>
+
+          <p>
+            {{ 'HOME.TRAMITES_EXPRES_DESC' | translate }}
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Componente auxiliar -->
+  <app-destacadas />
+
+  <section class="comunidad-proceso">
+
+    <div class="contenedor-global grid-dos-bloques">
+
+      <div class="bloque-proceso">
+
+        <h2>
+          {{ 'HOME.COMO_CONSEGUIR_UNIDAD' | translate }}
+        </h2>
+
+        <div class="pasos-verticales">
+
+          <div class="paso-item">
+
+            <div class="numero">1</div>
+
+            <div class="texto-paso">
+
+              <h5>
+                {{ 'HOME.PASO1_TITULO' | translate }}
+              </h5>
+
+              <p>
+                {{ 'HOME.PASO1_DESC' | translate }}
+              </p>
+
+            </div>
+
+          </div>
+
+          <div class="paso-item">
+
+            <div class="numero">2</div>
+
+            <div class="texto-paso">
+
+              <h5>
+                {{ 'HOME.PASO2_TITULO' | translate }}
+              </h5>
+
+              <p>
+                {{ 'HOME.PASO2_DESC' | translate }}
+              </p>
+
+            </div>
+
+          </div>
+
+          <div class="paso-item">
+
+            <div class="numero">3</div>
+
+            <div class="texto-paso">
+
+              <h5>
+                {{ 'HOME.PASO3_TITULO' | translate }}
+              </h5>
+
+              <p>
+                {{ 'HOME.PASO3_DESC' | translate }}
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <section class="seccion-cta-final">
+
+    <div class="contenedor-global grid-cta">
+
+      <div class="info-cta">
+
+        <h2>
+          {{ 'HOME.RENOVAR_FLOTA' | translate }}
+        </h2>
+
+        <p>
+          {{ 'HOME.RENOVAR_FLOTA_DESC' | translate }}
+        </p>
+
+      </div>
+
+      <div class="accion-cta">
+
+        <button class="btn-cta">
+
+          {{ 'HOME.INICIAR_VALORACION' | translate }}
+
+          <fa-icon [icon]="faArrowRight"></fa-icon>
+
+        </button>
+
+      </div>
+
+    </div>
+
+  </section>
+
+</div>

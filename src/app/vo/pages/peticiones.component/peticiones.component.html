@@ -1,0 +1,265 @@
+<div class="contenedor-global pagina-peticion">
+  <header class="header-aviso">
+    <span class="tagline">{{ 'PETICIONES.TAGLINE' | translate }}</span>
+
+    <h1>
+      {{ 'PETICIONES.TITULO_PREFIX' | translate }}
+      <span class="destaque">{{ 'PETICIONES.TITULO_HIGHLIGHT' | translate }}</span>
+    </h1>
+
+    <p class="subtitulo">
+      {{ 'PETICIONES.SUBTITULO' | translate }}
+    </p>
+  </header>
+
+  <div class="cuerpo-legal">
+    <div class="card-peticion">
+
+      @if (cargandoFiltros()) {
+        <div class="loader-container">
+          <fa-icon [icon]="faSpinner" [animation]="'spin'" class="spinner-icon"></fa-icon>
+          <p>{{ 'PETICIONES.CARGANDO_OPCIONES' | translate }}</p>
+        </div>
+      } @else {
+
+        <form [formGroup]="peticionForm" (ngSubmit)="onSubmit()" novalidate>
+
+          <div class="seccion-form">
+            <h2>{{ 'PETICIONES.SECCION_1' | translate }}</h2>
+
+            <!-- TIPO VEHÍCULO -->
+            <div class="bloque-checkbox">
+              <div class="bloque-header">
+                <h3>
+                  <fa-icon [icon]="faTruckFront"></fa-icon>
+                  {{ 'PETICIONES.CAMPOS.TIPO_VEHICULO' | translate }}
+                </h3>
+
+                <span class="contador-seleccion">
+                  {{ tiposSeleccionados.length }}
+                </span>
+              </div>
+
+              <div class="grid-checks">
+                @for (item of filtros()?.tipoVeh; track item) {
+                  <label
+                    class="check-card"
+                    [class.activo]="estaSeleccionado('tipoVehiculo', item)">
+
+                    <input
+                      type="checkbox"
+                      [checked]="estaSeleccionado('tipoVehiculo', item)"
+                      (change)="toggleCheckbox('tipoVehiculo', item, $event)" />
+
+                    <span class="check-custom">
+                      <fa-icon [icon]="faCheck"></fa-icon>
+                    </span>
+
+                    <span class="check-texto">
+                      {{ item }}
+                    </span>
+                  </label>
+                }
+              </div>
+
+              @if (peticionForm.get('tipoVehiculo')?.invalid && peticionForm.get('tipoVehiculo')?.touched) {
+                <span class="msj-error">
+                  {{ 'PETICIONES.CAMPOS.OBLIGATORIO' | translate }}
+                </span>
+              }
+            </div>
+
+            <!-- MARCA -->
+            @if (hayTipoSeleccionado) {
+              <div class="bloque-checkbox">
+                <div class="bloque-header">
+                  <h3>
+                    <fa-icon [icon]="faTag"></fa-icon>
+                    {{ 'PETICIONES.CAMPOS.MARCA' | translate }}
+                  </h3>
+
+                  <span class="contador-seleccion">
+                    {{ marcasSeleccionadas.length }}
+                  </span>
+                </div>
+
+                <div class="grid-checks">
+                  @for (item of filtros()?.desMarca; track item) {
+                    <label
+                      class="check-card"
+                      [class.activo]="estaSeleccionado('marca', item)">
+
+                      <input
+                        type="checkbox"
+                        [checked]="estaSeleccionado('marca', item)"
+                        (change)="toggleCheckbox('marca', item, $event)" />
+
+                      <span class="check-custom">
+                        <fa-icon [icon]="faCheck"></fa-icon>
+                      </span>
+
+                      <span class="check-texto">
+                        {{ item }}
+                      </span>
+                    </label>
+                  }
+                </div>
+              </div>
+            }
+
+            <!-- MODELO FILTRADO POR MARCA -->
+            @if (hayMarcaSeleccionada) {
+              <div class="bloque-checkbox">
+
+                <div class="bloque-header">
+                  <h3>
+                    <fa-icon [icon]="faList"></fa-icon>
+                    {{ 'PETICIONES.CAMPOS.MODELO' | translate }}
+                  </h3>
+
+                  <span class="contador-seleccion">
+                    {{ modelosSeleccionados.length }}
+                  </span>
+                </div>
+
+                @if (modelosFiltrados.length > 0) {
+
+                  <div class="grid-checks">
+
+                    @for (item of modelosFiltrados; track item) {
+
+                      <label
+                        class="check-card"
+                        [class.activo]="estaSeleccionado('modelo', item)">
+
+                        <input
+                          type="checkbox"
+                          [checked]="estaSeleccionado('modelo', item)"
+                          (change)="toggleCheckbox('modelo', item, $event)" />
+
+                        <span class="check-custom">
+                          <fa-icon [icon]="faCheck"></fa-icon>
+                        </span>
+
+                        <span class="check-texto">
+                          {{ item }}
+                        </span>
+
+                      </label>
+
+                    }
+
+                  </div>
+
+                } @else {
+
+                  <div class="alerta alerta-error">
+                    <fa-icon [icon]="faCircleInfo"></fa-icon>
+                    No hay modelos disponibles para las marcas seleccionadas.
+                  </div>
+
+                }
+
+              </div>
+            }
+
+
+            <!-- CARROCERÍA -->
+            @if (hayMarcaSeleccionada) {
+
+              <div class="bloque-checkbox">
+
+                <div class="bloque-header">
+                  <h3>
+                    <fa-icon [icon]="faTruckRampBox"></fa-icon>
+                    {{ 'PETICIONES.CAMPOS.CARROCERIA' | translate }}
+                  </h3>
+
+                  <span class="contador-seleccion">
+                    {{ carroceriasSeleccionadas.length }}
+                  </span>
+                </div>
+
+                <div class="grid-checks">
+
+                  @for (item of filtros()?.desCarro; track item) {
+
+                    <label
+                      class="check-card"
+                      [class.activo]="estaSeleccionado('carroceria', item)">
+
+                      <input
+                        type="checkbox"
+                        [checked]="estaSeleccionado('carroceria', item)"
+                        (change)="toggleCheckbox('carroceria', item, $event)" />
+
+                      <span class="check-custom">
+                        <fa-icon [icon]="faCheck"></fa-icon>
+                      </span>
+
+                      <span class="check-texto">
+                        {{ item }}
+                      </span>
+
+                    </label>
+
+                  }
+
+                </div>
+
+              </div>
+
+            }
+
+          </div>
+
+          @if (mensajeExito()) {
+            <div class="alerta alerta-exito">
+              <fa-icon [icon]="faCircleCheck"></fa-icon>
+              {{ mensajeExito() }}
+            </div>
+          }
+
+          @if (mensajeError()) {
+            <div class="alerta alerta-error">
+              <fa-icon [icon]="faTriangleExclamation"></fa-icon>
+              {{ mensajeError() }}
+            </div>
+          }
+
+          <div class="acciones-form">
+            <button
+              type="button"
+              class="btn-limpiar"
+              (click)="limpiarFormulario()"
+              [disabled]="enviando()">
+
+              <fa-icon [icon]="faRotateLeft"></fa-icon>
+              {{ 'PETICIONES.BOTONES.LIMPIAR' | translate }}
+            </button>
+
+            <button
+              type="submit"
+              class="btn-enviar"
+              [disabled]="enviando()">
+
+              @if (!enviando()) {
+                <span>
+                  <fa-icon [icon]=""></fa-icon>
+                  {{ 'PETICIONES.BOTONES.ENVIAR' | translate }}
+                </span>
+              } @else {
+                <span>
+                  <fa-icon [icon]="faSpinner" [animation]="'spin'"></fa-icon>
+                  {{ 'PETICIONES.BOTONES.PROCESANDO' | translate }}
+                </span>
+              }
+            </button>
+          </div>
+
+        </form>
+      }
+
+    </div>
+  </div>
+</div>

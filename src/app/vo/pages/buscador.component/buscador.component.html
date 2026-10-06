@@ -1,0 +1,519 @@
+<div class="container mt-4">
+
+  <div class="row mb-4">
+    <div class="col-12">
+      <div class="header-buscador d-flex flex-wrap align-items-center justify-content-between gap-3 pb-3 border-bottom">
+
+        <!-- TITLE AND SUBTITLE -->
+        <div>
+          <h1 class="titulo-pagina mb-1">{{ 'BUSCADOR_VEHICULOS.TITULO' | translate }}</h1>
+          <p class="subtitulo-pagina text-muted mb-0">{{ 'BUSCADOR_VEHICULOS.SUBTITULO' | translate }}</p>
+        </div>
+
+        <!-- ACTION GROUP AND MAIN SEARCH -->
+        <div class="d-flex align-items-center flex-wrap gap-2 buscador-toolbar">
+
+          <!-- SEARCH INPUT WITH ICON AND CLEAR BUTTON -->
+          <div class="search-box-container">
+            <div class="input-group search-box shadow-sm">
+              <span class="input-group-text search-icon">
+                <fa-icon [icon]="faMagnifyingGlass"></fa-icon>
+              </span>
+              <input
+                type="text"
+                class="form-control search-input"
+                [placeholder]="'BUSCADOR_VEHICULOS.PLACEHOLDER_BUSQUEDA' | translate"
+                [ngModel]="textoBusqueda()"
+                (ngModelChange)="onTextoBusquedaChange($event)"
+              />
+              @if (textoBusqueda()) {
+                <button
+                  class="btn btn-clear-search"
+                  type="button"
+                  (click)="onTextoBusquedaChange('')"
+                  [title]="'BUSCADOR_VEHICULOS.LIMPIAR_BUSQUEDA' | translate">
+                  <fa-icon [icon]="faXmark"></fa-icon>
+                </button>
+              }
+            </div>
+          </div>
+
+          <!-- Comparator Button -->
+          <button
+            type="button"
+            class="btn btn-outline-primary d-flex align-items-center gap-2 shadow-sm action-btn"
+            routerLink="/comparador">
+            <fa-icon [icon]="faScaleUnbalanced"></fa-icon>
+            <span>{{ 'BUSCADOR_VEHICULOS.COMPARAR' | translate }}</span>
+          </button>
+
+          <!-- Save Search Button -->
+          <button
+            type="button"
+            class="btn btn-warning text-white d-flex align-items-center gap-2 shadow-sm action-btn"
+            (click)="guardarBusqueda()">
+            <fa-icon [icon]="faBookmark"></fa-icon>
+            <span>{{ 'BUSCADOR_VEHICULOS.GUARDAR_BUSQUEDA' | translate }}</span>
+          </button>
+
+          <!-- Results Counter -->
+          @if (vehiculos().length > 0) {
+            <span class="badge bg-light text-dark border px-3 py-2 d-none d-xl-inline-block">
+              <strong>{{ vehiculos().length }}</strong> {{ 'BUSCADOR_VEHICULOS.VEHICULOS_DISPONIBLES' | translate }}
+            </span>
+          }
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- FILTERS BUTTON FOR MOBILE / TABLET -->
+  <div class="d-lg-none mb-3">
+    <button
+      class="btn btn-aplicar w-100 d-flex align-items-center justify-content-center gap-2 py-2"
+      type="button"
+      (click)="toggleFiltros()">
+      <fa-icon [icon]="faSliders"></fa-icon>
+      <span>{{ 'BUSCADOR_VEHICULOS.FILTRAR_VEHICULOS' | translate }}</span>
+    </button>
+  </div>
+
+  <div class="row">
+
+    <!-- FILTERS SIDEBAR -->
+    <aside
+      class="col-lg-3 sidebar-filtros offcanvas-lg offcanvas-start"
+      [class.show]="mostrarFiltros()"
+      tabindex="-1"
+      id="sidebarFiltros">
+
+      <!-- Mobile Header -->
+      <div class="offcanvas-header d-lg-none border-bottom">
+        <h5 class="offcanvas-title fw-bold">{{ 'FILTROS.TITULO' | translate }}</h5>
+        <button type="button" class="btn-close" (click)="cerrarFiltros()" [attr.aria-label]="'COMUN.CERRAR' | translate"></button>
+      </div>
+
+      <!-- Offcanvas Body -->
+      <div class="offcanvas-body p-lg-0">
+        <form (ngSubmit)="overrideApplyFilters()" class="w-100">
+
+          <div class="d-none d-lg-block mb-3">
+            <span class="titulo-filtro">{{ 'FILTROS.TITULO' | translate }}</span>
+            <hr class="w-100 my-2 separator">
+          </div>
+
+          <!-- SECTION: TYPOLOGY -->
+          @if (tipos().length > 0) {
+            <div class="seccion-filtro">
+              <h3 class="titulo-seccion">{{ 'FILTROS.TIPO' | translate }}:</h3>
+              <div class="contenedor-checkboxes">
+                @for (tipo of tipos(); track tipo.id; let idx = $index) {
+                  <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" [id]="tipo.id" [checked]="tipo.isChecked" (change)="toggleCheckbox('tipos', idx)">
+                    <label class="custom-control-label" [for]="tipo.id">{{ tipo.name }}</label>
+                  </div>
+                }
+              </div>
+            </div>
+          }
+
+          <!-- SECTION: MAKES -->
+          @if (marcas().length > 0) {
+            <div class="seccion-filtro">
+              <h3 class="titulo-seccion">{{ 'FILTROS.MARCA' | translate }}:</h3>
+              <div class="contenedor-checkboxes">
+                @for (marca of marcas(); track marca.id; let idx = $index) {
+                  <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" [id]="marca.id" [checked]="marca.isChecked" (change)="toggleCheckbox('marcas', idx)">
+                    <label class="custom-control-label" [for]="marca.id">{{ marca.name }}</label>
+                  </div>
+                }
+              </div>
+            </div>
+          }
+
+          <!-- SECTION: MODELS -->
+          @if (modelos().length > 0) {
+            <div class="seccion-filtro">
+              <h3 class="titulo-seccion">{{ 'FILTROS.MODELO' | translate }}:</h3>
+              <div class="contenedor-checkboxes">
+                @for (modelo of modelos(); track modelo.id; let idx = $index) {
+                  @if (idx < 4 || expandidoModelos()) {
+                    <div class="custom-control custom-checkbox">
+                      <input type="checkbox" class="custom-control-input" [id]="modelo.id" [checked]="modelo.isChecked" (change)="toggleCheckbox('modelos', idx)">
+                      <label class="custom-control-label" [for]="modelo.id">{{ modelo.name }}</label>
+                    </div>
+                  }
+                }
+                @if (modelos().length > 4) {
+                  <a (click)="$event.preventDefault(); expandidoModelos.set(!expandidoModelos())" class="Desplegable">
+                    {{ (expandidoModelos() ? 'COMUN.MOSTRAR_MENOS' : 'COMUN.MOSTRAR_MAS') | translate }}
+                  </a>
+                }
+              </div>
+            </div>
+          }
+
+          <!-- SECTION: REGISTRATION YEAR -->
+          <div class="seccion-filtro">
+            <h3 class="titulo-seccion">{{ 'FILTROS.ANIO_MATRICULACION' | translate }}:</h3>
+            <div class="row g-2">
+              <div class="col-6 form-group">
+                <label class="sublabel">{{ 'FILTROS.DESDE' | translate }}</label>
+                <select class="form-select form-select-sm" [ngModel]="anioDesde()" (ngModelChange)="setAnioDesde($event)" name="AnioDesde">
+                  @for (anio of aniosDisponibles(); track anio) {
+                    <option [value]="anio">{{ anio }}</option>
+                  }
+                </select>
+              </div>
+              <div class="col-6 form-group">
+                <label class="sublabel">{{ 'FILTROS.HASTA' | translate }}</label>
+                <select class="form-select form-select-sm" [ngModel]="anioHasta()" (ngModelChange)="setAnioHasta($event)" name="AnioHasta">
+                  @for (anio of filtrarAniosHasta; track anio) {
+                    <option [value]="anio">{{ anio }}</option>
+                  }
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- SECTION: POWER -->
+          <div class="seccion-filtro">
+            <h3 class="titulo-seccion">{{ 'FILTROS.POTENCIA' | translate }}:</h3>
+            <div class="row g-2">
+              <div class="col-6 form-group">
+                <label class="sublabel">{{ 'FILTROS.DESDE' | translate }}</label>
+                <select class="form-select form-select-sm" [ngModel]="potDesde()" (ngModelChange)="setPotDesde($event)" name="PotDesde">
+                  @for (pot of potenciasDisponibles(); track pot) {
+                    <option [value]="pot">{{ pot }} CV</option>
+                  }
+                </select>
+              </div>
+              <div class="col-6 form-group">
+                <label class="sublabel">{{ 'FILTROS.HASTA' | translate }}</label>
+                <select class="form-select form-select-sm" [ngModel]="potHasta()" (ngModelChange)="setPotHasta($event)" name="PotHasta">
+                  @for (pot of filtrarPotenciasHasta; track pot) {
+                    <option [value]="pot">{{ pot }} CV</option>
+                  }
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- SECTION: MILEAGE -->
+          <div class="seccion-filtro">
+            <h3 class="titulo-seccion">{{ 'FILTROS.KILOMETRAJE' | translate }}:</h3>
+            <div class="row g-2">
+              <div class="col-6 form-group">
+                <label class="sublabel">{{ 'FILTROS.DESDE' | translate }}</label>
+                <input
+                  type="number"
+                  class="form-control form-control-sm"
+                  [ngModel]="kmDesde()"
+                  (ngModelChange)="setKmDesde($event)"
+                  name="KmDesde"
+                  placeholder="0 km"
+                  min="0"
+                  step="10000">
+              </div>
+              <div class="col-6 form-group">
+                <label class="sublabel">{{ 'FILTROS.HASTA' | translate }}</label>
+                <input
+                  type="number"
+                  class="form-control form-control-sm"
+                  [ngModel]="kmHasta()"
+                  (ngModelChange)="setKmHasta($event)"
+                  name="KmHasta"
+                  [placeholder]="'FILTROS.SIN_LIMITE' | translate"
+                  min="0"
+                  step="10000">
+              </div>
+            </div>
+          </div>
+
+          <!-- SECTION: CABIN -->
+          @if (cabinas().length > 0) {
+            <div class="seccion-filtro">
+              <h3 class="titulo-seccion">{{ 'FILTROS.CABINA' | translate }}:</h3>
+              <div class="contenedor-checkboxes">
+                @for (cabina of cabinas(); track cabina.id; let idx = $index) {
+                  @if (idx < 3 || expandidoCabinas()) {
+                    <div class="custom-control custom-checkbox">
+                      <input type="checkbox" class="custom-control-input" [id]="cabina.id" [checked]="cabina.isChecked" (change)="toggleCheckbox('cabinas', idx)">
+                      <label class="custom-control-label" [for]="cabina.id">{{ cabina.name }}</label>
+                    </div>
+                  }
+                }
+                @if (cabinas().length > 3) {
+                  <a (click)="$event.preventDefault(); expandidoCabinas.set(!expandidoCabinas())" class="Desplegable">
+                    {{ (expandidoCabinas() ? 'COMUN.MOSTRAR_MENOS' : 'COMUN.MOSTRAR_MAS') | translate }}
+                  </a>
+                }
+              </div>
+            </div>
+          }
+
+          <!-- SECTION: AXLE CONFIGURATION -->
+          @if (ejes().length > 0) {
+            <div class="seccion-filtro">
+              <h3 class="titulo-seccion">{{ 'FILTROS.CONFIGURACION_EJES' | translate }}:</h3>
+              <div class="contenedor-checkboxes">
+                @for (eje of ejes(); track eje.id; let idx = $index) {
+                  <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" [id]="eje.id" [checked]="eje.isChecked" (change)="toggleCheckbox('ejes', idx)">
+                    <label class="custom-control-label" [for]="eje.id">{{ eje.name }}</label>
+                  </div>
+                }
+              </div>
+            </div>
+          }
+
+          <!-- SECTION: EMISSIONS (EURONORM) -->
+          @if (euroNormas().length > 0) {
+            <div class="seccion-filtro">
+              <h3 class="titulo-seccion">{{ 'FILTROS.EMISIONES' | translate }}:</h3>
+              <div class="contenedor-checkboxes">
+                @for (euro of euroNormas(); track euro.id; let idx = $index) {
+                  <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" [id]="euro.id" [checked]="euro.isChecked" (change)="toggleCheckbox('euroNormas', idx)">
+                    <label class="custom-control-label" [for]="euro.id">{{ euro.name }}</label>
+                  </div>
+                }
+              </div>
+            </div>
+          }
+
+          <!-- SECTION: BODY WORK -->
+          @if (carrocerias().length > 0) {
+            <div class="seccion-filtro">
+              <h3 class="titulo-seccion">{{ 'FILTROS.CARROCERIA' | translate }}:</h3>
+              <div class="contenedor-checkboxes">
+                @for (carro of carrocerias(); track carro.id; let idx = $index) {
+                  @if (idx < 4 || expandidoCarrocerias()) {
+                    <div class="custom-control custom-checkbox">
+                      <input type="checkbox" class="custom-control-input" [id]="carro.id" [checked]="carro.isChecked" (change)="toggleCheckbox('carrocerias', idx)">
+                      <label class="custom-control-label" [for]="carro.id">{{ carro.name }}</label>
+                    </div>
+                  }
+                }
+                @if (carrocerias().length > 4) {
+                  <a (click)="$event.preventDefault(); expandidoCarrocerias.set(!expandidoCarrocerias())" class="Desplegable">
+                    {{ (expandidoCarrocerias() ? 'COMUN.MOSTRAR_MENOS' : 'COMUN.MOSTRAR_MAS') | translate }}
+                  </a>
+                }
+              </div>
+            </div>
+          }
+
+        </form>
+      </div>
+    </aside>
+
+    <!-- Dark Overlay Backdrop for Mobile -->
+    @if (mostrarFiltros()) {
+      <div class="offcanvas-backdrop fade show d-lg-none" (click)="cerrarFiltros()"></div>
+    }
+
+    <!-- STOCK RESULTS AREA -->
+    <main class="col-lg-9 col-md-12 col-12 zona-resultados mb-4">
+
+      @if (vehiculos().length === 0) {
+
+        <div class="empty-state">
+          <fa-icon [icon]="faTruck"></fa-icon>
+          <h4>{{ 'TARJETA_VEHICULO.SIN_VEHICULOS' | translate }}</h4>
+          <p>{{ 'TARJETA_VEHICULO.INDICACION_FILTROS' | translate }}</p>
+        </div>
+
+      } @else {
+
+        <div class="vehiculos-grid">
+
+          @for (vehiculo of vehiculos(); track vehiculo.idStoc) {
+
+            <div class="vehiculo-card">
+
+              <div class="vehiculo-imagen">
+
+                @if (estaCargandoImagen(vehiculo)) {
+                  <div class="imagen-skeleton">
+                    <fa-icon [icon]="faTruck"></fa-icon>
+                  </div>
+                }
+
+                <!-- 1. Foto de fondo difuminada (rellena el espacio) -->
+                <img
+                  [src]="getImagenSrc(vehiculo)"
+                  alt=""
+                  aria-hidden="true"
+                  class="img-bg-blur"
+                  loading="lazy" decoding="async">
+
+                <!-- 2. Foto principal centrada (100% nítida) -->
+                <img
+                  [src]="getImagenSrc(vehiculo)"
+                  [alt]="vehiculo.marca + ' ' + vehiculo.modelo"
+                  loading="lazy"
+                  decoding="async"
+                  class="img-principal"
+                  [class.imagen-cargando]="estaCargandoImagen(vehiculo)"
+                  loading="lazy" decoding="async">
+
+                <span class="precio">
+                  @if (vehiculo.precio > 0) {
+                    {{ vehiculo.precio }} €
+                  } @else {
+                    {{ 'TARJETA_VEHICULO.PRECIO_A_CONSULTAR' | translate }}
+                  }
+                </span>
+
+              </div>
+
+              <div class="vehiculo-body">
+                <h3>
+                  {{ vehiculo.marca }}
+                  {{ vehiculo.modelo }}
+                </h3>
+
+                <div class="subtitulo">
+                  {{ vehiculo.tipoVeh }}
+                </div>
+
+                <div class="datos-grid">
+                  <div>
+                    <fa-icon [icon]="faCalendar"></fa-icon>
+                    {{ formatearFecha(vehiculo.fechaMat) }}
+                  </div>
+
+                  <div>
+                    <fa-icon [icon]="faRoad"></fa-icon>
+                    {{ formatearKm( vehiculo.kilom) }} km
+                  </div>
+
+                  <div>
+                    <fa-icon [icon]="faGaugeHigh"></fa-icon>
+                    {{ vehiculo.potMot }} CV
+                  </div>
+
+                  <div>
+                    <fa-icon [icon]="faTruck"></fa-icon>
+                    {{ vehiculo.cabina }}
+                  </div>
+
+                  <div>
+                    <fa-icon [icon]="faLeaf"></fa-icon>
+                    {{ vehiculo.euronorma }}
+                  </div>
+                </div>
+
+                <div class="badges">
+                  @if (vehiculo.adr === 'S') {
+                    <span class="badge adr">
+                      ADR
+                    </span>
+                  }
+
+                  <!-- RETARDER HIGHLIGHT -->
+                  @if (vehiculo.marca === '') {
+                    <span class="badge retarder">
+                      <fa-icon [icon]="faGauge" class="me-1"></fa-icon> {{vehiculo.frenoAux}}
+                    </span>
+                  }
+                </div>
+
+                <div class="acciones">
+
+                  <button
+                    type="button"
+                    class="btn-favorito"
+                    [class.activo]="vehiculo.esFavorito"
+                    (click)="toggleFavorito(vehiculo)"
+                    [title]="(vehiculo.esFavorito ? 'TARJETA_VEHICULO.QUITAR_FAVORITO' : 'TARJETA_VEHICULO.AGREGAR_FAVORITO') | translate">
+
+                    <!-- SUSTITUIDO: Alternancia dinámicamente según estado favorito -->
+                    <fa-icon [icon]="vehiculo.esFavorito ? faStarSolid : faStarRegular"></fa-icon>
+
+                  </button>
+
+                  <button
+                    type="button"
+                    class="btn btn-sm"
+                    [class.btn-outline-primary]="!esVehiculoComparado(vehiculo)"
+                    [class.btn-success]="esVehiculoComparado(vehiculo)"
+                    (click)="toggleComparador(vehiculo)"
+                    [title]="'TARJETA_VEHICULO.TOOLTIP_COMPARAR' | translate">
+
+                    @if (esVehiculoComparado(vehiculo)) {
+                      <fa-icon [icon]="faCheck" class="me-1"></fa-icon> {{ 'TARJETA_VEHICULO.AGREGADO_A_COMPARADOR' | translate }}
+                    } @else {
+                      <fa-icon [icon]="faScaleUnbalanced" class="me-1"></fa-icon> {{ 'BUSCADOR_VEHICULOS.COMPARAR' | translate }}
+                    }
+
+                  </button>
+
+                  <button
+                    class="btn btn-primary btn-detalle"
+                    [routerLink]="['/detalle', vehiculo.idStoc]">
+
+                    {{ 'TARJETA_VEHICULO.VER_DETALLE' | translate }}
+
+                  </button>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          }
+
+        </div>
+
+      }
+
+      @if (totalPaginas() > 1) {
+
+        <div class="paginacion">
+
+          <button
+            class="btn btn-outline-primary"
+            [disabled]="paginaActual() === 1"
+            (click)="paginaAnterior()">
+            <fa-icon [icon]="faChevronLeft"></fa-icon>
+          </button>
+
+          @for (pagina of paginas(); track pagina) {
+            <button
+              class="btn"
+              [class.btn-primary]="pagina === paginaActual()"
+              [class.btn-outline-primary]="pagina !== paginaActual()"
+              (click)="irPagina(pagina)">
+              {{ pagina }}
+            </button>
+          }
+
+          <button
+            class="btn btn-outline-primary"
+            [disabled]="paginaActual() === totalPaginas()"
+            (click)="paginaSiguiente()">
+            <fa-icon [icon]="faChevronRight"></fa-icon>
+          </button>
+
+        </div>
+
+      }
+
+    </main>
+
+  </div>
+</div>
+
+@if (mostrarLoginModal()) {
+
+  <app-login-modal
+    (cerrarModal)="cerrarLoginModal()">
+  </app-login-modal>
+
+}

@@ -1,0 +1,1184 @@
+{
+  "HOME": {
+    "TAGLINE": "Veinsur Guarantee",
+    "TITULO_1": "Find the truck that",
+    "TITULO_2": "drives your business",
+    "DESCRIPCION": "Access our fully inspected used fleet serviced in official workshops. Performance and reliability ready for the road.",
+
+    "VEHICULOS_LISTOS": "Vehicles ready",
+    "SOPORTE_RUTA": "Roadside support",
+    "ANIOS_CONTIGO": "Years with you",
+
+    "FILTROS_BUSQUEDA": "Search filters",
+    "MARCAS_BUSCADAS": "Most searched brands",
+
+    "TALLER_OFICIAL": "Official workshop",
+    "TALLER_OFICIAL_DESC": "Complete pre-delivery technical inspection at Veinsur.",
+
+    "TRAMITES_EXPRES": "Express paperwork",
+    "TRAMITES_EXPRES_DESC": "Fast processing so you can get on the road the same day.",
+
+    "COMO_CONSEGUIR_UNIDAD": "How to get your vehicle?",
+
+    "PASO1_TITULO": "Choose online",
+    "PASO1_DESC": "Filter and find the truck that best suits your business.",
+
+    "PASO2_TITULO": "On-site test drive",
+    "PASO2_DESC": "Come and test it with our mechanics at any of our branches.",
+
+    "PASO3_TITULO": "Ready for the road",
+    "PASO3_DESC": "We take care of the ownership transfer so you only have to focus on driving.",
+
+    "VOZ_CLIENTES": "What our customers say",
+
+    "RENOVAR_FLOTA": "Want to renew your current fleet?",
+    "RENOVAR_FLOTA_DESC": "We value your used truck immediately. Get the best market price directly with Veinsur.",
+    "INICIAR_VALORACION": "Start valuation"
+  },
+
+  "BUSCADOR": {
+    "MARCA": "Brand",
+    "MODELO": "Model",
+    "TODAS_MARCAS": "All brands",
+    "TODOS_MODELOS": "All models",
+    "ANIO_MIN": "Min. year",
+    "KM_MAX": "Max. km",
+    "CUALQUIERA": "Any",
+    "BUSCAR": "Search vehicles"
+  },
+
+  "DESTACADAS": {
+    "TITULO": "Featured vehicles in stock",
+    "DESCRIPCION": "Industrial vehicles ready for immediate delivery.",
+    "DIESEL": "Diesel",
+    "PRECIO_CONSULTAR": "Price on request",
+    "VER_DETALLES": "View details"
+  },
+
+  "MENU": {
+    "INICIO": "Home",
+    "BUSCADOR": "Search",
+    "DELEGACIONES": "Branches",
+    "FAVORITOS": "Favorites",
+    "COMPARADOR": "Compare",
+    "BUSQUEDAS": "Saved Searches",
+    "PETICIONES": "Requests",
+    "CERRAR_SESION": "Log out",
+    "MI_CUENTA": "My account",
+    "ARIA_LABEL": "Menu"
+  },
+
+  "CONTACTO": {
+    "TITULO": "WE CALL YOU",
+    "DESCRIPCION": "We will get in touch with you to answer any questions regarding our pre-owned vehicles.",
+    "NOMBRE": "Name",
+    "TELEFONO": "Phone",
+    "ACEPTO_PRIVACIDAD_TEXTO": "I have read and accept the ",
+    "POLITICA_PRIVACIDAD": "privacy policy",
+    "ERROR_PRIVACIDAD": "You must accept the privacy policy to continue.",
+    "BTN_ENVIAR": "Send",
+    "LEGAL": {
+      "RESPONSABLE_LABEL": "Data Controller",
+      "RESPONSABLE_VALOR": "VEINSUR, SAU.",
+      "FINALIDAD_LABEL": "Purpose",
+      "FINALIDAD_VALOR": "Manage and respond to inquiries or communications received through the contact form.",
+      "DERECHOS_LABEL": "Rights",
+      "DERECHOS_VALOR": "You have the right to access, rectify, and erase your data, as well as other rights, as explained in the additional information.",
+      "INFO_ADICIONAL_LABEL": "Additional information",
+      "DISPONIBLE_EN": "Available in our",
+      "POLITICA_PRIVACIDAD_LINK": "Privacy Policy"
+    }
+  },
+
+  "FOOTER": {
+    "POSTVENTA": "After-sales Service",
+    "RECAMBIOS": "Spare Parts Sales",
+    "SEGUROS": "Transport Insurance",
+    "AVISO_LEGAL": "Legal Notice",
+    "POLITICA_REDES": "Social Media Policy",
+    "POLITICA_PRIVACIDAD": "Privacy Policy",
+    "POLITICA_COOKIES": "Cookies Policy",
+    "DERECHOS_RESERVADOS": "All rights reserved."
+  },
+
+  "COMUN": {
+    "MOSTRAR_MAS": "Show more",
+    "MOSTRAR_MENOS": "Show less",
+    "CERRAR": "Close"
+  },
+  "BUSCADOR_VEHICULOS": {
+    "TITULO": "Vehicle Search",
+    "SUBTITULO": "Find the vehicle that best fits your needs",
+    "PLACEHOLDER_BUSQUEDA": "Search make, model, chassis...",
+    "LIMPIAR_BUSQUEDA": "Clear search",
+    "COMPARAR": "Compare",
+    "GUARDAR_BUSQUEDA": "Save search",
+    "VEHICULOS_DISPONIBLES": "vehicles available",
+    "FILTRAR_VEHICULOS": "Filter vehicles"
+  },
+  "FILTROS": {
+    "TITULO": "Search Filters",
+    "TIPO": "Type",
+    "MARCA": "Make",
+    "MODELO": "Model",
+    "ANIO_MATRICULACION": "Registration Year",
+    "POTENCIA": "Power",
+    "KILOMETRAJE": "Mileage",
+    "CABINA": "Cabin",
+    "CONFIGURACION_EJES": "Axle Configuration",
+    "EMISIONES": "Emissions / EuroNorm",
+    "CARROCERIA": "Body Type",
+    "DESDE": "From",
+    "HASTA": "To",
+    "SIN_LIMITE": "No limit"
+  },
+  "TARJETA_VEHICULO": {
+    "SIN_VEHICULOS": "No vehicles to display",
+    "INDICACION_FILTROS": "Select filters and click search.",
+    "PRECIO_A_CONSULTAR": "Price on request",
+    "GARANTIA": "Warranty",
+    "AGREGAR_FAVORITO": "Add to favorites",
+    "QUITAR_FAVORITO": "Remove from favorites",
+    "TOOLTIP_COMPARAR": "Compare vehicle",
+    "AGREGADO_A_COMPARADOR": "Added to comparator",
+    "VER_DETALLE": "View details"
+  },
+
+  "DETALLE_VEHICULO": {
+    "ANTERIOR": "Previous",
+    "ESTADO": "Status",
+    "DISPONIBLE": "Available",
+    "CARGANDO": "Loading complete technical sheet...",
+    "REF_STOCK": "Stock Ref",
+    "CHASIS": "Chassis",
+    "PRECIO_A_CONSULTAR": "Price on request",
+    "VER_EN_GRANDE": "Enlarge image",
+    "VENDIDO": "SOLD",
+    "DATOS_CLAVE": "Key Data",
+    "MATRICULACION": "Registration",
+    "KILOMETRAJE": "Mileage",
+    "POTENCIA": "Power",
+    "CONFIG_EJES": "Axle Config.",
+    "NORMATIVA": "Emissions",
+    "UBICACION": "Location",
+    "GARANTIA_INCLUIDA": "Warranty Included",
+    "ADR": "ADR",
+    "TACOGRAFO": "Tachograph",
+    "FAVORITO": "Favorite",
+    "AGREGAR_FAVORITO": "Add to favorites",
+    "QUITAR_COMPARADOR": "Remove comparator",
+    "COMPARAR": "Compare",
+    "INFO_COMPARADOR": "You have <strong>{{ cantidad }}</strong> vehicle(s) in comparator",
+    "SOLICITAR_INFORMACION": "Request Information",
+    "ESPECIFICACIONES_TECNICAS": "Full Technical Specifications",
+    "DESPLEGAR_TODO": "Expand all",
+    "PLEGAR_TODO": "Collapse all",
+    "FICHA_MINI": "Quick sheet",
+    "FICHA_COMPLETA": "Full sheet"
+  },
+  "SECCIONES_FICHA": {
+    "MOTOR_TRANSMISION": "Engine & Transmission",
+    "POTENCIA": "Power",
+    "CODIGO_MOTOR": "Engine Code",
+    "EURONORMA": "EuroNorm",
+    "TIPO_CAJA_CAMBIOS": "Gearbox Type",
+    "MODELO_CAJA": "Gearbox Model",
+    "NUM_VELOCIDADES": "Number of Gears",
+    "FRENO_PRINCIPAL": "Main Brake",
+    "FRENO_AUXILIAR": "Auxiliary Brake",
+    "ADBLUE": "AdBlue",
+    "NUM_DEPOSITOS": "Number of Tanks",
+    "DEPOSITO_PRINCIPAL": "Main Tank",
+    "DEPOSITO_SECUNDARIO": "Secondary Tank",
+
+    "CHASIS_EJES_PESOS": "Chassis, Axles & Weight",
+    "CONFIGURACION_EJES": "Axle Configuration",
+    "NUM_EJES": "Number of Axles",
+    "MARCA_EJE": "Axle Brand",
+    "DISTANCIA_EJES": "Wheelbase",
+    "EJE_ELEVABLE": "Lift Axle",
+    "EJE_DIRECCIONAL": "Steering Axle",
+    "MMA_TOTAL": "GVWR Total",
+    "MMA_EJE_DIRECCION": "GVWR Front Axle",
+    "TARA": "Curb Weight",
+    "SUSPENSION_DELANTERA": "Front Suspension",
+    "SUSPENSION_TRASERA": "Rear Suspension",
+    "TIPO_CHASIS": "Chassis Type",
+    "ALTURA_CHASIS": "Chassis Height",
+    "LLANTAS": "Rims",
+
+    "CABINA_EQUIPAMIENTO": "Cabin & Equipment",
+    "MODELO_CABINA": "Cabin Model",
+    "LITERAS": "Bunks",
+    "COLOR": "Color",
+    "RESORTE_CABINA": "Cabin Suspension",
+    "ASIENTO_EXTRA": "Extra Seat",
+    "AIRE_ACONDICIONADO": "Air Conditioning",
+    "CLIMATIZADOR_TECNICO": "Climate Control",
+    "CALEFACTOR": "Auxiliary Heater",
+    "NEVERA": "Fridge",
+    "NAVEGADOR": "Navigation System",
+    "XENON": "Xenon Lights",
+    "RADIO": "Radio",
+    "EMISORA": "CB Radio",
+    "CONTROL_VELOCIDAD": "Cruise Control",
+    "SISTEMA_EBS": "EBS System",
+    "SPOILER": "Spoiler",
+    "TECHO_CORTINA": "Curtain Roof",
+    "TECHO_ELECTRICO": "Sunroof",
+
+    "CARROCERIA_DIMENSIONES": "Bodywork & Dimensions",
+    "TIPO_CARROCERIA": "Body Type",
+    "MARCA_CARROCERIA": "Body Brand",
+    "LARGO_INTERIOR": "Internal Length",
+    "ANCHO_INTERIOR": "Internal Width",
+    "ALTO_INTERIOR": "Internal Height",
+    "LARGO_EXTERIOR": "External Length",
+    "ANCHO_EXTERIOR": "External Width",
+    "ALTO_EXTERIOR": "External Height",
+    "VOLUMEN": "Volume",
+    "TIPO_PISO": "Floor Type",
+    "PORTA_PALET": "Pallet Box",
+    "LONA": "Tarpaulin",
+    "PUERTA": "Door",
+
+    "EQUIPO_FRIGORIFICO": "Refrigeration Unit",
+    "EQUIPO_FRIO": "Cooling Unit",
+    "MARCA_FRIO": "Cooling Brand",
+    "MODELO_FRIO": "Cooling Model",
+    "HORAS_FRIO": "Cooling Hours",
+    "FECHA_ATP": "ATP Date",
+    "CONEXION_ELECTRICA": "Electric Standby",
+    "TERMOGRAFO": "Temperature Recorder",
+
+    "GRUA_PLATAFORMA": "Crane & Tailgate",
+    "TIENE_GRUA": "Crane Fitted",
+    "MARCA_GRUA": "Crane Brand",
+    "MODELO_GRUA": "Crane Model",
+    "MANDO_GRUA": "Remote Control",
+    "NUM_PROLONGAS": "Extensions",
+    "TIENE_PLATAFORMA": "Tail Lift",
+    "MARCA_PLATAFORMA": "Tail Lift Brand",
+    "MODELO_PLATAFORMA": "Tail Lift Model",
+
+    "DOCUMENTACION_EXTRAS": "Documentation & Extras",
+    "MATRICULA": "License Plate",
+    "PROXIMA_ITV": "Next MOT/ITV",
+    "GARANTIA_VO": "Used Vehicle Warranty",
+    "INSTALACION_HIDRAULICA": "Hydraulic System",
+    "GANCHO_REMOLQUE": "Tow Hitch",
+    "REMOLCADOR": "Towing Hook"
+  },
+
+  "FORMULARIO": {
+    "TITULO": "Request information about this vehicle",
+    "SUBTITULO": "Our team of professionals will assist you with everything you need to find the model you are looking for.",
+    "EXITO_TITULO": "Request sent successfully!",
+    "EXITO_MENSAJE": "We will contact you as soon as possible.",
+    "NOMBRE": "Full name",
+    "PLACEHOLDER_NOMBRE": "Your name",
+    "EMAIL": "Email address",
+    "PLACEHOLDER_EMAIL": "example@email.com",
+    "TELEFONO": "Contact phone number",
+    "PLACEHOLDER_TELEFONO": "+34 600 000 000",
+    "RESPONSABLE": "Controller:",
+    "FINALIDAD": "Purpose:",
+    "FINALIDAD_TEXTO": "To manage and respond to inquiries or communications received through the contact form.",
+    "DERECHOS": "Rights:",
+    "DERECHOS_TEXTO": "You have the right to access, rectify, and erase your data, as well as other rights, as explained in the additional information.",
+    "INFO_ADICIONAL": "Additional information:",
+    "INFO_ADICIONAL_TEXTO": "You can consult additional information at the following link:",
+    "POLITICA_PRIVACIDAD": "Privacy Policy",
+    "ACEPTO_POLITICA": "I have read and accept the privacy policy",
+    "ENVIANDO": "Sending request...",
+    "ENVIAR": "Send Request"
+  },
+
+  "RELACIONADOS": {
+    "TITULO": "Related Vehicles",
+    "SUBTITULO": "Similar models you might be interested in",
+    "TIPO_DEFAULT": "Vehicle",
+    "KM": "Km:",
+    "POTENCIA": "Power:",
+    "CABINA": "Cabin:",
+    "CONFIG": "Config:",
+    "PRECIO": "Price",
+    "CONSULTAR": "Upon Request",
+    "VER_DETALLE": "View Details",
+    "NO_DISPONIBLE": "N/A",
+    "MAS_VEHICULOS": "Show more vehicles",
+    "MENOS_VEHICULOS": "Show less"
+  },
+  "DELEGACIONES": {
+    "SUBTITULO_TAG": "Official center network",
+    "TITULO": "Our Branches",
+    "FOTO": "Photo",
+    "MAPA": "Map",
+    "ALT_FOTO": "Veinsur Facilities ",
+    "TITLE_MAPA": "Location map of ",
+    "CARGANDO_MAPA": "Loading map...",
+    "LABEL_TELEFONO": "Customer service phone:",
+    "COMO_LLEGAR": "Get directions",
+    "RECAMBIOS": "Spare Parts",
+    "POSTVENTA": "After-sales"
+  },
+
+  "FICHA_DELEGACION": {
+    "TAG_TIENDA": "Spare Parts Store",
+    "LEMA": "The spare part you need right when you need it.",
+    "DESC_TITULO": "Immediate Availability and Warranty",
+    "DESC_TEXTO": "In the transport industry, time is money. That is why our warehouses maintain a large stock of spare parts to solve most issues without delay, backed by the quality and warranty of Genuine Volvo Parts.",
+    "POR_QUE_ELEGIRNOS": "Why choose us?",
+    "POR_QUE_VOLVO": "Why choose Genuine Volvo Parts",
+    "VENTAJA_1": "Manufactured to the strictest quality standards.",
+    "VENTAJA_2": "Designed to fit your truck perfectly.",
+    "VENTAJA_3": "Rigorous field tests for maximum reliability and performance.",
+    "VENTAJA_4": "2-year international warranty when fitted in authorized Volvo workshops.",
+    "MSJ_CUALIFICACION": "Our team of professionals is highly qualified and always ready to provide the advice and support you need.",
+    "INFO_CONTACTO": "Contact Information",
+    "LLAMANOS": "Call us",
+    "DIRECCION": "Address",
+    "EMAIL": "Email",
+    "HORARIO": "Opening Hours",
+    "HORARIO_DETALLE": "Monday to Friday: 08:00 - 19:00<br>Saturdays: 08:00 - 13:00",
+    "HORARIO_ANTAS_DETALLE": "Monday to Friday: 08:00 - 19:00<br>Saturdays: 09:00 - 13:00",
+    "HORARIO_DETALLE_SAB_9": "Monday to Friday: 08:00 - 19:00<br>Saturdays: 09:00 - 13:00",
+    "HORARIO_JAEN_DETALLE": "Monday to Friday: 06:00 - 22:00<br>Saturdays and Sundays: 08:00 - 21:00",
+    "COMO_LLEGAR": "Get directions",
+    "COMO_ENCONTRARNOS": "How to find us",
+    "DONDE_ESTAMOS": "Where we are"
+  },
+  "FICHA_GRANADA": {
+    "TAG_TIENDA": "Volvo Trucks Spare Parts Store",
+    "LEMA": "We build strong and lasting relationships with our customers by offering a fast, efficient, and professional service characterized by excellence.",
+    "DESC_TITULO": "Global Solutions for Your Business",
+    "DESC_TEXTO": "Backed by a work philosophy aimed at excellence and a team of highly qualified and experienced professionals, Veinsur provides global solutions that help clients simplify their business operations.",
+    "MAPA_TITULO": "Location map"
+
+  },
+  "FICHA_JAEN": {
+    "TAG_TIENDA": "Volvo Trucks Spare Parts Store",
+    "LEMA": "We build strong and lasting relationships with our customers by offering a fast, efficient, and professional service characterized by excellence.",
+    "DESC_TITULO": "Global Solutions for Your Business",
+    "DESC_TEXTO": "Backed by a work philosophy aimed at excellence and a team of highly qualified and experienced professionals, Veinsur provides global solutions that help clients simplify their business operations.",
+    "MAPA_TITULO": "Location map"
+  },
+  "FICHA_MALAGA": {
+    "TAG_TIENDA": "Volvo Trucks Spare Parts Store",
+    "LEMA": "We build strong and lasting relationships with our customers by offering a fast, efficient, and professional service characterized by excellence.",
+    "DESC_TITULO": "Global Solutions for Your Business",
+    "DESC_TEXTO": "Backed by a work philosophy aimed at excellence and a team of highly qualified and experienced professionals, Veinsur provides global solutions that help clients simplify their business operations.",
+    "MAPA_TITULO": "Location map"
+  },
+  "FICHA_SEVILLA": {
+    "TAG_TIENDA": "Volvo Trucks Spare Parts Store",
+    "LEMA": "We build strong and lasting relationships with our customers by offering a fast, efficient, and professional service characterized by excellence.",
+    "DESC_TITULO": "Global Solutions for Your Business",
+    "DESC_TEXTO": "Backed by a work philosophy aimed at excellence and a team of highly qualified and experienced professionals, Veinsur provides global solutions that help clients simplify their business operations.",
+    "MAPA_TITULO": "Location map"
+  },
+  "FICHA_DELEGACION_POSTVENTA": {
+    "TAG_POSTVENTA": "Official Service & Aftersales",
+    "SOLUCIONES_FLOTA": "Global Solutions for Your Fleet",
+    "QUE_OFRECEMOS": "What we offer",
+    "SERVICIOS_TITULO": "Services at this location",
+    "INFO_CONTACTO": "Contact information",
+    "LLAMANOS": "Call us",
+    "DIRECCION": "Address",
+    "EMAIL": "Email",
+    "HORARIO": "Working hours",
+    "HORARIO_DETALLE": "Monday to Friday: 08:00 - 19:00<br>Saturdays: 08:00 - 13:00",
+    "HORARIO_ANTAS_DETALLE": "Monday to Friday: 08:00 - 19:00<br>Saturdays: 09:00 - 13:00",
+    "HORARIO_JAEN_DETALLE": "Monday to Friday: 06:00 - 22:00<br>Saturdays and Sundays: 08:00 - 21:00",
+
+    "COMO_LLEGAR": "How to get here",
+    "COMO_ENCONTRARNOS": "How to find us",
+    "MAPA_TITULO": "Location map"
+  },
+  "SERVICIOS_ALMERIA": {
+    "MANTENIMIENTO_CAMIONES": "Truck maintenance and repair",
+    "FURGONETA_TALLER": "Mobile workshop van",
+    "MANTENIMIENTO_AUTOBUSES": "Bus maintenance and repair",
+    "SERVICIO_RUEDAS": "Tire service",
+    "SEMIRREMOLQUES": "Semi-trailer maintenance and repair",
+    "AIRE_ACONDICIONADO": "Air conditioning - Truck",
+    "EQUIPOS_FRIO": "Refrigeration equipment maintenance",
+    "DIAGNOSTICO_VCADS": "VCADS Diagnostics",
+    "CHAPA_PINTURA": "Bodywork and paint shop",
+    "DESCARGA_TACOGRAFO": "Tachograph data download",
+    "BANCADA_CHASIS": "Chassis straightening bench",
+    "FRENOMETRO": "Brake tester",
+    "ASISTENCIA_24H": "24/7 Roadside assistance - Trucks"
+  },
+
+  "FICHA_ANTAS": {
+    "TAG_CONCESIONARIO": "Volvo Trucks Official Dealer",
+    "LEMA": "We build strong and lasting relationships with our customers by offering a fast, efficient, and professional service characterized by excellence.",
+    "SOLUCIONES_TITULO": "Global Solutions for Your Fleet",
+    "SOLUCIONES_DESC": "Backed by a work philosophy aimed at excellence and a team of highly qualified and experienced professionals, Veinsur provides global solutions that help clients simplify their business operations."
+  },
+  "SERVICIOS_ANTAS": {
+    "MANTENIMIENTO_CAMIONES": "Truck maintenance and repair",
+    "FURGONETA_TALLER": "Mobile workshop van",
+    "SEMIRREMOLQUES": "Semi-trailer maintenance and repair",
+    "AIRE_ACONDICIONADO": "Air conditioning - Truck",
+    "MANTENIMIENTO_AUTOBUSES": "Bus maintenance and repair",
+    "DIAGNOSTICO_VCADS": "VCADS Diagnostics",
+    "ASISTENCIA_24H": "24/7 Roadside assistance - Trucks"
+  },
+
+  "FICHA_CORDOBA": {
+    "TAG_CONCESIONARIO": "Volvo Trucks Official Dealer",
+    "LEMA": "We build strong and lasting relationships with our customers by offering a fast, efficient, and professional service characterized by excellence.",
+    "SOLUCIONES_TITULO": "Global Solutions for Your Fleet",
+    "SOLUCIONES_DESC": "Backed by a work philosophy aimed at excellence and a team of highly qualified and experienced professionals, Veinsur provides global solutions that help clients simplify their business operations."
+  },
+  "SERVICIOS_CORDOBA": {
+    "MANTENIMIENTO_CAMIONES": "Truck maintenance and repair",
+    "FURGONETA_TALLER": "Mobile workshop van",
+    "SEMIRREMOLQUES": "Semi-trailer maintenance and repair",
+    "AIRE_ACONDICIONADO": "Air conditioning - Truck",
+    "MANTENIMIENTO_AUTOBUSES": "Bus maintenance and repair",
+    "DIAGNOSTICO_VCADS": "VCADS Diagnostics",
+    "ASISTENCIA_24H": "24/7 Roadside assistance - Trucks"
+  },
+
+  "FICHA_DELEGACION_COMUN": {
+    "TAG_CONCESIONARIO": "Volvo Trucks Official Dealer",
+    "LEMA": "We build strong and lasting relationships with our customers by offering a fast, efficient, and professional service characterized by excellence.",
+    "SOLUCIONES_TITULO": "Global Solutions for Your Fleet",
+    "SOLUCIONES_DESC": "Backed by a work philosophy aimed at excellence and a team of highly qualified and experienced professionals, Veinsur provides global solutions that help clients simplify their business operations."
+  },
+  "SERVICIOS_GRANADA": {
+    "MANTENIMIENTO_CAMIONES": "Truck maintenance and repair",
+    "FURGONETA_TALLER": "Mobile workshop van",
+    "MANTENIMIENTO_AUTOBUSES": "Bus maintenance and repair",
+    "SERVICIO_RUEDAS": "Tire service",
+    "SEMIRREMOLQUES": "Semi-trailer maintenance and repair",
+    "AIRE_ACONDICIONADO": "Air conditioning - Truck",
+    "EQUIPOS_FRIO": "Cold-chain refrigeration unit maintenance and repair - Truck",
+    "DIAGNOSTICO_VCADS": "VCADS Diagnostics",
+    "CHAPA_PINTURA": "Bodywork and paint",
+    "DESCARGA_TACOGRAFO": "Tachograph data download",
+    "BANCADA_CHASIS": "Chassis straightening frame",
+    "FRENOMETRO": "Brake tester",
+    "ASISTENCIA_24H": "24/7 Roadside assistance - Trucks"
+  },
+
+  "SERVICIOS_JAEN": {
+    "MANTENIMIENTO_CAMIONES": "Truck maintenance and repair",
+    "FURGONETA_TALLER": "Mobile workshop van",
+    "MANTENIMIENTO_AUTOBUSES": "Bus maintenance and repair",
+    "SERVICIO_RUEDAS": "Tire service",
+    "SEMIRREMOLQUES": "Semi-trailer maintenance and repair",
+    "AIRE_ACONDICIONADO": "Air conditioning - Truck",
+    "EQUIPOS_FRIO": "Cold-chain refrigeration unit maintenance and repair - Truck",
+    "DIAGNOSTICO_VCADS": "VCADS Diagnostics",
+    "CHAPA_PINTURA": "Bodywork and paint",
+    "DESCARGA_TACOGRAFO": "Tachograph data download",
+    "BANCADA_CHASIS": "Chassis straightening frame",
+    "FRENOMETRO": "Brake tester",
+    "ASISTENCIA_24H": "24/7 Roadside assistance - Trucks"
+  },
+
+  "SERVICIOS_MALAGA": {
+    "MANTENIMIENTO_CAMIONES": "Truck maintenance and repair",
+    "FURGONETA_TALLER": "Mobile workshop van",
+    "MANTENIMIENTO_AUTOBUSES": "Bus maintenance and repair",
+    "SERVICIO_RUEDAS": "Tire service",
+    "SEMIRREMOLQUES": "Semi-trailer maintenance and repair",
+    "AIRE_ACONDICIONADO": "Air conditioning - Truck",
+    "EQUIPOS_FRIO": "Cold-chain refrigeration unit maintenance and repair - Truck",
+    "DIAGNOSTICO_VCADS": "VCADS Diagnostics",
+    "CHAPA_PINTURA": "Bodywork and paint",
+    "DESCARGA_TACOGRAFO": "Tachograph data download",
+    "BANCADA_CHASIS": "Chassis straightening frame",
+    "FRENOMETRO": "Brake tester",
+    "ASISTENCIA_24H": "24/7 Roadside assistance - Trucks"
+  },
+  "SERVICIOS_SEVILLA": {
+    "MANTENIMIENTO_CAMIONES": "Truck maintenance and repair",
+    "FURGONETA_TALLER": "Mobile workshop van",
+    "MANTENIMIENTO_AUTOBUSES": "Bus maintenance and repair",
+    "SERVICIO_RUEDAS": "Tire service",
+    "SEMIRREMOLQUES": "Semi-trailer maintenance and repair",
+    "AIRE_ACONDICIONADO": "Air conditioning - Truck",
+    "EQUIPOS_FRIO": "Cold-chain refrigeration unit maintenance and repair - Truck",
+    "DIAGNOSTICO_VCADS": "VCADS Diagnostics",
+    "CHAPA_PINTURA": "Bodywork and paint",
+    "DESCARGA_TACOGRAFO": "Tachograph data download",
+    "BANCADA_CHASIS": "Chassis straightening frame",
+    "FRENOMETRO": "Brake tester",
+    "ASISTENCIA_24H": "24/7 Roadside assistance - Trucks"
+  },
+
+  "AREA_PRIVADA": {
+    "TAG_AREA_PRIVADA": "Private Area",
+    "BIENVENIDA": "Hello {{email}}, welcome to your private area",
+    "FAVORITOS": "Favorites",
+    "BUSQUEDAS": "Searches",
+    "COMPARADOR": "Compare",
+    "CATALOGO": "Catalog",
+    "CARGANDO_FAVORITOS": "Loading favorites...",
+    "PRECIO_CONSULTAR": "Price on request",
+    "ESTADO_VENDIDO": "Sold",
+    "ESTADO_DISPONIBLE": "Available",
+    "VER_DETALLES": "View details",
+    "SIN_FAVORITOS": "You don't have any saved vehicles in your favorites yet."
+  },
+
+  "COMPARADOR": {
+    "TITULO": "Vehicle Comparator",
+    "SUBTITULO": "Side-by-side detailed specification analysis.",
+    "SIN_VEHICULOS_TITULO": "No vehicles in comparator",
+    "SIN_VEHICULOS_DESC": "Add up to 3 vehicles from the search engine to compare specs.",
+    "MOBILE_TITULO_TABLA": "Comparison",
+    "MOBILE_ANADIR_TITULO": "Add another vehicle",
+    "MOBILE_ANADIR_DESC": "To compare on mobile you need at least 2 vehicles.",
+    "BARRAS": {
+      "ESPECIFICACION": "Specification",
+      "STOCK": "Stock:",
+      "VER_FICHA": "View details",
+      "VER": "View",
+      "QUITAR": "Remove",
+      "NO_APLICA": "N/A"
+    },
+    "CATEGORIAS": {
+      "DATOS_BASICOS": "Basic details",
+      "TRANSMISION_CHASIS": "Transmission and chassis",
+      "PESOS_MASAS": "Weights and masses",
+      "SUSPENSION": "Suspension",
+      "CABINA_CONFORT": "Cabin and comfort",
+      "CARROCERIA_FRIO": "Bodywork and special equipment"
+    },
+    "CAMPOS": {
+      "MARCA": "Brand",
+      "MODELO": "Model",
+      "TIPO_VEHICULO": "Vehicle type",
+      "CABINA": "Cabin",
+      "MATRICULACION": "Registration date",
+      "KILOMETROS": "Kilometers",
+      "POTENCIA": "Power",
+      "NORMA_EURO": "Euro standard",
+      "PRECIO": "Price",
+      "TIPO_CAJA": "Gearbox type",
+      "MODELO_CAJA": "Gearbox model",
+      "NUM_VELOCIDADES": "Gears count",
+      "FRENO_AUXILIAR": "Auxiliary brake",
+      "FRENO_PRINCIPAL": "Main brake",
+      "CONFIGURACION_EJES": "Axle configuration",
+      "MARCA_EJE": "Axle brand",
+      "NUM_EJES": "Axles count",
+      "DISTANCIA_EJES": "Wheelbase",
+      "EJES_DIR": "Steered / Fixed last axle",
+      "SOLO_RIGIDOS": "Rigids only",
+      "EJE_ELEVABLE": "Lift axle",
+      "MMA_TOTAL": "Total GVWR",
+      "MMA_EJE_DELANTERO": "Front axle GVWR",
+      "TARA": "Tare weight",
+      "SUSPENSION_DELANTERA": "Front suspension",
+      "SUSPENSION_TRASERA": "Rear suspension",
+      "AIRE_ACONDICIONADO": "Air conditioning",
+      "CALEFACCION": "Heating",
+      "CLIMATIZADOR_TECHO": "Roof air conditioner",
+      "RADIO": "Radio",
+      "NEVERA": "Fridge",
+      "XENON": "Xenon",
+      "LITERAS": "Bunks",
+      "TIPO_CARROCERIA": "Body type",
+      "MARCA_CARROCERIA": "Body brand",
+      "EQUIPO_FRIO": "Refrigeration unit",
+      "MARCA_FRIO": "Refrigeration brand",
+      "MODELO_FRIO": "Refrigeration model",
+      "HORAS_FRIO": "Refrigeration hours",
+      "TERMOGRAFO": "Temperature recorder",
+      "ADR": "ADR"
+    }
+  },
+
+  "BUSQUEDAS": {
+    "TITULO": "My Saved Searches",
+    "SUBTITULO": "You will receive an email notification when matching vehicles are available.",
+    "NUEVA_BUSQUEDA": "New search",
+    "CARGANDO": "Loading searches...",
+    "SIN_BUSQUEDAS": "You have no saved searches.",
+    "BUSQUEDA_NUMERO": "Search #",
+    "ELIMINAR": "Delete",
+    "VER_VEHICULOS": "View vehicles",
+    "TIPOLOGIA": "Typology:",
+    "MARCAS": "Brands:",
+    "RANGOS": {
+      "KM": "Km",
+      "ANIO": "Year",
+      "POTENCIA": "Power",
+      "PRECIO": "Price",
+      "SIN_LIMITE": "Unlimited"
+    }
+  },
+
+  "PETICIONES": {
+    "TAGLINE": "Custom Request",
+    "TITULO_PREFIX": "Send",
+    "TITULO_HIGHLIGHT": "Request",
+    "SUBTITULO": "SELECT YOUR VEHICLE SPECIFICATIONS AND LEAVE US YOUR DETAILS",
+    "CARGANDO_OPCIONES": "Loading vehicle options...",
+    "SECCION_1": "1. VEHICLE SPECIFICATIONS",
+    "CAMPOS": {
+      "TIPO_VEHICULO": "Vehicle Type *",
+      "SELECCIONAR_TIPO": "Select a type",
+      "MARCA": "Brand *",
+      "SELECCIONAR_MARCA": "Select a brand",
+      "MODELO": "Model *",
+      "SELECCIONAR_MODELO": "Select a model",
+      "CABINA": "Cabin *",
+      "SELECCIONAR_CABINA": "Select a cabin type",
+      "OBLIGATORIO": "This field is required",
+      "CARROCERIA": "bodywork"
+    },
+    "MENSAJES": {
+      "ERROR_CARGA_FILTROS": "Could not load form options.",
+      "EXITO_ENVIO": "Request sent successfully! We will contact you shortly.",
+      "ERROR_PROCESAR": "The request could not be processed correctly.",
+      "ERROR_ENVIO": "An error occurred while submitting the form. Please try again."
+    },
+    "BOTONES": {
+      "ENVIAR": "Send Request",
+      "PROCESANDO": "Processing...",
+      "LIMPIAR": "Clear"
+    }
+  },
+  "LOGIN": {
+    "AREA_CLIENTES": "Customer Area",
+    "BIENVENIDO": "Welcome to your private area",
+    "USUARIO_EMAIL": "Username / Email",
+    "PASSWORD": "Password",
+    "OLVIDO_PASSWORD": "Forgot your password?",
+    "ENVIAR": "Submit",
+    "CONTINUAR_GOOGLE": "Continue with Google",
+    "NO_TIENES_CUENTA": "Don't have an account?",
+    "REGISTRATE_VENTAJAS": "Sign up and enjoy the benefits",
+    "BENEFICIOS": {
+      "FAVORITOS": "Create your favorites",
+      "NOTIFICACIONES": "Receive notifications",
+      "COMPARA": "Compare vehicles",
+      "CATALOGO": "Build your catalog"
+    },
+    "CREAR_CUENTA": "Create an account now",
+    "OPORTUNIDADES": "Opportunities",
+    "VEHICULOS_DESTACADOS": "Featured Vehicles",
+    "QUE_HACEMOS": "What we do for you",
+    "SERVICIOS_VEINSUR": "VEINSUR Services",
+    "SERVICIOS": {
+      "SEGUROS_TITULO": "Transport Insurance",
+      "SEGUROS_TEXTO": "Tailored protection for your fleet and cargo backed by leading insurance companies.",
+      "TALLER_TITULO": "Workshop Service",
+      "TALLER_TEXTO": "Preventive and corrective maintenance with specialized mechanics to keep you on the road.",
+      "VOLVO_TITULO": "Volvo Action Service",
+      "VOLVO_TEXTO": "24/7 roadside assistance, wherever you are in Europe.",
+      "FINANCIEROS_TITULO": "Financial Services",
+      "FINANCIEROS_TEXTO": "Flexible financing solutions and leasing designed to grow your business."
+    },
+    "VALORES": {
+      "TAG": "Our Identity",
+      "TITULO": "VEINSUR Values",
+      "PARRAFO_1": "Being the largest official Volvo Trucks dealership in Europe allows us to offer a wide variety of vehicles, both Volvo maintained in our workshops, and other market brands.",
+      "PARRAFO_2": "Since starting operations in 1990, Veinsur has provided customers with extensive expertise and deep transport sector knowledge. Backed by a philosophy of excellence and a qualified team, Veinsur delivers global solutions that simplify business management.",
+      "BADGE_TEXTO": "Providing global transport solutions"
+    },
+    "ERRORES": {
+      "LOGIN_FAIL": "Login failed"
+    }
+  },
+  "REGISTRO": {
+    "TAGLINE": "Join Veinsur",
+    "TITULO": "Create an Account",
+    "ALERTAS": {
+      "REVISA_CAMPOS": "Please check the fields highlighted in red before continuing.",
+      "PASSWORD_NO_COINCIDE": "• Passwords do not match.",
+      "EXITO": "Registration completed successfully!"
+    },
+    "CAMPOS": {
+      "EMAIL": "Email",
+      "EMAIL_PLACEHOLDER": "your@email.com",
+      "EMAIL_REQ": "Email is required.",
+      "EMAIL_INVALIDO": "Enter a valid email.",
+      "NOMBRE": "Full Name",
+      "NOMBRE_PLACEHOLDER": "First and last name",
+      "NOMBRE_REQ": "Full name is required.",
+      "PASSWORD": "Password",
+      "PASSWORD_REQ": "Password is required.",
+      "PASSWORD_PATRON": "Must be 8 to 12 characters long (letters, numbers, or !?-).",
+      "PASSWORD_CONFIRM": "Confirm Password",
+      "PASSWORD_CONFIRM_REQ": "You must confirm your password.",
+      "PASSWORD_CONFIRM_MISMATCH": "Passwords do not match.",
+      "TELEFONO": "Phone"
+    },
+    "LEGAL": {
+      "TITULO": "Privacy Information",
+      "RESPONSABLE": "Data Controller:",
+      "RESPONSABLE_VAL": "VEINSUR, SAU.",
+      "FINALIDAD": "Purpose:",
+      "FINALIDAD_VAL": "To manage your registration and, if authorized, to send you commercial communications",
+      "DERECHOS": "Rights:",
+      "DERECHOS_VALOR": "You have the right to access, rectify, and erase your data, as well as other rights, as explained in the additional information.",
+      "POLITICA_PRIVACIDAD": "Additional Information:",
+      "ENLACE_POLITICA": "Available in our Privacy Policy."
+    },
+    "CHECKBOXES": {
+      "NOTIFICACIONES": "I agree to receive email notifications",
+      "TERMINOS": "I have read and accept the privacy policy",
+      "TERMINOS_REQ": "You must accept the privacy policy to continue."
+    },
+    "BOTONES": {
+      "REGISTRARME": "Register now",
+      "PROCESANDO": "Registering..."
+    },
+    "ERRORES": {
+      "REGISTRO_FALLIDO": "Registration failed. Please try again."
+    }
+  },
+  "PASSWORD": {
+    "TITULO": "Forgot your password?",
+    "DESCRIPCION": "Enter your email address associated with your Veinsur account and we will send you instructions to reset it.",
+    "EXITO": {
+      "TITULO": "Email sent!",
+      "TEXTO_1": "We have sent a recovery link to",
+      "TEXTO_2": "Please check your inbox or spam folder.",
+      "REDIRIGIENDO": "You will be automatically redirected to login in a few seconds...",
+      "BTN_VOLVER": "Return to login now"
+    },
+    "CAMPOS": {
+      "EMAIL": "Email address",
+      "EMAIL_PLACEHOLDER": "example@email.com",
+      "EMAIL_INVALIDO": "Please enter a valid email address."
+    },
+    "BOTONES": {
+      "ENVIAR": "Send recovery link",
+      "PROCESANDO": "Sending link..."
+    },
+    "ENLACES": {
+      "VOLVER": "Return to login"
+    },
+    "LEGAL": {
+      "RESPONSABLE": "Data Controller:",
+      "RESPONSABLE_VAL": "VEINSUR, SAU.",
+      "FINALIDAD": "Purpose:",
+      "FINALIDAD_VAL": "Manage access password reset.",
+      "INFO_ADD": "Additional information:",
+      "POLITICA": "Privacy Policy"
+    },
+    "ERRORES": {
+      "ENVIO_FALLIDO": "Could not send recovery email.",
+      "ERROR_PROCESO": "An error occurred while processing the request."
+    }
+  },
+  "ACTIVACION": {
+    "TAGLINE": "Join Veinsur",
+    "CARGANDO": {
+      "TITULO": "Activating account...",
+      "DESCRIPCION": "Please wait a few seconds while we verify your link."
+    },
+    "RESULTADO": {
+      "EXITO_TITULO": "Account activated",
+      "ERROR_TITULO": "Activation failed",
+      "BTN_EXITO": "Go to login",
+      "BTN_ERROR": "Back to home"
+    },
+    "MENSAJES": {
+      "EXITO_DEFECTO": "Your account has been successfully activated.",
+      "ERROR_DEFECTO": "Could not activate the account or the link has expired."
+    }
+  },
+  "RESET_PASSWORD": {
+    "TITULO": "Reset Password",
+    "SUBTITULO": "Enter your new password for",
+    "ESTADOS": {
+      "VALIDANDO": "Validating link...",
+      "TOKEN_INVALIDO": "The link is invalid or has expired.",
+      "SOLICITAR_NUEVO": "Request new link"
+    },
+    "EXITO": {
+      "TITULO": "Password updated!",
+      "DESCRIPCION": "Your password has been changed successfully. You can now log in with your new credentials.",
+      "BTN_LOGIN": "Log in"
+    },
+    "CAMPOS": {
+      "NUEVA_PWD": "New password",
+      "REPETIR_PWD": "Repeat new password",
+      "REQ": "Password is required.",
+      "MIN_LENGTH": "Minimum 6 characters.",
+      "MISMATCH": "Passwords do not match."
+    },
+    "BOTONES": {
+      "GUARDAR": "Save password",
+      "PROCESANDO": "Saving..."
+    },
+    "LEGAL": {
+      "RESPONSABLE": "Data Controller:",
+      "RESPONSABLE_VAL": "VEINSUR, SAU.",
+      "FINALIDAD": "Purpose:",
+      "FINALIDAD_VAL": "Management and modification of access data to the private platform.",
+      "POLITICA": "Privacy Policy"
+    },
+    "ERRORES": {
+      "FALLO_CAMBIO": "Could not change the password. Please try again."
+    }
+  },
+  "AVISO_LEGAL": {
+    "TAGLINE": "Corporate Information",
+    "TITULO_1": "Legal",
+    "TITULO_2": "Notice",
+    "SUBTITULO": "INFORMATION SOCIETY SERVICES ACT (LSSI)",
+    "INTRODUCCION": {
+      "P1": "<strong>VEINSUR, S.A.U.</strong>, responsible for the website, hereinafter RESPONSIBLE, makes this document available to users in order to comply with the obligations set out in Law 34/2002, of July 11, on Information Society Services and Electronic Commerce (LSSICE), and to inform all users about the conditions of use.",
+      "P2": "Any person accessing this website assumes the role of user, committing to the strict observance and compliance with the provisions herein, as well as any other applicable legal provision.",
+      "P3": "VEINSUR, S.A.U. reserves the right to modify any information that may appear on the website, without obligation to pre-advise or inform users, publication on the website being deemed sufficient."
+    },
+    "DATOS": {
+      "TITULO": "1. IDENTIFICATION DATA",
+      "NOMBRE_COMERCIAL": "Trade name",
+      "DENOMINACION_SOCIAL": "Company name",
+      "NIF": "Tax ID (NIF)",
+      "DOMINIO": "Domain name",
+      "DOMICILIO": "Registered address",
+      "TELEFONO": "Phone",
+      "EMAIL": "Contact email",
+      "REGISTRALES": "Registry data",
+      "VALORES": {
+        "DOMICILIO": "CTRA. A 1000 - 04230 Huércal de Almería (ALMERÍA)",
+        "REGISTRALES": "Mercantile Registry of Almería, Volume 1285, Sheet 142, Page AL-31217"
+      }
+    },
+    "PROPIEDAD": {
+      "TITULO": "2. INTELLECTUAL AND INDUSTRIAL PROPERTY RIGHTS",
+      "P1": "The website, including but not limited to its programming, editing, compilation, and other elements necessary for its operation, designs, logos, text, and/or graphics, are the property of the RESPONSIBLE or have an express license from the authors. All content is protected by intellectual and industrial property regulations.",
+      "P2": "Total or partial reproduction, use, exploitation, distribution, and commercialization requires prior written authorization from the RESPONSIBLE in all cases.",
+      "P3": "Designs, logos, text, and/or graphics non-native to the RESPONSIBLE belong to their respective owners.",
+      "P4": "The RESPONSIBLE acknowledges the corresponding property rights in favor of their holders.",
+      "NOTA": "To make any observation regarding possible breaches of intellectual property rights, email"
+    },
+    "EXENCION": {
+      "TITULO": "3. DISCLAIMER OF LIABILITY",
+      "P1": "The RESPONSIBLE is exempt from any liability derived from the information published on its website, provided it has no effective knowledge that this information has been manipulated by a third party.",
+      "COOKIES": {
+        "TITULO": "Use of Cookies",
+        "P1": "This website may use technical cookies essential for proper operation and visualization.",
+        "P2": "Cookies may also be used to recognize the user's browser to facilitate navigation.",
+        "P3": "Users can configure their browser to block or be alerted about cookies."
+      },
+      "ENLACES": {
+        "TITULO": "Link Policy",
+        "P1": "From the website, you may be redirected to third-party content. The RESPONSIBLE assumes no responsibility for external content.",
+        "P2": "The RESPONSIBLE is not liable for information stored in forums, chats, or social networks.",
+        "P3": "This website has been reviewed and tested to function correctly 24/7."
+      },
+      "IP": {
+        "TITULO": "IP Addresses",
+        "P1": "The servers can automatically detect the IP address and domain name used by the user for statistical purposes."
+      }
+    },
+    "LEY": {
+      "TITULO": "4. APPLICABLE LAW AND JURISDICTION",
+      "P1": "For the resolution of all disputes or issues related to this website, Spanish legislation will apply."
+    }
+  },
+  "REDES_SOCIALES": {
+    "TAGLINE": "Privacy and Communication",
+    "TITULO_1": "Social Media",
+    "TITULO_2": "Policy",
+    "SUBTITULO": "TRANSPARENT INFORMATION ON DATA PROCESSING ON OUR OFFICIAL PROFILES",
+    "SECCION_1": {
+      "TITULO": "1. USER INFORMATION",
+      "P1_TITULO": "Who is responsible for processing your personal data?",
+      "P1_DESCRIPCION": "<strong>VEINSUR, S.A.U.</strong>, hereinafter RESPONSIBLE, informs the USER that it has created a profile on Social Media platforms including Facebook, Instagram, Twitter, LinkedIn, Youtube, Vimeo, and Google+, and is responsible for processing the user's personal data carried out on these social networks, in accordance with Regulation (EU) 2016/679 (GDPR) and national data protection regulations.",
+      "P2_TITULO": "For what purpose do we process your personal data?",
+      "FIN_TRATAMIENTO": "<strong>Purpose of processing:</strong> to maintain a relationship between the USER and the RESPONSIBLE which may include the following operations:",
+      "OPERACIONES": {
+        "OP1": "Process requests and inquiries sent to the controller.",
+        "OP2": "Inform about activities and events organized by the controller.",
+        "OP3": "Inform about products or services offered by the controller.",
+        "OP4": "Interact through official social media profiles."
+      },
+      "P3_TITULO": "What is the legal basis for processing your data?",
+      "BASE_JURIDICA": "<strong>Legal basis:</strong> Article 6.1.a GDPR, the data subject has given consent to the processing of personal data. By following our official profiles, the USER consents to the processing of personal data published in their profile.",
+      "CONFIGURACION_PRIVACIDAD": "The USER can access the privacy policies of the social network at any time and configure their profile to ensure privacy.",
+      "INFORMACION_PUBLICA": "The RESPONSIBLE accesses and processes public information of the USER, especially contact names. This data is only used within the social network itself.",
+      "P4_TITULO": "How long will we keep your personal data?",
+      "CONSERVACION": "<strong>Data retention criteria:</strong> data will be kept as long as the USER does not revoke the consent granted.",
+      "P5_TITULO": "To whom do we disclose your personal data?",
+      "COMUNICACION_DATOS": "<strong>Data communication:</strong> information provided through social media profiles may be public to other users. No external data communication is foreseen unless essential for service delivery to data processor providers under confidentiality agreements.",
+      "PROVEEDORES": "No personal data communication to third parties outside the social network is planned, except to authorized service providers required for service execution under strict data protection agreements.",
+      "P6_TITULO": "What are your rights?",
+      "DERECHOS_INTRO": "USER rights: can only be satisfied regarding information under the control of the RESPONSIBLE.",
+      "LISTA_DERECHOS": {
+        "D1": "Right to withdraw consent at any time.",
+        "D2": "Right of access, rectification, portability, erasure, restriction, and objection to processing.",
+        "D3": "Right to lodge a complaint with a supervisory authority (www.aepd.es)."
+      },
+      "CONTACTO_DERECHOS": {
+        "TITULO": "Contact details to exercise your rights:",
+        "DIRECCION": "VEINSUR, S.A.U.. CTRA. A 1000, 32 - 04230 HUÉRCAL DE ALMERÍA (Almería).",
+        "EMAIL": "E-mail:",
+        "DPD": "Data Protection Officer:",
+        "DPD_VALOR": "GRUPO GM CONSULTORÍA EMPRESARIAL, S.L. (CIF B04827697), C/ Navarro Rodrigo, 2, Entreplanta - 04001 Almería (Almería)."
+      }
+    },
+    "SECCION_2": {
+      "TITULO": "2. PROFILE USAGE",
+      "INTRO": "The RESPONSIBLE will perform the following actions:",
+      "ACCIONES": {
+        "A1": "Access to public profile information.",
+        "A2": "Publication on the USER's profile of information already published on the RESPONSIBLE's profile.",
+        "A3": "Send direct messages through social network channels.",
+        "A4": "Page status updates published on the USER's feed."
+      },
+      "CONTROL_USUARIO": "The USER can always control connections, delete unwanted content, and restrict privacy settings via the platform."
+    },
+    "SECCION_3": {
+      "TITULO": "3. PUBLICATIONS",
+      "P1": "The USER may post comments, links, images, or multimedia content, provided they hold ownership and copyright permissions.",
+      "P2": "Any posts contravening ethics, public order, or intellectual property rights are strictly prohibited.",
+      "P3": "The RESPONSIBLE reserves the right to immediately remove non-compliant content without prior notice.",
+      "P4": "The RESPONSIBLE is not liable for content freely posted by users.",
+      "P5": "Publications will be visible to other users; therefore, the USER is primarily responsible for their own privacy."
+    },
+    "SECCION_4": {
+      "TITULO": "4. DATA OF MINORS OR PERSONS WITH SPECIAL NEEDS",
+      "P1": "Access and registration on our social media profiles by minors under 14 years of age is strictly prohibited.",
+      "P2": "The RESPONSIBLE is explicitly exonerated from liabilities arising from unauthorized access or usage by minors."
+    }
+  },
+
+  "COOKIES": {
+    "TAGLINE": "Privacy Management",
+    "TITULO_1": "Cookie",
+    "TITULO_2": "Policy",
+    "SUBTITULO": "TRANSPARENT INFORMATION ON THE USE, PURPOSE AND CONFIGURATION OF COOKIES",
+    "SECCION_1": {
+      "TITULO": "1. GENERAL INFORMATION AND REGULATIONS",
+      "CONFORMIDAD_TITULO": "Legal Compliance",
+      "CONFORMIDAD_P": "In compliance with Law 34/2002 (LSSI), in relation to Regulation (EU) 2016/679 (GDPR) and national laws, express consent must be obtained from users of websites using non-essential cookies prior to browsing.",
+      "QUE_SON_TITULO": "What are cookies?",
+      "QUE_SON_P1": "Cookies and similar technologies (such as local shared objects, flash cookies or pixels) are tools used by web servers to store and retrieve information about visitors and ensure proper site functionality.",
+      "QUE_SON_P2": "Using these devices allows the web server to remember certain user preferences, login credentials, interested products, etc.",
+      "EXCEPTUADAS_TITULO": "Cookies affected and exempt from regulations",
+      "EXCEPTUADAS_P": "According to EU directives, cookies requiring informed consent are analytics, advertising, and affiliate cookies. Technical cookies required for operation or requested services are exempt."
+    },
+    "SECCION_2": {
+      "TITULO": "2. TYPES OF COOKIES",
+      "FINALIDAD": {
+        "ETIQUETA": "By Purpose",
+        "TECNICAS": "<strong>Technical and functional cookies:</strong> Allow navigation through the website and usage of available options/services.",
+        "ANALITICAS": "<strong>Analytics cookies:</strong> Allow tracking and analysis of user behavior to measure site activity and build navigation profiles.",
+        "PUBLICITARIAS": "<strong>Advertising cookies:</strong> Allow effective management of advertising spaces based on edited content or ad frequency.",
+        "COMPORTAMENTAL": "<strong>Behavioral advertising cookies:</strong> Collect user preference information (retargeting) for efficient ad space management.",
+        "SOCIALES": "<strong>Social cookies:</strong> Set by social media networks to share content; capable of tracking online activity outside their services.",
+        "AFILIADOS": "<strong>Affiliate cookies:</strong> Allow tracking visits coming from partner websites under affiliate contracts.",
+        "SEGURIDAD": "<strong>Security cookies:</strong> Store encrypted data to prevent stored information from being vulnerable to malicious attacks."
+      },
+      "PROPIEDAD": {
+        "ETIQUETA": "By Ownership",
+        "PROPIAS": "<strong>First-party cookies:</strong> Sent to the user's device from a domain managed by the publisher.",
+        "TERCEROS": "<strong>Third-party cookies:</strong> Sent to the user's device from a domain managed by an external entity."
+      },
+      "CONSERVACION": {
+        "ETIQUETA": "By Retention Period",
+        "SESION": "<strong>Session cookies:</strong> Designed to collect and store data while the user accesses a website.",
+        "PERSISTENTES": "<strong>Persistent cookies:</strong> Data remains stored in the device and can be processed over a defined period (minutes to years)."
+      }
+    },
+    "SECCION_3": {
+      "TITULO": "3. DATA PROCESSING ASSOCIATED WITH COOKIES",
+      "INTRO": "<strong>VEINSUR, S.A.U.</strong> is the Data Controller and informs you that personal data will be processed according to Regulation (EU) 2016/679 (GDPR):",
+      "FINES": "<strong>Purposes of processing:</strong> As specified in the cookie inventory on this website.",
+      "LEGITIMACION": "<strong>Legal basis:</strong> Consent of the data subject (Art. 6.1.a GDPR), except for essential technical navigation.",
+      "CONSERVACION": "<strong>Retention:</strong> According to periods specified in the cookie breakdown.",
+      "COMUNICACION": "<strong>Data communication:</strong> Data will not be shared with third parties, except for third-party cookies or legal obligations.",
+      "CONTACTO_DERECHOS": {
+        "TITULO": "Exercise of Rights:",
+        "TEXTO": "You can withdraw consent or exercise access, rectification, portability, erasure, restriction, or objection rights by contacting:",
+        "DIRECCION": "VEINSUR, S.A.U. - CTRA. A 1000, 32 - 04230 HUÉRCAL DE ALMERÍA (Almería).",
+        "EMAIL": "E-mail:",
+        "DPD": "Data Protection Officer:",
+        "DPD_VALOR": "GRUPO GM CONSULTORÍA EMPRESARIAL, S.L. (CIF B04827697), C/ Navarro Rodrigo, 2, Entreplanta - 04001 Almería (Almería).",
+        "RECLAMACIONES": "Complaints to the supervisory authority:"
+      }
+    },
+    "SECCION_4": {
+      "TITULO": "4. COOKIES USED ON THIS WEBSITE",
+      "TABLA_CABECERA": {
+        "PROPIEDAD": "Domain",
+        "COOKIE": "Cookie",
+        "FINALIDAD": "Purpose",
+        "PLAZO": "Duration"
+      },
+      "TECNICAS_TITULO": "Technical and Functional",
+      "ANALITICAS_TITULO": "Analytics",
+      "PUBLICITARIAS_TITULO": "Advertising",
+      "FINES_TEXTO": {
+        "USO_SERVICIOS": "Use of website options and services",
+        "RASTREADOR": "Google cookie consent tracker",
+        "ANUNCIOS_RELEVANTES": "Delivery of relevant ads based on interests",
+        "ID_USUARIOS": "ID used to identify unique users",
+        "ANALISIS_AGREGADO": "Aggregated site visitor analytics",
+        "CAMPAÑAS": "Targeting, analytics and ad campaign optimization",
+        "HERRAMIENTAS": "Google tools, preferences, and ad personalization",
+        "ESTADISTICAS": "Statistics, conversion rates, and ad personalization",
+        "PREFERENCIAS_BUSQUEDA": "Search preferences and personalized ads",
+        "ESTADISTICAS_SITIO": "Site statistics and ad personalization",
+        "DESCARGA": "Download tools and display preferences",
+        "ESTADO_SEGURIDAD": "State management, security, and ad preferences",
+        "EXPERIMENTACION": "Ad experimentation via Google AdSense"
+      },
+      "PLAZOS": {
+        "ANO": "1 year",
+        "ANOS": "years",
+        "MESES_12": "12 months",
+        "DIAS_24": "24 days",
+        "MESES_9": "9 months",
+        "MESES_4": "4 months",
+        "MES_1": "1 month",
+        "MESES_2": "2 months",
+        "MESES_7": "7 months",
+        "DIA_1": "1 day",
+        "SESION": "Session",
+        "MESES_3": "3 months"
+      }
+    },
+    "SECCION_5": {
+      "TITULO": "5. THIRD-PARTY COOKIES AND BROWSER SETTINGS",
+      "INTRO": "Third-party services are outside publisher control. Providers may update service terms, cookie usage, and purposes at any time.",
+      "PROVEEDORES_TITULO": "External Providers",
+      "TABLA_PROVEEDORES": {
+        "EDITOR": "Publisher",
+        "POLITICA": "Privacy Policy"
+      },
+      "GESTION_TITULO": "How to Manage Cookies in Your Browser",
+      "GESTION_OPCIONES": {
+        "ELIMINAR_TITULO": "Delete cookies",
+        "ELIMINAR_DESC": "Cookies can be removed by clearing browser history. This removes cookies for all visited sites (saved logins may be lost).",
+        "GESTION_TITULO": "Specific management",
+        "GESTION_DESC": "Adjust privacy and cookie controls in browser settings for precise control.",
+        "BLOQUEAR_TITULO": "Block cookies",
+        "BLOQUEAR_DESC": "Prevents cookie installation, though manual preference setting on each visit may be required."
+      },
+      "INSTRUCCIONES_TITULO": "Instructions for Common Browsers",
+      "TABLA_NAVEGADORES": {
+        "NAVEGADOR": "Browser",
+        "ENLACE": "Help / Settings Link",
+        "CHROME": "Google Chrome Support",
+        "EDGE": "Microsoft Edge Support",
+        "IE": "Internet Explorer Support",
+        "FIREFOX": "Mozilla Firefox Support",
+        "SAFARI": "Apple Safari Support",
+        "OPERA": "Opera Support"
+      }
+    }
+  },
+  "PRIVACIDAD": {
+    "TAGLINE": "Data Protection",
+    "TITULO_1": "Privacy",
+    "TITULO_2": "Policy",
+    "SUBTITULO": "DETAILED INFORMATION ON THE PROCESSING OF YOUR PERSONAL DATA",
+    "SECCION_1": {
+      "TITULO": "1. USER INFORMATION",
+      "RESPONSABLE_TITULO": "Who is responsible for processing your personal data?",
+      "RESPONSABLE_P": "<strong>VEINSUR, S.A.U.</strong> is the CONTROLLER responsible for processing the USER'S personal data and informs you that this data will be processed in accordance with Regulation (EU) 2016/679 (GDPR) and national data protection laws.",
+      "FINES_TITULO": "Why do we process your personal data and what for?",
+      "FINES_INTRO": "Depending on the form through which we obtained your personal data, we will process it confidentially for the following purposes:",
+      "FORM_CONTACTO": {
+        "ETIQUETA": "Contact and WhatsApp Form",
+        "ITEM_1": "Respond to inquiries or any request submitted by the user through any available contact methods on the website. <em>(By consent of the data subject, Art. 6.1.a GDPR)</em>.",
+        "ITEM_2": "Perform statistical analysis and market research. <em>(By legitimate interest of the controller, Art. 6.1.f GDPR)</em>."
+      },
+      "FORM_REGISTRO": {
+        "ETIQUETA": "User Registration Form",
+        "ITEM_1": "Manage the user account to provide personalized access to the website and interactive services. <em>(By consent of the data subject, Art. 6.1.a GDPR)</em>.",
+        "ITEM_2": "Send newsletters, news updates, offers, and online promotions (when applicable). <em>(By consent of the data subject, Art. 6.1.a GDPR)</em>."
+      },
+      "FORM_INFORMACION": {
+        "ETIQUETA": "Information Request Form",
+        "ITEM_1": "Provide information regarding the entity's products and/or services. <em>(By consent of the data subject, Art. 6.1.a GDPR)</em>."
+      },
+      "CONSERVACION_TITULO": "How long will we keep your personal data?",
+      "CONSERVACION_P": "They will be kept for no longer than necessary to fulfill the purpose of processing or as long as legal requirements dictate their custody. When no longer required, data will be deleted with appropriate security measures to guarantee complete anonymization or destruction.",
+      "DESTINATARIOS_TITULO": "To whom do we disclose your personal data?",
+      "DESTINATARIOS_P": "No communication of personal data to third parties is planned, except when necessary for the development and execution of processing purposes to our communication service providers, with whom the CONTROLLER has signed required confidentiality and data processor agreements.",
+      "DERECHOS_TITULO": "What are your rights?",
+      "DERECHOS_INTRO": "The rights granted to the USER are:",
+      "DERECHOS_LISTA": {
+        "ITEM_1": "Right to withdraw consent at any time.",
+        "ITEM_2": "Right of access, rectification, portability, and erasure of data, as well as restriction or objection to processing.",
+        "ITEM_3": "Right to lodge a complaint with the supervisory authority (<a href=\"https://www.aepd.es\" target=\"_blank\" rel=\"noopener\">www.aepd.es</a>) if you consider that processing does not comply with regulations."
+      },
+      "CONTACTO_DERECHOS": {
+        "TITULO": "Contact details to exercise your rights:",
+        "DIRECCION": "VEINSUR, S.A.U.. Ctra. A 1000, 32 - 04230 Huércal de Almería (Almería).",
+        "EMAIL": "E-mail:",
+        "DPD": "Data Protection Officer:",
+        "DPD_VALOR": "GRUPO GM CONSULTORÍA EMPRESARIAL, S.L. (CIF B04827697), C/ Navarro Rodrigo, 2, Entreplanta - 04001 Almería (Almería)."
+      }
+    },
+    "SECCION_2": {
+      "TITULO": "2. MANDATORY OR OPTIONAL NATURE OF INFORMATION PROVIDED BY THE USER",
+      "P1": "USERS, by checking the corresponding boxes and entering data into fields marked with an asterisk (*) in contact forms or download forms, expressly and freely accept that their data is required to meet their request by the provider. Inclusion of data in remaining fields is voluntary. The USER guarantees that personal data provided is accurate and responsible for notifying any changes.",
+      "P2": "The CONTROLLER informs that all data requested through the website is mandatory, as it is necessary to provide optimal service. If all data is not provided, there is no guarantee that provided information and services will fully meet your needs."
+    },
+    "SECCION_3": {
+      "TITULO": "3. SECURITY MEASURES",
+      "P1": "In accordance with data protection regulations, the CONTROLLER complies with all GDPR provisions for processing personal data, adhering to Article 5 principles: processed lawfully, fairly, transparently, adequate, relevant, and limited to necessary purposes.",
+      "P2": "The CONTROLLER guarantees the implementation of appropriate technical and organizational policies to apply security measures established by GDPR to protect USER rights and freedoms.",
+      "P3": "For more information on privacy guarantees, you may contact the CONTROLLER via e-mail:"
+    },
+    "SECCION_4": {
+      "TITULO": "4. IMPORTANT NOTICE – EU DATA ACT",
+      "P1": "The EU Data Act requires us to provide pre-contractual information describing how this Connected Product generates product data, how it is collected, how you as a user can access it, and how Volvo Truck Corporation uses it.",
+      "P2": "Full information is available at",
+      "P2_LINK": "under section",
+      "SECCION_VALOR": "Data Notice: Product and Data Notice: Services"
+    }
+  },
+  "MODAL_LOGIN": {
+    "TITULO": "Log in to save your searches",
+    "SUBTITULO": "and receive notifications",
+    "FORMULARIO": {
+      "EMAIL_LABEL": "Email",
+      "EMAIL_PLACEHOLDER": "example@email.com",
+      "PWD_LABEL": "Password",
+      "PWD_PLACEHOLDER": "••••••••",
+      "BTN_ACCEDIENDO": "Logging in...",
+      "BTN_INICIAR_SESION": "Log in",
+      "BTN_GOOGLE": "Continue with Google"
+    },
+    "ENLACES": {
+      "OLVIDADO_PWD": "Forgot your password?",
+      "SIN_CUENTA": "Don't have an account yet?"
+    },
+    "LEGAL": {
+      "RESPONSABLE": "Controller:",
+      "RESPONSABLE_VALOR": "VEINSUR, SAU.",
+      "FINALIDAD": "Purpose:",
+      "FINALIDAD_VALOR": "Manage your registration and, if authorized, send you commercial communications.",
+      "DERECHOS": "Rights:",
+      "DERECHOS_VALOR": "You have the right to access, rectify, and erase your data, as well as other rights, as explained in the additional information.",
+      "INFO_ADD": "Additional information:",
+      "POLITICA_PRIVACIDAD": "Privacy Policy"
+    },
+    "WHATSAPP_MODAL": {
+      "TITULO": "Contact via WhatsApp",
+      "RESPONSABLE_LABEL": "Data Controller",
+      "RESPONSABLE_VALOR": "VEINSUR, SAU.",
+      "FINALIDAD_LABEL": "Purpose",
+      "FINALIDAD_VALOR": "Manage and respond to inquiries or communications received through WhatsApp.",
+      "DERECHOS_LABEL": "Rights",
+      "DERECHOS_VALOR": "You have the right to access, rectify, and erase your data, as well as other rights, as explained in the additional information.",
+      "INFO_ADICIONAL_LABEL": "Additional information",
+      "DISPONIBLE_EN": "You can consult additional information at the following link:",
+      "POLITICA_PRIVACIDAD_LINK": "Privacy Policy",
+      "BTN_CANCELAR": "Cancel",
+      "BTN_ACEPTAR": "Accept and proceed to WhatsApp"
+    }
+  }
+
+
+}

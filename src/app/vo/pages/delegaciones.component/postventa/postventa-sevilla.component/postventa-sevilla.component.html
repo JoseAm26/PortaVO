@@ -1,0 +1,143 @@
+<div class="ficha-delegacion-container">
+
+  <!-- Cabecera Hero -->
+  <header class="header-ficha">
+    <div class="imagen-hero-wrapper">
+      <img src="/assets/img/delegaciones/Sevilla.webp" class="imagen-hero" alt="Instalaciones Veinsur Sevilla" loading="lazy" decoding="async">
+      <div class="overlay-hero"></div>
+    </div>
+    <div class="contenido-hero">
+      <div class="contenedor-centrado">
+        <span class="tag-concesionario">{{ 'FICHA_DELEGACION_COMUN.TAG_CONCESIONARIO' | translate }}</span>
+        <h1>Veinsur Sevilla</h1>
+        <p class="lema-delegacion">
+          {{ 'FICHA_DELEGACION_COMUN.LEMA' | translate }}
+        </p>
+      </div>
+    </div>
+  </header>
+
+  <!-- Contenedor del Cuerpo -->
+  <div class="contenedor-cuerpo">
+
+    <div class="grid-contenido">
+
+      <!-- Columna Izquierda: Descripción y Servicios -->
+      <main class="columna-principal">
+
+        <!-- Tarjeta de Presentación Destacada -->
+        <section class="bloque-descripcion">
+          <div class="tarjeta-blanca">
+            <div class="icono-destacado">
+              <fa-icon [icon]="faTruckFront"></fa-icon>
+            </div>
+            <div class="texto-descripcion">
+              <h3>{{ 'FICHA_DELEGACION_COMUN.SOLUCIONES_TITULO' | translate }}</h3>
+              <p>
+                {{ 'FICHA_DELEGACION_COMUN.SOLUCIONES_DESC' | translate }}
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Bloque de Servicios -->
+        <section class="bloque-servicios">
+          <div class="titulo-seccion-wrap">
+            <span class="subtitulo-decorado">{{ 'FICHA_DELEGACION_POSTVENTA.QUE_OFRECEMOS' | translate }}</span>
+            <h2 class="titulo-seccion">{{ 'FICHA_DELEGACION_POSTVENTA.SERVICIOS_TITULO' | translate }}</h2>
+          </div>
+
+          <div class="grid-servicios">
+            <div class="item-servicio" *ngFor="let servicio of servicios">
+              <div class="icono-check-wrap">
+                <fa-icon [icon]="faCircleCheck"></fa-icon>
+              </div>
+              <span>{{ servicio | translate }}</span>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <!-- Columna Derecha: Tarjeta de Contacto Lateral -->
+      <aside class="columna-lateral">
+        <div class="tarjeta-contacto-lateral">
+          <h3>{{ 'FICHA_DELEGACION_POSTVENTA.INFO_CONTACTO' | translate }}</h3>
+
+          <div class="lista-contacto-rapido">
+            <!-- Fila Teléfono -->
+            <a href="tel:955632050" class="enlace-contacto">
+              <div class="wrapper-icono">
+                <fa-icon [icon]="faPhone"></fa-icon>
+              </div>
+              <div class="detalle-contacto">
+                <span class="label">{{ 'FICHA_DELEGACION_POSTVENTA.LLAMANOS' | translate }}</span>
+                <strong>955 63 20 50</strong>
+              </div>
+            </a>
+
+            <!-- Fila Dirección -->
+            <a href="https://goo.gl/maps/TNdtsHCmTmTKYnJm8" target="_blank" class="enlace-contacto">
+              <div class="wrapper-icono">
+                <fa-icon [icon]="faLocationDot"></fa-icon>
+              </div>
+              <div class="detalle-contacto">
+                <span class="label">{{ 'FICHA_DELEGACION_POSTVENTA.DIRECCION' | translate }}</span>
+                <strong>Autovía A-92, Km 5<br>41500 – Alcalá de Guadaira (Sevilla)</strong>
+              </div>
+            </a>
+
+            <!-- Fila Email -->
+            <a href="mailto:veinsur@veinsur.es" class="enlace-contacto">
+              <div class="wrapper-icono">
+                <fa-icon [icon]="faEnvelope"></fa-icon>
+              </div>
+              <div class="detalle-contacto">
+                <span class="label">{{ 'FICHA_DELEGACION_POSTVENTA.EMAIL' | translate }}</span>
+                <strong>veinsur@veinsur.es</strong>
+              </div>
+            </a>
+
+            <!-- Fila Horario -->
+            <div class="enlace-contacto no-link">
+              <div class="wrapper-icono">
+                <fa-icon [icon]="faClock"></fa-icon>
+              </div>
+              <div class="detalle-contacto">
+                <span class="label">{{ 'FICHA_DELEGACION_POSTVENTA.HORARIO' | translate }}</span>
+                <strong [innerHTML]="'FICHA_DELEGACION_POSTVENTA.HORARIO_SEVILLA_DETALLE' | translate"></strong>
+              </div>
+            </div>
+          </div>
+
+          <!-- Botón de Acción Lateral -->
+          <div class="acciones-sidebar">
+            <a href="https://goo.gl/maps/TNdtsHCmTmTKYnJm8" target="_blank" class="btn-accion-lateral btn-mapa">
+              <fa-icon [icon]="faMapLocationDot"></fa-icon>
+              <span>{{ 'FICHA_DELEGACION_POSTVENTA.COMO_LLEGAR' | translate }}</span>
+            </a>
+          </div>
+        </div>
+      </aside>
+
+    </div>
+
+    <!-- Sección Mapa -->
+    <section class="seccion-mapa-completo">
+      <div class="titulo-seccion-wrap">
+        <span class="subtitulo-decorado">{{ 'FICHA_DELEGACION_POSTVENTA.COMO_ENCONTRARNOS' | translate }}</span>
+        <h2 class="titulo-seccion">{{ 'FICHA_DELEGACION_POSTVENTA.MAPA_TITULO' | translate }}</h2>
+      </div>
+      <div class="contenedor-mapa">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3170.563540285975!2d-5.8889066846937554!3d37.37650307983397!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd126504bbed08bb%3A0x26ca43825544e297!2sVeinsur%2C%20S.A.U.!5e0!3m2!1ses!2ses!4v1638196120880!5m2!1ses!2ses"
+          width="100%"
+          height="400"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </section>
+
+  </div>
+</div>

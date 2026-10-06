@@ -1,0 +1,408 @@
+:host {
+  display: block;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.header {
+  background: #ffffff;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.container {
+  max-width: 1600px;
+  margin: 0 auto;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30px;
+  box-sizing: border-box;
+}
+
+.logo img {
+  height: 50px;
+  object-fit: contain;
+  display: block;
+}
+
+/* --- MENÚ DE NAVEGACIÓN (ESCRITORIO) --- */
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 5px;
+  margin: 0;
+  padding: 0;
+}
+
+nav a {
+  display: flex;
+  align-items: center;
+  height: 80px;
+  padding: 0 20px;
+  cursor: pointer;
+  color: #0d2c54;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  left: 20px;
+  right: 20px;
+  bottom: 0;
+  height: 4px;
+  background: #0d2c54;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+nav a:hover {
+  color: #0d2c54;
+}
+
+nav a:hover::after {
+  transform: scaleX(1);
+}
+
+.acciones-movil {
+  display: none;
+}
+
+/* --- BLOQUE DE ACCIONES ESCRITORIO --- */
+.acciones {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* --- TELÉFONO (ESTILO INTEGRADO TIPO CÁPSULA / SIN ASPECTO DE ENLACE) --- */
+.telefono-link,
+.telefono-movil {
+  color: #0d2c54;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 8px 14px;
+  border-radius: 6px;
+  background-color: #f8f9fa;
+  border: 1px solid #e5e7eb;
+  transition: all 0.2s ease;
+
+  i {
+    color: #0d2c54;
+    font-size: 0.85rem;
+  }
+
+  &:hover {
+    background-color: #f1f5f9;
+    border-color: #cbd5e1;
+    color: #0d2c54; /* Se mantiene en azul corporativo sin cambiar a rojo */
+  }
+}
+
+.btn-cuenta {
+  background: #0d2c54;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #001a35;
+  }
+}
+
+.usuario-logado {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.mail-usuario {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.btn-logout {
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 50%;
+  background: #b41010;
+  color: white;
+  cursor: pointer;
+  transition: 0.2s;
+
+  &:hover {
+    background: #b91c1c;
+  }
+}
+
+/* --- IDIOMA --- */
+.selector-idioma {
+  position: relative;
+}
+
+.idioma-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid #e5e7eb;
+  background: #ffffff;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  color: #0d2c54;
+  font-weight: 500;
+
+  .flecha {
+    font-size: 0.7rem;
+    color: #9ca3af;
+  }
+}
+
+.idioma-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  min-width: 150px;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(5px);
+  transition: all 0.2s ease;
+  border: 1px solid #e5e7eb;
+}
+
+.selector-idioma:hover .idioma-dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.idioma-item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border: none;
+  background: #ffffff;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: #333333;
+  text-align: left;
+
+  &:hover {
+    background: #f8f9fa;
+    color: #0d2c54;
+  }
+}
+
+/* --- BOTÓN HAMBURGUESA --- */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 1001;
+  padding: 0;
+
+  span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: #0d2c54;
+    margin: 3px 0;
+    transition: 0.3s;
+    border-radius: 2px;
+  }
+}
+
+.close {
+  color: #0d2c54;
+  font-size: 24px;
+}
+
+/* --- OVERLAY --- */
+.menu-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(13, 44, 84, 0.2);
+  backdrop-filter: blur(4px);
+  z-index: 998;
+}
+
+/* --- MEDIA QUERIES (ADAPTABILIDAD TOTAL) --- */
+@media (max-width: 1024px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .acciones {
+    gap: 10px;
+  }
+
+  .telefono-link,
+  .btn-cuenta,
+  .usuario-logado {
+    display: none;
+  }
+
+  /* Transformación del Menú a Lateral (Drawer) */
+  nav {
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 300px;
+    height: 100vh;
+    background: #ffffff;
+    z-index: 999;
+    transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    padding: 80px 0 30px 0;
+    box-sizing: border-box;
+
+    &.open {
+      right: 0;
+    }
+
+    ul {
+      flex-direction: column;
+      gap: 0;
+    }
+
+    li {
+      width: 100%;
+    }
+
+    a {
+      width: 100%;
+      height: auto;
+      padding: 16px 24px;
+      border-bottom: 1px solid #f3f4f6;
+      color: #0d2c54;
+      font-size: 1.05rem;
+
+      &::after {
+        display: none;
+      }
+
+      &:hover {
+        background-color: #f8f9fa;
+        color: #e30613;
+        padding-left: 30px;
+      }
+    }
+  }
+
+  /* Acciones dentro del menú lateral */
+  .acciones-movil {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 24px;
+    margin-top: auto;
+    border-top: 1px solid #e5e7eb;
+    background-color: #f8f9fa;
+  }
+
+  .telefono-movil {
+    width: 100%;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+
+  .btn-cuenta-movil {
+    background: #0d2c54;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: center;
+    width: 100%;
+    transition: background-color 0.2s;
+
+    &:hover {
+      background: #001a35;
+    }
+  }
+
+  .usuario-logado-movil {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+
+    .mail-usuario-movil {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #335375;
+      word-break: break-all;
+      background: #ffffff;
+      padding: 8px 12px;
+      border-radius: 6px;
+      border: 1px solid #e5e7eb;
+    }
+
+    .btn-logout-movil {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background-color: #b41010;
+      color: #ffffff;
+      border: none;
+      padding: 10px;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      width: 100%;
+      transition: background-color 0.2s;
+
+      &:hover {
+        background-color: #b91c1c;
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 15px;
+    height: 70px;
+  }
+
+  .logo img {
+    height: 40px;
+  }
+}

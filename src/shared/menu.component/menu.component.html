@@ -1,0 +1,160 @@
+<header class="header">
+  @if (menuAbierto) {
+    <div class="menu-overlay" (click)="cerrarMenu()"></div>
+  }
+
+  <div class="container">
+    <!-- LOGO -->
+    <div class="logo">
+      <img src="/assets/img/logo.webp" alt="Logo Veinsur" routerLink="/home" loading="lazy" decoding="async">
+    </div>
+
+    <!-- NAVEGACIÓN -->
+    <nav [class.open]="menuAbierto">
+      <ul>
+        <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+          <a routerLink="/inicio" (click)="cerrarMenu()">
+            {{ 'MENU.INICIO' | translate }}
+          </a>
+        </li>
+        <li routerLinkActive="active">
+          <a routerLink="/buscador" (click)="cerrarMenu()">
+            {{ 'MENU.BUSCADOR' | translate }}
+          </a>
+        </li>
+        <li routerLinkActive="active">
+          <a routerLink="/delegaciones" (click)="cerrarMenu()">
+            {{ 'MENU.DELEGACIONES' | translate }}
+          </a>
+        </li>
+        <li routerLinkActive="active">
+          <a
+            href="#"
+            (click)="$event.preventDefault(); irRutaProtegida('/favoritos')">
+            {{ 'MENU.FAVORITOS' | translate }}
+          </a>
+        </li>
+        <li routerLinkActive="active">
+          <a routerLink="/comparador" (click)="cerrarMenu()">
+            {{ 'MENU.COMPARADOR' | translate }}
+          </a>
+        </li>
+        <li routerLinkActive="active">
+          <a
+            href="#"
+            (click)="$event.preventDefault(); irRutaProtegida('/busquedas')">
+            {{ 'MENU.BUSQUEDAS' | translate }}
+          </a>
+        </li>
+        <li routerLinkActive="active">
+          <a
+            href="#"
+            (click)="$event.preventDefault(); irRutaProtegida('/peticiones')">
+            {{ 'MENU.PETICIONES' | translate }}
+          </a>
+        </li>
+      </ul>
+
+      <!-- ACCIONES MÓVIL -->
+      <div class="acciones-movil">
+        <a href="tel:950212000" class="telefono-movil">
+          <fa-icon [icon]="faPhone"></fa-icon>
+          <strong>950 212 000</strong>
+        </a>
+
+        @if ((usuario$ | async); as usuario) {
+          <div class="usuario-logado-movil">
+            <span class="mail-usuario-movil" [title]="usuario.mail">
+              {{ usuario.mail }}
+            </span>
+            <button
+              type="button"
+              class="btn-logout-movil"
+              (click)="cerrarSesion(); cerrarMenu()">
+              <fa-icon [icon]="faRightFromBracket"></fa-icon>
+              <span>{{ 'MENU.CERRAR_SESION' | translate }}</span>
+            </button>
+          </div>
+        } @else {
+          <button routerLink="/login" (click)="cerrarMenu()" class="btn-cuenta-movil">
+            {{ 'MENU.MI_CUENTA' | translate }}
+          </button>
+        }
+      </div>
+    </nav>
+
+    <!-- ACCIONES ESCRITORIO -->
+    <div class="acciones">
+      <!-- TELÉFONO -->
+      <a href="tel:950212000" class="telefono-link">
+        <fa-icon [icon]="faPhone"></fa-icon>
+        <strong>950 212 000</strong>
+      </a>
+
+      <!-- SELECTOR DE IDIOMA -->
+      <div class="selector-idioma">
+        <button type="button" class="idioma-btn">
+          <span class="codigo-idioma">{{ idiomaService.idioma().codigo }}</span>
+          <fa-icon [icon]="faChevronDown" class="flecha"></fa-icon>
+        </button>
+
+        <div class="idioma-dropdown shadow-sm">
+          @for (idioma of idiomas; track idioma.codigo) {
+            <button
+              type="button"
+              class="idioma-item"
+              [class.activo]="idioma.codigo === idiomaService.idioma().codigo"
+              (click)="cambiarIdioma(idioma)">
+              <span>{{ idioma.nombre }}</span>
+
+              @if (idioma.codigo === idiomaService.idioma().codigo) {
+                <fa-icon [icon]="faCheck" class="checkmark"></fa-icon>
+              }
+            </button>
+          }
+        </div>
+      </div>
+
+      <!-- SESIÓN DE USUARIO -->
+      @if ((usuario$ | async); as usuario) {
+        <div class="usuario-logado">
+          <span class="mail-usuario">
+            {{ usuario.mail }}
+          </span>
+          <button
+            type="button"
+            class="btn-logout"
+            (click)="cerrarSesion()">
+            <fa-icon [icon]="faRightFromBracket"></fa-icon>
+          </button>
+        </div>
+      } @else {
+        <button routerLink="/login" class="btn-cuenta">
+          {{ 'MENU.MI_CUENTA' | translate }}
+        </button>
+      }
+    </div>
+
+    <!-- BOTÓN HAMBURGUESA MÓVIL -->
+    <button
+      class="hamburger"
+      [class.active]="menuAbierto"
+      (click)="toggleMenu()"
+      [attr.aria-label]="'MENU.ARIA_LABEL' | translate">
+      @if (!menuAbierto) {
+        <span></span>
+        <span></span>
+        <span></span>
+      } @else {
+        <span class="close">✕</span>
+      }
+    </button>
+  </div>
+</header>
+
+<!-- MODAL LOGIN -->
+@if (mostrarLoginModal) {
+  <app-login-modal
+    (cerrarModal)="cerrarLoginModal()">
+  </app-login-modal>
+}

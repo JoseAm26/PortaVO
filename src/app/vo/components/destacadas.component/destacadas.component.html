@@ -1,0 +1,126 @@
+<section class="showroom-camiones">
+  <div class="contenedor-global">
+
+    <div class="cabecera-seccion-centro">
+      <h2>{{ 'DESTACADAS.TITULO' | translate }}</h2>
+      <p>{{ 'DESTACADAS.DESCRIPCION' | translate }}</p>
+    </div>
+
+    @if (vehiculosDestacados().length > 0) {
+      <div class="carrusel-wrapper">
+
+        <!-- BOTÓN ANTERIOR -->
+        <button
+          type="button"
+          class="btn-carrusel btn-prev"
+          (click)="anterior()"
+          aria-label="Anterior">
+          <!-- SUSTITUIDO: Chevron Izquierdo -->
+          <fa-icon [icon]="faChevronLeft"></fa-icon>
+        </button>
+
+        <!-- VIEWPORT DEL CARRUSEL -->
+        <div class="carrusel-viewport">
+          <div
+            class="carrusel-track"
+            [style.--items-visibles]="itemsVisibles"
+            [style.transform]="getTransformTrack()">
+
+            @for (camion of vehiculosDestacados(); track camion.idStoc) {
+
+              <div class="carrusel-slide">
+                <div class="tarjeta-horizontal">
+
+                  <div
+                    class="zona-imagen"
+                    [style.--bg-img]="'url(' + getImagenVehiculo(camion) + ')'">
+
+                    <img
+                      [src]="getImagenVehiculo(camion)"
+                      [alt]="camion.marca + ' ' + camion.modelo"
+                      class="vehiculo-img"
+                      loading="lazy" decoding="async">
+                  </div>
+
+                  <div class="zona-contenido">
+
+                    <div class="cabecera-tarjeta">
+                      <h3>
+                        {{camion.marca}}
+                        <span class="modelo">{{camion.modelo}}</span>
+                      </h3>
+
+                      <div class="especificaciones">
+                        <span class="dato">
+                          <!-- SUSTITUIDO: Indicador de potencia/Velocímetro -->
+                          <fa-icon [icon]="faGaugeHigh"></fa-icon>
+                          {{camion.potMot}} CV
+                        </span>
+
+                        <span class="dato">
+                          <!-- SUSTITUIDO: Surtidor de gasolinera -->
+                          <fa-icon [icon]="faGasPump"></fa-icon>
+                          {{ 'DESTACADAS.DIESEL' | translate }}
+                        </span>
+                      </div>
+                    </div>
+
+                    <div class="tarjeta-fin">
+                      @if (camion.precio && camion.precio !== 0) {
+                        <span class="precio-fijo">
+                          {{camion.precio}} €
+                        </span>
+                      } @else {
+                        <span class="precio-consultar">
+                          {{ 'DESTACADAS.PRECIO_CONSULTAR' | translate }}
+                        </span>
+                      }
+
+                      <button
+                        class="btn-solicitar"
+                        [routerLink]="['/detalle', camion.idStoc]">
+                        {{ 'DESTACADAS.VER_DETALLES' | translate }}
+                      </button>
+                    </div>
+
+                  </div>
+
+                </div>
+              </div>
+
+            }
+
+          </div>
+        </div>
+
+        <!-- BOTÓN SIGUIENTE -->
+        <button
+          type="button"
+          class="btn-carrusel btn-next"
+          (click)="siguiente()"
+          aria-label="Siguiente">
+          <!-- SUSTITUIDO: Chevron Derecho -->
+          <fa-icon [icon]="faChevronRight"></fa-icon>
+        </button>
+
+      </div>
+
+      <!-- PUNTOS DE NAVEGACIÓN (DOTS) -->
+      @if (vehiculosDestacados().length > 1) {
+        <div class="carrusel-puntos">
+          @for (camion of vehiculosDestacados(); track camion.idStoc; let i = $index) {
+            @if (i <= maxIndiceVisible) {
+              <button
+                type="button"
+                class="punto"
+                [class.activo]="i === indiceActual()"
+                (click)="irAlIndice(i)">
+              </button>
+            }
+          }
+        </div>
+      }
+    }
+
+  </div>
+</section>

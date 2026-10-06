@@ -1,0 +1,53 @@
+<section class="seccion-activacion">
+  <div class="contenedor-global flex-centro">
+    <div class="tarjeta-activacion">
+
+      <div class="cabecera-seccion text-center">
+        <span class="subtitulo-tag">{{ 'ACTIVACION.TAGLINE' | translate }}</span>
+      </div>
+
+      <!-- Estado Cargando -->
+      @if (cargando()) {
+        <div class="bloque-estado cargando">
+          <div class="spinner-custom"></div>
+          <h2>{{ 'ACTIVACION.CARGANDO.TITULO' | translate }}</h2>
+          <p>{{ 'ACTIVACION.CARGANDO.DESCRIPCION' | translate }}</p>
+        </div>
+      }
+
+      <!-- Estado Resultado -->
+      @else {
+        <div class="bloque-estado" [class.exito]="exito()" [class.error]="!exito()">
+
+          <div class="contenedor-icono">
+            @if (exito()) {
+              <!-- Ícono Check SVG -->
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+              </svg>
+            } @else {
+              <!-- Ícono Error SVG -->
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="15" y1="9" x2="9" y2="15"></line>
+                <line x1="9" y1="9" x2="15" y2="15"></line>
+              </svg>
+            }
+          </div>
+
+          <h2>{{ (exito() ? 'ACTIVACION.RESULTADO.EXITO_TITULO' : 'ACTIVACION.RESULTADO.ERROR_TITULO') | translate }}</h2>
+          <p class="mensaje-resultado">{{ mensaje() }}</p>
+
+          <button
+            type="button"
+            class="btn-accion-activacion"
+            (click)="aceptar()">
+            {{ (exito() ? 'ACTIVACION.RESULTADO.BTN_EXITO' : 'ACTIVACION.RESULTADO.BTN_ERROR') | translate }}
+          </button>
+        </div>
+      }
+
+    </div>
+  </div>
+</section>

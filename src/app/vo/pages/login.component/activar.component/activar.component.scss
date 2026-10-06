@@ -1,0 +1,134 @@
+.seccion-activacion {
+  padding: 4rem 1rem;
+  min-height: calc(100vh - 120px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f8f9fa;
+
+  .contenedor-global.flex-centro {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 580px;
+  }
+
+  .tarjeta-activacion {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 3rem 2.5rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+    border: 1px solid #eef0f2;
+    width: 100%;
+    text-align: center;
+  }
+
+  .cabecera-seccion {
+    margin-bottom: 1.5rem;
+
+    .subtitulo-tag {
+      display: inline-block;
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #004b87; // Color corporativo principal
+      background: #eef5fc;
+      padding: 0.35rem 0.85rem;
+      border-radius: 20px;
+    }
+  }
+
+  .bloque-estado {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+
+    h2 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: #1a202c;
+      margin: 0;
+    }
+
+    p {
+      color: #64748b;
+      font-size: 1rem;
+      margin: 0 0 1rem 0;
+      line-height: 1.5;
+    }
+
+    .contenedor-icono {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 0.5rem;
+
+      svg {
+        width: 36px;
+        height: 36px;
+      }
+    }
+
+    /* Estado Éxito */
+    &.exito {
+      .contenedor-icono {
+        background-color: #d1e7dd;
+        color: #0f5132;
+      }
+    }
+
+    /* Estado Error */
+    &.error {
+      .contenedor-icono {
+        background-color: #f8d7da;
+        color: #842029;
+      }
+    }
+  }
+
+  /* Spinner de carga estilizado */
+  .spinner-custom {
+    width: 48px;
+    height: 48px;
+    border: 4px solid #eef2f6;
+    border-top: 4px solid #004b87;
+    border-radius: 50%;
+    animation: spin 0.9s linear infinite;
+    margin-bottom: 0.5rem;
+  }
+
+  /* Botón principal */
+  .btn-accion-activacion {
+    width: 100%;
+    max-width: 280px;
+    padding: 0.85rem 1.5rem;
+    background-color: #004b87;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+      background-color: #003663;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(0, 75, 135, 0.25);
+    }
+
+    &:active {
+      transform: translateY(0);
+    }
+  }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

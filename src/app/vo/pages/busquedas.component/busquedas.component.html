@@ -1,0 +1,162 @@
+<div class="container mt-4 mb-5">
+
+  <div class="row mb-4">
+    <div class="col-12">
+      <div class="header-busquedas pb-3 border-bottom d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3">
+        <div>
+          <h1 class="titulo-pagina mb-1">
+            {{ 'BUSQUEDAS.TITULO' | translate }}
+          </h1>
+          <p class="subtitulo-pagina text-muted mb-0">
+            {{ 'BUSQUEDAS.SUBTITULO' | translate }}
+          </p>
+        </div>
+
+        <a class="btn btn-warning text-white fw-bold px-4 py-2 shadow-sm flex-shrink-0" routerLink="/buscador">
+          <fa-icon [icon]="faPlus" class="me-2"></fa-icon>
+          {{ 'BUSQUEDAS.NUEVA_BUSQUEDA' | translate }}
+        </a>
+      </div>
+    </div>
+  </div>
+
+  @if (cargando()) {
+    <div class="text-center py-5">
+      <div class="spinner-border text-primary"></div>
+      <div class="mt-3">
+        {{ 'BUSQUEDAS.CARGANDO' | translate }}
+      </div>
+    </div>
+  } @else if (busquedas().length === 0) {
+    <div class="alert alert-info">
+      <fa-icon [icon]="faCircleInfo" class="me-2"></fa-icon>
+      {{ 'BUSQUEDAS.SIN_BUSQUEDAS' | translate }}
+    </div>
+  } @else {
+    @for (busqueda of busquedas(); track busqueda.numBusqueda) {
+      <div class="tarjeta-busqueda mb-4">
+        <div class="card border-0 shadow-sm rounded-3 overflow-hidden">
+
+          <div class="card-header bg-white border-bottom p-3 d-flex justify-content-between align-items-center">
+            <span class="badge bg-primary-subtle text-primary fw-semibold px-3 py-2">
+              <fa-icon [icon]="faBookmark" class="me-1"></fa-icon>
+              {{ busqueda.nombre || (('BUSQUEDAS.BUSQUEDA_NUMERO' | translate) + busqueda.numBusqueda) }}
+            </span>
+
+            <div class="d-flex gap-2">
+              <button
+                type="button"
+                class="btn btn-outline-danger btn-sm px-3"
+                (click)="eliminarBusqueda(busqueda)">
+                <fa-icon [icon]="faTrashCan" class="me-1"></fa-icon>
+                {{ 'BUSQUEDAS.ELIMINAR' | translate }}
+              </button>
+
+              <button
+                type="button"
+                class="btn btn-aplicar btn-sm px-4"
+                (click)="verVehiculos(busqueda)">
+                <fa-icon [icon]="faMagnifyingGlass" class="me-1"></fa-icon>
+                {{ 'BUSQUEDAS.VER_VEHICULOS' | translate }}
+              </button>
+            </div>
+          </div>
+
+          <div class="card-body p-4">
+            <div class="row g-4">
+
+              <div class="col-lg-5 border-end-lg">
+                @if (busqueda.tipos && busqueda.tipos.length > 0) {
+                  <div class="mb-3">
+                    <span class="sublabel d-block mb-2">
+                      {{ 'BUSQUEDAS.TIPOLOGIA' | translate }}
+                    </span>
+                    <div class="d-flex flex-wrap gap-2">
+                      @for (tipo of busqueda.tipos; track tipo) {
+                        <span class="badge badge-filtro">
+                          {{ tipo }}
+                        </span>
+                      }
+                    </div>
+                  </div>
+                }
+
+                @if (busqueda.marcas && busqueda.marcas.length > 0) {
+                  <div>
+                    <span class="sublabel d-block mb-2">
+                      {{ 'BUSQUEDAS.MARCAS' | translate }}
+                    </span>
+                    <div class="d-flex flex-wrap gap-2">
+                      @for (marca of busqueda.marcas; track marca) {
+                        <span class="badge badge-filtro">
+                          {{ marca }}
+                        </span>
+                      }
+                    </div>
+                  </div>
+                }
+              </div>
+
+              <div class="col-lg-7">
+                <div class="row g-3">
+
+                  <div class="col-sm-6 col-md-3">
+                    <div class="rango-box">
+                      <span class="rango-titulo">
+                        <fa-icon [icon]="faRoad" class="me-1"></fa-icon>
+                        {{ 'BUSQUEDAS.RANGOS.KM' | translate }}
+                      </span>
+                      <div class="rango-valores">
+                        {{ getRango(busqueda.kmsDesde, busqueda.kmsHasta) }}
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-sm-6 col-md-3">
+                    <div class="rango-box">
+                      <span class="rango-titulo">
+                        <fa-icon [icon]="faCalendar" class="me-1"></fa-icon>
+                        {{ 'BUSQUEDAS.RANGOS.ANIO' | translate }}
+                      </span>
+                      <div class="rango-valores">
+                        {{ getRango(busqueda.anioDesde, busqueda.anioHasta) }}
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-sm-6 col-md-3">
+                    <div class="rango-box">
+                      <span class="rango-titulo">
+                        <fa-icon [icon]="faGaugeHigh" class="me-1"></fa-icon>
+                        {{ 'BUSQUEDAS.RANGOS.POTENCIA' | translate }}
+                      </span>
+                      <div class="rango-valores">
+                        {{ getRango(busqueda.potDesde, busqueda.potHasta, ' CV') }}
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-sm-6 col-md-3">
+                    <div class="rango-box">
+                      <span class="rango-titulo">
+                        <fa-icon [icon]="faTag" class="me-1"></fa-icon>
+                        {{ 'BUSQUEDAS.RANGOS.PRECIO' | translate }}
+                      </span>
+                      <div class="rango-valores">
+                        {{ getRango(busqueda.precioDesde, busqueda.precioHasta, ' €') }}
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    }
+  }
+
+</div>

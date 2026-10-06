@@ -1,0 +1,99 @@
+$color-corporate: #222765;
+$color-text-muted: #6c757d;
+
+.subtitulo-seccion {
+  color: $color-corporate;
+  font-size: 1.4rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.card-relacionado {
+  max-width: 320px; // Mantiene las tarjetas proporcionadas y centradas
+  border: 1px solid #e9ecef !important;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  background-color: #ffffff;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(34, 39, 101, 0.08) !important;
+    border-color: rgba(34, 39, 101, 0.2) !important;
+
+    .img-vehiculo {
+      transform: scale(1.05);
+    }
+  }
+
+  /* Ajuste de la imagen base64 centrada */
+  .contenedor-imagen {
+    height: 180px;
+    width: 100%;
+    overflow: hidden;
+    background-color: #f8f9fa;
+
+    .img-vehiculo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      transition: transform 0.3s ease;
+    }
+  }
+
+  .badge-tipo {
+    background-color: rgba(255, 255, 255, 0.95);
+    color: $color-corporate;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    border: 1px solid rgba(34, 39, 101, 0.15);
+  }
+
+  .titulo-vehiculo {
+    color: $color-corporate;
+    font-size: 1.1rem;
+    font-weight: 700;
+  }
+
+  .fs-7 {
+    font-size: 0.825rem;
+  }
+
+  .max-w-120 {
+    max-width: 120px;
+  }
+
+  .precio-container {
+    background-color: #f8f9fa;
+    border: 1px dashed #ced4da;
+
+    .precio-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.5px;
+    }
+
+    .precio-valor {
+      color: $color-corporate;
+      font-size: 1.2rem;
+    }
+  }
+
+  /* Botón unificado */
+  .btn-aplicar {
+    background-color: $color-corporate;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border: none;
+    border-radius: 6px;
+    transition: background-color 0.2s ease-in-out;
+
+    &:hover {
+      background-color: lighten($color-corporate, 8%);
+      color: #ffffff;
+    }
+  }
+}

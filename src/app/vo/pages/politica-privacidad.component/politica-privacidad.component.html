@@ -1,0 +1,102 @@
+<div class="contenedor-global pagina-legal">
+  <!-- Cabecera principal -->
+  <header class="header-aviso">
+    <span class="tagline">{{ 'PRIVACIDAD.TAGLINE' | translate }}</span>
+    <h1>{{ 'PRIVACIDAD.TITULO_1' | translate }} <span class="destaque">{{ 'PRIVACIDAD.TITULO_2' | translate }}</span></h1>
+    <p class="subtitulo">{{ 'PRIVACIDAD.SUBTITULO' | translate }}</p>
+  </header>
+
+  <!-- Cuerpo del documento -->
+  <div class="cuerpo-legal">
+
+    <!-- 1. INFORMACIÓN AL USUARIO -->
+    <section class="seccion-legal">
+      <h2>{{ 'PRIVACIDAD.SECCION_1.TITULO' | translate }}</h2>
+
+      <h3>{{ 'PRIVACIDAD.SECCION_1.RESPONSABLE_TITULO' | translate }}</h3>
+      <p [innerHTML]="'PRIVACIDAD.SECCION_1.RESPONSABLE_P' | translate"></p>
+
+      <h3>{{ 'PRIVACIDAD.SECCION_1.FINES_TITULO' | translate }}</h3>
+      <p>{{ 'PRIVACIDAD.SECCION_1.FINES_INTRO' | translate }}</p>
+
+      <!-- Bloques de finalidad según formulario -->
+      <div class="bloque-formulario">
+        <span class="etiqueta-formulario">{{ 'PRIVACIDAD.SECCION_1.FORM_CONTACTO.ETIQUETA' | translate }}</span>
+        <ul class="lista-corporativa">
+          <li [innerHTML]="'PRIVACIDAD.SECCION_1.FORM_CONTACTO.ITEM_1' | translate"></li>
+          <li [innerHTML]="'PRIVACIDAD.SECCION_1.FORM_CONTACTO.ITEM_2' | translate"></li>
+        </ul>
+      </div>
+
+      <div class="bloque-formulario">
+        <span class="etiqueta-formulario">{{ 'PRIVACIDAD.SECCION_1.FORM_REGISTRO.ETIQUETA' | translate }}</span>
+        <ul class="lista-corporativa">
+          <li [innerHTML]="'PRIVACIDAD.SECCION_1.FORM_REGISTRO.ITEM_1' | translate"></li>
+          <li [innerHTML]="'PRIVACIDAD.SECCION_1.FORM_REGISTRO.ITEM_2' | translate"></li>
+        </ul>
+      </div>
+
+      <div class="bloque-formulario">
+        <span class="etiqueta-formulario">{{ 'PRIVACIDAD.SECCION_1.FORM_INFORMACION.ETIQUETA' | translate }}</span>
+        <ul class="lista-corporativa">
+          <li [innerHTML]="'PRIVACIDAD.SECCION_1.FORM_INFORMACION.ITEM_1' | translate"></li>
+        </ul>
+      </div>
+
+      <h3>{{ 'PRIVACIDAD.SECCION_1.CONSERVACION_TITULO' | translate }}</h3>
+      <p>{{ 'PRIVACIDAD.SECCION_1.CONSERVACION_P' | translate }}</p>
+
+      <h3>{{ 'PRIVACIDAD.SECCION_1.DESTINATARIOS_TITULO' | translate }}</h3>
+      <p>{{ 'PRIVACIDAD.SECCION_1.DESTINATARIOS_P' | translate }}</p>
+
+      <h3>{{ 'PRIVACIDAD.SECCION_1.DERECHOS_TITULO' | translate }}</h3>
+      <p>{{ 'PRIVACIDAD.SECCION_1.DERECHOS_INTRO' | translate }}</p>
+      <ul class="lista-corporativa">
+        <li>{{ 'PRIVACIDAD.SECCION_1.DERECHOS_LISTA.ITEM_1' | translate }}</li>
+        <li>{{ 'PRIVACIDAD.SECCION_1.DERECHOS_LISTA.ITEM_2' | translate }}</li>
+        <li [innerHTML]="'PRIVACIDAD.SECCION_1.DERECHOS_LISTA.ITEM_3' | translate"></li>
+      </ul>
+
+      <!-- Caja destacada de contacto -->
+      <div class="nota-contacto">
+        <strong>{{ 'PRIVACIDAD.SECCION_1.CONTACTO_DERECHOS.TITULO' | translate }}</strong><br>
+        {{ 'PRIVACIDAD.SECCION_1.CONTACTO_DERECHOS.DIRECCION' | translate }}<br>
+        <strong>{{ 'PRIVACIDAD.SECCION_1.CONTACTO_DERECHOS.EMAIL' | translate }}</strong>
+        <a href="mailto:protecciondatos@veinsur.es">protecciondatos@veinsur.es</a><br><br>
+        <strong>{{ 'PRIVACIDAD.SECCION_1.CONTACTO_DERECHOS.DPD' | translate }}</strong>
+        {{ 'PRIVACIDAD.SECCION_1.CONTACTO_DERECHOS.DPD_VALOR' | translate }}
+      </div>
+    </section>
+
+    <!-- 2. CARÁCTER OBLIGATORIO O FACULTATIVO -->
+    <section class="seccion-legal">
+      <h2>{{ 'PRIVACIDAD.SECCION_2.TITULO' | translate }}</h2>
+      <p>{{ 'PRIVACIDAD.SECCION_2.P1' | translate }}</p>
+      <p>{{ 'PRIVACIDAD.SECCION_2.P2' | translate }}</p>
+    </section>
+
+    <!-- 3. MEDIDAS DE SEGURIDAD -->
+    <section class="seccion-legal">
+      <h2>{{ 'PRIVACIDAD.SECCION_3.TITULO' | translate }}</h2>
+      <p>{{ 'PRIVACIDAD.SECCION_3.P1' | translate }}</p>
+      <p>{{ 'PRIVACIDAD.SECCION_3.P2' | translate }}</p>
+      <p>
+        {{ 'PRIVACIDAD.SECCION_3.P3' | translate }}
+        <a href="mailto:protecciondatos@veinsur.es">protecciondatos@veinsur.es</a>.
+      </p>
+    </section>
+
+    <!-- 4. AVISO IMPORTANTE – REGLAMENTO DE DATOS DE LA UE -->
+    <section class="seccion-legal">
+      <h2>{{ 'PRIVACIDAD.SECCION_4.TITULO' | translate }}</h2>
+      <p>{{ 'PRIVACIDAD.SECCION_4.P1' | translate }}</p>
+      <p>
+        {{ 'PRIVACIDAD.SECCION_4.P2' | translate }}
+        <a href="https://www.volvotrucks.es/es-es/tools/data-act.html" target="_blank" rel="noopener">www.volvotrucks.es/es-es/tools/data-act.html</a>
+        {{ 'PRIVACIDAD.SECCION_4.P2_LINK' | translate }}
+        <strong>{{ 'PRIVACIDAD.SECCION_4.SECCION_VALOR' | translate }}</strong>.
+      </p>
+    </section>
+
+  </div>
+</div>

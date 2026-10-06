@@ -1,0 +1,193 @@
+$color-corporate: #222765;
+$color-text-muted: #6c757d;
+
+.card-formulario {
+  background-color: #ffffff;
+  border: 1px solid #e9ecef;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+
+  /* Cabecera en azul corporativo */
+  .cabecera-corporativa {
+    background-color: $color-corporate;
+    color: #ffffff;
+    padding: 2rem 1.5rem;
+    text-align: center;
+
+    .titulo-formulario {
+      font-size: 1.5rem;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      margin-bottom: 0.5rem;
+    }
+
+    .subtitulo-formulario {
+      font-size: 0.95rem;
+      opacity: 0.9;
+      max-width: 650px;
+      margin: 0 auto;
+      line-height: 1.4;
+    }
+  }
+
+  /* Etiquetas e inputs */
+  .form-label {
+    color: #333333;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    margin-bottom: 0.4rem;
+  }
+
+  .input-group {
+    .input-group-text {
+      border-color: #ced4da;
+      color: $color-corporate;
+      background-color: #f8f9fa;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 42px;
+    }
+
+    .form-control,
+    .form-select {
+      padding: 0.65rem 0.85rem;
+      font-size: 0.95rem;
+      border-color: #ced4da;
+      transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+
+      &:focus {
+        border-color: $color-corporate;
+        box-shadow: 0 0 0 0.25rem rgba(34, 39, 101, 0.15);
+      }
+    }
+  }
+
+  /* Evita saltos de maquetación (CLS) con los mensajes de error dinámicos */
+  .invalid-feedback,
+  .valid-feedback {
+    font-size: 0.8rem;
+    margin-top: 0.25rem;
+    min-height: 1.2rem;
+  }
+
+  /* Cuadro informativo RGPD */
+  .box-privacidad {
+    background-color: #f8f9fa !important;
+    border: 1px solid #e9ecef !important;
+    border-radius: 8px;
+    padding: 1rem;
+    color: #495057;
+
+    p {
+      color: $color-text-muted;
+      font-size: 0.825rem;
+      line-height: 1.4;
+      margin-bottom: 0;
+
+      strong {
+        color: #212529;
+      }
+    }
+
+    a {
+      color: $color-corporate !important;
+      font-weight: 600;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline !important;
+      }
+    }
+  }
+
+  /* Checkbox */
+  .form-check {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+
+    .form-check-input {
+      cursor: pointer;
+      width: 1.1em;
+      height: 1.1em;
+      margin-top: 0.15em;
+      flex-shrink: 0; /* Evita deformaciones en móviles */
+
+      &:checked {
+        background-color: $color-corporate;
+        border-color: $color-corporate;
+      }
+
+      &:focus {
+        box-shadow: 0 0 0 0.2rem rgba(34, 39, 101, 0.25);
+      }
+    }
+
+    .form-check-label {
+      color: #333333;
+      font-size: 0.875rem;
+      cursor: pointer;
+      user-select: none;
+      line-height: 1.3;
+    }
+  }
+
+  /* Botón con el azul corporativo */
+  .btn-aplicar {
+    background-color: $color-corporate;
+    color: #ffffff;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 6px;
+    transition: all 0.2s ease-in-out;
+
+    &:hover:not(:disabled) {
+      background-color: lighten($color-corporate, 8%);
+      color: #ffffff;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(34, 39, 101, 0.25);
+    }
+
+    &:active:not(:disabled) {
+      transform: translateY(0);
+      box-shadow: none;
+    }
+
+    &:disabled {
+      background-color: #a0a5ba;
+      border-color: #a0a5ba;
+      cursor: not-allowed;
+      opacity: 0.7;
+      transform: none;
+      box-shadow: none;
+    }
+  }
+}
+
+/* Responsividad en móviles */
+@media (max-width: 767.98px) {
+  .card-formulario {
+    .cabecera-corporativa {
+      padding: 1.5rem 1rem !important;
+
+      .titulo-formulario {
+        font-size: 1.25rem;
+      }
+
+      .subtitulo-formulario {
+        font-size: 0.875rem;
+      }
+    }
+
+    .card-body {
+      padding: 1.25rem !important;
+    }
+  }
+}

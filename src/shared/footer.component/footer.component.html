@@ -1,0 +1,118 @@
+<footer class="footer">
+  <!-- Línea decorativa superior -->
+  <div class="footer-accent-bar"></div>
+
+  <div class="footer-container">
+    <!-- Bloque Superior: Columnas -->
+    <div class="footer-top">
+
+      <!-- Columna 1: Postventa -->
+      <div class="footer-column">
+        <div class="column-header">
+          <h3>Veinsur</h3>
+          <span class="subtitle">{{ 'FOOTER.POSTVENTA' | translate }}</span>
+        </div>
+        <ul class="footer-nav">
+          <li><a routerLink="/delegaciones/postventa/almeria">Almería</a></li>
+          <li><a routerLink="/delegaciones/postventa/antas">Antas</a></li>
+          <li><a routerLink="/delegaciones/postventa/jaen">Jaén</a></li>
+          <li><a routerLink="/delegaciones/postventa/cordoba">Córdoba</a></li>
+          <li><a routerLink="/delegaciones/postventa/sevilla">Sevilla</a></li>
+          <li><a routerLink="/delegaciones/postventa/granada">Granada</a></li>
+          <li><a routerLink="/delegaciones/postventa/malaga">Málaga</a></li>
+        </ul>
+      </div>
+
+      <!-- Columna 2: Recambios -->
+      <div class="footer-column">
+        <div class="column-header">
+          <h3>Veinsur</h3>
+          <span class="subtitle">{{ 'FOOTER.RECAMBIOS' | translate }}</span>
+        </div>
+        <ul class="footer-nav">
+          <li><a routerLink="/delegaciones/recambios/almeria">Almería</a></li>
+          <li><a routerLink="/delegaciones/recambios/antas">Antas</a></li>
+          <li><a routerLink="/delegaciones/recambios/jaen">Jaén</a></li>
+          <li><a routerLink="/delegaciones/recambios/cordoba">Córdoba</a></li>
+          <li><a routerLink="/delegaciones/recambios/sevilla">Sevilla</a></li>
+          <li><a routerLink="/delegaciones/recambios/granada">Granada</a></li>
+          <li><a routerLink="/delegaciones/recambios/malaga">Málaga</a></li>
+        </ul>
+      </div>
+
+      <!-- Columna 3: Transintersegur -->
+      <div class="footer-column">
+        <div class="column-header">
+          <h3>Transintersegur</h3>
+          <span class="subtitle">{{ 'FOOTER.SEGUROS' | translate }}</span>
+        </div>
+        <ul class="footer-nav">
+          <li>
+            <a href="https://www.transintersegur.es/" target="_blank" rel="noopener noreferrer">
+              Almería <fa-icon [icon]="faArrowUpRightFromSquare" class="external-icon"></fa-icon>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.transintersegur.es/" target="_blank" rel="noopener noreferrer">
+              Jaén <fa-icon [icon]="faArrowUpRightFromSquare" class="external-icon"></fa-icon>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.transintersegur.es/" target="_blank" rel="noopener noreferrer">
+              Córdoba <fa-icon [icon]="faArrowUpRightFromSquare" class="external-icon"></fa-icon>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.transintersegur.es/" target="_blank" rel="noopener noreferrer">
+              Sevilla <fa-icon [icon]="faArrowUpRightFromSquare" class="external-icon"></fa-icon>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.transintersegur.es/" target="_blank" rel="noopener noreferrer">
+              Granada <fa-icon [icon]="faArrowUpRightFromSquare" class="external-icon"></fa-icon>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.transintersegur.es/" target="_blank" rel="noopener noreferrer">
+              Málaga <fa-icon [icon]="faArrowUpRightFromSquare" class="external-icon"></fa-icon>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Divisor central -->
+    <hr class="footer-divider" />
+
+    <!-- Bloque Inferior: Redes Sociales y Enlaces Legales -->
+    <div class="footer-bottom">
+      <div class="social-links">
+        <a href="https://www.facebook.com/Veinsur-105146358010406" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+          <fa-icon [icon]="faFacebookF"></fa-icon>
+        </a>
+        <a href="https://www.instagram.com/veinsuroficial" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <fa-icon [icon]="faInstagram"></fa-icon>
+        </a>
+        <a href="https://www.linkedin.com/company/veinsur-s-a-u-/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <fa-icon [icon]="faLinkedinIn"></fa-icon>
+        </a>
+      </div>
+
+      <nav class="legal-links">
+        <a routerLink="/aviso-legal">{{ 'FOOTER.AVISO_LEGAL' | translate }}</a>
+        <span class="dot-separator">•</span>
+        <a routerLink="/politica-redes-sociales">{{ 'FOOTER.POLITICA_REDES' | translate }}</a>
+        <span class="dot-separator">•</span>
+        <a routerLink="/politica-privacidad">{{ 'FOOTER.POLITICA_PRIVACIDAD' | translate }}</a>
+        <span class="dot-separator">•</span>
+        <a routerLink="/politica-cookies">{{ 'FOOTER.POLITICA_COOKIES' | translate }}</a>
+      </nav>
+    </div>
+
+    <!-- Copyright -->
+    <div class="footer-copy">
+      © <strong>VEINSUR S.A.U.</strong> {{ 'FOOTER.DERECHOS_RESERVADOS' | translate }}
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,124 @@
+<section class="seccion-delegaciones">
+  <div class="contenedor-delegaciones">
+
+    <!-- Cabecera de la Sección -->
+    <div class="cabecera-seccion">
+      <span class="subtitulo-tag">{{ 'DELEGACIONES.SUBTITULO_TAG' | translate }}</span>
+      <h2>{{ 'DELEGACIONES.TITULO' | translate }}</h2>
+    </div>
+
+    <!-- Grid de Delegaciones -->
+    <div class="grid-delegaciones">
+      @for (del of delegaciones; track del.nombre) {
+
+        <!-- Carga diferida según visibilidad en pantalla (Viewport) -->
+        @defer (on viewport) {
+          <div class="tarjeta-delegacion">
+
+            <!-- Contenedor de Medios (Foto o Mapa) -->
+            <div class="media-delegacion">
+
+              <!-- Selector de Vista (Foto/Mapa) -->
+              <div class="selector-vista">
+                <button [class.activo]="!del.mostrarMapa" (click)="del.mostrarMapa = false" type="button">
+                  <fa-icon [icon]="faImage"></fa-icon> {{ 'DELEGACIONES.FOTO' | translate }}
+                </button>
+                <button [class.activo]="del.mostrarMapa" (click)="del.mostrarMapa = true" type="button">
+                  <fa-icon [icon]="faMapLocationDot"></fa-icon> {{ 'DELEGACIONES.MAPA' | translate }}
+                </button>
+              </div>
+
+              @if (!del.mostrarMapa) {
+                <!-- Carga optimizada de la imagen -->
+                <img
+                  [src]="del.imagen"
+                  [alt]="('DELEGACIONES.ALT_FOTO' | translate) + del.nombre"
+                  class="foto-full"
+                  loading="lazy"
+                  decoding="async"
+                  width="400"
+                  height="200">
+              }
+
+              @if (del.mostrarMapa) {
+                <!-- Carga diferida del iframe: solo se descarga/procesa cuando se muestra -->
+                @defer (on immediate) {
+                  <iframe
+                    [src]="del.iframeUrl"
+                    width="100%"
+                    height="100%"
+                    style="border:0;"
+                    allowfullscreen=""
+                    loading="lazy"
+                    [title]="('DELEGACIONES.TITLE_MAPA' | translate) + del.nombre"
+                    referrerpolicy="no-referrer-when-downgrade">
+                  </iframe>
+                } @placeholder {
+                  <div class="mapa-placeholder">{{ 'DELEGACIONES.CARGANDO_MAPA' | translate }}</div>
+                }
+              }
+            </div>
+
+            <!-- Cuerpo de la Tarjeta con Detalles -->
+            <div class="cuerpo-tarjeta">
+              <h3>{{ del.nombre }}</h3>
+
+              <div class="info-rows">
+                <div class="info-row">
+                  <div class="icono-wrap">
+                    <fa-icon [icon]="faLocationDot" class="icon"></fa-icon>
+                  </div>
+                  <p>{{ del.direccion }}</p>
+                </div>
+
+                <div class="info-row">
+                  <div class="icono-wrap">
+                    <fa-icon [icon]="faClock" class="icon"></fa-icon>
+                  </div>
+                  <p>{{ del.horario }}</p>
+                </div>
+              </div>
+
+              <!-- Bloque de Contacto Rápido -->
+              <div class="bloque-contacto">
+                <a [href]="'tel:' + del.telefono" class="telefono-link">
+                  <div class="icono-tel">
+                    <fa-icon [icon]="faPhone"></fa-icon>
+                  </div>
+                  <div class="datos-tel">
+                    <span class="label-tel">{{ 'DELEGACIONES.LABEL_TELEFONO' | translate }}</span>
+                    <strong>{{ del.telefono }}</strong>
+                  </div>
+                </a>
+              </div>
+            </div>
+
+            <!-- Footer con los Tres Botones de Acción -->
+            <div class="footer-tarjeta">
+              <a [href]="del.enlaceComoLlegar" target="_blank" rel="noopener noreferrer" class="btn-accion btn-como-llegar" [title]="'DELEGACIONES.COMO_LLEGAR' | translate">
+                <fa-icon [icon]="faMapPin"></fa-icon>
+                <span>{{ 'DELEGACIONES.COMO_LLEGAR' | translate }}</span>
+              </a>
+
+              <a [routerLink]="del.rutaRecambios" class="btn-accion btn-recambios" [title]="'DELEGACIONES.RECAMBIOS' | translate">
+                <fa-icon [icon]="faGears"></fa-icon>
+                <span>{{ 'DELEGACIONES.RECAMBIOS' | translate }}</span>
+              </a>
+
+              <a [routerLink]="del.rutaPostventa" class="btn-accion btn-postventa" [title]="'DELEGACIONES.POSTVENTA' | translate">
+                <fa-icon [icon]="faScrewdriverWrench"></fa-icon>
+                <span>{{ 'DELEGACIONES.POSTVENTA' | translate }}</span>
+              </a>
+            </div>
+
+          </div>
+        } @placeholder {
+          <!-- Skeleton / Esqueleto visual ligero mientras se hace scroll -->
+          <div class="tarjeta-skeleton"></div>
+        }
+
+      }
+    </div>
+
+  </div>
+</section>

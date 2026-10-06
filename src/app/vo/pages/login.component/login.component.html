@@ -1,0 +1,179 @@
+<section class="seccion-privada-servicios">
+  <div class="contenedor-global">
+
+    <!-- ================================================================= -->
+    <!-- BLOQUE 1: ACCESO PRIVADO & REGISTRO -->
+    <!-- ================================================================= -->
+    <div class="grid-doble-columna">
+
+      <!-- Formulario de Acceso -->
+      <div class="tarjeta-acceso-registro">
+        <div class="cabecera-bloque">
+          <span class="subtitulo-tag">{{ 'LOGIN.AREA_CLIENTES' | translate }}</span>
+          <h2>{{ 'LOGIN.BIENVENIDO' | translate }}</h2>
+        </div>
+
+        <form class="formulario-acceso" [formGroup]="form">
+          <div class="grupo-input">
+            <label for="usuario">{{ 'LOGIN.USUARIO_EMAIL' | translate }}</label>
+            <input type="email" id="usuario" placeholder="ejemplo@correo.com" formControlName="email" required>
+          </div>
+
+          <div class="grupo-input">
+            <label for="password">{{ 'LOGIN.PASSWORD' | translate }}</label>
+            <input type="password" id="password" placeholder="••••••••" formControlName="pwd" required>
+          </div>
+
+          <div class="enlaces-formulario">
+            <a routerLink="/login/password" class="enlace-olvido">{{ 'LOGIN.OLVIDO_PASSWORD' | translate }}</a>
+          </div>
+
+          @if (error) {
+            <div class="alerta alerta-error mb-3">
+              {{ error }}
+            </div>
+          }
+
+          <button type="submit" class="btn-enviar" (click)="login()" [disabled]="loading">
+            <span>{{ 'LOGIN.ENVIAR' | translate }}</span>
+            <fa-icon [icon]="faArrowRight"></fa-icon>
+          </button>
+
+          <!-- Divisor visual entre Login Tradicional y Google -->
+          <div class="separador-o"></div>
+
+          <!-- Botón de Google -->
+          <button type="button" class="btn-google" (click)="loginGoogle()">
+            <svg class="logo-google" viewBox="0 0 24 24" width="20" height="20" xmlns="http://www.w3.org/2000/svg">
+              <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.665-5.17 3.665-9.17z"/>
+              <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.24v3.15C3.26 21.39 7.37 24 12 24z"/>
+              <path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.24C.45 8.15 0 9.99 0 12s.45 3.85 1.24 5.42l4.04-3.15z"/>
+              <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.37 0 3.26 2.61 1.24 6.58l4.04 3.15c.95-2.83 3.6-4.98 6.72-4.98z"/>
+            </svg>
+            <span>{{ 'LOGIN.CONTINUAR_GOOGLE' | translate }}</span>
+          </button>
+        </form>
+      </div>
+
+      <!-- Beneficios del Registro -->
+      <div class="tarjeta-beneficios">
+        <div class="cabecera-bloque">
+          <span class="subtitulo-tag">{{ 'LOGIN.NO_TIENES_CUENTA' | translate }}</span>
+          <h2>{{ 'LOGIN.REGISTRATE_VENTAJAS' | translate }}</h2>
+        </div>
+
+        <ul class="lista-beneficios">
+          <li>
+            <div class="icono-beneficio">
+              <fa-icon [icon]="faStar"></fa-icon>
+            </div>
+            <p>{{ 'LOGIN.BENEFICIOS.FAVORITOS' | translate }}</p>
+          </li>
+          <li>
+            <div class="icono-beneficio">
+              <fa-icon [icon]="faBell"></fa-icon>
+            </div>
+            <p>{{ 'LOGIN.BENEFICIOS.NOTIFICACIONES' | translate }}</p>
+          </li>
+          <li>
+            <div class="icono-beneficio">
+              <fa-icon [icon]="faCodeCompare"></fa-icon>
+            </div>
+            <p>{{ 'LOGIN.BENEFICIOS.COMPARA' | translate }}</p>
+          </li>
+          <li>
+            <div class="icono-beneficio">
+              <fa-icon [icon]="faBookOpen"></fa-icon>
+            </div>
+            <p>{{ 'LOGIN.BENEFICIOS.CATALOGO' | translate }}</p>
+          </li>
+        </ul>
+
+        <div class="bloque-contacto">
+          <a [routerLink]="['/login/registro']" class="btn-registro-link">
+            <span>{{ 'LOGIN.CREAR_CUENTA' | translate }}</span>
+            <fa-icon [icon]="faUserPlus"></fa-icon>
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ================================================================= -->
+    <!-- BLOQUE 2: VEHÍCULOS DESTACADOS -->
+    <!-- ================================================================= -->
+    <!-- <app-destacadas /> -->
+
+    <!-- ================================================================= -->
+    <!-- BLOQUE 3: SERVICIOS Y VALORES VEINSUR -->
+    <!-- ================================================================= -->
+    <div class="bloque-corporativo">
+
+      <!-- Grid de Servicios -->
+      <div class="cabecera-seccion-centro">
+        <span class="subtitulo-tag">{{ 'LOGIN.QUE_HACEMOS' | translate }}</span>
+        <h2>{{ 'LOGIN.SERVICIOS_VEINSUR' | translate }}</h2>
+      </div>
+
+      <div class="grid-servicios">
+        <!-- Servicio 1 -->
+        <div class="tarjeta-servicio">
+          <div class="icono-servicio">
+            <fa-icon [icon]="faShieldHalved"></fa-icon>
+          </div>
+          <h3>{{ 'LOGIN.SERVICIOS.SEGUROS_TITULO' | translate }}</h3>
+          <p>{{ 'LOGIN.SERVICIOS.SEGUROS_TEXTO' | translate }}</p>
+        </div>
+
+        <!-- Servicio 2 -->
+        <div class="tarjeta-servicio">
+          <div class="icono-servicio">
+            <fa-icon [icon]="faWrench"></fa-icon>
+          </div>
+          <h3>{{ 'LOGIN.SERVICIOS.TALLER_TITULO' | translate }}</h3>
+          <p>{{ 'LOGIN.SERVICIOS.TALLER_TEXTO' | translate }}</p>
+        </div>
+
+        <!-- Servicio 3 -->
+        <div class="tarjeta-servicio">
+          <div class="icono-servicio">
+            <fa-icon [icon]="faTruckMedical"></fa-icon>
+          </div>
+          <h3>{{ 'LOGIN.SERVICIOS.VOLVO_TITULO' | translate }}</h3>
+          <p>{{ 'LOGIN.SERVICIOS.VOLVO_TEXTO' | translate }}</p>
+        </div>
+
+        <!-- Servicio 4 -->
+        <div class="tarjeta-servicio">
+          <div class="icono-servicio">
+            <fa-icon [icon]="faCoins"></fa-icon>
+          </div>
+          <h3>{{ 'LOGIN.SERVICIOS.FINANCIEROS_TITULO' | translate }}</h3>
+          <p>{{ 'LOGIN.SERVICIOS.FINANCIEROS_TEXTO' | translate }}</p>
+        </div>
+      </div>
+
+      <!-- Valores Veinsur -->
+      <div class="valores-empresa">
+        <div class="grid-valores-info">
+          <div class="texto-valores">
+            <span class="subtitulo-tag">{{ 'LOGIN.VALORES.TAG' | translate }}</span>
+            <h2>{{ 'LOGIN.VALORES.TITULO' | translate }}</h2>
+            <p>{{ 'LOGIN.VALORES.PARRAFO_1' | translate }}</p>
+            <p>{{ 'LOGIN.VALORES.PARRAFO_2' | translate }}</p>
+          </div>
+          <div class="badge-experiencia">
+            <div class="contenido-badge">
+              <span class="numero">1990</span>
+              <span class="etiqueta">{{ 'LOGIN.VALORES.BADGE_TEXTO' | translate }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<app-destacadas />

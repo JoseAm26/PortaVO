@@ -1,0 +1,168 @@
+<section class="seccion-formulario-registro">
+  <div class="contenedor-global">
+    <div class="cabecera-seccion">
+      <span class="subtitulo-tag">{{ 'REGISTRO.TAGLINE' | translate }}</span>
+      <h2>{{ 'REGISTRO.TITULO' | translate }}</h2>
+    </div>
+
+    <div class="tarjeta-registro-full">
+
+      <!-- Mensaje de error global si el formulario es inválido al intentar enviar -->
+      @if (formulario.invalid && formulario.touched) {
+        <div class="alerta-error-global">
+          <p>{{ 'REGISTRO.ALERTAS.REVISA_CAMPOS' | translate }}</p>
+          @if (formulario.errors?.['passwordNoCoincide']) {
+            <span>{{ 'REGISTRO.ALERTAS.PASSWORD_NO_COINCIDE' | translate }}</span>
+          }
+        </div>
+      }
+
+      <!-- Mensaje de error del servidor -->
+      @if (mensajeError()) {
+        <div class="alerta-error-global">
+          {{ mensajeError() }}
+        </div>
+      }
+
+      <!-- Mensaje de éxito -->
+      @if (registroOk()) {
+        <div class="alerta-exito">
+          {{ 'REGISTRO.ALERTAS.EXITO' | translate }}
+        </div>
+      }
+
+      <form [formGroup]="formulario" (ngSubmit)="registrar()" class="formulario-estilizado">
+
+        <!-- Grid de campos -->
+        <div class="grid-inputs">
+
+          <!-- Email -->
+          <div class="form-group" [class.has-error]="esCampoInvalido('email')">
+            <label for="email">{{ 'REGISTRO.CAMPOS.EMAIL' | translate }}</label>
+            <input
+              id="email"
+              type="email"
+              formControlName="email"
+              [placeholder]="'REGISTRO.CAMPOS.EMAIL_PLACEHOLDER' | translate">
+            @if (esCampoInvalido('email')) {
+              <small class="error-texto">
+                @if (formulario.get('email')?.errors?.['required']) {
+                  <span>{{ 'REGISTRO.CAMPOS.EMAIL_REQ' | translate }}</span>
+                }
+                @if (formulario.get('email')?.errors?.['email']) {
+                  <span>{{ 'REGISTRO.CAMPOS.EMAIL_INVALIDO' | translate }}</span>
+                }
+              </small>
+            }
+          </div>
+
+          <!-- Nombre -->
+          <div class="form-group" [class.has-error]="esCampoInvalido('nombre')">
+            <label for="nombre">{{ 'REGISTRO.CAMPOS.NOMBRE' | translate }}</label>
+            <input
+              id="nombre"
+              type="text"
+              formControlName="nombre"
+              [placeholder]="'REGISTRO.CAMPOS.NOMBRE_PLACEHOLDER' | translate">
+            @if (esCampoInvalido('nombre')) {
+              <small class="error-texto">
+                {{ 'REGISTRO.CAMPOS.NOMBRE_REQ' | translate }}
+              </small>
+            }
+          </div>
+
+          <!-- Contraseña -->
+          <div class="form-group" [class.has-error]="esCampoInvalido('password')">
+            <label for="password">{{ 'REGISTRO.CAMPOS.PASSWORD' | translate }}</label>
+            <input
+              id="password"
+              type="password"
+              formControlName="password"
+              placeholder="••••••••">
+            @if (esCampoInvalido('password')) {
+              <small class="error-texto">
+                @if (formulario.get('password')?.errors?.['required']) {
+                  <span>{{ 'REGISTRO.CAMPOS.PASSWORD_REQ' | translate }}</span>
+                }
+                @if (formulario.get('password')?.errors?.['pattern']) {
+                  <span>{{ 'REGISTRO.CAMPOS.PASSWORD_PATRON' | translate }}</span>
+                }
+              </small>
+            }
+          </div>
+
+          <!-- Confirmar contraseña -->
+          <div class="form-group" [class.has-error]="esCampoInvalido('passwordConfirm') || (formulario.errors?.['passwordNoCoincide'] && formulario.get('passwordConfirm')?.touched)">
+            <label for="passwordConfirm">{{ 'REGISTRO.CAMPOS.PASSWORD_CONFIRM' | translate }}</label>
+            <input
+              id="passwordConfirm"
+              type="password"
+              formControlName="passwordConfirm"
+              placeholder="••••••••">
+            @if (esCampoInvalido('passwordConfirm')) {
+              <small class="error-texto">
+                {{ 'REGISTRO.CAMPOS.PASSWORD_CONFIRM_REQ' | translate }}
+              </small>
+            }
+            @if (formulario.errors?.['passwordNoCoincide'] && formulario.get('passwordConfirm')?.touched && !esCampoInvalido('passwordConfirm')) {
+              <small class="error-texto">
+                {{ 'REGISTRO.CAMPOS.PASSWORD_CONFIRM_MISMATCH' | translate }}
+              </small>
+            }
+          </div>
+
+          <!-- Teléfono -->
+          <div class="form-group span-full">
+            <label for="telefono">{{ 'REGISTRO.CAMPOS.TELEFONO' | translate }}</label>
+            <input
+              id="telefono"
+              type="tel"
+              formControlName="telefono"
+              placeholder="+34 000 000 000">
+          </div>
+
+        </div>
+
+        <!-- Bloque Legal -->
+        <div class="caja-legal">
+          <p class="titulo-legal">{{ 'REGISTRO.LEGAL.TITULO' | translate }}</p>
+          <ul class="lista-legal">
+            <li><strong>{{ 'REGISTRO.LEGAL.RESPONSABLE' | translate }}</strong> {{ 'REGISTRO.LEGAL.RESPONSABLE_VAL' | translate }}</li>
+            <li><strong>{{ 'REGISTRO.LEGAL.FINALIDAD' | translate }}</strong> {{ 'REGISTRO.LEGAL.FINALIDAD_VAL' | translate }}</li>
+            <li><strong>{{ 'REGISTRO.LEGAL.DERECHOS' | translate }}</strong> {{ 'REGISTRO.LEGAL.DERECHOS_VAL' | translate }}</li>
+            <li><strong>{{ 'REGISTRO.LEGAL.POLITICA_PRIVACIDAD' | translate}}</strong> <a href="/es/Politica-de-Privacidad" target="_blank">{{ 'REGISTRO.LEGAL.ENLACE_POLITICA' | translate }}</a></li>
+          </ul>
+        </div>
+
+        <!-- Checkboxes -->
+        <div class="opciones-form">
+          <label class="checkbox-container">
+            <input type="checkbox" formControlName="aceptaEnvio">
+            <span>{{ 'REGISTRO.CHECKBOXES.NOTIFICACIONES' | translate }}</span>
+          </label>
+
+          <div class="checkbox-wrapper">
+            <label class="checkbox-container" [class.has-error]="esCampoInvalido('terminos')">
+              <input type="checkbox" formControlName="terminos">
+              <span>{{ 'REGISTRO.CHECKBOXES.TERMINOS' | translate }}</span>
+            </label>
+            @if (esCampoInvalido('terminos')) {
+              <small class="error-texto">
+                {{ 'REGISTRO.CHECKBOXES.TERMINOS_REQ' | translate }}
+              </small>
+            }
+          </div>
+        </div>
+
+        <!-- Botón de envío -->
+        <button
+          type="submit"
+          class="btn-enviar-registro"
+          [disabled]="enviando()">
+          {{ enviando() ? ('REGISTRO.BOTONES.PROCESANDO' | translate) : ('REGISTRO.BOTONES.REGISTRARME' | translate) }}
+        </button>
+
+      </form>
+    </div>
+  </div>
+</section>

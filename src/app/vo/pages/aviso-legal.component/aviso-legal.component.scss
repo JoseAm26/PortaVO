@@ -1,0 +1,183 @@
+@use "sass:color";
+
+// ==========================================
+// PALETA DE COLORES REFINADA
+// ==========================================
+$azul-corporativo: #0056a0; // Solo títulos, destacados, bordes y enlaces
+$azul-medio-texto: #335375; // Párrafos de lectura y etiquetas secundarias
+$azul-fondo-suave: #f2f7fc; // Fondos suaves de cajas
+$blanco-puro: #ffffff;
+
+$borde-ligero: 1px solid rgba($azul-corporativo, 0.15);
+$radio-esquina: 14px;
+
+// Transición optimizada por GPU (evita Layout Shift durante la interacción)
+$transicion: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+             opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+             background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+
+$sombra-suave: 0 4px 20px rgba($azul-corporativo, 0.08);
+
+// ==========================================
+// ESTILOS DEL AVISO LEGAL
+// ==========================================
+.pagina-legal {
+  padding-top: 2rem;
+  padding-bottom: 4rem;
+  contain: layout style; // Aísla el cálculo de layout
+
+  .header-aviso {
+    text-align: center;
+    margin-bottom: 2.5rem;
+
+    .tagline {
+      display: inline-block;
+      background-color: rgba($azul-corporativo, 0.1);
+      color: $azul-corporativo;
+      padding: 0.4rem 1rem;
+      border-radius: 30px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+      line-height: 1;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 4vw, 2.5rem);
+      font-weight: 900;
+      color: $azul-corporativo;
+      margin: 0 0 0.5rem 0;
+      line-height: 1.2;
+      min-height: 1.2em; // Previene colapso vertical durante FOUT
+
+      .destaque {
+        color: $azul-corporativo;
+      }
+    }
+
+    .subtitulo {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: $azul-medio-texto;
+      letter-spacing: 0.5px;
+      margin: 0;
+      line-height: 1.3;
+      min-height: 1.3em;
+    }
+  }
+
+  .cuerpo-legal {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .seccion-legal {
+    background-color: $blanco-puro;
+    border: $borde-ligero;
+    border-radius: $radio-esquina;
+    padding: 1.75rem;
+    box-shadow: $sombra-suave;
+
+    h2 {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: $azul-corporativo;
+      margin: 0 0 1.25rem 0;
+      padding-bottom: 0.75rem;
+      border-bottom: 2px solid $azul-fondo-suave;
+      line-height: 1.25;
+      min-height: 1.25em;
+    }
+
+    h3 {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: $azul-corporativo;
+      margin: 1.5rem 0 0.75rem 0;
+      line-height: 1.3;
+      min-height: 1.3em;
+    }
+
+    p {
+      font-size: 0.925rem;
+      line-height: 1.65;
+      color: $azul-medio-texto; // Párrafos en tono neutro legible
+      margin: 0 0 1rem 0;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    a {
+      color: $azul-corporativo;
+      text-decoration: underline;
+      font-weight: 700;
+      transition: $transicion;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+
+  // Cuadrícula de Datos Identificativos blindada para CLS
+  .grid-datos {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    background-color: $azul-fondo-suave;
+    padding: 1.25rem;
+    border-radius: 10px;
+    border: $borde-ligero;
+
+    @media (min-width: 600px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .dato-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+
+      &.span-2 {
+        @media (min-width: 600px) {
+          grid-column: span 2;
+        }
+      }
+
+      .etiqueta {
+        font-size: 0.75rem;
+        font-weight: 800;
+        text-transform: uppercase;
+        color: $azul-medio-texto;
+        line-height: 1.2;
+        min-height: 1.2em;
+      }
+
+      .valor {
+        font-size: 0.9rem;
+        font-weight: 700;
+        color: $azul-corporativo;
+        line-height: 1.4;
+        min-height: 1.4em;
+      }
+    }
+  }
+
+  // Caja de contacto
+  .nota-contacto {
+    margin-top: 1.25rem;
+    background-color: rgba($azul-corporativo, 0.08);
+    border-left: 4px solid $azul-corporativo;
+    padding: 1rem;
+    border-radius: 0 8px 8px 0;
+    font-size: 0.875rem;
+    line-height: 1.6;
+    color: $azul-medio-texto;
+  }
+}

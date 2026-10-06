@@ -1,0 +1,148 @@
+<div class="container my-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-10">
+
+      <div class="card card-formulario shadow-sm border-0 rounded-4 overflow-hidden">
+
+        <!-- CABECERA EN AZUL CORPORATIVO -->
+        <div class="cabecera-corporativa text-white p-4 p-md-5 text-center">
+          <h2 class="titulo-formulario text-uppercase fw-bold mb-2">
+            {{ 'FORMULARIO.TITULO' | translate }}
+          </h2>
+          <p class="subtitulo-formulario mb-0">
+            {{ 'FORMULARIO.SUBTITULO' | translate }}
+          </p>
+        </div>
+
+        <!-- CUERPO DEL FORMULARIO -->
+        <div class="card-body p-4 p-md-5">
+
+          @if (mensajeFormExito()) {
+            <div class="alert alert-success d-flex align-items-center p-3 rounded-3 my-3" role="alert">
+              <fa-icon [icon]="faCircleCheck" class="fs-3 me-3"></fa-icon>
+              <div>
+                <h5 class="alert-heading mb-1 fw-bold">{{ 'FORMULARIO.EXITO_TITULO' | translate }}</h5>
+                <p class="mb-0 fs-6">{{ 'FORMULARIO.EXITO_MENSAJE' | translate }}</p>
+              </div>
+            </div>
+          } @else {
+            <form (ngSubmit)="enviarSolicitud()" #formInfo="ngForm">
+
+              <div class="row g-3">
+
+                <div class="col-md-4">
+                  <label for="nombre" class="form-label fw-semibold">
+                    {{ 'FORMULARIO.NOMBRE' | translate }} <span class="text-danger">*</span>
+                  </label>
+                  <div class="input-group">
+                    <span class="input-group-text bg-light">
+                      <fa-icon [icon]="faUser" class="text-muted"></fa-icon>
+                    </span>
+                    <input
+                      type="text"
+                      id="nombre"
+                      class="form-control"
+                      [placeholder]="'FORMULARIO.PLACEHOLDER_NOMBRE' | translate"
+                      required
+                      [value]="nombre()"
+                      (input)="nombre.set($any($event.target).value)">
+                  </div>
+                </div>
+
+                <div class="col-md-4">
+                  <label for="email" class="form-label fw-semibold">
+                    {{ 'FORMULARIO.EMAIL' | translate }} <span class="text-danger">*</span>
+                  </label>
+                  <div class="input-group">
+                    <span class="input-group-text bg-light">
+                      <fa-icon [icon]="faEnvelope" class="text-muted"></fa-icon>
+                    </span>
+                    <input
+                      type="email"
+                      id="email"
+                      class="form-control"
+                      [placeholder]="'FORMULARIO.PLACEHOLDER_EMAIL' | translate"
+                      required
+                      [value]="email()"
+                      (input)="email.set($any($event.target).value)">
+                  </div>
+                </div>
+
+                <div class="col-md-4">
+                  <label for="telefono" class="form-label fw-semibold">
+                    {{ 'FORMULARIO.TELEFONO' | translate }} <span class="text-danger">*</span>
+                  </label>
+                  <div class="input-group">
+                    <span class="input-group-text bg-light">
+                      <fa-icon [icon]="faPhone" class="text-muted"></fa-icon>
+                    </span>
+                    <input
+                      type="tel"
+                      id="telefono"
+                      class="form-control"
+                      [placeholder]="'FORMULARIO.PLACEHOLDER_TELEFONO' | translate"
+                      required
+                      [value]="telefono()"
+                      (input)="telefono.set($any($event.target).value)">
+                  </div>
+                </div>
+              </div>
+
+              <!-- BLOQUE PRIVACIDAD / RGPD -->
+              <div class="box-privacidad mt-4 p-3 bg-light rounded-3 border">
+                <p class="mb-1 small">
+                  <strong>{{ 'FORMULARIO.RESPONSABLE' | translate }}</strong> VEINSUR, S.A.U.
+                </p>
+                <p class="mb-1 small">
+                  <strong>{{ 'FORMULARIO.FINALIDAD' | translate }}</strong> {{ 'FORMULARIO.FINALIDAD_TEXTO' | translate }}
+                </p>
+                <p class="mb-1 small">
+                  <strong>{{ 'FORMULARIO.DERECHOS' | translate }}</strong> {{ 'FORMULARIO.DERECHOS_TEXTO' | translate }}
+                </p>
+                <p class="mb-0 small">
+                  <strong>{{ 'FORMULARIO.INFO_ADICIONAL' | translate }}</strong> {{ 'FORMULARIO.INFO_ADICIONAL_TEXTO' | translate }}
+                  <a href="#" target="_blank" class="text-primary text-decoration-underline fw-semibold">
+                    {{ 'FORMULARIO.POLITICA_PRIVACIDAD' | translate }}
+                  </a>.
+                </p>
+              </div>
+
+              <!-- CHECKBOX POLÍTICA -->
+              <div class="form-check mt-3">
+                <input
+                  type="checkbox"
+                  class="form-check-input"
+                  id="aceptaPolitica"
+                  required
+                  [checked]="aceptaPolitica()"
+                  (change)="aceptaPolitica.set($any($event.target).checked)">
+                <label class="form-check-label small fw-semibold" for="aceptaPolitica">
+                  {{ 'FORMULARIO.ACEPTO_POLITICA' | translate }} <span class="text-danger">*</span>
+                </label>
+              </div>
+
+              <!-- BOTÓN DE ENVÍO -->
+              <div class="mt-4 text-center">
+                <button
+                  type="submit"
+                  class="btn btn-aplicar btn-lg px-5 py-3 fw-bold shadow-sm"
+                  [disabled]="!formInfo.form.valid || !aceptaPolitica() || enviandoFormulario()">
+                  @if (enviandoFormulario()) {
+                    <span class="spinner-border spinner-border-sm me-2" role="status"></span>
+                    {{ 'FORMULARIO.ENVIANDO' | translate }}
+                  } @else {
+                    <fa-icon [icon]="faPaperPlane" class="me-2"></fa-icon> {{ 'FORMULARIO.ENVIAR' | translate }}
+                  }
+                </button>
+              </div>
+
+            </form>
+          }
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>

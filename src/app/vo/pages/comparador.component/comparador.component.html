@@ -1,0 +1,976 @@
+<div class="container-fluid container-lg mt-4 mb-5 px-2 px-sm-3">
+
+  <!-- CABECERA PRINCIPAL -->
+  <div class="row mb-4">
+    <div class="col-12">
+      <div class="card border-0 text-white overflow-hidden shadow-sm header-comparador-card">
+        <img src="/assets/img/header_comparador.webp" class="card-img" alt="Comparador de Vehículos" loading="lazy" decoding="async">
+        <div class="card-img-overlay d-flex flex-column justify-content-end p-3 p-md-4 bg-gradient-dark">
+          <h1 class="card-title fw-bold mb-1 fs-4 fs-md-3">
+            <fa-icon [icon]="faCodeCompare" class="me-2"></fa-icon>{{ 'COMPARADOR.TITULO' | translate }}
+          </h1>
+          <p class="card-text opacity-75 mb-0 small">{{ 'COMPARADOR.SUBTITULO' | translate }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ESTADO DE CARGA (SPINNER) -->
+  @if (cargando()) {
+    <div class="card border-0 shadow-sm rounded-4 p-5 text-center bg-white my-4">
+      <div class="d-flex flex-column align-items-center justify-content-center py-4">
+        <div class="spinner-border text-corporate mb-3" style="width: 3rem; height: 3rem;" role="status">
+          <span class="visually-hidden"></span>
+        </div>
+        <h6 class="fw-bold text-dark mb-1"></h6>
+      </div>
+    </div>
+  } @else if (vehiculos().length === 0) {
+    <!-- ESTADO VACÍO -->
+    <div class="card border-0 shadow-sm rounded-4 p-4 p-md-5 text-center bg-white">
+      <div class="mb-3">
+        <fa-icon [icon]="faTruckFront" class="text-muted fs-1 opacity-50"></fa-icon>
+      </div>
+      <h5 class="fw-bold text-dark mb-2">{{ 'COMPARADOR.SIN_VEHICULOS_TITULO' | translate }}</h5>
+      <p class="text-secondary small mb-0">{{ 'COMPARADOR.SIN_VEHICULOS_DESC' | translate }}</p>
+    </div>
+  } @else {
+
+    <!-- ======================================================== -->
+    <!-- VISTA MÓVIL (< 768px): COMPARATIVA 2 COLUMNAS + TÍTULO CENTRO -->
+    <!-- ======================================================== -->
+    <div class="d-md-none">
+
+      @if (vehiculos().length >= 2) {
+
+        <div class="table-responsive tabla-mobile-comparador">
+          <table class="table table-bordered align-middle mb-0 tabla-mobile-fixed">
+
+            <thead>
+              <tr>
+                <!-- VEHÍCULO IZQUIERDA -->
+                <th class="vehiculo-col sticky-header">
+                  @if (vehiculos()[0]; as v1) {
+                    <div class="text-center position-relative">
+
+                      <button
+                        type="button"
+                        class="btn btn-danger btn-sm rounded-circle btn-quitar-mobile mb-2"
+                        (click)="quitarVehiculo(v1.idStoc.toString())"
+                        [title]="'COMPARADOR.BARRAS.QUITAR' | translate">
+                        <fa-icon [icon]="faXmark"></fa-icon>
+                      </button>
+
+                      <div class="imagen-mobile-fixed mx-auto mb-2">
+                        <img
+                          [src]="v1.imagenPrincipal
+                            ? (v1.imagenPrincipal.startsWith('http') ||
+                              v1.imagenPrincipal.startsWith('assets') ||
+                              v1.imagenPrincipal.startsWith('data:')
+                                ? v1.imagenPrincipal
+                                : 'data:image/webp;base64,' + v1.imagenPrincipal)
+                            : '/assets/img/no-image.webp'"
+                          [alt]="v1.marca + ' ' + v1.modelo"
+                          loading="lazy" decoding="async">
+                      </div>
+
+                      <div class="fw-bold small text-uppercase text-truncate">
+                        {{ v1.marca }}
+                      </div>
+
+                      <div class="extra-small text-muted text-truncate">
+                        {{ v1.modelo }}
+                      </div>
+
+                      <small class="text-muted d-block">
+                        {{ 'COMPARADOR.BARRAS.STOCK' | translate }} {{ v1.idStoc }}
+                      </small>
+
+                      <a
+                        [routerLink]="['/detalle', v1.idStoc]"
+                        class="btn btn-corporate btn-sm rounded-pill text-white mt-2 px-3">
+                        <fa-icon [icon]="faEye" class="me-1"></fa-icon>
+                        {{ 'COMPARADOR.BARRAS.VER' | translate }}
+                      </a>
+
+                    </div>
+                  }
+                </th>
+
+                <!-- COLUMNA CENTRAL -->
+                <th class="propiedad-col sticky-header text-center">
+                  {{ 'COMPARADOR.MOBILE_TITULO_TABLA' | translate }}
+                </th>
+
+                <!-- VEHÍCULO DERECHA -->
+                <th class="vehiculo-col sticky-header">
+                  @if (vehiculos()[1]; as v2) {
+                    <div class="text-center position-relative">
+
+                      <button
+                        type="button"
+                        class="btn btn-danger btn-sm rounded-circle btn-quitar-mobile mb-2"
+                        (click)="quitarVehiculo(v2.idStoc.toString())"
+                        [title]="'COMPARADOR.BARRAS.QUITAR' | translate">
+                        <fa-icon [icon]="faXmark"></fa-icon>
+                      </button>
+
+                      <div class="imagen-mobile-fixed mx-auto mb-2">
+                        <img
+                          [src]="v2.imagenPrincipal
+                            ? (v2.imagenPrincipal.startsWith('http') ||
+                              v2.imagenPrincipal.startsWith('assets') ||
+                              v2.imagenPrincipal.startsWith('data:')
+                                ? v2.imagenPrincipal
+                                : 'data:image/webp;base64,' + v2.imagenPrincipal)
+                            : '/assets/img/no-image.webp'"
+                          [alt]="v2.marca + ' ' + v2.modelo"
+                          loading="lazy" decoding="async">
+                      </div>
+
+                      <div class="fw-bold small text-uppercase text-truncate">
+                        {{ v2.marca }}
+                      </div>
+
+                      <div class="extra-small text-muted text-truncate">
+                        {{ v2.modelo }}
+                      </div>
+
+                      <small class="text-muted d-block">
+                        {{ 'COMPARADOR.BARRAS.STOCK' | translate }} {{ v2.idStoc }}
+                      </small>
+
+                      <a
+                        [routerLink]="['/detalle', v2.idStoc]"
+                        class="btn btn-corporate btn-sm rounded-pill text-white mt-2 px-3">
+                        <fa-icon [icon]="faEye" class="me-1"></fa-icon>
+                        {{ 'COMPARADOR.BARRAS.VER' | translate }}
+                      </a>
+
+                    </div>
+                  }
+                </th>
+              </tr>
+            </thead>
+
+            <tbody>
+
+              <!-- DATOS BÁSICOS -->
+              <tr class="categoria-row">
+                <td colspan="3">
+                  <fa-icon [icon]="faTruck" class="me-2"></fa-icon>
+                  {{ 'COMPARADOR.CATEGORIAS.DATOS_BASICOS' | translate }}
+                </td>
+              </tr>
+
+              <tr>
+                <td><span [innerHTML]="renderValor(vehiculos()[0].marca)"></span></td>
+                <td class="titulo-centro">{{ 'COMPARADOR.CAMPOS.MARCA' | translate }}</td>
+                <td><span [innerHTML]="renderValor(vehiculos()[1].marca)"></span></td>
+              </tr>
+
+              <tr>
+                <td><span [innerHTML]="renderValor(vehiculos()[0].modelo)"></span></td>
+                <td class="titulo-centro">{{ 'COMPARADOR.CAMPOS.MODELO' | translate }}</td>
+                <td><span [innerHTML]="renderValor(vehiculos()[1].modelo)"></span></td>
+              </tr>
+
+              <tr>
+                <td><span [innerHTML]="renderValor(vehiculos()[0].tipoVeh)"></span></td>
+                <td class="titulo-centro">{{ 'COMPARADOR.CAMPOS.TIPO_VEHICULO' | translate }}</td>
+                <td><span [innerHTML]="renderValor(vehiculos()[1].tipoVeh)"></span></td>
+              </tr>
+
+              <tr>
+                <td><span [innerHTML]="renderValor(vehiculos()[0].cabina)"></span></td>
+                <td class="titulo-centro">{{ 'COMPARADOR.CAMPOS.CABINA' | translate }}</td>
+                <td><span [innerHTML]="renderValor(vehiculos()[1].cabina)"></span></td>
+              </tr>
+
+              <tr>
+                <td><span [innerHTML]="renderValor(vehiculos()[0].fecMat)"></span></td>
+                <td class="titulo-centro">{{ 'COMPARADOR.CAMPOS.MATRICULACION' | translate }}</td>
+                <td><span [innerHTML]="renderValor(vehiculos()[1].fecMat)"></span></td>
+              </tr>
+
+              <tr>
+                <td><span [innerHTML]="renderValor(formatearNumero(vehiculos()[0].kilom, ' Km'))"></span></td>
+                <td class="titulo-centro">{{ 'COMPARADOR.CAMPOS.KILOMETROS' | translate }}</td>
+                <td><span [innerHTML]="renderValor(formatearNumero(vehiculos()[1].kilom, ' Km'))"></span></td>
+              </tr>
+
+              <tr>
+                <td><span [innerHTML]="renderValor(formatearNumero(vehiculos()[0].potMot, ' CV'))"></span></td>
+                <td class="titulo-centro">{{ 'COMPARADOR.CAMPOS.POTENCIA' | translate }}</td>
+                <td><span [innerHTML]="renderValor(formatearNumero(vehiculos()[1].potMot, ' CV'))"></span></td>
+              </tr>
+
+              <tr>
+                <td><span [innerHTML]="renderValor(vehiculos()[0].euronorma)"></span></td>
+                <td class="titulo-centro">{{ 'COMPARADOR.CAMPOS.NORMA_EURO' | translate }}</td>
+                <td><span [innerHTML]="renderValor(vehiculos()[1].euronorma)"></span></td>
+              </tr>
+
+              <tr>
+                <td class="fw-bold text-corporate">
+                  <span [innerHTML]="renderValor(formatearNumero(vehiculos()[0].precio, ' €'))"></span>
+                </td>
+                <td class="titulo-centro">{{ 'COMPARADOR.CAMPOS.PRECIO' | translate }}</td>
+                <td class="fw-bold text-corporate">
+                  <span [innerHTML]="renderValor(formatearNumero(vehiculos()[1].precio, ' €'))"></span>
+                </td>
+              </tr>
+
+
+              <!-- TRANSMISIÓN Y CHASIS -->
+              <tr class="categoria-row">
+                <td colspan="3">
+                  <fa-icon [icon]="faGears" class="me-2"></fa-icon>
+                  {{ 'COMPARADOR.CATEGORIAS.TRANSMISION_CHASIS' | translate }}
+                </td>
+              </tr>
+
+              <tr>
+                <td><span [innerHTML]="renderValor(vehiculos()[0].tipoCaja)"></span></td>
+                <td class="titulo-centro">{{ 'COMPARADOR.CAMPOS.TIPO_CAJA' | translate }}</td>
+                <td><span [innerHTML]="renderValor(vehiculos()[1].tipoCaja)"></span></td>
+              </tr>
+
+              <tr>
+                <td><span [innerHTML]="renderValor(vehiculos()[0].modeloCaja)"></span></td>
+                <td class="titulo-centro">{{ 'COMPARADOR.CAMPOS.MODELO_CAJA' | translate }}</td>
+                <td><span [innerHTML]="renderValor(vehiculos()[1].modeloCaja)"></span></td>
+              </tr>
+
+              <tr>
+                <td><span [innerHTML]="renderValor(vehiculos()[0].numVel)"></span></td>
+                <td class="titulo-centro">{{ 'COMPARADOR.CAMPOS.NUM_VELOCIDADES' | translate }}</td>
+                <td><span [innerHTML]="renderValor(vehiculos()[1].numVel)"></span></td>
+              </tr>
+
+              <tr>
+                <td><span [innerHTML]="renderValor(vehiculos()[0].frenoAux)"></span></td>
+                <td class="titulo-centro">{{ 'COMPARADOR.CAMPOS.FRENO_AUXILIAR' | translate }}</td>
+                <td><span [innerHTML]="renderValor(vehiculos()[1].frenoAux)"></span></td>
+              </tr>
+
+              <tr>
+                <td><span [innerHTML]="renderValor(vehiculos()[0].frenoPri)"></span></td>
+                <td class="titulo-centro">{{ 'COMPARADOR.CAMPOS.FRENO_PRINCIPAL' | translate }}</td>
+                <td><span [innerHTML]="renderValor(vehiculos()[1].frenoPri)"></span></td>
+              </tr>
+
+              <tr>
+                <td><span [innerHTML]="renderValor(vehiculos()[0].confEje || vehiculos()[0].cfgeje)"></span></td>
+                <td class="titulo-centro">{{ 'COMPARADOR.CAMPOS.CONFIGURACION_EJES' | translate }}</td>
+                <td><span [innerHTML]="renderValor(vehiculos()[1].confEje || vehiculos()[1].cfgeje)"></span></td>
+              </tr>
+
+              <tr>
+                <td><span [innerHTML]="renderValor(vehiculos()[0].marcaEje)"></span></td>
+                <td class="titulo-centro">{{ 'COMPARADOR.CAMPOS.MARCA_EJE' | translate }}</td>
+                <td><span [innerHTML]="renderValor(vehiculos()[1].marcaEje)"></span></td>
+              </tr>
+
+              <tr>
+                <td><span [innerHTML]="renderValor(vehiculos()[0].numEje)"></span></td>
+                <td class="titulo-centro">{{ 'COMPARADOR.CAMPOS.NUM_EJES' | translate }}</td>
+                <td><span [innerHTML]="renderValor(vehiculos()[1].numEje)"></span></td>
+              </tr>
+
+              <tr>
+                <td><span [innerHTML]="renderValor(formatearNumero(vehiculos()[0].disEje, ' mm'))"></span></td>
+                <td class="titulo-centro">{{ 'COMPARADOR.CAMPOS.DISTANCIA_EJES' | translate }}</td>
+                <td><span [innerHTML]="renderValor(formatearNumero(vehiculos()[1].disEje, ' mm'))"></span></td>
+              </tr>
+
+              <tr>
+                <td>
+                  @if (esRigido(vehiculos()[0])) {
+                    <span [innerHTML]="renderValor(vehiculos()[0].ejtDir)"></span>
+                  } @else {
+                    <span class="text-muted">{{ 'COMPARADOR.BARRAS.NO_APLICA' | translate }}</span>
+                  }
+                </td>
+                <td class="titulo-centro">{{ 'COMPARADOR.CAMPOS.EJES_DIR' | translate }}</td>
+                <td>
+                  @if (esRigido(vehiculos()[1])) {
+                    <span [innerHTML]="renderValor(vehiculos()[1].ejtDir)"></span>
+                  } @else {
+                    <span class="text-muted">{{ 'COMPARADOR.BARRAS.NO_APLICA' | translate }}</span>
+                  }
+                </td>
+              </tr>
+
+              <tr>
+                <td><span [innerHTML]="renderValor(vehiculos()[0].ejeEle)"></span></td>
+                <td class="titulo-centro">{{ 'COMPARADOR.CAMPOS.EJE_ELEVABLE' | translate }}</td>
+                <td><span [innerHTML]="renderValor(vehiculos()[1].ejeEle)"></span></td>
+              </tr>
+
+
+              <!-- PESOS Y MASAS -->
+              <tr class="categoria-row">
+                <td colspan="3">
+                  <fa-icon [icon]="faWeightHanging" class="me-2"></fa-icon>
+                  {{ 'COMPARADOR.CATEGORIAS.PESOS_MASAS' | translate }}
+                </td>
+              </tr>
+
+              <tr>
+                <td><span [innerHTML]="renderValor(formatearNumero(vehiculos()[0].mma, ' Kg'))"></span></td>
+                <td class="titulo-centro">{{ 'COMPARADOR.CAMPOS.MMA_TOTAL' | translate }}</td>
+                <td><span [innerHTML]="renderValor(formatearNumero(vehiculos()[1].mma, ' Kg'))"></span></td>
+              </tr>
+
+              <tr>
+                <td><span [innerHTML]="renderValor(formatearNumero(vehiculos()[0].mmaEjd, ' Kg'))"></span></td>
+                <td class="titulo-centro">{{ 'COMPARADOR.CAMPOS.MMA_EJE_DELANTERO' | translate }}</td>
+                <td><span [innerHTML]="renderValor(formatearNumero(vehiculos()[1].mmaEjd, ' Kg'))"></span></td>
+              </tr>
+
+              <tr>
+                <td><span [innerHTML]="renderValor(formatearNumero(vehiculos()[0].tara, ' Kg'))"></span></td>
+                <td class="titulo-centro">{{ 'COMPARADOR.CAMPOS.TARA' | translate }}</td>
+                <td><span [innerHTML]="renderValor(formatearNumero(vehiculos()[1].tara, ' Kg'))"></span></td>
+              </tr>
+
+
+              <!-- SUSPENSIÓN -->
+              <tr class="categoria-row">
+                <td colspan="3">
+                  <fa-icon [icon]="faTruckPickup" class="me-2"></fa-icon>
+                  {{ 'COMPARADOR.CATEGORIAS.SUSPENSION' | translate }}
+                </td>
+              </tr>
+
+              <tr>
+                <td><span [innerHTML]="renderValor(vehiculos()[0].susDel)"></span></td>
+                <td class="titulo-centro">{{ 'COMPARADOR.CAMPOS.SUSPENSION_DELANTERA' | translate }}</td>
+                <td><span [innerHTML]="renderValor(vehiculos()[1].susDel)"></span></td>
+              </tr>
+
+              <tr>
+                <td><span [innerHTML]="renderValor(vehiculos()[0].susTra)"></span></td>
+                <td class="titulo-centro">{{ 'COMPARADOR.CAMPOS.SUSPENSION_TRASERA' | translate }}</td>
+                <td><span [innerHTML]="renderValor(vehiculos()[1].susTra)"></span></td>
+              </tr>
+
+
+              <!-- CABINA Y CONFORT -->
+              <tr class="categoria-row">
+                <td colspan="3">
+                  <fa-icon [icon]="faCouch" class="me-2"></fa-icon>
+                  {{ 'COMPARADOR.CATEGORIAS.CABINA_CONFORT' | translate }}
+                </td>
+              </tr>
+
+              <tr>
+                <td><span [innerHTML]="renderValor(vehiculos()[0].airAco)"></span></td>
+                <td class="titulo-centro">{{ 'COMPARADOR.CAMPOS.AIRE_ACONDICIONADO' | translate }}</td>
+                <td><span [innerHTML]="renderValor(vehiculos()[1].airAco)"></span></td>
+              </tr>
+
+              <tr>
+                <td><span [innerHTML]="renderValor(vehiculos()[0].calefa)"></span></td>
+                <td class="titulo-centro">{{ 'COMPARADOR.CAMPOS.CALEFACCION' | translate }}</td>
+                <td><span [innerHTML]="renderValor(vehiculos()[1].calefa)"></span></td>
+              </tr>
+
+              <tr>
+                <td><span [innerHTML]="renderValor(vehiculos()[0].cliTec)"></span></td>
+                <td class="titulo-centro">{{ 'COMPARADOR.CAMPOS.CLIMATIZADOR_TECHO' | translate }}</td>
+                <td><span [innerHTML]="renderValor(vehiculos()[1].cliTec)"></span></td>
+              </tr>
+
+              <tr>
+                <td><span [innerHTML]="renderValor(vehiculos()[0].radio)"></span></td>
+                <td class="titulo-centro">{{ 'COMPARADOR.CAMPOS.RADIO' | translate }}</td>
+                <td><span [innerHTML]="renderValor(vehiculos()[1].radio)"></span></td>
+              </tr>
+
+              <tr>
+                <td><span [innerHTML]="renderValor(vehiculos()[0].nevera)"></span></td>
+                <td class="titulo-centro">{{ 'COMPARADOR.CAMPOS.NEVERA' | translate }}</td>
+                <td><span [innerHTML]="renderValor(vehiculos()[1].nevera)"></span></td>
+              </tr>
+
+              <tr>
+                <td><span [innerHTML]="renderValor(vehiculos()[0].xenon)"></span></td>
+                <td class="titulo-centro">{{ 'COMPARADOR.CAMPOS.XENON' | translate }}</td>
+                <td><span [innerHTML]="renderValor(vehiculos()[1].xenon)"></span></td>
+              </tr>
+
+              <tr>
+                <td><span [innerHTML]="renderValor(vehiculos()[0].literas)"></span></td>
+                <td class="titulo-centro">{{ 'COMPARADOR.CAMPOS.LITERAS' | translate }}</td>
+                <td><span [innerHTML]="renderValor(vehiculos()[1].literas)"></span></td>
+              </tr>
+
+
+              <!-- CARROCERÍA Y EQUIPO ESPECIAL -->
+              <tr class="categoria-row">
+                <td colspan="3">
+                  <fa-icon [icon]="faBoxesStacked" class="me-2"></fa-icon>
+                  {{ 'COMPARADOR.CATEGORIAS.CARROCERIA_FRIO' | translate }}
+                </td>
+              </tr>
+
+              <tr>
+                <td><span [innerHTML]="renderValor(vehiculos()[0].tipoCarro)"></span></td>
+                <td class="titulo-centro">{{ 'COMPARADOR.CAMPOS.TIPO_CARROCERIA' | translate }}</td>
+                <td><span [innerHTML]="renderValor(vehiculos()[1].tipoCarro)"></span></td>
+              </tr>
+
+              <tr>
+                <td><span [innerHTML]="renderValor(vehiculos()[0].marcaCarro)"></span></td>
+                <td class="titulo-centro">{{ 'COMPARADOR.CAMPOS.MARCA_CARROCERIA' | translate }}</td>
+                <td><span [innerHTML]="renderValor(vehiculos()[1].marcaCarro)"></span></td>
+              </tr>
+
+              <tr>
+                <td><span [innerHTML]="renderValor(vehiculos()[0].friEqu)"></span></td>
+                <td class="titulo-centro">{{ 'COMPARADOR.CAMPOS.EQUIPO_FRIO' | translate }}</td>
+                <td><span [innerHTML]="renderValor(vehiculos()[1].friEqu)"></span></td>
+              </tr>
+
+              <tr>
+                <td><span [innerHTML]="renderValor(vehiculos()[0].marcaFrio)"></span></td>
+                <td class="titulo-centro">{{ 'COMPARADOR.CAMPOS.MARCA_FRIO' | translate }}</td>
+                <td><span [innerHTML]="renderValor(vehiculos()[1].marcaFrio)"></span></td>
+              </tr>
+
+              <tr>
+                <td><span [innerHTML]="renderValor(vehiculos()[0].friMod)"></span></td>
+                <td class="titulo-centro">{{ 'COMPARADOR.CAMPOS.MODELO_FRIO' | translate }}</td>
+                <td><span [innerHTML]="renderValor(vehiculos()[1].friMod)"></span></td>
+              </tr>
+
+              <tr>
+                <td><span [innerHTML]="renderValor(formatearNumero(vehiculos()[0].horFri, ' h'))"></span></td>
+                <td class="titulo-centro">{{ 'COMPARADOR.CAMPOS.HORAS_FRIO' | translate }}</td>
+                <td><span [innerHTML]="renderValor(formatearNumero(vehiculos()[1].horFri, ' h'))"></span></td>
+              </tr>
+
+              <tr>
+                <td><span [innerHTML]="renderValor(vehiculos()[0].terMog)"></span></td>
+                <td class="titulo-centro">{{ 'COMPARADOR.CAMPOS.TERMOGRAFO' | translate }}</td>
+                <td><span [innerHTML]="renderValor(vehiculos()[1].terMog)"></span></td>
+              </tr>
+
+              <tr>
+                <td><span [innerHTML]="renderValor(vehiculos()[0].adr)"></span></td>
+                <td class="titulo-centro">{{ 'COMPARADOR.CAMPOS.ADR' | translate }}</td>
+                <td><span [innerHTML]="renderValor(vehiculos()[1].adr)"></span></td>
+              </tr>
+
+            </tbody>
+
+          </table>
+        </div>
+
+      } @else {
+
+        <!-- Si solo tienes 1 vehículo en móvil -->
+        <div class="card border-0 shadow-sm rounded-4 p-4 text-center bg-white">
+          <fa-icon [icon]="faCodeCompare" class="text-muted fs-1 opacity-50 mb-3"></fa-icon>
+          <h6 class="fw-bold mb-2">{{ 'COMPARADOR.MOBILE_ANADIR_TITULO' | translate }}</h6>
+          <p class="text-secondary small mb-0">
+            {{ 'COMPARADOR.MOBILE_ANADIR_DESC' | translate }}
+          </p>
+        </div>
+
+      }
+
+    </div>
+
+    <!-- ======================================================== -->
+    <!-- VISTA ESCRITORIO (>= 768px): TABLA COMPARATIVA FLUIDA   -->
+    <!-- ======================================================== -->
+    <div class="card border-0 shadow-sm rounded-4 overflow-hidden bg-white d-none d-md-block">
+      <table class="table table-comparador align-middle mb-0 w-100 layout-fixed">
+
+        <thead>
+          <tr>
+            <th scope="col" class="col-titular bg-light align-bottom p-3 border-end">
+              <span class="text-uppercase text-muted fw-bold small">{{ 'COMPARADOR.BARRAS.ESPECIFICACION' | translate }}</span>
+            </th>
+
+            @for (v of vehiculos(); track v.idStoc) {
+              <th scope="col" class="col-vehiculo text-center p-3 border-end">
+                <div class="card-vehiculo-top">
+                  <div class="imagen-container mb-2 rounded-3 overflow-hidden border shadow-sm mx-auto" style="max-height: 130px; max-width: 200px;">
+                    <img
+                      [src]="v.imagenPrincipal
+                        ? (v.imagenPrincipal.startsWith('http') || v.imagenPrincipal.startsWith('assets') || v.imagenPrincipal.startsWith('data:')
+                            ? v.imagenPrincipal
+                            : 'data:image/webp;base64,' + v.imagenPrincipal)
+                        : '/assets/img/no-image.webp'"
+                      class="img-fluid object-fit-cover w-100 h-100"
+                      [alt]="v.marca + ' ' + v.modelo"
+                      loading="lazy" decoding="async">
+                  </div>
+                  <h6 class="fw-bold mb-0 text-dark text-uppercase text-truncate">{{ v.marca }} {{ v.modelo }}</h6>
+                  <small class="text-muted d-block mb-2">{{ 'COMPARADOR.BARRAS.STOCK' | translate }} {{ v.idStoc }}</small>
+
+                  <div class="d-flex flex-column gap-1 mt-2">
+                    <a
+                      [routerLink]="['/detalle', v.idStoc]"
+                      class="btn btn-corporate text-white btn-sm rounded-pill w-100 btn-ficha">
+                      <fa-icon [icon]="faEye" class="me-1"></fa-icon> {{ 'COMPARADOR.BARRAS.VER_FICHA' | translate }}
+                    </a>
+                    <button
+                      type="button"
+                      class="btn btn-outline-danger btn-sm rounded-pill w-100 btn-quitar"
+                      (click)="quitarVehiculo(v.idStoc.toString())">
+                      <fa-icon [icon]="faTrashCan" class="me-1"></fa-icon> {{ 'COMPARADOR.BARRAS.QUITAR' | translate }}
+                    </button>
+                  </div>
+
+                </div>
+              </th>
+            }
+          </tr>
+        </thead>
+
+        <tbody>
+
+          <!-- DATOS BÁSICOS -->
+          <tr class="tr-categoria bg-corporate text-white">
+            <td
+              [attr.colspan]="vehiculos().length + 1"
+              class="bg-corporate text-white fw-bold py-2 px-3 text-uppercase small">
+              <fa-icon [icon]="faTruck" class="me-2"></fa-icon>
+              {{ 'COMPARADOR.CATEGORIAS.DATOS_BASICOS' | translate }}
+            </td>
+          </tr>
+
+          <tr>
+            <td class="col-titular border-end">{{ 'COMPARADOR.CAMPOS.MARCA' | translate }}</td>
+            @for (v of vehiculos(); track v.idStoc) {
+              <td class="col-vehiculo border-end text-center fw-semibold">
+                <span [innerHTML]="renderValor(v.marca)"></span>
+              </td>
+            }
+          </tr>
+
+          <tr>
+            <td class="col-titular border-end">{{ 'COMPARADOR.CAMPOS.MODELO' | translate }}</td>
+            @for (v of vehiculos(); track v.idStoc) {
+              <td class="col-vehiculo border-end text-center">
+                <span [innerHTML]="renderValor(v.modelo)"></span>
+              </td>
+            }
+          </tr>
+
+          <tr>
+            <td class="col-titular border-end">{{ 'COMPARADOR.CAMPOS.TIPO_VEHICULO' | translate }}</td>
+            @for (v of vehiculos(); track v.idStoc) {
+              <td class="col-vehiculo border-end text-center">
+                <span [innerHTML]="renderValor(v.tipoVeh)"></span>
+              </td>
+            }
+          </tr>
+
+          <tr>
+            <td class="col-titular border-end">{{ 'COMPARADOR.CAMPOS.CABINA' | translate }}</td>
+            @for (v of vehiculos(); track v.idStoc) {
+              <td class="col-vehiculo border-end text-center">
+                <span [innerHTML]="renderValor(v.cabina)"></span>
+              </td>
+            }
+          </tr>
+
+          <tr>
+            <td class="col-titular border-end">{{ 'COMPARADOR.CAMPOS.MATRICULACION' | translate }}</td>
+            @for (v of vehiculos(); track v.idStoc) {
+              <td class="col-vehiculo border-end text-center">
+                <span [innerHTML]="renderValor(formatearFecha(v.fecMat))"></span>
+              </td>
+            }
+          </tr>
+
+          <tr>
+            <td class="col-titular border-end">{{ 'COMPARADOR.CAMPOS.KILOMETROS' | translate }}</td>
+            @for (v of vehiculos(); track v.idStoc) {
+              <td class="col-vehiculo border-end text-center">
+                <span [innerHTML]="renderValor(formatearNumero(v.kilom, ' Km'))"></span>
+              </td>
+            }
+          </tr>
+
+          <tr>
+            <td class="col-titular border-end">{{ 'COMPARADOR.CAMPOS.POTENCIA' | translate }}</td>
+            @for (v of vehiculos(); track v.idStoc) {
+              <td class="col-vehiculo border-end text-center">
+                <span [innerHTML]="renderValor(formatearNumero(v.potMot, ' CV'))"></span>
+              </td>
+            }
+          </tr>
+
+          <tr>
+            <td class="col-titular border-end">{{ 'COMPARADOR.CAMPOS.NORMA_EURO' | translate }}</td>
+            @for (v of vehiculos(); track v.idStoc) {
+              <td class="col-vehiculo border-end text-center">
+                <span [innerHTML]="renderValor(v.euronorma)"></span>
+              </td>
+            }
+          </tr>
+
+          <tr>
+            <td class="col-titular border-end">{{ 'COMPARADOR.CAMPOS.PRECIO' | translate }}</td>
+            @for (v of vehiculos(); track v.idStoc) {
+              <td class="col-vehiculo border-end text-center fw-semibold text-corporate">
+                <span [innerHTML]="renderValor(formatearNumero(v.precio, ' €'))"></span>
+              </td>
+            }
+          </tr>
+
+
+          <!-- TRANSMISIÓN Y CHASIS -->
+          <tr class="tr-categoria bg-corporate text-white">
+            <td
+              [attr.colspan]="vehiculos().length + 1"
+              class="bg-corporate text-white fw-bold py-2 px-3 text-uppercase small">
+              <fa-icon [icon]="faGears" class="me-2"></fa-icon>
+              {{ 'COMPARADOR.CATEGORIAS.TRANSMISION_CHASIS' | translate }}
+            </td>
+          </tr>
+
+          <tr>
+            <td class="col-titular border-end">{{ 'COMPARADOR.CAMPOS.TIPO_CAJA' | translate }}</td>
+            @for (v of vehiculos(); track v.idStoc) {
+              <td class="col-vehiculo border-end text-center">
+                <span [innerHTML]="renderValor(v.tipoCaja)"></span>
+              </td>
+            }
+          </tr>
+
+          <tr>
+            <td class="col-titular border-end">{{ 'COMPARADOR.CAMPOS.MODELO_CAJA' | translate }}</td>
+            @for (v of vehiculos(); track v.idStoc) {
+              <td class="col-vehiculo border-end text-center">
+                <span [innerHTML]="renderValor(v.modeloCaja)"></span>
+              </td>
+            }
+          </tr>
+
+          <tr>
+            <td class="col-titular border-end">{{ 'COMPARADOR.CAMPOS.NUM_VELOCIDADES' | translate }}</td>
+            @for (v of vehiculos(); track v.idStoc) {
+              <td class="col-vehiculo border-end text-center">
+                <span [innerHTML]="renderValor(v.numVel)"></span>
+              </td>
+            }
+          </tr>
+
+          <tr>
+            <td class="col-titular border-end">{{ 'COMPARADOR.CAMPOS.FRENO_AUXILIAR' | translate }}</td>
+            @for (v of vehiculos(); track v.idStoc) {
+              <td class="col-vehiculo border-end text-center">
+                <span [innerHTML]="renderValor(v.frenoAux)"></span>
+              </td>
+            }
+          </tr>
+
+          <tr>
+            <td class="col-titular border-end">{{ 'COMPARADOR.CAMPOS.FRENO_PRINCIPAL' | translate }}</td>
+            @for (v of vehiculos(); track v.idStoc) {
+              <td class="col-vehiculo border-end text-center">
+                <span [innerHTML]="renderValor(v.frenoPri)"></span>
+              </td>
+            }
+          </tr>
+
+          <tr>
+            <td class="col-titular border-end">{{ 'COMPARADOR.CAMPOS.CONFIGURACION_EJES' | translate }}</td>
+            @for (v of vehiculos(); track v.idStoc) {
+              <td class="col-vehiculo border-end text-center">
+                <span [innerHTML]="renderValor(v.confEje || v.cfgeje)"></span>
+              </td>
+            }
+          </tr>
+
+          <tr>
+            <td class="col-titular border-end">{{ 'COMPARADOR.CAMPOS.MARCA_EJE' | translate }}</td>
+            @for (v of vehiculos(); track v.idStoc) {
+              <td class="col-vehiculo border-end text-center">
+                <span [innerHTML]="renderValor(v.marcaEje)"></span>
+              </td>
+            }
+          </tr>
+
+          <tr>
+            <td class="col-titular border-end">{{ 'COMPARADOR.CAMPOS.NUM_EJES' | translate }}</td>
+            @for (v of vehiculos(); track v.idStoc) {
+              <td class="col-vehiculo border-end text-center">
+                <span [innerHTML]="renderValor(v.numEje)"></span>
+              </td>
+            }
+          </tr>
+
+          <tr>
+            <td class="col-titular border-end">{{ 'COMPARADOR.CAMPOS.DISTANCIA_EJES' | translate }}</td>
+            @for (v of vehiculos(); track v.idStoc) {
+              <td class="col-vehiculo border-end text-center">
+                <span [innerHTML]="renderValor(formatearNumero(v.disEje, ' mm'))"></span>
+              </td>
+            }
+          </tr>
+
+          <tr>
+            <td class="col-titular border-end">
+              {{ 'COMPARADOR.CAMPOS.EJES_DIR' | translate }}
+              <small class="d-block text-muted fw-normal">{{ 'COMPARADOR.CAMPOS.SOLO_RIGIDOS' | translate }}</small>
+            </td>
+
+            @for (v of vehiculos(); track v.idStoc) {
+              <td class="col-vehiculo border-end text-center">
+                @if (esRigido(v)) {
+                  <span [innerHTML]="renderValor(v.ejtDir)"></span>
+                } @else {
+                  <span class="text-muted small">{{ 'COMPARADOR.BARRAS.NO_APLICA' | translate }}</span>
+                }
+              </td>
+            }
+          </tr>
+
+          <tr>
+            <td class="col-titular border-end">{{ 'COMPARADOR.CAMPOS.EJE_ELEVABLE' | translate }}</td>
+            @for (v of vehiculos(); track v.idStoc) {
+              <td class="col-vehiculo border-end text-center">
+                <span [innerHTML]="renderValor(v.ejeEle)"></span>
+              </td>
+            }
+          </tr>
+
+
+          <!-- PESOS Y MASAS -->
+          <tr class="tr-categoria bg-corporate text-white">
+            <td
+              [attr.colspan]="vehiculos().length + 1"
+              class="bg-corporate text-white fw-bold py-2 px-3 text-uppercase small">
+              <fa-icon [icon]="faWeightHanging" class="me-2"></fa-icon>
+              {{ 'COMPARADOR.CATEGORIAS.PESOS_MASAS' | translate }}
+            </td>
+          </tr>
+
+          <tr>
+            <td class="col-titular border-end">{{ 'COMPARADOR.CAMPOS.MMA_TOTAL' | translate }}</td>
+            @for (v of vehiculos(); track v.idStoc) {
+              <td class="col-vehiculo border-end text-center">
+                <span [innerHTML]="renderValor(formatearNumero(v.mma, ' Kg'))"></span>
+              </td>
+            }
+          </tr>
+
+          <tr>
+            <td class="col-titular border-end">{{ 'COMPARADOR.CAMPOS.MMA_EJE_DELANTERO' | translate }}</td>
+            @for (v of vehiculos(); track v.idStoc) {
+              <td class="col-vehiculo border-end text-center">
+                <span [innerHTML]="renderValor(formatearNumero(v.mmaEjd, ' Kg'))"></span>
+              </td>
+            }
+          </tr>
+
+          <tr>
+            <td class="col-titular border-end">{{ 'COMPARADOR.CAMPOS.TARA' | translate }}</td>
+            @for (v of vehiculos(); track v.idStoc) {
+              <td class="col-vehiculo border-end text-center">
+                <span [innerHTML]="renderValor(formatearNumero(v.tara, ' Kg'))"></span>
+              </td>
+            }
+          </tr>
+
+
+          <!-- SUSPENSIÓN -->
+          <tr class="tr-categoria bg-corporate text-white">
+            <td
+              [attr.colspan]="vehiculos().length + 1"
+              class="bg-corporate text-white fw-bold py-2 px-3 text-uppercase small">
+              <fa-icon [icon]="faTruckPickup" class="me-2"></fa-icon>
+              {{ 'COMPARADOR.CATEGORIAS.SUSPENSION' | translate }}
+            </td>
+          </tr>
+
+          <tr>
+            <td class="col-titular border-end">{{ 'COMPARADOR.CAMPOS.SUSPENSION_DELANTERA' | translate }}</td>
+            @for (v of vehiculos(); track v.idStoc) {
+              <td class="col-vehiculo border-end text-center">
+                <span [innerHTML]="renderValor(v.susDel)"></span>
+              </td>
+            }
+          </tr>
+
+          <tr>
+            <td class="col-titular border-end">{{ 'COMPARADOR.CAMPOS.SUSPENSION_TRASERA' | translate }}</td>
+            @for (v of vehiculos(); track v.idStoc) {
+              <td class="col-vehiculo border-end text-center">
+                <span [innerHTML]="renderValor(v.susTra)"></span>
+              </td>
+            }
+          </tr>
+
+
+          <!-- CABINA Y CONFORT -->
+          <tr class="tr-categoria bg-corporate text-white">
+            <td
+              [attr.colspan]="vehiculos().length + 1"
+              class="bg-corporate text-white fw-bold py-2 px-3 text-uppercase small">
+              <fa-icon [icon]="faCouch" class="me-2"></fa-icon>
+              {{ 'COMPARADOR.CATEGORIAS.CABINA_CONFORT' | translate }}
+            </td>
+          </tr>
+
+          <tr>
+            <td class="col-titular border-end">{{ 'COMPARADOR.CAMPOS.AIRE_ACONDICIONADO' | translate }}</td>
+            @for (v of vehiculos(); track v.idStoc) {
+              <td class="col-vehiculo border-end text-center">
+                <span [innerHTML]="renderValor(v.airAco)"></span>
+              </td>
+            }
+          </tr>
+
+          <tr>
+            <td class="col-titular border-end">{{ 'COMPARADOR.CAMPOS.CALEFACCION' | translate }}</td>
+            @for (v of vehiculos(); track v.idStoc) {
+              <td class="col-vehiculo border-end text-center">
+                <span [innerHTML]="renderValor(v.calefa)"></span>
+              </td>
+            }
+          </tr>
+
+          <tr>
+            <td class="col-titular border-end">{{ 'COMPARADOR.CAMPOS.CLIMATIZADOR_TECHO' | translate }}</td>
+            @for (v of vehiculos(); track v.idStoc) {
+              <td class="col-vehiculo border-end text-center">
+                <span [innerHTML]="renderValor(v.cliTec)"></span>
+              </td>
+            }
+          </tr>
+
+          <tr>
+            <td class="col-titular border-end">{{ 'COMPARADOR.CAMPOS.RADIO' | translate }}</td>
+            @for (v of vehiculos(); track v.idStoc) {
+              <td class="col-vehiculo border-end text-center">
+                <span [innerHTML]="renderValor(v.radio)"></span>
+              </td>
+            }
+          </tr>
+
+          <tr>
+            <td class="col-titular border-end">{{ 'COMPARADOR.CAMPOS.NEVERA' | translate }}</td>
+            @for (v of vehiculos(); track v.idStoc) {
+              <td class="col-vehiculo border-end text-center">
+                <span [innerHTML]="renderValor(v.nevera)"></span>
+              </td>
+            }
+          </tr>
+
+          <tr>
+            <td class="col-titular border-end">{{ 'COMPARADOR.CAMPOS.XENON' | translate }}</td>
+            @for (v of vehiculos(); track v.idStoc) {
+              <td class="col-vehiculo border-end text-center">
+                <span [innerHTML]="renderValor(v.xenon)"></span>
+              </td>
+            }
+          </tr>
+
+          <tr>
+            <td class="col-titular border-end">{{ 'COMPARADOR.CAMPOS.LITERAS' | translate }}</td>
+            @for (v of vehiculos(); track v.idStoc) {
+              <td class="col-vehiculo border-end text-center">
+                <span [innerHTML]="renderValor(v.literas)"></span>
+              </td>
+            }
+          </tr>
+
+
+          <!-- CARROCERÍA / EQUIPO ESPECIAL -->
+          <tr class="tr-categoria bg-corporate text-white">
+            <td
+              [attr.colspan]="vehiculos().length + 1"
+              class="bg-corporate text-white fw-bold py-2 px-3 text-uppercase small">
+              <fa-icon [icon]="faBoxesStacked" class="me-2"></fa-icon>
+              {{ 'COMPARADOR.CATEGORIAS.CARROCERIA_FRIO' | translate }}
+            </td>
+          </tr>
+
+          <tr>
+            <td class="col-titular border-end">{{ 'COMPARADOR.CAMPOS.TIPO_CARROCERIA' | translate }}</td>
+            @for (v of vehiculos(); track v.idStoc) {
+              <td class="col-vehiculo border-end text-center">
+                <span [innerHTML]="renderValor(v.tipoCarro)"></span>
+              </td>
+            }
+          </tr>
+
+          <tr>
+            <td class="col-titular border-end">{{ 'COMPARADOR.CAMPOS.MARCA_CARROCERIA' | translate }}</td>
+            @for (v of vehiculos(); track v.idStoc) {
+              <td class="col-vehiculo border-end text-center">
+                <span [innerHTML]="renderValor(v.marcaCarro)"></span>
+              </td>
+            }
+          </tr>
+
+          <tr>
+            <td class="col-titular border-end">{{ 'COMPARADOR.CAMPOS.EQUIPO_FRIO' | translate }}</td>
+            @for (v of vehiculos(); track v.idStoc) {
+              <td class="col-vehiculo border-end text-center">
+                <span [innerHTML]="renderValor(v.friEqu)"></span>
+              </td>
+            }
+          </tr>
+
+          <tr>
+            <td class="col-titular border-end">{{ 'COMPARADOR.CAMPOS.MARCA_FRIO' | translate }}</td>
+            @for (v of vehiculos(); track v.idStoc) {
+              <td class="col-vehiculo border-end text-center">
+                <span [innerHTML]="renderValor(v.marcaFrio)"></span>
+              </td>
+            }
+          </tr>
+
+          <tr>
+            <td class="col-titular border-end">{{ 'COMPARADOR.CAMPOS.MODELO_FRIO' | translate }}</td>
+            @for (v of vehiculos(); track v.idStoc) {
+              <td class="col-vehiculo border-end text-center">
+                <span [innerHTML]="renderValor(v.friMod)"></span>
+              </td>
+            }
+          </tr>
+
+          <tr>
+            <td class="col-titular border-end">{{ 'COMPARADOR.CAMPOS.HORAS_FRIO' | translate }}</td>
+            @for (v of vehiculos(); track v.idStoc) {
+              <td class="col-vehiculo border-end text-center">
+                <span [innerHTML]="renderValor(formatearNumero(v.horFri, ' h'))"></span>
+              </td>
+            }
+          </tr>
+
+          <tr>
+            <td class="col-titular border-end">{{ 'COMPARADOR.CAMPOS.TERMOGRAFO' | translate }}</td>
+            @for (v of vehiculos(); track v.idStoc) {
+              <td class="col-vehiculo border-end text-center">
+                <span [innerHTML]="renderValor(v.terMog)"></span>
+              </td>
+            }
+          </tr>
+
+          <tr>
+            <td class="col-titular border-end">{{ 'COMPARADOR.CAMPOS.ADR' | translate }}</td>
+            @for (v of vehiculos(); track v.idStoc) {
+              <td class="col-vehiculo border-end text-center">
+                <span [innerHTML]="renderValor(v.adr)"></span>
+              </td>
+            }
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+  }
+
+</div>

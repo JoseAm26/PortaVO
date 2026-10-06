@@ -1,0 +1,814 @@
+// Importación del módulo de color para compatibilidad con Dart Sass 3.0.0
+@use "sass:color";
+
+// ==========================================
+// PALETA DE COLORES (Exclusiva: Azules y Blanco Puro)
+// ==========================================
+$azul-marino-oscuro: #001a35;
+$azul-corporativo: #0056a0;
+$azul-cyan-brillante: #0084ff;
+$azul-cielo-suave: #f2f7fc;
+$azul-medio-texto: #335375;
+$blanco-puro: #ffffff;
+
+$borde-ligero: 1px solid rgba(0, 86, 160, 0.12);
+$radio-esquina: 14px;
+
+// Transición segura para GPU (Previene el CLS en animaciones)
+$transicion: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+             opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+             background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+             border-color 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+             box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+
+$sombra-suave: 0 4px 20px rgba(0, 26, 53, 0.05);
+$sombra-hover: 0 12px 30px rgba(0, 26, 53, 0.12);
+
+// Equivalencias de variables
+$color-texto-oscuro: $azul-marino-oscuro;
+$color-texto-mutado: $azul-medio-texto;
+$color-texto-mutated: $azul-medio-texto;
+$color-fondo-tarjeta: $blanco-puro;
+$color-borde: rgba(0, 86, 160, 0.12);
+$color-primario: $azul-corporativo;
+$color-consultar: $azul-cyan-brillante;
+
+// Contenedor general responsive
+.contenedor-global {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  box-sizing: border-box;
+}
+
+// Estructura contenedora global de la interfaz
+.interfaz-bento {
+  background-color: $blanco-puro;
+  font-family: system-ui, -apple-system, sans-serif;
+  contain: layout style;
+}
+
+// ==========================================
+// 1. SPLIT HERO + BUSCADOR
+// ==========================================
+.split-cabecera {
+  position: relative;
+  color: $blanco-puro;
+  padding: 4rem 0;
+  overflow: hidden;
+  min-height: 520px; // Reserva de altura inicial para el bloque completo
+
+  @media (min-width: 992px) {
+    padding: 6rem 0;
+  }
+
+  &.con-fondo {
+    background: $azul-marino-oscuro;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('/assets/img/imagen_back.webp');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      opacity: 0.25;
+      z-index: 1;
+    }
+  }
+
+  .contenedor-global {
+    position: relative;
+    z-index: 2;
+  }
+
+  .grid-split {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    align-items: center;
+
+    @media (min-width: 992px) {
+      grid-template-columns: 1.1fr 0.9fr;
+    }
+  }
+
+  .columna-hero {
+    .tagline {
+      display: inline-block;
+      background-color: rgba($azul-cyan-brillante, 0.2);
+      color: color.adjust($azul-cyan-brillante, $lightness: 10%);
+      padding: 0.4rem 1rem;
+      border-radius: 30px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 1.25rem;
+      line-height: 1;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      line-height: 1.15;
+      font-weight: 900;
+      margin: 0 0 1.25rem 0;
+      letter-spacing: -0.5px;
+      min-height: 1.15em; // Previene colapso tipográfico
+
+      .destaque {
+        color: $azul-cyan-brillante;
+      }
+    }
+
+    .descripcion {
+      font-size: 1.05rem;
+      line-height: 1.6;
+      color: rgba($blanco-puro, 0.9);
+      margin-bottom: 2.5rem;
+      max-width: 500px;
+      min-height: 3.2em;
+    }
+
+    .mini-contadores {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      border-top: 1px solid rgba($blanco-puro, 0.25);
+      padding-top: 2rem;
+
+      .mini-item {
+        .numero {
+          display: block;
+          font-size: 1.75rem;
+          font-weight: 900;
+          color: $azul-cyan-brillante;
+          line-height: 1.2;
+        }
+        .etiqueta {
+          font-size: 0.75rem;
+          color: rgba($blanco-puro, 0.75);
+          font-weight: 600;
+          text-transform: uppercase;
+          line-height: 1.2;
+        }
+      }
+    }
+  }
+
+  .columna-buscador {
+    .caja-buscador {
+      background-color: $blanco-puro;
+      border-radius: $radio-esquina;
+      padding: 1.75rem;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+      color: $azul-marino-oscuro;
+
+      h2 {
+        font-size: 1.25rem;
+        font-weight: 800;
+        margin: 0 0 1.25rem 0;
+        color: $azul-marino-oscuro;
+        line-height: 1.2;
+      }
+
+      .formulario-buscador {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .grupo-campo {
+        display: flex;
+        flex-direction: column;
+        gap: 0.35rem;
+
+        label {
+          font-size: 0.75rem;
+          font-weight: 800;
+          text-transform: uppercase;
+          color: $azul-medio-texto;
+          line-height: 1.2;
+        }
+
+        input, select {
+          width: 100%;
+          height: 42px; // Altura explícita
+          padding: 0 0.75rem;
+          background-color: $azul-cielo-suave;
+          border: 1px solid rgba($azul-corporativo, 0.15);
+          border-radius: 8px;
+          color: $azul-marino-oscuro;
+          font-size: 0.85rem;
+          font-weight: 600;
+          outline: none;
+          box-sizing: border-box;
+
+          &:focus {
+            border-color: $azul-cyan-brillante;
+            background-color: $blanco-puro;
+            box-shadow: 0 0 0 3px rgba($azul-cyan-brillante, 0.15);
+          }
+        }
+      }
+
+      .doble-campo {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.75rem;
+      }
+
+      .btn-buscar-principal {
+        background-color: $azul-cyan-brillante;
+        color: $blanco-puro;
+        border: none;
+        height: 46px; // Altura fija
+        padding: 0 0.9rem;
+        font-size: 0.95rem;
+        font-weight: 800;
+        border-radius: 8px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        margin-top: 0.5rem;
+        transition: $transicion;
+
+        /* Control rígido de icono interno */
+        i, svg {
+          font-size: 1.1rem !important;
+          width: 1.1rem !important;
+          height: 1.1rem !important;
+          display: inline-flex !important;
+          align-items: center;
+          justify-content: center;
+          flex-shrink: 0;
+          overflow: hidden;
+        }
+
+        &:hover {
+          background-color: $azul-corporativo;
+        }
+      }
+    }
+  }
+}
+
+// ==========================================
+// 2. GRID BENTO
+// ==========================================
+.bento-dashboard {
+  background-color: $azul-cielo-suave;
+  padding: 3rem 0;
+  border-bottom: $borde-ligero;
+
+  .grid-bento {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(6, 1fr);
+    }
+  }
+
+  .bento-box {
+    background-color: $blanco-puro;
+    border: $borde-ligero;
+    border-radius: $radio-esquina;
+    padding: 1.5rem;
+    box-sizing: border-box;
+
+    h3 {
+      font-size: 1rem;
+      font-weight: 800;
+      color: $azul-marino-oscuro;
+      margin: 0 0 1rem 0;
+      line-height: 1.2;
+    }
+  }
+
+  .bento-marcas {
+    @media (min-width: 768px) { grid-column: span 4; }
+
+    .tags-marcas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+
+      .tag-marca-btn {
+        background-color: $azul-cielo-suave;
+        border: 1px solid transparent;
+        color: $azul-marino-oscuro;
+        padding: 0.5rem 1rem;
+        border-radius: 30px;
+        font-size: 0.8rem;
+        font-weight: 700;
+        cursor: pointer;
+        transition: $transicion;
+
+        &:hover {
+          border-color: $azul-cyan-brillante;
+          background-color: $blanco-puro;
+        }
+      }
+    }
+  }
+
+  .bento-tipos {
+    @media (min-width: 768px) { grid-column: span 2; }
+
+    .flex-tipos {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+
+      .chip-tipo {
+        background-color: $azul-cielo-suave;
+        padding: 0.6rem 0.85rem;
+        border-radius: 8px;
+        font-size: 0.8rem;
+        font-weight: 700;
+        color: $azul-marino-oscuro;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+
+        i, svg {
+          color: $azul-cyan-brillante;
+          font-size: 1rem !important;
+          width: 1rem !important;
+          height: 1rem !important;
+          display: inline-flex !important;
+          align-items: center;
+          justify-content: center;
+          flex-shrink: 0;
+          overflow: hidden;
+        }
+      }
+    }
+  }
+
+  .bento-valor {
+    @media (min-width: 768px) { grid-column: span 3; }
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .icono-valor {
+      color: $azul-cyan-brillante;
+      margin-bottom: 0.5rem;
+      font-size: 1.75rem !important;
+      width: 1.75rem !important;
+      height: 1.75rem !important;
+      display: inline-flex !important;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      overflow: hidden;
+    }
+
+    h4 {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: $azul-marino-oscuro;
+      margin: 0 0 0.35rem 0;
+      line-height: 1.2;
+    }
+
+    p {
+      font-size: 0.8rem;
+      color: $azul-medio-texto;
+      margin: 0;
+      line-height: 1.4;
+    }
+  }
+}
+
+// ==========================================
+// 3. SHOWROOM DE VEHÍCULOS
+// ==========================================
+.showroom-camiones {
+  padding: 3rem 1rem;
+  background-color: #f8f9fa;
+
+  .contenedor-global {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .cabecera-seccion-centro {
+    text-align: center;
+    margin-bottom: 2rem;
+
+    h2 {
+      font-size: 1.75rem;
+      color: $color-texto-oscuro;
+      margin-bottom: 0.5rem;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    p {
+      color: $color-texto-mutated;
+      font-size: 0.95rem;
+      line-height: 1.4;
+    }
+  }
+
+  .listado-tarjetas {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .tarjeta-horizontal {
+    display: flex;
+    background: $color-fondo-tarjeta;
+    border: 1px solid $color-borde;
+    border-radius: 10px;
+    overflow: hidden;
+    min-height: 120px;
+    transition: $transicion;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.06);
+      border-color: color.adjust($color-borde, $lightness: -5%);
+    }
+
+    .zona-imagen {
+      width: 180px;
+      min-width: 180px;
+      aspect-ratio: 3 / 2; // Control estricto de proporción
+      background-color: #f1f3f5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+
+      .vehiculo-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+    }
+
+    .zona-contenido {
+      display: flex;
+      flex: 1;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 1.5rem;
+      box-sizing: border-box;
+    }
+
+    .cabecera-tarjeta {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+
+      h3 {
+        margin: 0;
+        font-size: 1.1rem;
+        color: $color-texto-oscuro;
+        font-weight: 600;
+        line-height: 1.3;
+        min-height: 1.3em;
+
+        .modelo {
+          font-weight: 400;
+          color: $color-texto-mutado;
+          margin-left: 0.5rem;
+        }
+      }
+
+      .especificaciones {
+        display: flex;
+        gap: 1rem;
+        font-size: 0.85rem;
+        color: $color-texto-mutado;
+        min-height: 1.2em;
+
+        .dato {
+          display: flex;
+          align-items: center;
+          gap: 0.35rem;
+
+          /* Aislamiento dimensional de icono */
+          i, svg {
+            color: $color-primario;
+            font-size: 0.95rem !important;
+            width: 0.95rem !important;
+            height: 0.95rem !important;
+            display: inline-flex !important;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            overflow: hidden;
+          }
+        }
+      }
+    }
+
+    .tarjeta-fin {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 0.5rem;
+      min-width: 140px;
+
+      .precio-fijo {
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: $color-texto-oscuro;
+        line-height: 1.2;
+        min-height: 1.2em;
+      }
+
+      .precio-consultar {
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: $color-consultar;
+        background-color: color.adjust($color-consultar, $lightness: 45%);
+        padding: 0.2rem 0.6rem;
+        border-radius: 5px;
+        border: 1px solid color.adjust($color-consultar, $lightness: 40%);
+        line-height: 1.2;
+      }
+
+      .btn-solicitar {
+        background-color: $color-primario;
+        color: #ffffff;
+        border: none;
+        padding: 0.4rem 1rem;
+        font-size: 0.85rem;
+        font-weight: 600;
+        border-radius: 6px;
+        cursor: pointer;
+        height: 32px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        transition: $transicion;
+
+        &:hover {
+          background-color: color.adjust($color-primario, $lightness: -10%);
+        }
+      }
+    }
+  }
+}
+
+// Adaptabilidad Móvil para Showroom
+@media (max-width: 768px) {
+  .showroom-camiones {
+    .tarjeta-horizontal {
+      flex-direction: column;
+
+      .zona-imagen {
+        width: 100%;
+        min-width: 100%;
+        aspect-ratio: 16 / 9;
+      }
+
+      .zona-contenido {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+
+        .tarjeta-fin {
+          width: 100%;
+          min-width: 100%;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+          border-top: 1px solid $color-borde;
+          padding-top: 0.75rem;
+        }
+      }
+    }
+  }
+}
+
+// ==========================================
+// 4. COMUNIDAD + PROCESO
+// ==========================================
+.comunidad-proceso {
+  background-color: $azul-cielo-suave;
+  padding: 5rem 0;
+  border-top: $borde-ligero;
+  border-bottom: $borde-ligero;
+
+  .grid-dos-bloques {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+
+    @media (min-width: 992px) {
+      grid-template-columns: 1.1fr 0.9fr;
+    }
+  }
+
+  .bloque-proceso {
+    h2 {
+      font-size: 1.6rem;
+      font-weight: 900;
+      color: $azul-marino-oscuro;
+      margin: 0 0 2rem 0;
+      line-height: 1.2;
+    }
+
+    .pasos-verticales {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .paso-item {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+
+      .numero {
+        background-color: $azul-cyan-brillante;
+        color: $blanco-puro;
+        font-weight: 900;
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        font-size: 0.9rem;
+        line-height: 1;
+      }
+
+      .texto-paso {
+        h5 {
+          font-size: 0.95rem;
+          font-weight: 800;
+          color: $azul-marino-oscuro;
+          margin: 0 0 0.25rem 0;
+          line-height: 1.2;
+        }
+
+        p {
+          font-size: 0.85rem;
+          color: $azul-medio-texto;
+          line-height: 1.4;
+          margin: 0;
+        }
+      }
+    }
+  }
+
+  .bloque-testimonios {
+    h2 {
+      font-size: 1.6rem;
+      font-weight: 900;
+      color: $azul-marino-oscuro;
+      margin: 0 0 2rem 0;
+      line-height: 1.2;
+    }
+
+    .pila-testimonios {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .burbuja-testimonio {
+      background-color: $blanco-puro;
+      border: $borde-ligero;
+      padding: 1.25rem;
+      border-radius: $radio-esquina;
+
+      .usuario {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        margin-bottom: 0.75rem;
+
+        .inicial {
+          width: 32px;
+          height: 32px;
+          background-color: rgba($azul-cyan-brillante, 0.1);
+          color: $azul-cyan-brillante;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 0.85rem;
+          font-weight: 700;
+          flex-shrink: 0;
+        }
+
+        strong {
+          font-size: 0.85rem;
+          color: $azul-marino-oscuro;
+          display: block;
+          line-height: 1.2;
+        }
+
+        .subtext {
+          font-size: 0.75rem;
+          color: $azul-medio-texto;
+          font-weight: 600;
+          line-height: 1.2;
+        }
+      }
+
+      .comentario {
+        font-size: 0.85rem;
+        font-style: italic;
+        color: $azul-marino-oscuro;
+        line-height: 1.4;
+        margin: 0;
+      }
+    }
+  }
+}
+
+// ==========================================
+// 5. SECCIÓN CTA FINAL
+// ==========================================
+.seccion-cta-final {
+  background-color: $azul-marino-oscuro;
+  color: $blanco-puro;
+  padding: 3.5rem 0;
+
+  .grid-cta {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1.5rem;
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+      align-items: center;
+    }
+  }
+
+  .info-cta {
+    h2 {
+      font-size: 1.6rem;
+      font-weight: 900;
+      margin: 0 0 0.5rem 0;
+      line-height: 1.2;
+    }
+
+    p {
+      font-size: 0.95rem;
+      color: rgba($blanco-puro, 0.8);
+      margin: 0;
+      max-width: 550px;
+      line-height: 1.5;
+    }
+  }
+
+  .accion-cta {
+    .btn-cta {
+      background-color: $azul-cyan-brillante;
+      color: $blanco-puro;
+      border: none;
+      height: 48px;
+      padding: 0 1.75rem;
+      font-size: 0.95rem;
+      font-weight: 800;
+      border-radius: 8px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      transition: $transicion;
+
+      i, svg {
+        font-size: 1.1rem !important;
+        width: 1.1rem !important;
+        height: 1.1rem !important;
+        display: inline-flex !important;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        overflow: hidden;
+      }
+
+      &:hover {
+        background-color: $blanco-puro;
+        color: $azul-marino-oscuro;
+      }
+    }
+  }
+}

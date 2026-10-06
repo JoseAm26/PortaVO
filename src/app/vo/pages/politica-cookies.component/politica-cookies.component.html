@@ -1,0 +1,241 @@
+<div class="contenedor-global pagina-legal">
+  <!-- Cabecera principal -->
+  <header class="header-aviso">
+    <span class="tagline">{{ 'COOKIES.TAGLINE' | translate }}</span>
+    <h1>{{ 'COOKIES.TITULO_1' | translate }} <span class="destaque">{{ 'COOKIES.TITULO_2' | translate }}</span></h1>
+    <p class="subtitulo">{{ 'COOKIES.SUBTITULO' | translate }}</p>
+  </header>
+
+  <!-- Cuerpo del documento -->
+  <div class="cuerpo-legal">
+
+    <!-- 1. INFORMACIÓN GENERAL -->
+    <section class="seccion-legal">
+      <h2>{{ 'COOKIES.SECCION_1.TITULO' | translate }}</h2>
+
+      <h3>{{ 'COOKIES.SECCION_1.CONFORMIDAD_TITULO' | translate }}</h3>
+      <p>{{ 'COOKIES.SECCION_1.CONFORMIDAD_P' | translate }}</p>
+
+      <h3>{{ 'COOKIES.SECCION_1.QUE_SON_TITULO' | translate }}</h3>
+      <p [innerHTML]="'COOKIES.SECCION_1.QUE_SON_P1' | translate"></p>
+      <p>{{ 'COOKIES.SECCION_1.QUE_SON_P2' | translate }}</p>
+
+      <h3>{{ 'COOKIES.SECCION_1.EXCEPTUADAS_TITULO' | translate }}</h3>
+      <p>{{ 'COOKIES.SECCION_1.EXCEPTUADAS_P' | translate }}</p>
+    </section>
+
+    <!-- 2. TIPOS DE COOKIES -->
+    <section class="seccion-legal">
+      <h2>{{ 'COOKIES.SECCION_2.TITULO' | translate }}</h2>
+
+      <div class="bloque-formulario">
+        <span class="etiqueta-formulario">{{ 'COOKIES.SECCION_2.FINALIDAD.ETIQUETA' | translate }}</span>
+        <ul class="lista-corporativa">
+          <li [innerHTML]="'COOKIES.SECCION_2.FINALIDAD.TECNICAS' | translate"></li>
+          <li [innerHTML]="'COOKIES.SECCION_2.FINALIDAD.ANALITICAS' | translate"></li>
+          <li [innerHTML]="'COOKIES.SECCION_2.FINALIDAD.PUBLICITARIAS' | translate"></li>
+          <li [innerHTML]="'COOKIES.SECCION_2.FINALIDAD.COMPORTAMENTAL' | translate"></li>
+          <li [innerHTML]="'COOKIES.SECCION_2.FINALIDAD.SOCIALES' | translate"></li>
+          <li [innerHTML]="'COOKIES.SECCION_2.FINALIDAD.AFILIADOS' | translate"></li>
+          <li [innerHTML]="'COOKIES.SECCION_2.FINALIDAD.SEGURIDAD' | translate"></li>
+        </ul>
+      </div>
+
+      <div class="bloque-formulario">
+        <span class="etiqueta-formulario">{{ 'COOKIES.SECCION_2.PROPIEDAD.ETIQUETA' | translate }}</span>
+        <ul class="lista-corporativa">
+          <li [innerHTML]="'COOKIES.SECCION_2.PROPIEDAD.PROPIAS' | translate"></li>
+          <li [innerHTML]="'COOKIES.SECCION_2.PROPIEDAD.TERCEROS' | translate"></li>
+        </ul>
+      </div>
+
+      <div class="bloque-formulario">
+        <span class="etiqueta-formulario">{{ 'COOKIES.SECCION_2.CONSERVACION.ETIQUETA' | translate }}</span>
+        <ul class="lista-corporativa">
+          <li [innerHTML]="'COOKIES.SECCION_2.CONSERVACION.SESION' | translate"></li>
+          <li [innerHTML]="'COOKIES.SECCION_2.CONSERVACION.PERSISTENTES' | translate"></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 3. INFORMACIÓN DEL TRATAMIENTO -->
+    <section class="seccion-legal">
+      <h2>{{ 'COOKIES.SECCION_3.TITULO' | translate }}</h2>
+      <p [innerHTML]="'COOKIES.SECCION_3.INTRO' | translate"></p>
+
+      <ul class="lista-corporativa">
+        <li [innerHTML]="'COOKIES.SECCION_3.FINES' | translate"></li>
+        <li [innerHTML]="'COOKIES.SECCION_3.LEGITIMACION' | translate"></li>
+        <li [innerHTML]="'COOKIES.SECCION_3.CONSERVACION' | translate"></li>
+        <li [innerHTML]="'COOKIES.SECCION_3.COMUNICACION' | translate"></li>
+      </ul>
+
+      <div class="nota-contacto">
+        <strong>{{ 'COOKIES.SECCION_3.CONTACTO_DERECHOS.TITULO' | translate }}</strong><br>
+        {{ 'COOKIES.SECCION_3.CONTACTO_DERECHOS.TEXTO' | translate }}<br>
+        <strong>{{ 'COOKIES.SECCION_3.CONTACTO_DERECHOS.DIRECCION' | translate }}</strong><br>
+        <strong>{{ 'COOKIES.SECCION_3.CONTACTO_DERECHOS.EMAIL' | translate }}</strong>
+        <a href="mailto:protecciondatos@veinsur.es">protecciondatos@veinsur.es</a><br><br>
+        <strong>{{ 'COOKIES.SECCION_3.CONTACTO_DERECHOS.DPD' | translate }}</strong>
+        {{ 'COOKIES.SECCION_3.CONTACTO_DERECHOS.DPD_VALOR' | translate }}<br>
+        <em>{{ 'COOKIES.SECCION_3.CONTACTO_DERECHOS.RECLAMACIONES' | translate }}
+          <a href="https://www.aepd.es" target="_blank" rel="noopener">www.aepd.es</a>
+        </em>
+      </div>
+    </section>
+
+    <!-- 4. INVENTARIO DE COOKIES -->
+    <section class="seccion-legal">
+      <h2>{{ 'COOKIES.SECCION_4.TITULO' | translate }}</h2>
+
+      <h3>{{ 'COOKIES.SECCION_4.TECNICAS_TITULO' | translate }}</h3>
+      <div class="tabla-responsive">
+        <table class="tabla-legal">
+          <thead>
+            <tr>
+              <th>{{ 'COOKIES.SECCION_4.TABLA_CABECERA.PROPIEDAD' | translate }}</th>
+              <th>{{ 'COOKIES.SECCION_4.TABLA_CABECERA.COOKIE' | translate }}</th>
+              <th>{{ 'COOKIES.SECCION_4.TABLA_CABECERA.FINALIDAD' | translate }}</th>
+              <th>{{ 'COOKIES.SECCION_4.TABLA_CABECERA.PLAZO' | translate }}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>accounts.google.com</td><td>__Host-1PLSID</td><td>{{ 'COOKIES.SECCION_4.FINES_TEXTO.USO_SERVICIOS' | translate }}</td><td>{{ 'COOKIES.SECCION_4.PLAZOS.ANO' | translate }}</td></tr>
+            <tr><td>accounts.google.com</td><td>__Host-3PLSID</td><td>{{ 'COOKIES.SECCION_4.FINES_TEXTO.USO_SERVICIOS' | translate }}</td><td>{{ 'COOKIES.SECCION_4.PLAZOS.ANO' | translate }}</td></tr>
+            <tr><td>accounts.google.com</td><td>__Host-GAPS</td><td>{{ 'COOKIES.SECCION_4.FINES_TEXTO.USO_SERVICIOS' | translate }}</td><td>{{ 'COOKIES.SECCION_4.PLAZOS.ANO' | translate }}</td></tr>
+            <tr><td>accounts.google.com</td><td>ACCOUNT_CHOOSER</td><td>{{ 'COOKIES.SECCION_4.FINES_TEXTO.USO_SERVICIOS' | translate }}</td><td>{{ 'COOKIES.SECCION_4.PLAZOS.MESES_12' | translate }}</td></tr>
+            <tr><td>accounts.google.com</td><td>LSID</td><td>{{ 'COOKIES.SECCION_4.FINES_TEXTO.USO_SERVICIOS' | translate }}</td><td>{{ 'COOKIES.SECCION_4.PLAZOS.ANO' | translate }}</td></tr>
+            <tr><td>doubleclick.net</td><td>ar_debug</td><td>{{ 'COOKIES.SECCION_4.FINES_TEXTO.USO_SERVICIOS' | translate }}</td><td>{{ 'COOKIES.SECCION_4.PLAZOS.DIAS_24' | translate }}</td></tr>
+            <tr><td>google.com</td><td>__Secure-1PAPISID</td><td>{{ 'COOKIES.SECCION_4.FINES_TEXTO.USO_SERVICIOS' | translate }}</td><td>{{ 'COOKIES.SECCION_4.PLAZOS.ANO' | translate }}</td></tr>
+            <tr><td>google.com</td><td>__Secure-1PSID</td><td>{{ 'COOKIES.SECCION_4.FINES_TEXTO.USO_SERVICIOS' | translate }}</td><td>{{ 'COOKIES.SECCION_4.PLAZOS.ANO' | translate }}</td></tr>
+            <tr><td>google.com</td><td>__Secure-1PSIDCC</td><td>{{ 'COOKIES.SECCION_4.FINES_TEXTO.USO_SERVICIOS' | translate }}</td><td>{{ 'COOKIES.SECCION_4.PLAZOS.ANO' | translate }}</td></tr>
+            <tr><td>google.com</td><td>__Secure-1PSIDTS</td><td>{{ 'COOKIES.SECCION_4.FINES_TEXTO.USO_SERVICIOS' | translate }}</td><td>{{ 'COOKIES.SECCION_4.PLAZOS.ANO' | translate }}</td></tr>
+            <tr><td>google.com</td><td>__Secure-3PSIDCC</td><td>{{ 'COOKIES.SECCION_4.FINES_TEXTO.USO_SERVICIOS' | translate }}</td><td>{{ 'COOKIES.SECCION_4.PLAZOS.ANO' | translate }}</td></tr>
+            <tr><td>google.com</td><td>__Secure-3PSIDTS</td><td>{{ 'COOKIES.SECCION_4.FINES_TEXTO.USO_SERVICIOS' | translate }}</td><td>{{ 'COOKIES.SECCION_4.PLAZOS.ANO' | translate }}</td></tr>
+            <tr><td>google.com</td><td>__Secure-ENID</td><td>{{ 'COOKIES.SECCION_4.FINES_TEXTO.USO_SERVICIOS' | translate }}</td><td>{{ 'COOKIES.SECCION_4.PLAZOS.MESES_9' | translate }}</td></tr>
+            <tr><td>google.com</td><td>_GRECAPTCHA</td><td>{{ 'COOKIES.SECCION_4.FINES_TEXTO.USO_SERVICIOS' | translate }}</td><td>{{ 'COOKIES.SECCION_4.PLAZOS.MESES_4' | translate }}</td></tr>
+            <tr><td>google.com</td><td>AEC</td><td>{{ 'COOKIES.SECCION_4.FINES_TEXTO.USO_SERVICIOS' | translate }}</td><td>{{ 'COOKIES.SECCION_4.PLAZOS.MES_1' | translate }}</td></tr>
+            <tr><td>Google</td><td>CONSENT</td><td>{{ 'COOKIES.SECCION_4.FINES_TEXTO.RASTREADOR' | translate }}</td><td>{{ 'COOKIES.SECCION_4.PLAZOS.MESES_9' | translate }}</td></tr>
+            <tr><td>google.com</td><td>SOCS</td><td>{{ 'COOKIES.SECCION_4.FINES_TEXTO.USO_SERVICIOS' | translate }}</td><td>{{ 'COOKIES.SECCION_4.PLAZOS.MESES_9' | translate }}</td></tr>
+            <tr><td>google.es</td><td>__Secure-1PAPISID</td><td>{{ 'COOKIES.SECCION_4.FINES_TEXTO.USO_SERVICIOS' | translate }}</td><td>{{ 'COOKIES.SECCION_4.PLAZOS.ANO' | translate }}</td></tr>
+            <tr><td>google.es</td><td>__Secure-1PSID</td><td>{{ 'COOKIES.SECCION_4.FINES_TEXTO.USO_SERVICIOS' | translate }}</td><td>{{ 'COOKIES.SECCION_4.PLAZOS.ANO' | translate }}</td></tr>
+            <tr><td>google.es</td><td>__Secure-ENID</td><td>{{ 'COOKIES.SECCION_4.FINES_TEXTO.USO_SERVICIOS' | translate }}</td><td>{{ 'COOKIES.SECCION_4.PLAZOS.ANO' | translate }}</td></tr>
+            <tr><td>region1.googleanalytics.com</td><td>ar_debug</td><td>{{ 'COOKIES.SECCION_4.FINES_TEXTO.USO_SERVICIOS' | translate }}</td><td>{{ 'COOKIES.SECCION_4.PLAZOS.MESES_2' | translate }}</td></tr>
+            <tr><td>veinsurtrucks.com</td><td>_ga_EMT6KJKHHZ</td><td>{{ 'COOKIES.SECCION_4.FINES_TEXTO.USO_SERVICIOS' | translate }}</td><td>{{ 'COOKIES.SECCION_4.PLAZOS.ANO' | translate }}</td></tr>
+            <tr><td>veinsurtrucks.com</td><td>cc_cookie</td><td>{{ 'COOKIES.SECCION_4.FINES_TEXTO.USO_SERVICIOS' | translate }}</td><td>{{ 'COOKIES.SECCION_4.PLAZOS.MESES_7' | translate }}</td></tr>
+            <tr><td>veinsurtrucks.com</td><td>cookieyes-consent</td><td>{{ 'COOKIES.SECCION_4.FINES_TEXTO.USO_SERVICIOS' | translate }}</td><td>{{ 'COOKIES.SECCION_4.PLAZOS.ANO' | translate }}</td></tr>
+            <tr><td>veinsurtrucks.com</td><td>G_ENABLED_IDPS</td><td>{{ 'COOKIES.SECCION_4.FINES_TEXTO.USO_SERVICIOS' | translate }}</td><td>{{ 'COOKIES.SECCION_4.PLAZOS.ANO' | translate }}</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>{{ 'COOKIES.SECCION_4.ANALITICAS_TITULO' | translate }}</h3>
+      <div class="tabla-responsive">
+        <table class="tabla-legal">
+          <thead>
+            <tr>
+              <th>{{ 'COOKIES.SECCION_4.TABLA_CABECERA.PROPIEDAD' | translate }}</th>
+              <th>{{ 'COOKIES.SECCION_4.TABLA_CABECERA.COOKIE' | translate }}</th>
+              <th>{{ 'COOKIES.SECCION_4.TABLA_CABECERA.FINALIDAD' | translate }}</th>
+              <th>{{ 'COOKIES.SECCION_4.TABLA_CABECERA.PLAZO' | translate }}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Google</td><td>__Secure-3PAPISID</td><td>{{ 'COOKIES.SECCION_4.FINES_TEXTO.ANUNCIOS_RELEVANTES' | translate }}</td><td>{{ 'COOKIES.SECCION_4.PLAZOS.ANO' | translate }}</td></tr>
+            <tr><td>Google</td><td>__Secure-3PSID</td><td>{{ 'COOKIES.SECCION_4.FINES_TEXTO.ANUNCIOS_RELEVANTES' | translate }}</td><td>{{ 'COOKIES.SECCION_4.PLAZOS.ANO' | translate }}</td></tr>
+            <tr><td>Google Analytics</td><td>_ga</td><td>{{ 'COOKIES.SECCION_4.FINES_TEXTO.ID_USUARIOS' | translate }}</td><td>{{ 'COOKIES.SECCION_4.PLAZOS.ANO' | translate }}</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>{{ 'COOKIES.SECCION_4.PUBLICITARIAS_TITULO' | translate }}</h3>
+      <div class="tabla-responsive">
+        <table class="tabla-legal">
+          <thead>
+            <tr>
+              <th>{{ 'COOKIES.SECCION_4.TABLA_CABECERA.PROPIEDAD' | translate }}</th>
+              <th>{{ 'COOKIES.SECCION_4.TABLA_CABECERA.COOKIE' | translate }}</th>
+              <th>{{ 'COOKIES.SECCION_4.TABLA_CABECERA.FINALIDAD' | translate }}</th>
+              <th>{{ 'COOKIES.SECCION_4.TABLA_CABECERA.PLAZO' | translate }}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Google</td><td>OTZ</td><td>{{ 'COOKIES.SECCION_4.FINES_TEXTO.ANALISIS_AGREGADO' | translate }}</td><td>{{ 'COOKIES.SECCION_4.PLAZOS.DIA_1' | translate }}</td></tr>
+            <tr><td>DoubleClick/Google Marketing</td><td>id</td><td>{{ 'COOKIES.SECCION_4.FINES_TEXTO.CAMPAÑAS' | translate }}</td><td>{{ 'COOKIES.SECCION_4.PLAZOS.ANO' | translate }}</td></tr>
+            <tr><td>Google</td><td>APISID</td><td>{{ 'COOKIES.SECCION_4.FINES_TEXTO.HERRAMIENTAS' | translate }}</td><td>{{ 'COOKIES.SECCION_4.PLAZOS.ANO' | translate }}</td></tr>
+            <tr><td>Google</td><td>DV</td><td>{{ 'COOKIES.SECCION_4.FINES_TEXTO.ESTADISTICAS' | translate }}</td><td>{{ 'COOKIES.SECCION_4.PLAZOS.SESION' | translate }}</td></tr>
+            <tr><td>Google</td><td>HSID</td><td>{{ 'COOKIES.SECCION_4.FINES_TEXTO.PREFERENCIAS_BUSQUEDA' | translate }}</td><td>{{ 'COOKIES.SECCION_4.PLAZOS.ANO' | translate }}</td></tr>
+            <tr><td>Google</td><td>NID</td><td>{{ 'COOKIES.SECCION_4.FINES_TEXTO.ESTADISTICAS_SITIO' | translate }}</td><td>{{ 'COOKIES.SECCION_4.PLAZOS.MESES_7' | translate }}</td></tr>
+            <tr><td>Google</td><td>SAPISID</td><td>{{ 'COOKIES.SECCION_4.FINES_TEXTO.DESCARGA' | translate }}</td><td>{{ 'COOKIES.SECCION_4.PLAZOS.ANO' | translate }}</td></tr>
+            <tr><td>Google</td><td>SID / SIDCC / SSID</td><td>{{ 'COOKIES.SECCION_4.FINES_TEXTO.ESTADO_SEGURIDAD' | translate }}</td><td>{{ 'COOKIES.SECCION_4.PLAZOS.ANO' | translate }}</td></tr>
+            <tr><td>Google</td><td>_gcl_au</td><td>{{ 'COOKIES.SECCION_4.FINES_TEXTO.EXPERIMENTACION' | translate }}</td><td>{{ 'COOKIES.SECCION_4.PLAZOS.MESES_3' | translate }}</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- 5. TERCEROS Y GESTIÓN -->
+    <section class="seccion-legal">
+      <h2>{{ 'COOKIES.SECCION_5.TITULO' | translate }}</h2>
+      <p>{{ 'COOKIES.SECCION_5.INTRO' | translate }}</p>
+
+      <h3>{{ 'COOKIES.SECCION_5.PROVEEDORES_TITULO' | translate }}</h3>
+      <div class="tabla-responsive">
+        <table class="tabla-legal">
+          <thead>
+            <tr>
+              <th>{{ 'COOKIES.SECCION_5.TABLA_PROVEEDORES.EDITOR' | translate }}</th>
+              <th>{{ 'COOKIES.SECCION_5.TABLA_PROVEEDORES.POLITICA' | translate }}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>DoubleClick / Google Marketing</td><td><a href="https://privacy.google.com/take-control.html" target="_blank" rel="noopener">privacy.google.com/take-control.html</a></td></tr>
+            <tr><td>Google Analytics</td><td><a href="https://privacy.google.com/take-control.html" target="_blank" rel="noopener">privacy.google.com/take-control.html</a></td></tr>
+            <tr><td>Google</td><td><a href="https://safety.google/privacy/privacy-controls/" target="_blank" rel="noopener">safety.google/privacy/privacy-controls/</a></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>{{ 'COOKIES.SECCION_5.GESTION_TITULO' | translate }}</h3>
+      <div class="tabla-responsive">
+        <table class="tabla-legal">
+          <tbody>
+            <tr>
+              <th>{{ 'COOKIES.SECCION_5.GESTION_OPCIONES.ELIMINAR_TITULO' | translate }}</th>
+              <td>{{ 'COOKIES.SECCION_5.GESTION_OPCIONES.ELIMINAR_DESC' | translate }}</td>
+            </tr>
+            <tr>
+              <th>{{ 'COOKIES.SECCION_5.GESTION_OPCIONES.GESTION_TITULO' | translate }}</th>
+              <td>{{ 'COOKIES.SECCION_5.GESTION_OPCIONES.GESTION_DESC' | translate }}</td>
+            </tr>
+            <tr>
+              <th>{{ 'COOKIES.SECCION_5.GESTION_OPCIONES.BLOQUEAR_TITULO' | translate }}</th>
+              <td>{{ 'COOKIES.SECCION_5.GESTION_OPCIONES.BLOQUEAR_DESC' | translate }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>{{ 'COOKIES.SECCION_5.INSTRUCCIONES_TITULO' | translate }}</h3>
+      <div class="tabla-responsive">
+        <table class="tabla-legal">
+          <thead>
+            <tr>
+              <th>{{ 'COOKIES.SECCION_5.TABLA_NAVEGADORES.NAVEGADOR' | translate }}</th>
+              <th>{{ 'COOKIES.SECCION_5.TABLA_NAVEGADORES.ENLACE' | translate }}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Google Chrome</td><td><a href="http://support.google.com/chrome/answer/95647?hl=es" target="_blank" rel="noopener">{{ 'COOKIES.SECCION_5.TABLA_NAVEGADORES.CHROME' | translate }}</a></td></tr>
+            <tr><td>Microsoft Edge</td><td><a href="https://support.microsoft.com/es-es/microsoft-edge/eliminar-las-cookies-en-microsoft-edge-63947406-40ac-c3b8-57b9-2a946a29ae09" target="_blank" rel="noopener">{{ 'COOKIES.SECCION_5.TABLA_NAVEGADORES.EDGE' | translate }}</a></td></tr>
+            <tr><td>Internet Explorer</td><td><a href="https://support.microsoft.com/es-es/help/278835/how-to-delete-cookie-files-in-internet-explorer" target="_blank" rel="noopener">{{ 'COOKIES.SECCION_5.TABLA_NAVEGADORES.IE' | translate }}</a></td></tr>
+            <tr><td>Mozilla Firefox</td><td><a href="https://www.mozilla.org/es-ES/privacy/websites/#cookies" target="_blank" rel="noopener">{{ 'COOKIES.SECCION_5.TABLA_NAVEGADORES.FIREFOX' | translate }}</a></td></tr>
+            <tr><td>Apple Safari</td><td><a href="https://support.apple.com/es-es/guide/safari/sfri11471/mac" target="_blank" rel="noopener">{{ 'COOKIES.SECCION_5.TABLA_NAVEGADORES.SAFARI' | translate }}</a></td></tr>
+            <tr><td>Opera</td><td><a href="https://help.opera.com/en/latest/security-and-privacy/#clearBrowsingData" target="_blank" rel="noopener">{{ 'COOKIES.SECCION_5.TABLA_NAVEGADORES.OPERA' | translate }}</a></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+  </div>
+</div>

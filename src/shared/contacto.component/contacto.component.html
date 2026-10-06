@@ -1,0 +1,56 @@
+<section class="contacto">
+  <div class="contact-card">
+    <h2>{{ 'CONTACTO.TITULO' | translate }}</h2>
+    <p class="descripcion">
+      {{ 'CONTACTO.DESCRIPCION' | translate }}
+    </p>
+
+    <form [formGroup]="formulario" (ngSubmit)="enviar()">
+      <div class="fila">
+        <mat-form-field appearance="outline">
+          <mat-label>{{ 'CONTACTO.NOMBRE' | translate }}</mat-label>
+          <input matInput formControlName="nombre">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>{{ 'CONTACTO.TELEFONO' | translate }}</mat-label>
+          <input matInput formControlName="telefono" type="tel">
+        </mat-form-field>
+      </div>
+
+      <div class="legal">
+        <p><strong>{{ 'CONTACTO.LEGAL.RESPONSABLE_LABEL' | translate }}:</strong> {{ 'CONTACTO.LEGAL.RESPONSABLE_VALOR' | translate }}</p>
+        <p><strong>{{ 'CONTACTO.LEGAL.FINALIDAD_LABEL' | translate }}:</strong> {{ 'CONTACTO.LEGAL.FINALIDAD_VALOR' | translate }}</p>
+        <p><strong>{{ 'CONTACTO.LEGAL.DERECHOS_LABEL' | translate }}:</strong> {{ 'CONTACTO.LEGAL.DERECHOS_VALOR' | translate }}</p>
+        <p><strong>{{ 'CONTACTO.LEGAL.INFO_ADICIONAL_LABEL' | translate }}:</strong> {{ 'CONTACTO.LEGAL.DISPONIBLE_EN' | translate }}
+          <a routerLink="/politica-privacidad">{{ 'CONTACTO.LEGAL.POLITICA_PRIVACIDAD_LINK' | translate }}</a>.
+        </p>
+
+        <div class="checkbox-container">
+          <mat-checkbox formControlName="privacidad">
+            {{ 'CONTACTO.ACEPTO_PRIVACIDAD_TEXTO' | translate }}
+            <a
+              routerLink="/politica-privacidad"
+              target="_blank"
+              (click)="$event.stopPropagation()">
+              {{ 'CONTACTO.POLITICA_PRIVACIDAD' | translate }}
+            </a>
+          </mat-checkbox>
+
+          @if (
+            formulario.get('privacidad')?.invalid &&
+            formulario.get('privacidad')?.touched
+          ) {
+            <div class="error-privacidad">
+              {{ 'CONTACTO.ERROR_PRIVACIDAD' | translate }}
+            </div>
+          }
+        </div>
+      </div>
+
+      <button mat-raised-button type="submit" class="btn-enviar">
+        {{ 'CONTACTO.BTN_ENVIAR' | translate }}
+      </button>
+    </form>
+  </div>
+</section>

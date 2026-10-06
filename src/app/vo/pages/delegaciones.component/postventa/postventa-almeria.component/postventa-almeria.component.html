@@ -1,0 +1,142 @@
+<div class="ficha-delegacion-container">
+
+  <!-- Cabecera Hero con Imagen de Fondo Dinámica -->
+  <header class="header-ficha">
+    <div class="imagen-hero-wrapper">
+      <img [src]="'/assets/img/delegaciones/Almeria.webp'" class="imagen-hero" [alt]="'Instalaciones ' + nombre" loading="lazy" decoding="async">
+      <div class="overlay-hero"></div>
+    </div>
+    <div class="contenido-hero">
+      <div class="contenedor-centrado">
+        <span class="tag-concesionario">{{ subtitulo }}</span>
+        <h1>{{ nombre }}</h1>
+        <p class="lema-delegacion">{{ descripcionCorta }}</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- Contenedor del Cuerpo de la Ficha (Limitado y centrado) -->
+  <div class="contenedor-cuerpo">
+
+    <div class="grid-contenido">
+
+      <!-- Columna Izquierda: Información y Servicios -->
+      <main class="columna-principal">
+
+        <!-- Tarjeta de Presentación Destacada -->
+        <section class="bloque-descripcion">
+          <div class="tarjeta-blanca">
+            <div class="icono-destacado">
+              <fa-icon [icon]="faTruckFront"></fa-icon>
+            </div>
+            <div class="texto-descripcion">
+              <h3>{{ 'FICHA_DELEGACION_POSTVENTA.SOLUCIONES_FLOTA' | translate }}</h3>
+              <p>{{ descripcionLarga }}</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Bloque de Servicios -->
+        <section class="bloque-servicios">
+          <div class="titulo-seccion-wrap">
+            <span class="subtitulo-decorado">{{ 'FICHA_DELEGACION_POSTVENTA.QUE_OFRECEMOS' | translate }}</span>
+            <h2 class="titulo-seccion">{{ 'FICHA_DELEGACION_POSTVENTA.SERVICIOS_TITULO' | translate }}</h2>
+          </div>
+
+          <div class="grid-servicios">
+            @for (servicio of servicios; track servicio) {
+              <div class="item-servicio">
+                <div class="icono-check-wrap">
+                  <fa-icon [icon]="faCircleCheck"></fa-icon>
+                </div>
+                <span>{{ servicio | translate }}</span>
+              </div>
+            }
+          </div>
+        </section>
+      </main>
+
+      <!-- Columna Derecha: Tarjeta de Contacto Lateral (Sidebar) -->
+      <aside class="columna-lateral">
+        <div class="tarjeta-contacto-lateral">
+          <h3>{{ 'FICHA_DELEGACION_POSTVENTA.INFO_CONTACTO' | translate }}</h3>
+
+          <div class="lista-contacto-rapido">
+            <!-- Fila Teléfono -->
+            <a [href]="telefonoLink" class="enlace-contacto">
+              <div class="wrapper-icono">
+                <fa-icon [icon]="faPhone"></fa-icon>
+              </div>
+              <div class="detalle-contacto">
+                <span class="label">{{ 'FICHA_DELEGACION_POSTVENTA.LLAMANOS' | translate }}</span>
+                <strong>{{ telefono }}</strong>
+              </div>
+            </a>
+
+            <!-- Fila Dirección -->
+            <a [href]="direccionLink" target="_blank" class="enlace-contacto">
+              <div class="wrapper-icono">
+                <fa-icon [icon]="faLocationDot"></fa-icon>
+              </div>
+              <div class="detalle-contacto">
+                <span class="label">{{ 'FICHA_DELEGACION_POSTVENTA.DIRECCION' | translate }}</span>
+                <strong>{{ direccion }}</strong>
+              </div>
+            </a>
+
+            <!-- Fila Email -->
+            <a [href]="emailLink" class="enlace-contacto">
+              <div class="wrapper-icono">
+                <fa-icon [icon]="faEnvelope"></fa-icon>
+              </div>
+              <div class="detalle-contacto">
+                <span class="label">{{ 'FICHA_DELEGACION_POSTVENTA.EMAIL' | translate }}</span>
+                <strong>{{ email }}</strong>
+              </div>
+            </a>
+
+            <!-- Fila Horario -->
+            <div class="enlace-contacto no-link">
+              <div class="wrapper-icono">
+                <fa-icon [icon]="faClock"></fa-icon>
+              </div>
+              <div class="detalle-contacto">
+                <span class="label">{{ 'FICHA_DELEGACION_POSTVENTA.HORARIO' | translate }}</span>
+                <strong [innerHTML]="'FICHA_DELEGACION_POSTVENTA.HORARIO_DETALLE' | translate"></strong>
+              </div>
+            </div>
+          </div>
+
+          <!-- Botón de Acción Lateral -->
+          <div class="acciones-sidebar">
+            <a [href]="direccionLink" target="_blank" class="btn-accion-lateral btn-mapa">
+              <fa-icon [icon]="faMapLocationDot"></fa-icon>
+              <span>{{ 'FICHA_DELEGACION_POSTVENTA.COMO_LLEGAR' | translate }}</span>
+            </a>
+          </div>
+        </div>
+      </aside>
+
+    </div>
+
+    <!-- Sección de Localización Inferior -->
+    <section class="seccion-mapa-completo">
+      <div class="titulo-seccion-wrap">
+        <span class="subtitulo-decorado">{{ 'FICHA_DELEGACION_POSTVENTA.COMO_ENCONTRARNOS' | translate }}</span>
+        <h2 class="titulo-seccion">{{ 'FICHA_DELEGACION_POSTVENTA.MAPA_TITULO' | translate }}</h2>
+      </div>
+      <div class="contenedor-mapa">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3191.7303721322965!2d-2.4446549847080634!3d36.87287217993367!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd7a9e383002b7af%3A0xf14084439bda7e92!2sVeinsur%2C%20S.A.U.!5e0!3m2!1ses!2ses!4v1637048782579!5m2!1ses!2ses"
+          width="100%"
+          height="400"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </section>
+
+  </div>
+</div>

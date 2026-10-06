@@ -1,0 +1,109 @@
+<section class="area-privada showroom-camiones">
+  <div class="contenedor-global">
+
+    <!-- CABECERA DE ÁREA PRIVADA -->
+    <div class="cabecera">
+      <div>
+        <span class="tag">{{ 'AREA_PRIVADA.TAG_AREA_PRIVADA' | translate }}</span>
+        <h1>{{ 'AREA_PRIVADA.BIENVENIDA' | translate:{ email: email() } }}</h1>
+      </div>
+      <img src="/assets/img/user.svg" alt="Usuario" loading="lazy" decoding="async">
+    </div>
+
+    <!-- ACCIONES RÁPIDAS -->
+    <div class="acciones">
+      <div class="accion">
+        <fa-icon [icon]="faStar"></fa-icon>
+        <span>{{ 'AREA_PRIVADA.FAVORITOS' | translate }}</span>
+      </div>
+      <div class="accion">
+        <fa-icon [icon]="faBell"></fa-icon>
+        <span>{{ 'AREA_PRIVADA.BUSQUEDAS' | translate }}</span>
+      </div>
+      <div class="accion">
+        <fa-icon [icon]="faCodeCompare"></fa-icon>
+        <span>{{ 'AREA_PRIVADA.COMPARADOR' | translate }}</span>
+      </div>
+      <div class="accion">
+        <fa-icon [icon]="faFilePdf"></fa-icon>
+        <span>{{ 'AREA_PRIVADA.CATALOGO' | translate }}</span>
+      </div>
+    </div>
+
+    <!-- LISTADO DE VEHÍCULOS FAVORITOS -->
+    @if (cargando()) {
+      <div class="loading">
+        <fa-icon [icon]="faSpinner" [animation]="'spin'"></fa-icon> {{ 'AREA_PRIVADA.CARGANDO_FAVORITOS' | translate }}
+      </div>
+    } @else {
+      <div class="listado-tarjetas">
+        @for (vehiculo of favoritos(); track vehiculo.idStoc) {
+          <article class="tarjeta-horizontal">
+
+            <!-- Zona de imagen -->
+            <div class="zona-imagen">
+              <img
+                [src]="vehiculo.imagenBase64 ? 'data:image/webp;base64,' + vehiculo.imagenBase64 : '/assets/img/noDisponible.webp'"
+                [alt]="vehiculo.marca + ' ' + vehiculo.modelo"
+                class="vehiculo-img" loading="lazy" decoding="async"
+              >
+            </div>
+
+            <!-- Zona de contenido principal -->
+            <div class="zona-contenido">
+              <div class="cabecera-tarjeta">
+                <h3>
+                  {{ vehiculo.marca }}
+                  <span class="modelo">{{ vehiculo.modelo }}</span>
+                  <span class="id-stoc">#{{ vehiculo.idStoc }}</span>
+                </h3>
+
+                <div class="especificaciones">
+                  <span class="dato">
+                    <fa-icon [icon]="faGaugeHigh"></fa-icon> {{ vehiculo.potMot }} CV
+                  </span>
+                  <span class="dato">
+                    <fa-icon [icon]="faRoad"></fa-icon> {{ vehiculo.kilom | number:'1.0-0' }} KM
+                  </span>
+                  <span class="dato">
+                    <fa-icon [icon]="faTruck"></fa-icon> {{ vehiculo.tipoVeh }}
+                  </span>
+                </div>
+              </div>
+
+              <!-- Zona lateral derecha con precio, estado y botón de detalles -->
+              <div class="tarjeta-fin">
+                @if (vehiculo.precio && vehiculo.precio > 0) {
+                  <span class="precio-fijo">{{ getPrecio(vehiculo.precio) }}</span>
+                } @else {
+                  <span class="precio-consultar">{{ 'AREA_PRIVADA.PRECIO_CONSULTAR' | translate }}</span>
+                }
+
+                <div class="acciones-fin">
+                  <div class="estado-tag">
+                    @if (vehiculo.vendido === 'S') {
+                      <span class="badge vendido">{{ 'AREA_PRIVADA.ESTADO_VENDIDO' | translate }}</span>
+                    } @else {
+                      <span class="badge disponible">{{ 'AREA_PRIVADA.ESTADO_DISPONIBLE' | translate }}</span>
+                    }
+                  </div>
+
+                  <button class="btn-solicitar" [routerLink]="['/detalle', vehiculo.idStoc]">
+                    {{ 'AREA_PRIVADA.VER_DETALLES' | translate }}
+                  </button>
+                </div>
+              </div>
+            </div>
+
+          </article>
+        } @empty {
+          <div class="sin-favoritos">
+            <fa-icon [icon]="faStarRegular"></fa-icon>
+            <p>{{ 'AREA_PRIVADA.SIN_FAVORITOS' | translate }}</p>
+          </div>
+        }
+      </div>
+    }
+
+  </div>
+</section>

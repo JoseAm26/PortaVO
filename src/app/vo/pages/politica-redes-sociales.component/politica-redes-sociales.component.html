@@ -1,0 +1,93 @@
+<div class="contenedor-global pagina-legal">
+  <!-- Cabecera principal -->
+  <header class="header-aviso">
+    <span class="tagline">{{ 'REDES_SOCIALES.TAGLINE' | translate }}</span>
+    <h1>{{ 'REDES_SOCIALES.TITULO_1' | translate }} <span class="destaque">{{ 'REDES_SOCIALES.TITULO_2' | translate }}</span></h1>
+    <p class="subtitulo">{{ 'REDES_SOCIALES.SUBTITULO' | translate }}</p>
+  </header>
+
+  <!-- Cuerpo del documento -->
+  <div class="cuerpo-legal">
+
+    <!-- 1. INFORMACIÓN AL USUARIO -->
+    <section class="seccion-legal">
+      <h2>{{ 'REDES_SOCIALES.SECCION_1.TITULO' | translate }}</h2>
+
+      <h3>{{ 'REDES_SOCIALES.SECCION_1.P1_TITULO' | translate }}</h3>
+      <p [innerHTML]="'REDES_SOCIALES.SECCION_1.P1_DESCRIPCION' | translate"></p>
+
+      <h3>{{ 'REDES_SOCIALES.SECCION_1.P2_TITULO' | translate }}</h3>
+      <p [innerHTML]="'REDES_SOCIALES.SECCION_1.FIN_TRATAMIENTO' | translate"></p>
+      <ul class="lista-corporativa">
+        <li>{{ 'REDES_SOCIALES.SECCION_1.OPERACIONES.OP1' | translate }}</li>
+        <li>{{ 'REDES_SOCIALES.SECCION_1.OPERACIONES.OP2' | translate }}</li>
+        <li>{{ 'REDES_SOCIALES.SECCION_1.OPERACIONES.OP3' | translate }}</li>
+        <li>{{ 'REDES_SOCIALES.SECCION_1.OPERACIONES.OP4' | translate }}</li>
+      </ul>
+
+      <h3>{{ 'REDES_SOCIALES.SECCION_1.P3_TITULO' | translate }}</h3>
+      <p [innerHTML]="'REDES_SOCIALES.SECCION_1.BASE_JURIDICA' | translate"></p>
+      <p>{{ 'REDES_SOCIALES.SECCION_1.CONFIGURACION_PRIVACIDAD' | translate }}</p>
+      <p>{{ 'REDES_SOCIALES.SECCION_1.INFORMACION_PUBLICA' | translate }}</p>
+
+      <h3>{{ 'REDES_SOCIALES.SECCION_1.P4_TITULO' | translate }}</h3>
+      <p [innerHTML]="'REDES_SOCIALES.SECCION_1.CONSERVACION' | translate"></p>
+
+      <h3>{{ 'REDES_SOCIALES.SECCION_1.P5_TITULO' | translate }}</h3>
+      <p [innerHTML]="'REDES_SOCIALES.SECCION_1.COMUNICACION_DATOS' | translate"></p>
+      <p>{{ 'REDES_SOCIALES.SECCION_1.PROVEEDORES' | translate }}</p>
+
+      <h3>{{ 'REDES_SOCIALES.SECCION_1.P6_TITULO' | translate }}</h3>
+      <p>{{ 'REDES_SOCIALES.SECCION_1.DERECHOS_INTRO' | translate }}</p>
+      <ul class="lista-corporativa">
+        <li>{{ 'REDES_SOCIALES.SECCION_1.LISTA_DERECHOS.D1' | translate }}</li>
+        <li>{{ 'REDES_SOCIALES.SECCION_1.LISTA_DERECHOS.D2' | translate }}</li>
+        <li>
+          {{ 'REDES_SOCIALES.SECCION_1.LISTA_DERECHOS.D3' | translate }}
+          (<a href="https://www.aepd.es" target="_blank" rel="noopener">www.aepd.es</a>)
+        </li>
+      </ul>
+
+      <!-- Caja destacada para el ejercicio de derechos -->
+      <div class="nota-contacto">
+        <strong>{{ 'REDES_SOCIALES.SECCION_1.CONTACTO_DERECHOS.TITULO' | translate }}</strong><br>
+        {{ 'REDES_SOCIALES.SECCION_1.CONTACTO_DERECHOS.DIRECCION' | translate }}<br>
+        <strong>{{ 'REDES_SOCIALES.SECCION_1.CONTACTO_DERECHOS.EMAIL' | translate }}</strong>
+        <a href="mailto:protecciondatos@veinsur.es">protecciondatos@veinsur.es</a><br><br>
+        <strong>{{ 'REDES_SOCIALES.SECCION_1.CONTACTO_DERECHOS.DPD' | translate }}</strong>
+        {{ 'REDES_SOCIALES.SECCION_1.CONTACTO_DERECHOS.DPD_VALOR' | translate }}
+      </div>
+    </section>
+
+    <!-- 2. UTILIZACIÓN DEL PERFIL -->
+    <section class="seccion-legal">
+      <h2>{{ 'REDES_SOCIALES.SECCION_2.TITULO' | translate }}</h2>
+      <p>{{ 'REDES_SOCIALES.SECCION_2.INTRO' | translate }}</p>
+      <ul class="lista-corporativa">
+        <li>{{ 'REDES_SOCIALES.SECCION_2.ACCIONES.A1' | translate }}</li>
+        <li>{{ 'REDES_SOCIALES.SECCION_2.ACCIONES.A2' | translate }}</li>
+        <li>{{ 'REDES_SOCIALES.SECCION_2.ACCIONES.A3' | translate }}</li>
+        <li>{{ 'REDES_SOCIALES.SECCION_2.ACCIONES.A4' | translate }}</li>
+      </ul>
+      <p>{{ 'REDES_SOCIALES.SECCION_2.CONTROL_USUARIO' | translate }}</p>
+    </section>
+
+    <!-- 3. PUBLICACIONES -->
+    <section class="seccion-legal">
+      <h2>{{ 'REDES_SOCIALES.SECCION_3.TITULO' | translate }}</h2>
+      <p>{{ 'REDES_SOCIALES.SECCION_3.P1' | translate }}</p>
+      <p>{{ 'REDES_SOCIALES.SECCION_3.P2' | translate }}</p>
+      <p>{{ 'REDES_SOCIALES.SECCION_3.P3' | translate }}</p>
+      <p>{{ 'REDES_SOCIALES.SECCION_3.P4' | translate }}</p>
+      <p>{{ 'REDES_SOCIALES.SECCION_3.P5' | translate }}</p>
+    </section>
+
+    <!-- 4. MENORES Y CAPACIDADES ESPECIALES -->
+    <section class="seccion-legal">
+      <h2>{{ 'REDES_SOCIALES.SECCION_4.TITULO' | translate }}</h2>
+      <p>{{ 'REDES_SOCIALES.SECCION_4.P1' | translate }}</p>
+      <p>{{ 'REDES_SOCIALES.SECCION_4.P2' | translate }}</p>
+    </section>
+
+  </div>
+</div>
