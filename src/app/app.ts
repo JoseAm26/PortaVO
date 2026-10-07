@@ -40,10 +40,17 @@ export class App implements OnInit {
 
   mostrarLogin = false;
   mostrarModalWhatsapp = false;
+  toastr: any;
 
   ngOnInit(): void {
     this.voService.cargarUsuario().subscribe({
-      error: () => {}
+      next: (usuario) => console.log('Usuario cargado:', usuario),
+      error: (err) => {
+        console.error('Error cargando usuario:', err);
+        // Mostrar notificación al usuario
+        this.toastr.error('No se pudo cargar el perfil de usuario');
+      },
+      
     });
 
     this.loginModalService.mostrarModal$
@@ -80,15 +87,20 @@ export class App implements OnInit {
   }
 
   private esperarConsentimientoCookies(): void {
-    const timer = setInterval(() => {
+    const checkConsent = () => {
       const hasConsent =
         (window as any).cookieyes?.consent?.analytics === 'yes' ||
         document.cookie.includes('analytics:yes');
 
       if (hasConsent) {
         this.analyticsService.init();
-        clearInterval(timer);
+        document.removeEventListener('cookieyesChanged', checkConsent);
       }
-    }, 1000);
+    };
+
+    // Escuchar evento en lugar de hacer polling
+    document.addEventListener('cookieyesChanged', checkConsent);
+    // O esperar a evento específico de CookieYes
+    (window as any).addEventListener('CookieYes-InitCookies', checkConsent);
   }
 }
